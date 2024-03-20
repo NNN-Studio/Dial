@@ -7,19 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		286971102BAB2C170074C2FB /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */; };
+		286971152BAB2D800074C2FB /* StatusIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971142BAB2D800074C2FB /* StatusIconView.swift */; };
+		286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */; };
 		28EE29B02BAB2155009005C3 /* DialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29AF2BAB2155009005C3 /* DialApp.swift */; };
-		28EE29B22BAB2155009005C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29B12BAB2155009005C3 /* ContentView.swift */; };
 		28EE29B42BAB2156009005C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EE29B32BAB2156009005C3 /* Assets.xcassets */; };
 		28EE29B72BAB2156009005C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EE29B62BAB2156009005C3 /* Preview Assets.xcassets */; };
+		28EE29C02BAB219E009005C3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29BF2BAB219E009005C3 /* SettingsView.swift */; };
+		28EE29C22BAB21AC009005C3 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C12BAB21AC009005C3 /* GeneralSettingsView.swift */; };
+		28EE29C42BAB21B5009005C3 /* ControllersSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C32BAB21B5009005C3 /* ControllersSettingsView.swift */; };
+		28EE29C62BAB21BD009005C3 /* DialMenuSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */; };
+		28EE29C82BAB21CB009005C3 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C72BAB21CB009005C3 /* AboutView.swift */; };
+		28EE29CB2BAB2234009005C3 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 28EE29CA2BAB2234009005C3 /* SettingsAccess */; };
+		28EE29CE2BAB2245009005C3 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 28EE29CD2BAB2245009005C3 /* Defaults */; };
+		28EE29D12BAB2258009005C3 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 28EE29D02BAB2258009005C3 /* SFSafeSymbols */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		286971142BAB2D800074C2FB /* StatusIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIconView.swift; sourceTree = "<group>"; };
+		286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		28EE29AC2BAB2155009005C3 /* Dial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EE29AF2BAB2155009005C3 /* DialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialApp.swift; sourceTree = "<group>"; };
-		28EE29B12BAB2155009005C3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		28EE29B32BAB2156009005C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28EE29B62BAB2156009005C3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		28EE29B82BAB2156009005C3 /* Dial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dial.entitlements; sourceTree = "<group>"; };
+		28EE29BF2BAB219E009005C3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		28EE29C12BAB21AC009005C3 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
+		28EE29C32BAB21B5009005C3 /* ControllersSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllersSettingsView.swift; sourceTree = "<group>"; };
+		28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialMenuSettingsView.swift; sourceTree = "<group>"; };
+		28EE29C72BAB21CB009005C3 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,12 +43,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EE29D12BAB2258009005C3 /* SFSafeSymbols in Frameworks */,
+				28EE29CE2BAB2245009005C3 /* Defaults in Frameworks */,
+				286971102BAB2C170074C2FB /* MenuBarExtraAccess in Frameworks */,
+				28EE29CB2BAB2234009005C3 /* SettingsAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		286971112BAB2D550074C2FB /* Status Bar */ = {
+			isa = PBXGroup;
+			children = (
+				286971142BAB2D800074C2FB /* StatusIconView.swift */,
+			);
+			path = "Status Bar";
+			sourceTree = "<group>";
+		};
+		286971162BAB2F5F0074C2FB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		28EE29A32BAB2155009005C3 = {
 			isa = PBXGroup;
 			children = (
@@ -53,10 +89,12 @@
 			isa = PBXGroup;
 			children = (
 				28EE29AF2BAB2155009005C3 /* DialApp.swift */,
-				28EE29B12BAB2155009005C3 /* ContentView.swift */,
-				28EE29B32BAB2156009005C3 /* Assets.xcassets */,
-				28EE29B82BAB2156009005C3 /* Dial.entitlements */,
+				286971112BAB2D550074C2FB /* Status Bar */,
+				28EE29BE2BAB218D009005C3 /* Settings */,
+				286971162BAB2F5F0074C2FB /* Extensions */,
 				28EE29B52BAB2156009005C3 /* Preview Content */,
+				28EE29B82BAB2156009005C3 /* Dial.entitlements */,
+				28EE29B32BAB2156009005C3 /* Assets.xcassets */,
 			);
 			path = Dial;
 			sourceTree = "<group>";
@@ -67,6 +105,18 @@
 				28EE29B62BAB2156009005C3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		28EE29BE2BAB218D009005C3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				28EE29BF2BAB219E009005C3 /* SettingsView.swift */,
+				28EE29C12BAB21AC009005C3 /* GeneralSettingsView.swift */,
+				28EE29C32BAB21B5009005C3 /* ControllersSettingsView.swift */,
+				28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */,
+				28EE29C72BAB21CB009005C3 /* AboutView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +135,12 @@
 			dependencies = (
 			);
 			name = Dial;
+			packageProductDependencies = (
+				28EE29CA2BAB2234009005C3 /* SettingsAccess */,
+				28EE29CD2BAB2245009005C3 /* Defaults */,
+				28EE29D02BAB2258009005C3 /* SFSafeSymbols */,
+				2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */,
+			);
 			productName = Dial;
 			productReference = 28EE29AC2BAB2155009005C3 /* Dial.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +169,12 @@
 				Base,
 			);
 			mainGroup = 28EE29A32BAB2155009005C3;
+			packageReferences = (
+				28EE29C92BAB2234009005C3 /* XCRemoteSwiftPackageReference "SettingsAccess" */,
+				28EE29CC2BAB2245009005C3 /* XCRemoteSwiftPackageReference "Defaults" */,
+				28EE29CF2BAB2258009005C3 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				2869710E2BAB2C170074C2FB /* XCRemoteSwiftPackageReference "MenuBarExtraAccess" */,
+			);
 			productRefGroup = 28EE29AD2BAB2155009005C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +201,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28EE29B22BAB2155009005C3 /* ContentView.swift in Sources */,
+				28EE29C62BAB21BD009005C3 /* DialMenuSettingsView.swift in Sources */,
+				28EE29C82BAB21CB009005C3 /* AboutView.swift in Sources */,
+				28EE29C02BAB219E009005C3 /* SettingsView.swift in Sources */,
+				286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */,
+				28EE29C22BAB21AC009005C3 /* GeneralSettingsView.swift in Sources */,
+				286971152BAB2D800074C2FB /* StatusIconView.swift in Sources */,
+				28EE29C42BAB21B5009005C3 /* ControllersSettingsView.swift in Sources */,
 				28EE29B02BAB2155009005C3 /* DialApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +347,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +375,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,6 +411,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2869710E2BAB2C170074C2FB /* XCRemoteSwiftPackageReference "MenuBarExtraAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/orchetect/MenuBarExtraAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.5;
+			};
+		};
+		28EE29C92BAB2234009005C3 /* XCRemoteSwiftPackageReference "SettingsAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/orchetect/SettingsAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+		28EE29CC2BAB2245009005C3 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		28EE29CF2BAB2258009005C3 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2869710E2BAB2C170074C2FB /* XCRemoteSwiftPackageReference "MenuBarExtraAccess" */;
+			productName = MenuBarExtraAccess;
+		};
+		28EE29CA2BAB2234009005C3 /* SettingsAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28EE29C92BAB2234009005C3 /* XCRemoteSwiftPackageReference "SettingsAccess" */;
+			productName = SettingsAccess;
+		};
+		28EE29CD2BAB2245009005C3 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28EE29CC2BAB2245009005C3 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
+		28EE29D02BAB2258009005C3 /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28EE29CF2BAB2258009005C3 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 28EE29A42BAB2155009005C3 /* Project object */;
 }
