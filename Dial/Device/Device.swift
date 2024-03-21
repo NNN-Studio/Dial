@@ -103,7 +103,6 @@ extension Device {
             }
             
             let buffer = UnsafeMutablePointer<wchar_t>.allocate(capacity: 255)
-            
             hid_get_manufacturer_string(dev, buffer, 255)
             
             return NSString(wcharArray: buffer) as String

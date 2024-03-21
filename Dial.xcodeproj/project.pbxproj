@@ -19,6 +19,11 @@
 		2887D7792BABFD4E00D733FC /* SymbolRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7782BABFD4E00D733FC /* SymbolRepresentation.swift */; };
 		2887D77B2BABFE0E00D733FC /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D77A2BABFE0E00D733FC /* Localization.swift */; };
 		2887D77D2BABFE8900D733FC /* Hardware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D77C2BABFE8900D733FC /* Hardware.swift */; };
+		2887D7812BAC002400D733FC /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7802BAC002400D733FC /* Controller.swift */; };
+		2887D7832BAC005200D733FC /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7822BAC005200D733FC /* MainController.swift */; };
+		2887D7872BAC00AF00D733FC /* ShortcutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7862BAC00AF00D733FC /* ShortcutsController.swift */; };
+		2887D7892BAC011300D733FC /* ShortcutArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7882BAC011300D733FC /* ShortcutArray.swift */; };
+		2887D78B2BAC013300D733FC /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D78A2BAC013300D733FC /* Input.swift */; };
 		28EE29B02BAB2155009005C3 /* DialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29AF2BAB2155009005C3 /* DialApp.swift */; };
 		28EE29B42BAB2156009005C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EE29B32BAB2156009005C3 /* Assets.xcassets */; };
 		28EE29B72BAB2156009005C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EE29B62BAB2156009005C3 /* Preview Assets.xcassets */; };
@@ -45,6 +50,11 @@
 		2887D77A2BABFE0E00D733FC /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		2887D77C2BABFE8900D733FC /* Hardware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hardware.swift; sourceTree = "<group>"; };
 		2887D77E2BABFF6400D733FC /* Dial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dial-Bridging-Header.h"; sourceTree = "<group>"; };
+		2887D7802BAC002400D733FC /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		2887D7822BAC005200D733FC /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		2887D7862BAC00AF00D733FC /* ShortcutsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsController.swift; sourceTree = "<group>"; };
+		2887D7882BAC011300D733FC /* ShortcutArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutArray.swift; sourceTree = "<group>"; };
+		2887D78A2BAC013300D733FC /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		28EE29AC2BAB2155009005C3 /* Dial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EE29AF2BAB2155009005C3 /* DialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialApp.swift; sourceTree = "<group>"; };
 		28EE29B32BAB2156009005C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,8 +117,20 @@
 			children = (
 				2887D7782BABFD4E00D733FC /* SymbolRepresentation.swift */,
 				2887D77A2BABFE0E00D733FC /* Localization.swift */,
+				2887D7882BAC011300D733FC /* ShortcutArray.swift */,
+				2887D78A2BAC013300D733FC /* Input.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2887D77F2BAC000800D733FC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2887D7802BAC002400D733FC /* Controller.swift */,
+				2887D7822BAC005200D733FC /* MainController.swift */,
+				2887D7862BAC00AF00D733FC /* ShortcutsController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		28EE29A32BAB2155009005C3 = {
@@ -133,6 +155,7 @@
 				2887D77E2BABFF6400D733FC /* Dial-Bridging-Header.h */,
 				28EE29AF2BAB2155009005C3 /* DialApp.swift */,
 				2887D7742BABFD0B00D733FC /* Device */,
+				2887D77F2BAC000800D733FC /* Controllers */,
 				2887D7772BABFD2A00D733FC /* Utilities */,
 				286971112BAB2D550074C2FB /* Status Bar */,
 				28EE29BE2BAB218D009005C3 /* Settings */,
@@ -252,15 +275,20 @@
 				2887D77D2BABFE8900D733FC /* Hardware.swift in Sources */,
 				2887D7712BABFBFF00D733FC /* NSString+Extension.swift in Sources */,
 				2887D76D2BABFB9800D733FC /* NSImage+Extension.swift in Sources */,
+				2887D7892BAC011300D733FC /* ShortcutArray.swift in Sources */,
 				2887D7762BABFD2200D733FC /* Device.swift in Sources */,
 				2887D77B2BABFE0E00D733FC /* Localization.swift in Sources */,
 				28EE29C02BAB219E009005C3 /* SettingsView.swift in Sources */,
+				2887D7812BAC002400D733FC /* Controller.swift in Sources */,
 				2887D76B2BABFB6100D733FC /* Defaults+Extension.swift in Sources */,
 				2887D7732BABFCEA00D733FC /* Defaults+Structures.swift in Sources */,
 				286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */,
+				2887D78B2BAC013300D733FC /* Input.swift in Sources */,
 				28EE29C22BAB21AC009005C3 /* GeneralSettingsView.swift in Sources */,
 				286971152BAB2D800074C2FB /* StatusIconView.swift in Sources */,
+				2887D7872BAC00AF00D733FC /* ShortcutsController.swift in Sources */,
 				28EE29C42BAB21B5009005C3 /* ControllersSettingsView.swift in Sources */,
+				2887D7832BAC005200D733FC /* MainController.swift in Sources */,
 				2887D7792BABFD4E00D733FC /* SymbolRepresentation.swift in Sources */,
 				28EE29B02BAB2155009005C3 /* DialApp.swift in Sources */,
 			);
