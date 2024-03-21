@@ -80,15 +80,14 @@ import Defaults
         case .continuous(_):
             break
         case .stepping(let direction):
-            Controllers.cycleThroughControllers(direction.physical.negate.rawValue, wrap: Controllers.activatedControllers.count == Defaults[.maxControllerCount])
-            // Buzzes are already handled by the method.
+            Defaults.cycleControllers(direction.physical.negate.rawValue, wrap: Defaults.controllerIDs.count == Defaults[.maxControllers])
         }
     }
     
     func willBeAgent() {
         dispatch = .init {
             self.isAgent = true
-            self.callback?.window.show()
+            //self.callback?.window.show()
             self.callback?.device.buzz()
             self.callback?.device.initSensitivity(autoTriggers: false)
             
@@ -107,8 +106,8 @@ import Defaults
         
         if isAgent {
             isAgent = false
-            self.callback?.window.hide()
-            self.callback?.device.initSensitivity(autoTriggers: Controllers.currentController.autoTriggers)
+            //self.callback?.window.hide()
+            self.callback?.device.initSensitivity(autoTriggers: Defaults.currentController?.autoTriggers ?? false)
             
             print("Main controller is no longer the agent.")
         }

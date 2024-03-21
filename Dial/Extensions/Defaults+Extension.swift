@@ -6,6 +6,7 @@
 //
 
 import Defaults
+import Foundation
 
 extension Defaults.Keys {
     static let haptics = Key<Bool>("haptics", default: true)
@@ -15,11 +16,11 @@ extension Defaults.Keys {
     static let globalSensitivity = Key<Sensitivity>("globalSensitivity", default: .natural)
     static let globalDirection = Key<Direction>("globalDirection", default: .clockwise)
     
-    static let controllers: Key<[ControllerID: Bool]> = {
+    static let controllerMap: Key<[ControllerID: Bool]> = {
         Task { @MainActor in
             print("Task started: validating controller indexes")
             
-            for await controllers in Defaults.updates(.controllers) {
+            for await controllers in Defaults.updates(.controllerMap) {
                 if controllers.isEmpty {
                     // Not selectable
                     Defaults[.currentControllerIndex] = nil
@@ -52,4 +53,38 @@ extension Defaults.Keys {
     }()
     static let currentControllerIndex = Key<Int?>("currentControllerIndex", default: 0)
     static let selectedControllerIndex = Key<Int?>("selectedControllerIndex", default: nil)
+    
+    // MARK: - Constants
+    
+    static let maxControllers = Key<Int>("maxControllers", default: 10)
+}
+
+extension Defaults {
+    static var controllerIDs: [ControllerID] {
+        Array(Defaults[.controllerMap].keys)
+    }
+    
+    static var currentController: Controller? {
+        guard let index = Defaults[.currentControllerIndex] else { return nil }
+        return controllerIDs[index].controller
+    }
+    
+    static var selectedController: Controller? {
+        guard let index = Defaults[.selectedControllerIndex] else { return nil }
+        return controllerIDs[index].controller
+    }
+    
+    static func cycleControllers(_ sign: Int, wrap: Bool = false) {
+        guard sign != 0 else { return }
+        guard let index = Defaults[.currentControllerIndex] else { return }
+        
+        let cycledIndex = index + sign.signum()
+        let count = controllerIDs.count
+        let inRange = NSRange(location: 0, length: count).contains(cycledIndex)
+        
+        if wrap || inRange {
+            Defaults[.currentControllerIndex] = (cycledIndex + count) % count
+            // TODO: Buzz
+        }
+    }
 }

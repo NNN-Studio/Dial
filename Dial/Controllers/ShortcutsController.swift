@@ -24,10 +24,6 @@ class ShortcutsController: Controller {
     
     struct Settings: SymbolRepresentable, Codable, Defaults.Serializable {
         var id: UUID
-        var index: Int {
-            Defaults[.shortcutsControllerSettings].firstIndex(where: { $0.id == id })!
-        }
-        
         var name: String?
         var representingSymbol: SFSymbol
         
@@ -157,7 +153,7 @@ class ShortcutsController: Controller {
     }
     
     var name: String {
-        settings.name ?? String(format: Localization.shortcutsNameFormat.localizedName, settings.index + 1)
+        settings.name ?? Localization.newController.localizedName
     }
     
     var representingSymbol: SFSymbol {

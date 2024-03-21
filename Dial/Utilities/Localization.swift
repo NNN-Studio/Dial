@@ -34,7 +34,7 @@ enum Localization: Codable {
     
     case quit
     
-    case shortcutsNameFormat
+    case newController
     
     enum ConnectionStatus: Codable {
         case on
@@ -86,7 +86,7 @@ extension Localization: Localizable {
             NSLocalizedString("OpenSettings.Name", value:"Settings...", comment: "open settings")
         case .quit:
             NSLocalizedString("Quit.Name", value:"Quit app", comment: "quit")
-        case .shortcutsNameFormat:
+        case .newController:
             NSLocalizedString(
                 "Controllers/Shortcuts/Fallback.Name",
                 value: "Controller %lld",
@@ -101,11 +101,11 @@ extension Localization: Localizable {
             NSLocalizedString("OpenSettings.Title", value:"Settings...", comment: "open settings")
         case .quit:
             NSLocalizedString("Quit.Title", value:"Quit App", comment: "quit")
-        case .shortcutsNameFormat:
+        case .newController:
             NSLocalizedString(
-                "Controllers/Shortcuts/Fallback.Title",
-                value: "Controller %lld",
-                comment: "shortcuts controller fallback"
+                "Controllers/New.Title",
+                value: "New Controller",
+                comment: "new controller name"
             )
         }
     }

@@ -15,14 +15,16 @@ import SwiftUI
 class Dial {
     var device: Device = .init()
     
+    /*
     var window: DialWindow = .init(
         styleMask: [.borderless],
         backing: .buffered,
         defer: true
     )
+     */
     
-    var controller: Controller {
-        MainController.instance.isAgent ? MainController.instance : Controllers.currentController
+    var controller: Controller? {
+        MainController.instance.isAgent ? MainController.instance : Defaults.currentController
     }
     
     private var timestamps: (
@@ -76,17 +78,17 @@ extension Dial: InputHandler {
             
             let clickInterval = Date.now.timeIntervalSince(timestamps.buttonPressed)
             guard let clickInterval, clickInterval <= NSEvent.doubleClickInterval else {
-                controller.onRelease(callback)
+                controller?.onRelease(callback)
                 break
             }
             
             if let releaseInterval, releaseInterval <= NSEvent.doubleClickInterval {
                 // Double click
-                controller.onClick(isDoubleClick: true, interval: releaseInterval, callback)
+                controller?.onClick(isDoubleClick: true, interval: releaseInterval, callback)
                 timestamps.buttonReleased = nil
             } else {
                 // Click
-                controller.onClick(isDoubleClick: false, interval: releaseInterval, callback)
+                controller?.onClick(isDoubleClick: false, interval: releaseInterval, callback)
                 timestamps.buttonReleased = .now
             }
         }
@@ -117,7 +119,7 @@ extension Dial: InputHandler {
         if let duration = Date.now.timeIntervalSince(rotationBehavior.started) {
             if lastStage.continuous != currentStage.continuous {
                 // Continuous rotation
-                controller.onRotation(
+                controller?.onRotation(
                     rotation: .continuous(direction), totalDegrees: rotationBehavior.degrees,
                     buttonState: buttonState, interval: interval, duration: duration,
                     callback
@@ -126,7 +128,7 @@ extension Dial: InputHandler {
             
             if lastStage.stepping != currentStage.stepping {
                 // Stepping rotation
-                controller.onRotation(
+                controller?.onRotation(
                     rotation: .stepping(direction), totalDegrees: rotationBehavior.degrees,
                     buttonState: buttonState, interval: interval, duration: duration,
                     callback
@@ -139,7 +141,7 @@ extension Dial: InputHandler {
             }
         } else {
             // Check threshold
-            let started = rotationBehavior.degrees.magnitude > Defaults[.rotationThresholdDegrees]
+            let started = rotationBehavior.degrees.magnitude > 10
             if started {
                 print("Rotation started.")
                 
@@ -167,9 +169,11 @@ extension Dial {
             dial.device.callback
         }
         
+        /*
         var window: DialWindow {
             dial.window
         }
+         */
     }
 }
 
