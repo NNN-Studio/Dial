@@ -1,0 +1,7 @@
+/usr/local/lib/cmake/hidapi/hidapi.cmake
+/usr/local/lib/cmake/hidapi/hidapi-release.cmake
+/usr/local/lib/cmake/hidapi/hidapi-config-version.cmake
+/usr/local/lib/cmake/hidapi/hidapi-config.cmake
+/usr/local/lib/libhidapi.a
+/usr/local/include/hidapi/hidapi.h
+/usr/local/lib/pkgconfig/hidapi.pc

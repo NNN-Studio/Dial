@@ -1,5 +1,5 @@
 //
-//  Hardware.swift
+//  Dial.swift
 //  Dial
 //
 //  Created by KrLite on 2024/3/21.
@@ -12,11 +12,8 @@ import AppKit
 import Cocoa
 import SwiftUI
 
-class Hardware {
-    
+class Dial {
     var device: Device = .init()
-    
-    var statusBarController: StatusBarController = .init()
     
     var window: DialWindow = .init(
         styleMask: [.borderless],
@@ -46,11 +43,9 @@ class Hardware {
         
         connect()
     }
-    
 }
 
-extension Hardware {
-    
+extension Dial {
     func connect() {
         device.start()
     }
@@ -58,11 +53,9 @@ extension Hardware {
     func disconnect() {
         device.stop()
     }
-    
 }
 
-extension Hardware: InputHandler {
-    
+extension Dial: InputHandler {
     func onButtonStateChanged(_ buttonState: Device.ButtonState) {
         let pressInterval = Date.now.timeIntervalSince(timestamps.buttonPressed)
         let releaseInterval = Date.now.timeIntervalSince(timestamps.buttonReleased)
@@ -156,20 +149,17 @@ extension Hardware: InputHandler {
         
         timestamps.rotation = .now
     }
-    
 }
 
-extension Hardware {
-    
+extension Dial {
     var callback: Callback {
         Callback(self)
     }
     
     struct Callback {
+        private var dial: Dial
         
-        private var dial: Hardware
-        
-        init(_ dial: Hardware) {
+        init(_ dial: Dial) {
             self.dial = dial
         }
         
@@ -180,8 +170,6 @@ extension Hardware {
         var window: DialWindow {
             dial.window
         }
-        
     }
-    
 }
 
