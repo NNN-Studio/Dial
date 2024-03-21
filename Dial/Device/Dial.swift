@@ -107,13 +107,13 @@ extension Dial: InputHandler {
         }
         
         let lastStage = (
-            stepping: Int(CGFloat(rotationBehavior.degrees) / Defaults[.sensitivity].gap),
-            continuous: Int(CGFloat(rotationBehavior.degrees) / Defaults[.sensitivity].flow)
+            stepping: Int(CGFloat(rotationBehavior.degrees) / Defaults[.globalSensitivity].gap),
+            continuous: Int(CGFloat(rotationBehavior.degrees) / Defaults[.globalSensitivity].flow)
         )
         rotationBehavior.degrees += direction.rawValue
         let currentStage = (
-            stepping: Int(CGFloat(rotationBehavior.degrees) / Defaults[.sensitivity].gap),
-            continuous: Int(CGFloat(rotationBehavior.degrees) / Defaults[.sensitivity].flow)
+            stepping: Int(CGFloat(rotationBehavior.degrees) / Defaults[.globalSensitivity].gap),
+            continuous: Int(CGFloat(rotationBehavior.degrees) / Defaults[.globalSensitivity].flow)
         )
         
         if let duration = Date.now.timeIntervalSince(rotationBehavior.started) {

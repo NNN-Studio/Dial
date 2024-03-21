@@ -59,7 +59,7 @@ endif()
 add_library(hidapi::include INTERFACE IMPORTED)
 
 set_target_properties(hidapi::include PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include/hidapi"
+  INTERFACE_INCLUDE_DIRECTORIES "/hidapi"
 )
 
 # Create imported target hidapi::darwin

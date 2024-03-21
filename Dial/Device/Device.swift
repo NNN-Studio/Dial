@@ -131,7 +131,7 @@ extension Device {
             
             connectionStatus = .connected(serialNumber)
             buzz(3)
-            initSensitivity(autoTriggers: Controllers.currentController.autoTriggers)
+            initSensitivity(autoTriggers: Defaults.currentController?.autoTriggers ?? false)
         }
         
         return isConnected
@@ -175,7 +175,7 @@ extension Device {
     func buzz(_ repeatCount: UInt8 = 1) {
         guard repeatCount > 0 else { return }
         
-        if Defaults[.hapticsEnabled] && isConnected {
+        if Defaults[.globalHaptics] && isConnected {
             var buf: Array<UInt8> = []
             
             buf.append(0x01) // Report ID
@@ -212,7 +212,7 @@ extension Device {
                 self.buttonState = buttonState
             }
             
-            return .dial(buttonState, direction?.multiply(Defaults[.direction]))
+            return .dial(buttonState, direction?.multiply(Defaults[.globalDirection]))
         default:
             return .unknown
         }

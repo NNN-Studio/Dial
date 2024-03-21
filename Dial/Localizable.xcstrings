@@ -1,7 +1,669 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "About" : {
 
+    },
+    "About %@" : {
+
+    },
+    "ConnectionStatus/Off.Name" : {
+      "comment" : "if (!connected)",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Dial"
+          }
+        }
+      }
+    },
+    "ConnectionStatus/OffBadge.Name" : {
+      "comment" : "if (!connected) badge",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "disconnected"
+          }
+        }
+      }
+    },
+    "ConnectionStatus/OffPlaceholder.Name" : {
+      "comment" : "if (!connected) badge",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Surface Dial disconnected"
+          }
+        }
+      }
+    },
+    "ConnectionStatus/On.Name" : {
+      "comment" : "if (connected)",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Dial"
+          }
+        }
+      }
+    },
+    "Controllers" : {
+
+    },
+    "Controllers/Advanced/AlternativeDirection.Name" : {
+      "comment" : "alternative direction",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Alternative direction"
+          }
+        }
+      }
+    },
+    "Controllers/Advanced/Haptics.Name" : {
+      "comment" : "haptics",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Haptic feedback"
+          }
+        }
+      }
+    },
+    "Controllers/Advanced/PhysicalDirection.Name" : {
+      "comment" : "physical direction",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Follows physical direction"
+          }
+        }
+      }
+    },
+    "Controllers/Advanced/RotationType.Name" : {
+      "comment" : "rotation type",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Rotation type"
+          }
+        }
+      }
+    },
+    "Controllers/Default/Brigshtnes/Description" : {
+      "comment" : "brightness controller description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You can increase / decrease screen brightness by dialing, increase / decrease keyboard backlighting by dialing while pressing, and toggle keyboard backlighting by clicking through this controller."
+          }
+        }
+      }
+    },
+    "Controllers/Default/Brigshtnes/Name" : {
+      "comment" : "brightness controller name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Brightness"
+          }
+        }
+      }
+    },
+    "Controllers/Default/Main/Name" : {
+      "comment" : "main controller",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Main"
+          }
+        }
+      }
+    },
+    "Controllers/Default/Mission/Description" : {
+      "comment" : "mission controller description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You can iterate through App Switcher and activate the app windows through this controller."
+          }
+        }
+      }
+    },
+    "Controllers/Default/Mission/Name" : {
+      "comment" : "mission controller name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Mission"
+          }
+        }
+      }
+    },
+    "Controllers/Default/Playback/Description" : {
+      "comment" : "playback controller description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You can trigger forward / backward by dialing, increase / decrease volume by dialing while pressing, toggle system play / pause by single clicking, and mute / unmute by double clicking through this controller."
+          }
+        }
+      }
+    },
+    "Controllers/Default/Playback/Name" : {
+      "comment" : "playback controller name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Playback"
+          }
+        }
+      }
+    },
+    "Controllers/Default/Scroll/Description" : {
+      "comment" : "scroll controller description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You can scroll and perform middle button clicks through this controller. Scrolls and clicks will always happen at the cursor."
+          }
+        }
+      }
+    },
+    "Controllers/Default/Scroll/Name" : {
+      "comment" : "scroll controller description",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Scroll"
+          }
+        }
+      }
+    },
+    "Controllers/New.Title" : {
+      "comment" : "new controller name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "New Controller"
+          }
+        }
+      }
+    },
+    "Controllers/Shortcuts/Cancellable.Name" : {
+      "comment" : "cancellable",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Release to cancel"
+          }
+        }
+      }
+    },
+    "Controllers/Shortcuts/Fallback.Name" : {
+      "comment" : "shortcuts controller fallback",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Controller %lld"
+          }
+        }
+      }
+    },
+    "Controllers/Shortcuts/Idle.Name" : {
+      "comment" : "idle",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Press and enter"
+          }
+        }
+      }
+    },
+    "Dial" : {
+
+    },
+    "Dial Menu" : {
+
+    },
+    "Dial/Rotation/Type/Continuous.Badge" : {
+      "comment" : "continuous rotation type",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "continuous"
+          }
+        }
+      }
+    },
+    "Dial/Rotation/Type/Continuous.Name" : {
+      "comment" : "continuous rotation type",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Continuous"
+          }
+        }
+      }
+    },
+    "Dial/Rotation/Type/Stepping.Badge" : {
+      "comment" : "stepping rotation type",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "stepping"
+          }
+        }
+      }
+    },
+    "Dial/Rotation/Type/Stepping.Name" : {
+      "comment" : "stepping rotation type",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Stepping"
+          }
+        }
+      }
+    },
+    "Direction/Clockwise.Badge" : {
+      "comment" : "clockwise direction",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "clockwise"
+          }
+        }
+      }
+    },
+    "Direction/Clockwise.Name" : {
+      "comment" : "clockwise direction",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Clockwise"
+          }
+        }
+      }
+    },
+    "Direction/Counterclockwise.Badge" : {
+      "comment" : "counterclockwise direction",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "counterclockwise"
+          }
+        }
+      }
+    },
+    "Direction/Counterclockwise.Name" : {
+      "comment" : "counterclockwise direction",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Counterclockwise"
+          }
+        }
+      }
+    },
+    "General" : {
+
+    },
+    "General/AutoHideIcon.Title" : {
+      "comment" : "auto hides icon",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hides Icon while Disconnected"
+          }
+        }
+      }
+    },
+    "General/AutoHidesIcon.Name" : {
+      "comment" : "auto hides icon",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Hides icon while disconnected"
+          }
+        }
+      }
+    },
+    "General/Direction.Name" : {
+      "comment" : "direction",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Primary direction"
+          }
+        }
+      }
+    },
+    "General/Direction.Title" : {
+      "comment" : "direction",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Primary Direction"
+          }
+        }
+      }
+    },
+    "General/Haptics.Name" : {
+      "comment" : "haptics",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Global haptic feedback"
+          }
+        }
+      }
+    },
+    "General/Haptics.Title" : {
+      "comment" : "haptics",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Global Haptic Feedback"
+          }
+        }
+      }
+    },
+    "General/Sensitivity.Name" : {
+      "comment" : "sensitivity",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sensitivity"
+          }
+        }
+      }
+    },
+    "General/Sensitivity.Title" : {
+      "comment" : "sensitivity",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sensitivity"
+          }
+        }
+      }
+    },
+    "General/StartsWithMacOS.Name" : {
+      "comment" : "starts with macOS",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Starts with macOS"
+          }
+        }
+      }
+    },
+    "General/StartsWithMacOS.Title" : {
+      "comment" : "starts with macOS",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Starts with macOS"
+          }
+        }
+      }
+    },
+    "Hello, World!" : {
+
+    },
+    "OpenSettings.Name" : {
+      "comment" : "open settings",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Settings..."
+          }
+        }
+      }
+    },
+    "OpenSettings.Title" : {
+      "comment" : "open settings",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Settings..."
+          }
+        }
+      }
+    },
+    "Quit" : {
+
+    },
+    "Quit.Name" : {
+      "comment" : "quit",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quit app"
+          }
+        }
+      }
+    },
+    "Quit.Title" : {
+      "comment" : "quit",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Quit App"
+          }
+        }
+      }
+    },
+    "Sensitivity/Extreme.Badge" : {
+      "comment" : "extreme sensitivity",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "extreme"
+          }
+        }
+      }
+    },
+    "Sensitivity/Extreme.Name" : {
+      "comment" : "extreme sensitivity",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Extreme"
+          }
+        }
+      }
+    },
+    "Sensitivity/High.Badge" : {
+      "comment" : "high sensitivity",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "high"
+          }
+        }
+      }
+    },
+    "Sensitivity/High.Name" : {
+      "comment" : "high sensitivity",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "High"
+          }
+        }
+      }
+    },
+    "Sensitivity/Low.Badge" : {
+      "comment" : "low sensitivity",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "low"
+          }
+        }
+      }
+    },
+    "Sensitivity/Low.Name" : {
+      "comment" : "low sensitivity",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Low"
+          }
+        }
+      }
+    },
+    "Sensitivity/Medium.Badge" : {
+      "comment" : "medium sensitivity",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "medium"
+          }
+        }
+      }
+    },
+    "Sensitivity/Medium.Name" : {
+      "comment" : "medium sensitivity",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Medium"
+          }
+        }
+      }
+    },
+    "Sensitivity/Natural.Badge" : {
+      "comment" : "natural sensitivity",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "natural"
+          }
+        }
+      }
+    },
+    "Sensitivity/Natural.Name" : {
+      "comment" : "natural sensitivity",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Natural"
+          }
+        }
+      }
+    },
+    "Settings…" : {
+
+    }
   },
   "version" : "1.0"
 }
