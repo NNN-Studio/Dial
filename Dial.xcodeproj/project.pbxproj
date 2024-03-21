@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2806E9BE2BAC5C8800CD2AE2 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806E9BD2BAC5C8800CD2AE2 /* Date+Extension.swift */; };
+		2806E9C12BAC5E6D00CD2AE2 /* ScrollController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806E9C02BAC5E6D00CD2AE2 /* ScrollController.swift */; };
+		2806E9C32BAC5EAF00CD2AE2 /* PlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806E9C22BAC5EAF00CD2AE2 /* PlaybackController.swift */; };
+		2806E9C52BAC5ED600CD2AE2 /* BrigntnessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806E9C42BAC5ED600CD2AE2 /* BrigntnessController.swift */; };
+		2806E9C72BAC5EFD00CD2AE2 /* MissionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2806E9C62BAC5EFD00CD2AE2 /* MissionController.swift */; };
 		286971102BAB2C170074C2FB /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */; };
 		286971152BAB2D800074C2FB /* StatusIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971142BAB2D800074C2FB /* StatusIconView.swift */; };
 		286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */; };
@@ -38,6 +43,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2806E9BD2BAC5C8800CD2AE2 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		2806E9C02BAC5E6D00CD2AE2 /* ScrollController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollController.swift; sourceTree = "<group>"; };
+		2806E9C22BAC5EAF00CD2AE2 /* PlaybackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackController.swift; sourceTree = "<group>"; };
+		2806E9C42BAC5ED600CD2AE2 /* BrigntnessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrigntnessController.swift; sourceTree = "<group>"; };
+		2806E9C62BAC5EFD00CD2AE2 /* MissionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionController.swift; sourceTree = "<group>"; };
 		286971142BAB2D800074C2FB /* StatusIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusIconView.swift; sourceTree = "<group>"; };
 		286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		2887D76A2BABFB6100D733FC /* Defaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Extension.swift"; sourceTree = "<group>"; };
@@ -82,6 +92,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2806E9BF2BAC5E5500CD2AE2 /* Builtin */ = {
+			isa = PBXGroup;
+			children = (
+				2887D7822BAC005200D733FC /* MainController.swift */,
+				2806E9C02BAC5E6D00CD2AE2 /* ScrollController.swift */,
+				2806E9C22BAC5EAF00CD2AE2 /* PlaybackController.swift */,
+				2806E9C42BAC5ED600CD2AE2 /* BrigntnessController.swift */,
+				2806E9C62BAC5EFD00CD2AE2 /* MissionController.swift */,
+			);
+			path = Builtin;
+			sourceTree = "<group>";
+		};
 		286971112BAB2D550074C2FB /* Status Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +121,7 @@
 				2887D76C2BABFB9800D733FC /* NSImage+Extension.swift */,
 				2887D76E2BABFBD100D733FC /* SFSymbol+Extension.swift */,
 				2887D7702BABFBFF00D733FC /* NSString+Extension.swift */,
+				2806E9BD2BAC5C8800CD2AE2 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -127,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				2887D7802BAC002400D733FC /* Controller.swift */,
-				2887D7822BAC005200D733FC /* MainController.swift */,
+				2806E9BF2BAC5E5500CD2AE2 /* Builtin */,
 				2887D7862BAC00AF00D733FC /* ShortcutsController.swift */,
 			);
 			path = Controllers;
@@ -275,21 +298,26 @@
 				2887D77D2BABFE8900D733FC /* Dial.swift in Sources */,
 				2887D7712BABFBFF00D733FC /* NSString+Extension.swift in Sources */,
 				2887D76D2BABFB9800D733FC /* NSImage+Extension.swift in Sources */,
+				2806E9BE2BAC5C8800CD2AE2 /* Date+Extension.swift in Sources */,
 				2887D7892BAC011300D733FC /* ShortcutArray.swift in Sources */,
 				2887D7762BABFD2200D733FC /* Device.swift in Sources */,
 				2887D77B2BABFE0E00D733FC /* Localization.swift in Sources */,
 				28EE29C02BAB219E009005C3 /* SettingsView.swift in Sources */,
+				2806E9C32BAC5EAF00CD2AE2 /* PlaybackController.swift in Sources */,
 				2887D7812BAC002400D733FC /* Controller.swift in Sources */,
 				2887D76B2BABFB6100D733FC /* Defaults+Extension.swift in Sources */,
 				2887D7732BABFCEA00D733FC /* Defaults+Structures.swift in Sources */,
 				286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */,
+				2806E9C52BAC5ED600CD2AE2 /* BrigntnessController.swift in Sources */,
 				2887D78B2BAC013300D733FC /* Input.swift in Sources */,
 				28EE29C22BAB21AC009005C3 /* GeneralSettingsView.swift in Sources */,
 				286971152BAB2D800074C2FB /* StatusIconView.swift in Sources */,
 				2887D7872BAC00AF00D733FC /* ShortcutsController.swift in Sources */,
 				28EE29C42BAB21B5009005C3 /* ControllersSettingsView.swift in Sources */,
+				2806E9C12BAC5E6D00CD2AE2 /* ScrollController.swift in Sources */,
 				2887D7832BAC005200D733FC /* MainController.swift in Sources */,
 				2887D7792BABFD4E00D733FC /* SymbolRepresentation.swift in Sources */,
+				2806E9C72BAC5EFD00CD2AE2 /* MissionController.swift in Sources */,
 				28EE29B02BAB2155009005C3 /* DialApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

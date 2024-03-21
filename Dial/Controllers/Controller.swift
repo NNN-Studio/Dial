@@ -10,40 +10,63 @@ import AppKit
 import Defaults
 import SFSafeSymbols
 
-extension Date {
-    func timeIntervalSince(
-        _ date: Date?
-    ) -> TimeInterval? {
-        if let date {
-            return timeIntervalSince(date)
-        } else {
-            return nil
-        }
-    }
-}
-
-enum ControllerID: Codable, Equatable, Defaults.Serializable, Hashable {
-    enum Default: CaseIterable, Codable {
+enum ControllerID: Codable, Hashable, Defaults.Serializable, Equatable {
+    enum Builtin: CaseIterable, Codable {
         case main
         
         case scroll
         
         case playback
         
-        case mission
-        
         case brightness
         
-        static var availableCases: [ControllerID.Default] {
+        case mission
+        
+        var controller: Controller {
+            switch self {
+            case .main:
+                MainController.instance
+            case .scroll:
+                ScrollController.instance
+            case .playback:
+                PlaybackController.instance
+            case .brightness:
+                BrightnessController.instance
+            case .mission:
+                MissionController.instance
+            }
+        }
+        
+        static var availableCases: [ControllerID.Builtin] {
             allCases.filter { $0 != .main }
         }
     }
     
-    case id(UUID)
+    case shortcuts(ShortcutsController.Settings)
     
-    case `default`(Default)
+    case builtin(Builtin)
     
-    public static let pasteboardType = NSPasteboard.PasteboardType("dial.controllerid")
+    var controller: Controller {
+        switch self {
+        case .shortcuts(let settings):
+            ShortcutsController(settings: settings)
+        case .builtin(let builtin):
+            builtin.controller
+        }
+    }
+}
+
+extension ControllerID: LosslessStringConvertible {
+    init?(_ description: String) {
+        guard let data = description.data(using: .utf8) else { return nil }
+        guard let id = try? JSONDecoder().decode(ControllerID.self, from: data.base64EncodedData()) else { return nil }
+        self = id
+    }
+    
+    var description: String {
+        let data = try! JSONEncoder().encode(self)
+        return data.base64EncodedString()
+    }
 }
 
 protocol Controller: AnyObject, SymbolRepresentable {
@@ -66,6 +89,14 @@ protocol Controller: AnyObject, SymbolRepresentable {
 }
 
 extension Controller {
+    static func equals(_ lhs: any Controller, _ rhs: any Controller) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func equals(_ another: any Controller) -> Bool {
+        Self.equals(self, another)
+    }
+    
     var isDefaultController: Bool {
         self is DefaultController
     }

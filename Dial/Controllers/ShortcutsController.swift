@@ -153,7 +153,7 @@ class ShortcutsController: Controller {
     var settings: Settings
     
     var id: ControllerID {
-        .id(settings.id)
+        .shortcuts(settings)
     }
     
     var name: String {
@@ -206,6 +206,18 @@ class ShortcutsController: Controller {
         if haptics && !rotationType.autoTriggers {
             callback.device.buzz()
         }
+    }
+}
+
+extension ShortcutsController.Settings: Equatable {
+    static func == (lhs: ShortcutsController.Settings, rhs: ShortcutsController.Settings) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+extension ShortcutsController.Settings: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 

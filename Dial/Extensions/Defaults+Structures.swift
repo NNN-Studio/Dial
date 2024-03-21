@@ -110,7 +110,7 @@ enum Direction: Int, CaseIterable, Codable, Defaults.Serializable {
     }
     
     var physical: Direction {
-        self.multiply(Defaults[.direction])
+        self.multiply(Defaults[.globalDirection])
     }
     
     func negateIf(_ flag: Bool) -> Direction {
@@ -237,7 +237,6 @@ struct Bag<Element: Defaults.Serializable>: Collection {
     var items: [Element]
     
     var startIndex: Int { items.startIndex }
-    
     var endIndex: Int { items.endIndex }
     
     mutating func insert(element: Element, at: Int) {

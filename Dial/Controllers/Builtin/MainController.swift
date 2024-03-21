@@ -11,9 +11,9 @@ import AppKit
 import Defaults
 
 @Observable class MainController: Controller {
-    public static var instance: MainController = .init()
+    static var instance: MainController = .init()
     
-    var id: ControllerID = .default(.main)
+    var id: ControllerID = .builtin(.main)
     var name: String = NSLocalizedString("Controllers/Default/Main/Name", value: "Main", comment: "main controller")
     var representingSymbol: SFSymbol = .hockeyPuck
     
