@@ -295,7 +295,7 @@ enum Input: Int32, CaseIterable, Codable, Defaults.Serializable {
 }
 
 extension Input {
-    static func postMouse(_ button: CGMouseButton, buttonState action: Device.ButtonState) {
+    static func postMouse(_ button: CGMouseButton, buttonState action: Hardware.ButtonState) {
         let mouseLocation = NSEvent.mouseLocation
         let screenHeight = NSScreen.main?.frame.height ?? 0
         

@@ -1,5 +1,5 @@
 //
-//  Dial.swift
+//  SurfaceDial.swift
 //  Dial
 //
 //  Created by KrLite on 2024/3/21.
@@ -12,8 +12,8 @@ import AppKit
 import Cocoa
 import SwiftUI
 
-class Dial {
-    var device: Device = .init()
+class SurfaceDial: ObservableObject {
+    var hardware: Hardware = .init()
     
     /*
     var window: DialWindow = .init(
@@ -40,25 +40,30 @@ class Dial {
     ) = (started: nil, direction: .clockwise, degrees: 0)
     
     init() {
-        device.inputHandler = self
+        hardware.inputHandler = self
         MainController.instance.callback = .init(self)
         
         connect()
     }
 }
 
-extension Dial {
+extension SurfaceDial {
     func connect() {
-        device.start()
+        hardware.start()
     }
     
     func disconnect() {
-        device.stop()
+        hardware.stop()
+    }
+    
+    func reconnect() {
+        disconnect()
+        connect()
     }
 }
 
-extension Dial: InputHandler {
-    func onButtonStateChanged(_ buttonState: Device.ButtonState) {
+extension SurfaceDial: InputHandler {
+    func onButtonStateChanged(_ buttonState: Hardware.ButtonState) {
         let pressInterval = Date.now.timeIntervalSince(timestamps.buttonPressed)
         let releaseInterval = Date.now.timeIntervalSince(timestamps.buttonReleased)
         
@@ -94,7 +99,7 @@ extension Dial: InputHandler {
         }
     }
     
-    func onRotation(_ direction: Direction, _ buttonState: Device.ButtonState) {
+    func onRotation(_ direction: Direction, _ buttonState: Hardware.ButtonState) {
         MainController.instance.discardUpcomingAgentRole()
         
         let interval = Date.now.timeIntervalSince(timestamps.rotation)
@@ -153,20 +158,20 @@ extension Dial: InputHandler {
     }
 }
 
-extension Dial {
+extension SurfaceDial {
     var callback: Callback {
         Callback(self)
     }
     
     struct Callback {
-        private var dial: Dial
+        private var dial: SurfaceDial
         
-        init(_ dial: Dial) {
+        init(_ dial: SurfaceDial) {
             self.dial = dial
         }
         
-        var device: Device.Callback {
-            dial.device.callback
+        var device: Hardware.Callback {
+            dial.hardware.callback
         }
         
         /*

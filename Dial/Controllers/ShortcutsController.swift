@@ -172,7 +172,7 @@ class ShortcutsController: Controller {
         self.settings = settings
     }
     
-    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: Dial.Callback) {
+    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: SurfaceDial.Callback) {
         if isDoubleClick {
             settings.shortcuts.double.post()
         } else {
@@ -182,8 +182,8 @@ class ShortcutsController: Controller {
     
     func onRotation(
         rotation: Rotation, totalDegrees: Int,
-        buttonState: Device.ButtonState, interval: TimeInterval?, duration: TimeInterval,
-        _ callback: Dial.Callback
+        buttonState: Hardware.ButtonState, interval: TimeInterval?, duration: TimeInterval,
+        _ callback: SurfaceDial.Callback
     ) {
         guard rotation.conformsTo(rotationType) else { return }
         

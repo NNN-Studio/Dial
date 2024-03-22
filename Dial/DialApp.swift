@@ -11,11 +11,13 @@ import MenuBarExtraAccess
 
 @main
 struct DialApp: App {
+    @StateObject var dial: SurfaceDial = .init()
     @State var isStatusItemPresented: Bool = false
     
     var body: some Scene {
         Settings {
             SettingsView()
+                .environmentObject(dial)
         }
         
         MenuBarExtra("Dial", image: "None") {

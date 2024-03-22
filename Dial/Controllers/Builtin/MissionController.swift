@@ -30,7 +30,7 @@ You can iterate through App Switcher and activate the app windows through this c
     private var inMission = false
     private var escapeDispatch: DispatchWorkItem?
     
-    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: Dial.Callback) {
+    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: SurfaceDial.Callback) {
         if !isDoubleClick {
             onRelease(callback)
         }
@@ -38,8 +38,8 @@ You can iterate through App Switcher and activate the app windows through this c
     
     func onRotation(
         rotation: Rotation, totalDegrees: Int,
-        buttonState: Device.ButtonState, interval: TimeInterval?, duration: TimeInterval,
-        _ callback: Dial.Callback
+        buttonState: Hardware.ButtonState, interval: TimeInterval?, duration: TimeInterval,
+        _ callback: SurfaceDial.Callback
     ) {
         switch rotation {
         case .stepping(let direction):
@@ -64,7 +64,7 @@ You can iterate through App Switcher and activate the app windows through this c
         }
     }
     
-    func onRelease(_ callback: Dial.Callback) {
+    func onRelease(_ callback: SurfaceDial.Callback) {
         if inMission {
             inMission = false
             escapeDispatch?.cancel()

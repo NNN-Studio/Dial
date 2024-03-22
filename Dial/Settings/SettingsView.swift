@@ -9,6 +9,7 @@ import SwiftUI
 import SFSafeSymbols
 
 struct SettingsView: View {
+    @EnvironmentObject var dial: SurfaceDial
     @State var selectedTab = 0
     
     var body: some View {
@@ -19,7 +20,9 @@ struct SettingsView: View {
                     Image(systemSymbol: .gear)
                     Text("General")
                 }
+                .environmentObject(dial)
                 .frame(width: 450)
+                .frame(minHeight: 600)
             
             ControllersSettingsView()
                 .tag(1)
@@ -46,8 +49,4 @@ struct SettingsView: View {
                 .frame(width: 450)
         }
     }
-}
-
-#Preview {
-    SettingsView()
 }

@@ -1,5 +1,5 @@
 //
-//  Device.swift
+//  Hardware.swift
 //  Dial
 //
 //  Created by KrLite on 2024/3/21.
@@ -9,11 +9,11 @@ import Foundation
 import Defaults
 
 protocol InputHandler {
-    func onButtonStateChanged(_ buttonState: Device.ButtonState)
-    func onRotation(_ direction: Direction, _ buttonState: Device.ButtonState)
+    func onButtonStateChanged(_ buttonState: Hardware.ButtonState)
+    func onRotation(_ direction: Direction, _ buttonState: Hardware.ButtonState)
 }
 
-@Observable class Device {
+class Hardware: ObservableObject {
     private struct ReadBuffer {
         let pointer: UnsafeMutablePointer<UInt8>
         let size: Int
@@ -24,14 +24,13 @@ protocol InputHandler {
     }
     
     // MARK: Product identifiers for Surface Dials
-    
     static let vendorId: UInt16 = 0x045E
     static let productId: UInt16 = 0x091B
     
     var connectionStatus: ConnectionStatus = .disconnected
-    var inputHandler: InputHandler?
     var buttonState: ButtonState = .released
     var lastButtonState: ButtonState = .released
+    var inputHandler: InputHandler?
     
     private var dev: OpaquePointer?
     private let readBuffer = ReadBuffer(size: 1024)
@@ -45,7 +44,7 @@ protocol InputHandler {
     }
 }
 
-extension Device {
+extension Hardware {
     enum ConnectionStatus {
         case connected(String)
         
@@ -91,7 +90,7 @@ extension Device {
     }
 }
 
-extension Device {
+extension Hardware {
     var isConnected: Bool {
         dev != nil
     }
@@ -124,7 +123,7 @@ extension Device {
     
     @discardableResult
     private func connect() -> Bool {
-        dev = hid_open(Device.vendorId, Device.productId, nil)
+        dev = hid_open(Hardware.vendorId, Hardware.productId, nil)
         
         if isConnected {
             print("Connected to device \(serialNumber)!")
@@ -238,7 +237,7 @@ extension Device {
     }
 }
 
-extension Device {
+extension Hardware {
     func start() {
         self.thread = Thread(
             target: self,
@@ -301,24 +300,35 @@ extension Device {
     }
 }
 
-extension Device {
+extension Hardware {
     var callback: Callback {
         Callback(self)
     }
     
     struct Callback {
-        private var device: Device
+        private var hardware: Hardware
         
-        init(_ device: Device) {
-            self.device = device
+        init(_ device: Hardware) {
+            self.hardware = device
         }
         
         func buzz(_ repeatCount: UInt8 = 1) {
-            device.buzz(repeatCount)
+            hardware.buzz(repeatCount)
         }
         
         func initSensitivity(autoTriggers haptics: Bool) {
-            device.initSensitivity(autoTriggers: haptics)
+            hardware.initSensitivity(autoTriggers: haptics)
+        }
+    }
+}
+
+extension Hardware.ConnectionStatus: Localizable {
+    var localizedName: String {
+        switch self {
+        case .connected(let string):
+            string
+        case .disconnected:
+            NSLocalizedString("Hardware/ConnectionStatus/Off", value: "SURFACE DIAL DISCONNECTED", comment: "surface dial disconnected")
         }
     }
 }

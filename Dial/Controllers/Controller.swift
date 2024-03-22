@@ -81,11 +81,11 @@ protocol Controller: AnyObject, SymbolRepresentable {
     
     var autoTriggers: Bool { get }
     
-    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: Dial.Callback)
+    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: SurfaceDial.Callback)
     
-    func onRotation(rotation: Rotation, totalDegrees: Int, buttonState: Device.ButtonState, interval: TimeInterval?, duration: TimeInterval, _ callback: Dial.Callback)
+    func onRotation(rotation: Rotation, totalDegrees: Int, buttonState: Hardware.ButtonState, interval: TimeInterval?, duration: TimeInterval, _ callback: SurfaceDial.Callback)
     
-    func onRelease(_ callback: Dial.Callback)
+    func onRelease(_ callback: SurfaceDial.Callback)
 }
 
 extension Controller {
@@ -115,7 +115,7 @@ extension Controller {
         haptics && rotationType.autoTriggers
     }
     
-    func onRelease(_ callback: Dial.Callback) {
+    func onRelease(_ callback: SurfaceDial.Callback) {
         
     }
 }

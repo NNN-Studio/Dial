@@ -25,19 +25,19 @@ You can increase / decrease screen brightness by dialing, increase / decrease ke
     
     var rotationType: Rotation.RawType = .continuous
     
-    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: Dial.Callback) {
+    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: SurfaceDial.Callback) {
         Input.postAuxKeys([Input.keyIlluminationToggle])
     }
     
     func onRotation(
         rotation: Rotation, totalDegrees: Int,
-        buttonState: Device.ButtonState, interval: TimeInterval?, duration: TimeInterval,
-        _ callback: Dial.Callback
+        buttonState: Hardware.ButtonState, interval: TimeInterval?, duration: TimeInterval,
+        _ callback: SurfaceDial.Callback
     ) {
         switch rotation {
         case .continuous(let direction):
             var modifiers: NSEvent.ModifierFlags
-            var action: [Device.ButtonState: [Direction: (aux: [Int32], normal: [Input])]] = [:]
+            var action: [Hardware.ButtonState: [Direction: (aux: [Int32], normal: [Input])]] = [:]
             
             switch buttonState {
             case .pressed:

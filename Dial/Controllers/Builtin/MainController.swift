@@ -10,32 +10,8 @@ import SFSafeSymbols
 import AppKit
 import Defaults
 
-@Observable class MainController: Controller {
-    static var instance: MainController = .init()
-    
-    var id: ControllerID = .builtin(.main)
-    var name: String = NSLocalizedString("Controllers/Default/Main/Name", value: "Main", comment: "main controller")
-    var representingSymbol: SFSymbol = .hockeyPuck
-    
-    var haptics: Bool = false
-    var rotationType: Rotation.RawType = .stepping
-    var callback: Dial.Callback?
-    
-    var isAgent: Bool {
-        get {
-            state.isAgent
-        }
-        
-        set {
-            state = newValue ? .agentPressing : .notAgent
-        }
-    }
-    
-    var state: State = .notAgent
-    private var dispatch: DispatchWorkItem?
-    
+class MainController: ObservableObject, Controller {
     enum State {
-        
         case agentPressing
         
         case agentPressingRotated
@@ -52,14 +28,36 @@ import Defaults
                 true
             }
         }
-        
     }
     
-    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: Dial.Callback) {
+    static var instance: MainController = .init()
+    
+    var id: ControllerID = .builtin(.main)
+    var name: String = NSLocalizedString("Controllers/Default/Main/Name", value: "Main", comment: "main controller")
+    var representingSymbol: SFSymbol = .hockeyPuck
+    
+    var haptics: Bool = false
+    var rotationType: Rotation.RawType = .stepping
+    var callback: SurfaceDial.Callback?
+    
+    var isAgent: Bool {
+        get {
+            state.isAgent
+        }
+        
+        set {
+            state = newValue ? .agentPressing : .notAgent
+        }
+    }
+    
+    @Published var state: State = .notAgent
+    private var dispatch: DispatchWorkItem?
+    
+    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: SurfaceDial.Callback) {
         discardAgentRole()
     }
     
-    func onRelease(_ callback: Dial.Callback) {
+    func onRelease(_ callback: SurfaceDial.Callback) {
         if state == .agentPressing {
             state = .agentReleased
         } else if state == .agentPressingRotated {
@@ -69,8 +67,8 @@ import Defaults
     
     func onRotation(
         rotation: Rotation, totalDegrees: Int,
-        buttonState: Device.ButtonState, interval: TimeInterval?, duration: TimeInterval,
-        _ callback: Dial.Callback
+        buttonState: Hardware.ButtonState, interval: TimeInterval?, duration: TimeInterval,
+        _ callback: SurfaceDial.Callback
     ) {
         if state == .agentPressing {
             state = .agentPressingRotated

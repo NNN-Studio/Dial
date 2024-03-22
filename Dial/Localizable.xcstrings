@@ -7,6 +7,9 @@
     "About %@" : {
 
     },
+    "Behavior" : {
+
+    },
     "ConnectionStatus/Off.Name" : {
       "comment" : "if (!connected)",
       "extractionState" : "extracted_with_value",
@@ -483,6 +486,18 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Starts with macOS"
+          }
+        }
+      }
+    },
+    "Hardware/ConnectionStatus/Off" : {
+      "comment" : "surface dial disconnected",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "SURFACE DIAL DISCONNECTED"
           }
         }
       }

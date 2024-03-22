@@ -24,7 +24,7 @@ You can trigger forward / backward by dialing, increase / decrease volume by dia
     
     var rotationType: Rotation.RawType = .continuous
     
-    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: Dial.Callback) {
+    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: SurfaceDial.Callback) {
         if isDoubleClick {
             // Undo pause sent on first click
             Input.postAuxKeys([Input.keyPlay], modifiers: [])
@@ -39,13 +39,13 @@ You can trigger forward / backward by dialing, increase / decrease volume by dia
     
     func onRotation(
         rotation: Rotation, totalDegrees: Int,
-        buttonState: Device.ButtonState, interval: TimeInterval?, duration: TimeInterval,
-        _ callback: Dial.Callback
+        buttonState: Hardware.ButtonState, interval: TimeInterval?, duration: TimeInterval,
+        _ callback: SurfaceDial.Callback
     ) {
         switch rotation {
         case .continuous(let direction):
             var modifiers: NSEvent.ModifierFlags
-            var action: [Device.ButtonState: [Direction: (aux: [Int32], normal: [Input])]] = [:]
+            var action: [Hardware.ButtonState: [Direction: (aux: [Int32], normal: [Input])]] = [:]
             
             switch buttonState {
             case .pressed:

@@ -26,15 +26,15 @@ You can scroll and perform middle button clicks through this controller. Scrolls
     
     private var accumulated = 0
     
-    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: Dial.Callback) {
+    func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: SurfaceDial.Callback) {
         Input.postMouse(.center, buttonState: .pressed)
         Input.postMouse(.center, buttonState: .released)
     }
     
     func onRotation(
         rotation: Rotation, totalDegrees: Int,
-        buttonState: Device.ButtonState, interval: TimeInterval?, duration: TimeInterval,
-        _ callback: Dial.Callback
+        buttonState: Hardware.ButtonState, interval: TimeInterval?, duration: TimeInterval,
+        _ callback: SurfaceDial.Callback
     ) {
         var accelerated = false
         
