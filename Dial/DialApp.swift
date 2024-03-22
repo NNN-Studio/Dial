@@ -11,6 +11,7 @@ import MenuBarExtraAccess
 
 @main
 struct DialApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var dial: SurfaceDial = .init()
     @State var isStatusItemPresented: Bool = false
     

@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct GeneralSettingsView: View {
     @EnvironmentObject var dial: SurfaceDial
+    var connectViaBluetoothTip = ConnectViaBluetoothTip()
     
     var body: some View {
         VStack {
@@ -17,6 +19,7 @@ struct GeneralSettingsView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 175, alignment: .center)
                 .padding(.vertical, 30)
+                .opacity(dial.hardware.isConnected ? 1 : 0.25)
             
             HStack {
                 Text(dial.hardware.connectionStatus.localizedName)
@@ -34,9 +37,13 @@ struct GeneralSettingsView: View {
                 .tint(dial.hardware.isConnected ? .green : .red)
             }
             
+            TipView(connectViaBluetoothTip)
+                .tint(.primary)
+                .padding(.horizontal, 20)
+            
             Form {
                 Section("Behavior") {
-                    
+                    Text("Test")
                 }
             }
             .formStyle(.grouped)

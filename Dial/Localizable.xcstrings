@@ -7,7 +7,34 @@
     "About %@" : {
 
     },
+    "App/PermissionsAlert/Content" : {
+      "comment" : "permissions alert content",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "(Bundle.main.appName) needs Accessibility permissions to function properly.\nDue to an issue in macOS, if you're upgrading from an earlier version, you might have to remove (Bundle.main.appName) from the accessibility permissions before restarting the app to re-add the permissions."
+          }
+        }
+      }
+    },
+    "App/PermissionsAlert/Title" : {
+      "comment" : "permissions alert title",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Permissions Required"
+          }
+        }
+      }
+    },
     "Behavior" : {
+
+    },
+    "Connect via Bluetooth" : {
 
     },
     "ConnectionStatus/Off.Name" : {
@@ -367,6 +394,16 @@
         }
       }
     },
+    "Discover and connect to your device in Settings app so that %@ is able to take charge of it. Click the reconnect button above to tell %@ that your device is ready." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Discover and connect to your device in Settings app so that %1$@ is able to take charge of it. Click the reconnect button above to tell %2$@ that your device is ready."
+          }
+        }
+      }
+    },
     "General" : {
 
     },
@@ -677,6 +714,9 @@
       }
     },
     "Settings…" : {
+
+    },
+    "Test" : {
 
     }
   },

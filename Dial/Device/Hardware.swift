@@ -131,6 +131,8 @@ extension Hardware {
             connectionStatus = .connected(serialNumber)
             buzz(3)
             initSensitivity(autoTriggers: Defaults.currentController?.autoTriggers ?? false)
+            
+            ConnectViaBluetoothTip.isConnected = true
         }
         
         return isConnected
@@ -143,6 +145,8 @@ extension Hardware {
             self.dev = nil
             connectionStatus = .disconnected
             initSensitivity(autoTriggers: false)
+            
+            ConnectViaBluetoothTip.isConnected = false
             
             print("Device disconnected.")
         }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SFSafeSymbols
+import TipKit
 
 struct SettingsView: View {
     @EnvironmentObject var dial: SurfaceDial
@@ -47,6 +48,17 @@ struct SettingsView: View {
                     Text("About")
                 }
                 .frame(width: 450)
+        }
+        .task {
+            try? Tips.configure([
+                .displayFrequency(.immediate),
+                .datastoreLocation(.applicationDefault)
+            ])
+            
+            #if DEBUG
+            try? Tips.resetDatastore()
+            Tips.showAllTipsForTesting()
+            #endif
         }
     }
 }

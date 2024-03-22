@@ -30,6 +30,9 @@
 		2887D7872BAC00AF00D733FC /* ShortcutsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7862BAC00AF00D733FC /* ShortcutsController.swift */; };
 		2887D7892BAC011300D733FC /* ShortcutArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7882BAC011300D733FC /* ShortcutArray.swift */; };
 		2887D78B2BAC013300D733FC /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D78A2BAC013300D733FC /* Input.swift */; };
+		289B83FC2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FB2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift */; };
+		289B83FE2BADC44D00D56D43 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */; };
+		289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FF2BADC4F900D56D43 /* AppDelegate.swift */; };
 		28EE29B02BAB2155009005C3 /* DialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29AF2BAB2155009005C3 /* DialApp.swift */; };
 		28EE29B42BAB2156009005C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EE29B32BAB2156009005C3 /* Assets.xcassets */; };
 		28EE29B72BAB2156009005C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EE29B62BAB2156009005C3 /* Preview Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		2887D7862BAC00AF00D733FC /* ShortcutsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsController.swift; sourceTree = "<group>"; };
 		2887D7882BAC011300D733FC /* ShortcutArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutArray.swift; sourceTree = "<group>"; };
 		2887D78A2BAC013300D733FC /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
+		289B83FB2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViaBluetoothTip.swift; sourceTree = "<group>"; };
+		289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
+		289B83FF2BADC4F900D56D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28EE29AC2BAB2155009005C3 /* Dial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EE29AF2BAB2155009005C3 /* DialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialApp.swift; sourceTree = "<group>"; };
 		28EE29B32BAB2156009005C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 				2887D77A2BABFE0E00D733FC /* Localization.swift */,
 				2887D7882BAC011300D733FC /* ShortcutArray.swift */,
 				2887D78A2BAC013300D733FC /* Input.swift */,
+				289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -156,6 +163,14 @@
 				2887D7862BAC00AF00D733FC /* ShortcutsController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		289B83FA2BADB9C400D56D43 /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				289B83FB2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift */,
+			);
+			path = Tips;
 			sourceTree = "<group>";
 		};
 		28EE29A32BAB2155009005C3 = {
@@ -179,11 +194,13 @@
 			children = (
 				2887D77E2BABFF6400D733FC /* Dial-Bridging-Header.h */,
 				28EE29AF2BAB2155009005C3 /* DialApp.swift */,
+				289B83FF2BADC4F900D56D43 /* AppDelegate.swift */,
 				2887D7742BABFD0B00D733FC /* Device */,
 				2887D77F2BAC000800D733FC /* Controllers */,
 				2887D7772BABFD2A00D733FC /* Utilities */,
 				286971112BAB2D550074C2FB /* Status Bar */,
 				28EE29BE2BAB218D009005C3 /* Settings */,
+				289B83FA2BADB9C400D56D43 /* Tips */,
 				286971162BAB2F5F0074C2FB /* Extensions */,
 				28EE29B52BAB2156009005C3 /* Preview Content */,
 				28EE29B82BAB2156009005C3 /* Dial.entitlements */,
@@ -299,9 +316,11 @@
 				2887D76F2BABFBD100D733FC /* SFSymbol+Extension.swift in Sources */,
 				28EE29C62BAB21BD009005C3 /* DialMenuSettingsView.swift in Sources */,
 				28EE29C82BAB21CB009005C3 /* AboutView.swift in Sources */,
+				289B83FE2BADC44D00D56D43 /* PermissionsManager.swift in Sources */,
 				2887D77D2BABFE8900D733FC /* SurfaceDial.swift in Sources */,
 				2887D7712BABFBFF00D733FC /* NSString+Extension.swift in Sources */,
 				2887D76D2BABFB9800D733FC /* NSImage+Extension.swift in Sources */,
+				289B83FC2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift in Sources */,
 				2806E9BE2BAC5C8800CD2AE2 /* Date+Extension.swift in Sources */,
 				2887D7892BAC011300D733FC /* ShortcutArray.swift in Sources */,
 				2887D7762BABFD2200D733FC /* Hardware.swift in Sources */,
@@ -312,6 +331,7 @@
 				2887D76B2BABFB6100D733FC /* Defaults+Extension.swift in Sources */,
 				2887D7732BABFCEA00D733FC /* Defaults+Structures.swift in Sources */,
 				286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */,
+				289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */,
 				2806E9C52BAC5ED600CD2AE2 /* BrigntnessController.swift in Sources */,
 				2887D78B2BAC013300D733FC /* Input.swift in Sources */,
 				28EE29C22BAB21AC009005C3 /* GeneralSettingsView.swift in Sources */,
