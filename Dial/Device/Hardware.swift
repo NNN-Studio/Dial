@@ -140,6 +140,7 @@ extension Hardware {
     
     private func disconnect() {
         if let dev = self.dev {
+            print(dev)
             hid_close(dev)
             
             self.dev = nil

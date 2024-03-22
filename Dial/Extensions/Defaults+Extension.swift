@@ -51,7 +51,7 @@ extension Defaults.Keys {
             .builtin(.mission): true
         ])
     }()
-    static let currentControllerIndex = Key<Int?>("currentControllerIndex", default: 0)
+    static let currentControllerIndex = Key<Int?>("currentControllerIndex", default: nil)
     static let selectedControllerIndex = Key<Int?>("selectedControllerIndex", default: nil)
     
     // MARK: - Constants

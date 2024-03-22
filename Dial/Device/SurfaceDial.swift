@@ -55,11 +55,6 @@ extension SurfaceDial {
     func disconnect() {
         hardware.stop()
     }
-    
-    func reconnect() {
-        disconnect()
-        connect()
-    }
 }
 
 extension SurfaceDial: InputHandler {
