@@ -111,7 +111,7 @@ class ShortcutsController: Controller {
         
         init(
             name: String? = nil,
-            representingSymbol: SFSymbol = .circleFillableFallback,
+            representingSymbol: SFSymbol = .__circleFillableFallback,
             haptics: Bool = true,
             physicalDirection: Bool = false, alternativeDirection: Bool = false,
             rotationType: Rotation.RawType = .continuous, shortcuts: Shortcuts = Shortcuts()
@@ -135,7 +135,7 @@ class ShortcutsController: Controller {
             }
             
             if resetsIcon {
-                representingSymbol = .circleFillableFallback
+                representingSymbol = .__circleFillableFallback
             }
             
             haptics = true

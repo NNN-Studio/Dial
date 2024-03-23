@@ -55,14 +55,15 @@ struct DialApp: App {
         .menuBarExtraStyle(.menu)
         .menuBarExtraAccess(isPresented: $isStatusItemPresented) { statusItem in
             guard
+                // Init once
                 let button = statusItem.button,
                 button.subviews.count == 0
-            else {
-                return
-            }
+            else { return }
+            
+            statusItem.length = 32
             
             let view = NSHostingView(rootView: StatusIconView())
-            view.frame.size = NSSize(width: 50, height: 22)
+            view.frame.size = .init(width: 32, height: NSStatusBar.system.thickness)
             button.addSubview(view)
         }
     }

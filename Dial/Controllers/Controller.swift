@@ -104,7 +104,7 @@ extension Controller {
 
 extension Controller {
     var representingSymbol: SFSymbol {
-        .circleFillableFallback
+        .__circleFillableFallback
     }
     
     var haptics: Bool {

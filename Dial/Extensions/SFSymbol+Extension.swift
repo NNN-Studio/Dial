@@ -9,14 +9,14 @@ import SFSafeSymbols
 import AppKit
 
 extension SFSymbol {
-    static let circleFillableSuffix = ".circle.fill"
+    static let __circleFillableSuffix = ".circle.fill"
     
-    static let circleFillableFallback: SFSymbol = .gear
+    static let __circleFillableFallback: SFSymbol = .gear
     
-    static var circleFillableSymbols: [SFSymbol] {
+    static var __circleFillableSymbols: [SFSymbol] {
         SFSymbol.allSymbols
-            .filter { $0.hasSuffix(SFSymbol.circleFillableSuffix) && $0.withoutSuffix(SFSymbol.circleFillableSuffix) != nil }
-            .map { $0.withoutSuffix(SFSymbol.circleFillableSuffix)! }
+            .filter { $0.hasSuffix(SFSymbol.__circleFillableSuffix) && $0.withoutSuffix(SFSymbol.__circleFillableSuffix) != nil }
+            .map { $0.withoutSuffix(SFSymbol.__circleFillableSuffix)! }
     }
     
     func hasSuffix(_ suffix: String) -> Bool {
@@ -37,16 +37,20 @@ extension SFSymbol {
 }
 
 extension SFSymbol {
-    var isCircleFillable: Bool {
-        SFSymbol.circleFillableSymbols.contains(self)
+    var __isCircleFillable: Bool {
+        SFSymbol.__circleFillableSymbols.contains(self)
     }
     
-    var image: NSImage {
+    var __circleFilled: SFSymbol {
+        self.withSuffix(SFSymbol.__circleFillableSuffix) ?? .__circleFillableFallback
+    }
+    
+    var __image: NSImage {
         NSImage(systemSymbol: self)
     }
     
-    var circleFilledImage: NSImage {
-        NSImage(systemSymbol: self.withSuffix(SFSymbol.circleFillableSuffix) ?? .circleFillableFallback)
+    var __circleFilledImage: NSImage {
+        __circleFilled.__image
     }
 }
 
