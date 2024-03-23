@@ -13,7 +13,7 @@ protocol InputHandler {
     func onRotation(_ direction: Direction, _ buttonState: Hardware.ButtonState)
 }
 
-class Hardware: ObservableObject {
+class Hardware {
     private struct ReadBuffer {
         let pointer: UnsafeMutablePointer<UInt8>
         let size: Int
@@ -131,8 +131,6 @@ extension Hardware {
             connectionStatus = .connected(serialNumber)
             buzz(3)
             initSensitivity(autoTriggers: Defaults.currentController?.autoTriggers ?? false)
-            
-            ConnectViaBluetoothTip.isConnected = true
         }
         
         return isConnected
@@ -140,14 +138,11 @@ extension Hardware {
     
     private func disconnect() {
         if let dev = self.dev {
-            print(dev)
             hid_close(dev)
             
             self.dev = nil
             connectionStatus = .disconnected
             initSensitivity(autoTriggers: false)
-            
-            ConnectViaBluetoothTip.isConnected = false
             
             print("Device disconnected.")
         }

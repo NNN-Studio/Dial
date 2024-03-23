@@ -9,7 +9,6 @@ import SwiftUI
 import TipKit
 
 struct GeneralSettingsView: View {
-    @EnvironmentObject var dial: SurfaceDial
     var connectViaBluetoothTip = ConnectViaBluetoothTip()
     
     var body: some View {
@@ -19,22 +18,22 @@ struct GeneralSettingsView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 175, alignment: .center)
                 .padding(.vertical, 30)
-                .opacity(dial.hardware.isConnected ? 1 : 0.25)
+                .opacity(true ? 1 : 0.25)
             
             HStack {
-                Text(dial.hardware.connectionStatus.localizedName)
+                Text("")
                     .foregroundStyle(.placeholder)
                     .fontDesign(.monospaced)
                 
                 Button {
-                    dial.connect()
+                    SurfaceDial.instance.connect()
                 } label: {
                     Image(systemSymbol: .arrowTriangle2CirclepathCircleFill)
                         .imageScale(.large)
                 }
                 .buttonStyle(.borderless)
                 .controlSize(.extraLarge)
-                .tint(dial.hardware.isConnected ? .green : .red)
+                .tint(true ? .green : .red)
             }
             
             TipView(connectViaBluetoothTip)
@@ -54,6 +53,5 @@ struct GeneralSettingsView: View {
 
 #Preview {
     GeneralSettingsView()
-        .environmentObject(SurfaceDial())
         .frame(width: 450)
 }

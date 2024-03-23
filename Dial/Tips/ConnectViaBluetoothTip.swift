@@ -9,9 +9,6 @@ import Foundation
 import TipKit
 
 struct ConnectViaBluetoothTip: Tip {
-    @Parameter(.transient)
-    static var isConnected: Bool = false
-    
     var title: Text {
         Text("Connect via Bluetooth")
     }
@@ -22,15 +19,5 @@ struct ConnectViaBluetoothTip: Tip {
     
     var image: Image? {
         Image(systemSymbol: .antennaRadiowavesLeftAndRight)
-    }
-    
-    var options: [any TipOption] {
-        [
-            IgnoresDisplayFrequency(true)
-        ]
-    }
-    
-    var rules: [Rule] {
-        #Rule(Self.$isConnected) { !$0 }
     }
 }
