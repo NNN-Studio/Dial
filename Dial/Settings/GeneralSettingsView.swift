@@ -10,6 +10,8 @@ import TipKit
 
 struct GeneralSettingsView: View {
     var connectViaBluetoothTip = ConnectViaBluetoothTip()
+    @State var isConnected: Bool = false
+    @State var serial: String? = nil
     
     var body: some View {
         VStack {
@@ -18,26 +20,26 @@ struct GeneralSettingsView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 175, alignment: .center)
                 .padding(.vertical, 30)
-                .opacity(true ? 1 : 0.25)
+                .opacity(isConnected ? 1 : 0.25)
             
             HStack {
-                Text("")
+                Text(serial ?? "SURFACE DIAL DISCONNECTED")
                     .foregroundStyle(.placeholder)
                     .fontDesign(.monospaced)
                 
                 Button {
                     dial.connect()
+                    connectViaBluetoothTip.invalidate(reason: .actionPerformed)
                 } label: {
-                    Image(systemSymbol: .arrowTriangle2CirclepathCircleFill)
+                    Image(systemSymbol: isConnected ? .checkmarkCircleFill : .arrowTriangle2CirclepathCircleFill)
                         .imageScale(.large)
                 }
                 .buttonStyle(.borderless)
                 .controlSize(.extraLarge)
-                .tint(true ? .green : .red)
+                .tint(isConnected ? .green : .red)
             }
             
             TipView(connectViaBluetoothTip)
-                .tint(.primary)
                 .padding(.horizontal, 20)
             
             Form {
