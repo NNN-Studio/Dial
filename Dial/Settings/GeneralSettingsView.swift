@@ -21,8 +21,8 @@ struct GeneralSettingsView: View {
     @Default(.globalSensitivity) var globalSensitivity
     @Default(.globalDirection) var globalDirection
     
-    @Default(.statusItemEnabled) var statusItemEnabled
-    @Default(.statusItemAutoHidden) var statusItemAutoHidden
+    @Default(.menuBarItemEnabled) var menuBarItemEnabled
+    @Default(.menuBarItemAutoHidden) var menuBarItemAutoHidden
     
     @ObservedObject var startsWithMacOS = LaunchAtLogin.observable
     
@@ -102,11 +102,11 @@ struct GeneralSettingsView: View {
                     }
                 }
                 
-                Section("Status Item") {
-                    Toggle(isOn: $statusItemEnabled) {
-                        Text("Shows status item")
+                Section("Menu Bar Item") {
+                    Toggle(isOn: $menuBarItemEnabled) {
+                        Text("Shows menu bar item")
                         
-                        if !statusItemEnabled {
+                        if !menuBarItemEnabled {
                             Text("Re-open \(Bundle.main.appName) to see this window.")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
@@ -114,11 +114,11 @@ struct GeneralSettingsView: View {
                         }
                     }
                     
-                    if statusItemEnabled {
-                        Toggle(isOn: $statusItemAutoHidden) {
-                            Text("Auto hides status item")
+                    if menuBarItemEnabled {
+                        Toggle(isOn: $menuBarItemAutoHidden) {
+                            Text("Auto hides menu bar item")
                             
-                            Text("Auto disables status item while device disconnected. Re-open \(Bundle.main.appName) to see this window.")
+                            Text("Hides menu bar item while device disconnected. Re-open \(Bundle.main.appName) to see this window.")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                                 .textSelection(.enabled)

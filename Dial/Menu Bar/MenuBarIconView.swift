@@ -1,5 +1,5 @@
 //
-//  StatusIconView.swift
+//  MenuBarIconView.swift
 //  Dial
 //
 //  Created by KrLite on 2024/3/20.
@@ -9,7 +9,7 @@ import SwiftUI
 import SFSafeSymbols
 import Defaults
 
-struct StatusIconView: View {
+struct MenuBarIconView: View {
     @State var isConnected: Bool = false
     @State var controllerSymbol: SFSymbol?
     

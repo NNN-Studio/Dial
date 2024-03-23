@@ -14,7 +14,7 @@ var dial: SurfaceDial = .init()
 @main
 struct DialApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @State var isStatusItemPresented: Bool = false
+    @State var isMenuBarItemPresented: Bool = false
     
     var body: some Scene {
         Settings {
@@ -53,16 +53,16 @@ struct DialApp: App {
             .keyboardShortcut("q", modifiers: .command)
         }
         .menuBarExtraStyle(.menu)
-        .menuBarExtraAccess(isPresented: $isStatusItemPresented) { statusItem in
+        .menuBarExtraAccess(isPresented: $isMenuBarItemPresented) { menuBarItem in
             guard
                 // Init once
-                let button = statusItem.button,
+                let button = menuBarItem.button,
                 button.subviews.count == 0
             else { return }
             
-            statusItem.length = 32
+            menuBarItem.length = 32
             
-            let view = NSHostingView(rootView: StatusIconView())
+            let view = NSHostingView(rootView: MenuBarIconView())
             view.frame.size = .init(width: 32, height: NSStatusBar.system.thickness)
             button.addSubview(view)
         }
