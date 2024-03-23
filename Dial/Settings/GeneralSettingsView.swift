@@ -25,6 +25,9 @@ struct GeneralSettingsView: View {
                 .opacity(isConnected ? 1 : 0.25)
             
             HStack {
+                Spacer()
+                    .frame(width: 50)
+                
                 Text("SURFACE DIAL DISCONNECTED")
                     .or(condition: isConnected) {
                         Text(serial ?? "")
@@ -42,6 +45,7 @@ struct GeneralSettingsView: View {
                 .buttonStyle(.borderless)
                 .controlSize(.extraLarge)
                 .tint(isConnected ? .green : .red)
+                .frame(width: 50, alignment: .leading)
             }
             
             TipView(connectViaBluetoothTip)

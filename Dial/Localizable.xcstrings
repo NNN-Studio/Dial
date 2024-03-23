@@ -2,10 +2,24 @@
   "sourceLanguage" : "en",
   "strings" : {
     "About" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关于"
+          }
+        }
+      }
     },
     "About %@" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关于%@"
+          }
+        }
+      }
     },
     "App/PermissionsAlert/Content" : {
       "comment" : "permissions alert content",
@@ -14,7 +28,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "(Bundle.main.appName) needs Accessibility permissions to function properly.\nDue to an issue in macOS, if you're upgrading from an earlier version, you might have to remove (Bundle.main.appName) from the accessibility permissions before restarting the app to re-add the permissions."
+            "value" : "%1$@ needs Accessibility permissions to perform dialing actions.\n\nIf you're updating, you might have to remove %2$@ from the list before re-granting the permissions."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@需要辅助功能权限以执行旋钮操作。\n\n如果你正在更新应用，你也许需要先将%2$@从权限列表中移除，再重新给予权限。"
           }
         }
       }
@@ -26,16 +46,36 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Permissions Required"
+            "value" : "%@ needs Accessibility Permissions"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@需要辅助功能权限"
           }
         }
       }
     },
     "Behavior" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "应用行为"
+          }
+        }
+      }
     },
     "Connect via Bluetooth" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通过蓝牙连接"
+          }
+        }
+      }
     },
     "ConnectionStatus/Off.Name" : {
       "comment" : "if (!connected)",
@@ -45,6 +85,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Dial"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "智能旋钮"
           }
         }
       }
@@ -58,6 +104,12 @@
             "state" : "new",
             "value" : "disconnected"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未连接"
+          }
         }
       }
     },
@@ -69,6 +121,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Surface Dial disconnected"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未连接到智能旋钮"
           }
         }
       }
@@ -82,11 +140,24 @@
             "state" : "new",
             "value" : "Dial"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "智能旋钮"
+          }
         }
       }
     },
     "Controllers" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "控制器"
+          }
+        }
+      }
     },
     "Controllers/Advanced/AlternativeDirection.Name" : {
       "comment" : "alternative direction",
@@ -96,6 +167,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Alternative direction"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反转方向"
           }
         }
       }
@@ -109,6 +186,12 @@
             "state" : "new",
             "value" : "Haptic feedback"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "震感反馈"
+          }
         }
       }
     },
@@ -121,6 +204,12 @@
             "state" : "new",
             "value" : "Follows physical direction"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "跟随物理设备方向"
+          }
         }
       }
     },
@@ -132,6 +221,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Rotation type"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旋转方式"
           }
         }
       }
@@ -293,10 +388,24 @@
       }
     },
     "Dial" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旋钮"
+          }
+        }
+      }
     },
     "Dial Menu" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旋钮菜单"
+          }
+        }
+      }
     },
     "Dial/Rotation/Type/Continuous.Badge" : {
       "comment" : "continuous rotation type",
@@ -306,6 +415,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "continuous"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "连续"
           }
         }
       }
@@ -319,6 +434,12 @@
             "state" : "new",
             "value" : "Continuous"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "连续"
+          }
         }
       }
     },
@@ -330,6 +451,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "stepping"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "步进"
           }
         }
       }
@@ -343,6 +470,12 @@
             "state" : "new",
             "value" : "Stepping"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "步进"
+          }
         }
       }
     },
@@ -354,6 +487,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "clockwise"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顺时针"
           }
         }
       }
@@ -367,6 +506,12 @@
             "state" : "new",
             "value" : "Clockwise"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顺时针"
+          }
         }
       }
     },
@@ -378,6 +523,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "counterclockwise"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "逆时针"
           }
         }
       }
@@ -391,14 +542,34 @@
             "state" : "new",
             "value" : "Counterclockwise"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "逆时针"
+          }
         }
       }
     },
     "Discover and connect to your device in Settings app so that %@ is able to take charge of it. Click the reconnect button above when your device is ready." : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你需要在系统设置中查找并连接到你的设备，以便让%@接管它。准备好你的设备后，请按下上方的重新连接按钮。"
+          }
+        }
+      }
     },
     "General" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通用"
+          }
+        }
+      }
     },
     "General/AutoHideIcon.Title" : {
       "comment" : "auto hides icon",
@@ -524,7 +695,14 @@
 
     },
     "Open in Settings" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在系统设置中打开"
+          }
+        }
+      }
     },
     "OpenSettings.Name" : {
       "comment" : "open settings",
@@ -551,7 +729,14 @@
       }
     },
     "Quit" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "退出"
+          }
+        }
+      }
     },
     "Quit.Name" : {
       "comment" : "quit",
@@ -698,10 +883,24 @@
       }
     },
     "Settings…" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置…"
+          }
+        }
+      }
     },
     "SURFACE DIAL DISCONNECTED" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未连接到智能旋钮"
+          }
+        }
+      }
     },
     "Test" : {
 

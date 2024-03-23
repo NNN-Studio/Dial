@@ -28,15 +28,26 @@ class PermissionsManager {
             guard !PermissionsManager.Accessibility.getStatus()  else { return true }
             
             let alert = NSAlert()
-            alert.messageText = NSLocalizedString("App/PermissionsAlert/Title", value: "Permissions Required", comment: "permissions alert title")
             alert.alertStyle = NSAlert.Style.informational
-            alert.informativeText = NSLocalizedString(
-                "App/PermissionsAlert/Content",
-                value: """
-\(Bundle.main.appName) needs Accessibility permissions to function properly.
-Due to an issue in macOS, if you're upgrading from an earlier version, you might have to remove \(Bundle.main.appName) from the accessibility permissions before restarting the app to re-add the permissions.
+            alert.messageText = String(
+                format: NSLocalizedString(
+                    "App/PermissionsAlert/Title",
+                    value: "%@ needs Accessibility Permissions",
+                    comment: "permissions alert title"
+                ),
+                Bundle.main.appName
+            )
+            alert.informativeText = String(
+                format: NSLocalizedString(
+                    "App/PermissionsAlert/Content",
+                    value: """
+%@ needs Accessibility permissions to perform dialing actions.
+
+If you're updating, you might have to remove %@ from the list before re-granting the permissions.
 """,
-                comment: "permissions alert content")
+                    comment: "permissions alert content"),
+                Bundle.main.appName, Bundle.main.appName
+            )
             
             alert.runModal()
             
