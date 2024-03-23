@@ -21,7 +21,7 @@ struct SettingsView: View {
                     Text("General")
                 }
                 .frame(width: 450)
-                .frame(minHeight: 600)
+                .fixedSize()
             
             ControllersSettingsView()
                 .tag(1)

@@ -175,7 +175,7 @@ extension Hardware {
     func buzz(_ repeatCount: UInt8 = 1) {
         guard repeatCount > 0 else { return }
         
-        if Defaults[.globalHaptics] && isConnected {
+        if Defaults[.globalHapticsEnabled] && isConnected {
             var buf: Array<UInt8> = []
             
             buf.append(0x01) // Report ID

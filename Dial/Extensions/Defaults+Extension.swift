@@ -9,8 +9,8 @@ import Defaults
 import Foundation
 
 extension Defaults.Keys {
-    static let globalHaptics = Key<Bool>("haptics", default: true)
-    static let statusItem = Key<Bool>("statusItem", default: true)
+    static let globalHapticsEnabled = Key<Bool>("haptics", default: true)
+    static let statusItemEnabled = Key<Bool>("statusItem", default: true)
     static let statusItemAutoHidden = Key<Bool>("statusItemAutoHidden", default: false)
     
     static let globalSensitivity = Key<Sensitivity>("globalSensitivity", default: .natural)

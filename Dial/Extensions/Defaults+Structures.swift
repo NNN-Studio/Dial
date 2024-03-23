@@ -46,6 +46,12 @@ enum Sensitivity: CGFloat, CaseIterable, Defaults.Serializable {
     }
 }
 
+extension Sensitivity: Identifiable {
+    var id: Self {
+        self
+    }
+}
+
 extension Sensitivity: Localizable {
     var localizedName: String {
         switch self {
@@ -124,6 +130,12 @@ enum Direction: Int, CaseIterable, Codable, Defaults.Serializable {
         case .counterclockwise:
             self.negate
         }
+    }
+}
+
+extension Direction: Identifiable {
+    var id: Self {
+        self
     }
 }
 

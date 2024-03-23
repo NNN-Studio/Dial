@@ -7,6 +7,8 @@
 
 import SwiftUI
 import TipKit
+import Defaults
+import LaunchAtLogin
 
 struct GeneralSettingsView: View {
     let connectViaBluetoothTip = ConnectViaBluetoothTip()
@@ -14,6 +16,15 @@ struct GeneralSettingsView: View {
     @State var reconnectButtonHasPerformed = false
     @State var isConnected: Bool = false
     @State var serial: String? = nil
+    
+    @Default(.globalHapticsEnabled) var globalHapticsEnabled
+    @Default(.globalSensitivity) var globalSensitivity
+    @Default(.globalDirection) var globalDirection
+    
+    @Default(.statusItemEnabled) var statusItemEnabled
+    @Default(.statusItemAutoHidden) var statusItemAutoHidden
+    
+    @ObservedObject var startsWithMacOS = LaunchAtLogin.observable
     
     var body: some View {
         VStack {
@@ -23,6 +34,7 @@ struct GeneralSettingsView: View {
                 .frame(height: 175, alignment: .center)
                 .padding(.vertical, 30)
                 .opacity(isConnected ? 1 : 0.25)
+                .animation(.easeInOut, value: isConnected)
             
             HStack {
                 Spacer()
@@ -50,10 +62,74 @@ struct GeneralSettingsView: View {
             
             TipView(connectViaBluetoothTip)
                 .padding(.horizontal, 20)
+                .transition(.asymmetric(
+                    insertion: .push(from: .top),
+                    removal: .push(from: .top))
+                )
             
             Form {
-                Section("Behavior") {
-                    Text("Test")
+                Section("Global Behavior") {
+                    Toggle(isOn: $globalHapticsEnabled) {
+                        Text("Haptics feedback")
+                    }
+                }
+                
+                Section {
+                    Picker(selection: $globalSensitivity) {
+                        ForEach(Sensitivity.allCases) { sensitivity in
+                            Text(sensitivity.localizedTitle)
+                        }
+                    } label: {
+                        HStack {
+                            Text("Sensitivity")
+                            Image(systemSymbol: globalSensitivity.representingSymbol)
+                                .frame(height: 16)
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                        }
+                    }
+                    
+                    Picker(selection: $globalDirection) {
+                        ForEach(Direction.allCases) { direction in
+                            Text(direction.localizedTitle)
+                        }
+                    } label: {
+                        HStack {
+                            Text("Direction")
+                            Image(systemSymbol: globalDirection.representingSymbol)
+                                .frame(height: 16)
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                        }
+                    }
+                }
+                
+                Section("Status Item") {
+                    Toggle(isOn: $statusItemEnabled) {
+                        Text("Shows status item")
+                        
+                        if !statusItemEnabled {
+                            Text("Re-open \(Bundle.main.appName) to see this window.")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                                .textSelection(.enabled)
+                        }
+                    }
+                    
+                    if statusItemEnabled {
+                        Toggle(isOn: $statusItemAutoHidden) {
+                            Text("Auto hides status item")
+                            
+                            Text("Auto disables status item while device disconnected. Re-open \(Bundle.main.appName) to see this window.")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                                .textSelection(.enabled)
+                        }
+                    }
+                }
+                
+                Section {
+                    Toggle(isOn: $startsWithMacOS.isEnabled) {
+                        Text("Starts with macOS")
+                    }
                 }
             }
             .formStyle(.grouped)
@@ -82,5 +158,5 @@ struct GeneralSettingsView: View {
 
 #Preview {
     GeneralSettingsView()
-        .frame(width: 450)
+        .frame(width: 450, height: 1200)
 }

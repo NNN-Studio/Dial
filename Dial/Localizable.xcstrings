@@ -57,12 +57,22 @@
         }
       }
     },
-    "Behavior" : {
+    "Auto disables status item while device disconnected. Re-open %@ to see this window." : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "应用行为"
+            "value" : "未连接到设备时自动隐藏菜单栏图标。再次启动%@以打开此窗口。"
+          }
+        }
+      }
+    },
+    "Auto hides status item" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自动隐藏菜单栏图标"
           }
         }
       }
@@ -479,6 +489,16 @@
         }
       }
     },
+    "Direction" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旋转方向"
+          }
+        }
+      }
+    },
     "Direction/Clockwise.Badge" : {
       "comment" : "clockwise direction",
       "extractionState" : "extracted_with_value",
@@ -691,6 +711,26 @@
         }
       }
     },
+    "Global Behavior" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全局行为"
+          }
+        }
+      }
+    },
+    "Haptics feedback" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "震感反馈"
+          }
+        }
+      }
+    },
     "Hello, World!" : {
 
     },
@@ -762,6 +802,26 @@
         }
       }
     },
+    "Re-open %@ to see this window." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再次启动%@以打开此窗口。"
+          }
+        }
+      }
+    },
+    "Sensitivity" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "敏感度"
+          }
+        }
+      }
+    },
     "Sensitivity/Extreme.Badge" : {
       "comment" : "extreme sensitivity",
       "extractionState" : "extracted_with_value",
@@ -770,6 +830,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "extreme"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "极致"
           }
         }
       }
@@ -783,6 +849,12 @@
             "state" : "new",
             "value" : "Extreme"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "极致"
+          }
         }
       }
     },
@@ -794,6 +866,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "high"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高"
           }
         }
       }
@@ -807,6 +885,12 @@
             "state" : "new",
             "value" : "High"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "高"
+          }
         }
       }
     },
@@ -818,6 +902,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "low"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "低"
           }
         }
       }
@@ -831,6 +921,12 @@
             "state" : "new",
             "value" : "Low"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "低"
+          }
         }
       }
     },
@@ -842,6 +938,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "medium"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中等"
           }
         }
       }
@@ -855,6 +957,12 @@
             "state" : "new",
             "value" : "Medium"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "中等"
+          }
         }
       }
     },
@@ -867,6 +975,12 @@
             "state" : "new",
             "value" : "natural"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自然"
+          }
         }
       }
     },
@@ -878,6 +992,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Natural"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自然"
           }
         }
       }
@@ -892,6 +1012,36 @@
         }
       }
     },
+    "Shows status item" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "显示菜单栏图标"
+          }
+        }
+      }
+    },
+    "Starts with macOS" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "随macOS启动"
+          }
+        }
+      }
+    },
+    "Status Item" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "菜单栏图标"
+          }
+        }
+      }
+    },
     "SURFACE DIAL DISCONNECTED" : {
       "localizations" : {
         "zh-Hans" : {
@@ -901,9 +1051,6 @@
           }
         }
       }
-    },
-    "Test" : {
-
     }
   },
   "version" : "1.0"

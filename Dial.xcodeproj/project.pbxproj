@@ -15,6 +15,7 @@
 		2806E9C92BAC6A6600CD2AE2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2806E9C82BAC6A6600CD2AE2 /* Localizable.xcstrings */; };
 		2821DA782BAEE8250017B5DD /* ObservationTrackingStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2821DA772BAEE8250017B5DD /* ObservationTrackingStream.swift */; };
 		2821DA7A2BAEF60B0017B5DD /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2821DA792BAEF60B0017B5DD /* View+Extension.swift */; };
+		2821DA7D2BAF1AD20017B5DD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 2821DA7C2BAF1AD20017B5DD /* LaunchAtLogin */; };
 		286971102BAB2C170074C2FB /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */; };
 		286971152BAB2D800074C2FB /* StatusIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971142BAB2D800074C2FB /* StatusIconView.swift */; };
 		286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */; };
@@ -97,6 +98,7 @@
 				28EE29D12BAB2258009005C3 /* SFSafeSymbols in Frameworks */,
 				28EE29CE2BAB2245009005C3 /* Defaults in Frameworks */,
 				286971102BAB2C170074C2FB /* MenuBarExtraAccess in Frameworks */,
+				2821DA7D2BAF1AD20017B5DD /* LaunchAtLogin in Frameworks */,
 				28EE29CB2BAB2234009005C3 /* SettingsAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +259,7 @@
 				28EE29CD2BAB2245009005C3 /* Defaults */,
 				28EE29D02BAB2258009005C3 /* SFSafeSymbols */,
 				2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */,
+				2821DA7C2BAF1AD20017B5DD /* LaunchAtLogin */,
 			);
 			productName = Dial;
 			productReference = 28EE29AC2BAB2155009005C3 /* Dial.app */;
@@ -292,6 +295,7 @@
 				28EE29CC2BAB2245009005C3 /* XCRemoteSwiftPackageReference "Defaults" */,
 				28EE29CF2BAB2258009005C3 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 				2869710E2BAB2C170074C2FB /* XCRemoteSwiftPackageReference "MenuBarExtraAccess" */,
+				2821DA7B2BAF1AD20017B5DD /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
 			);
 			productRefGroup = 28EE29AD2BAB2155009005C3 /* Products */;
 			projectDirPath = "";
@@ -581,6 +585,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2821DA7B2BAF1AD20017B5DD /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		2869710E2BAB2C170074C2FB /* XCRemoteSwiftPackageReference "MenuBarExtraAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/orchetect/MenuBarExtraAccess";
@@ -616,6 +628,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2821DA7C2BAF1AD20017B5DD /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2821DA7B2BAF1AD20017B5DD /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
 		2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2869710E2BAB2C170074C2FB /* XCRemoteSwiftPackageReference "MenuBarExtraAccess" */;
