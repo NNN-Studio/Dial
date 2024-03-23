@@ -48,15 +48,14 @@ struct SettingsView: View {
                 .frame(width: 450)
         }
         .task {
+#if DEBUG
+            try? Tips.resetDatastore()
+#endif
+            
             try? Tips.configure([
                 .displayFrequency(.immediate),
                 .datastoreLocation(.applicationDefault)
             ])
-            
-            #if DEBUG
-            try? Tips.resetDatastore()
-            Tips.showAllTipsForTesting()
-            #endif
         }
     }
 }

@@ -13,7 +13,7 @@ protocol InputHandler {
     func onRotation(_ direction: Direction, _ buttonState: Hardware.ButtonState)
 }
 
-class Hardware {
+@Observable class Hardware {
     private struct ReadBuffer {
         let pointer: UnsafeMutablePointer<UInt8>
         let size: Int
@@ -319,17 +319,6 @@ extension Hardware {
         
         func initSensitivity(autoTriggers haptics: Bool) {
             hardware.initSensitivity(autoTriggers: haptics)
-        }
-    }
-}
-
-extension Hardware.ConnectionStatus: Localizable {
-    var localizedName: String {
-        switch self {
-        case .connected(let string):
-            string
-        case .disconnected:
-            NSLocalizedString("Hardware/ConnectionStatus/Off", value: "SURFACE DIAL DISCONNECTED", comment: "surface dial disconnected")
         }
     }
 }

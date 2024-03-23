@@ -9,6 +9,8 @@ import Foundation
 import TipKit
 
 struct ConnectViaBluetoothTip: Tip {
+    static let didConnect = Tips.Event(id: "connectViaBluetoothDidConnect")
+    
     var title: Text {
         Text("Connect via Bluetooth")
     }
@@ -26,6 +28,14 @@ struct ConnectViaBluetoothTip: Tip {
             .init(perform: openBluetoothSettings) {
                 Text("Open in Settings")
             }
+        ]
+    }
+    
+    var rules: [Rule] {
+        [
+            #Rule(ConnectViaBluetoothTip.didConnect) {
+                $0.donations.count < 1
+            },
         ]
     }
     

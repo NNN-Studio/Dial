@@ -9,7 +9,9 @@ import SwiftUI
 import TipKit
 
 struct GeneralSettingsView: View {
-    var connectViaBluetoothTip = ConnectViaBluetoothTip()
+    let connectViaBluetoothTip = ConnectViaBluetoothTip()
+    
+    @State var reconnectButtonHasPerformed = false
     @State var isConnected: Bool = false
     @State var serial: String? = nil
     
@@ -23,13 +25,16 @@ struct GeneralSettingsView: View {
                 .opacity(isConnected ? 1 : 0.25)
             
             HStack {
-                Text(serial ?? "SURFACE DIAL DISCONNECTED")
+                Text("SURFACE DIAL DISCONNECTED")
+                    .or(condition: isConnected) {
+                        Text(serial ?? "")
+                    }
                     .foregroundStyle(.placeholder)
                     .fontDesign(.monospaced)
                 
                 Button {
                     dial.connect()
-                    connectViaBluetoothTip.invalidate(reason: .actionPerformed)
+                    reconnectButtonHasPerformed = true
                 } label: {
                     Image(systemSymbol: isConnected ? .checkmarkCircleFill : .arrowTriangle2CirclepathCircleFill)
                         .imageScale(.large)
@@ -49,6 +54,24 @@ struct GeneralSettingsView: View {
             }
             .formStyle(.grouped)
             .scrollDisabled(true)
+        }
+        .task {
+            Task { @MainActor in
+                for await connectionStatus in observationTrackingStream({ dial.hardware.connectionStatus }) {
+                    isConnected = connectionStatus.isConnected
+                    
+                    if reconnectButtonHasPerformed && isConnected {
+                        ConnectViaBluetoothTip.didConnect.sendDonation()
+                    }
+                    
+                    switch connectionStatus {
+                    case .connected(let string):
+                        serial = string
+                    case .disconnected:
+                        serial = nil
+                    }
+                }
+            }
         }
     }
 }

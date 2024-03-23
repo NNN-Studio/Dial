@@ -520,18 +520,6 @@
         }
       }
     },
-    "Hardware/ConnectionStatus/Off" : {
-      "comment" : "surface dial disconnected",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "SURFACE DIAL DISCONNECTED"
-          }
-        }
-      }
-    },
     "Hello, World!" : {
 
     },
@@ -710,6 +698,9 @@
       }
     },
     "Settings…" : {
+
+    },
+    "SURFACE DIAL DISCONNECTED" : {
 
     },
     "Test" : {

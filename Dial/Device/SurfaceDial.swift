@@ -12,7 +12,7 @@ import AppKit
 import Cocoa
 import SwiftUI
 
-@Observable class SurfaceDial {
+class SurfaceDial {
     var hardware: Hardware = .init()
     
     /*
