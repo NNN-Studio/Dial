@@ -9,6 +9,8 @@ import SwiftUI
 import SettingsAccess
 import MenuBarExtraAccess
 
+var dial: SurfaceDial = .init()
+
 @main
 struct DialApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate

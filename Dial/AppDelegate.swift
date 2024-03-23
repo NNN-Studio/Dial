@@ -10,6 +10,9 @@ import AppKit
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
+        // Force load dial instance
+        print("!!! Force loaded \(dial) !!!")
+        
         PermissionsManager.requestAccess()
     }
 }

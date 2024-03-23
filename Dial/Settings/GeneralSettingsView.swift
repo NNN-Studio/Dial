@@ -26,7 +26,7 @@ struct GeneralSettingsView: View {
                     .fontDesign(.monospaced)
                 
                 Button {
-                    SurfaceDial.instance.connect()
+                    dial.connect()
                 } label: {
                     Image(systemSymbol: .arrowTriangle2CirclepathCircleFill)
                         .imageScale(.large)

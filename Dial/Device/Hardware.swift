@@ -138,7 +138,8 @@ extension Hardware {
     
     private func disconnect() {
         if let dev = self.dev {
-            hid_close(dev)
+            // TODO: EXC_BAD_ACCESS, why?
+            //hid_close(dev)
             
             self.dev = nil
             connectionStatus = .disconnected
