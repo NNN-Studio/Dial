@@ -13,7 +13,12 @@ extension View {
         condition ? another() : self
     }
     
-    func orAnyView(condition: Bool, _ another: () -> any View) -> any View {
-        condition ? another() : self
+    @ViewBuilder
+    func orSomeView(condition: Bool, _ another: () -> some View) -> some View {
+        if condition {
+            another()
+        } else {
+            self
+        }
     }
 }

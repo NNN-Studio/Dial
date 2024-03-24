@@ -16,6 +16,7 @@
 		2821DA782BAEE8250017B5DD /* ObservationTrackingStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2821DA772BAEE8250017B5DD /* ObservationTrackingStream.swift */; };
 		2821DA7A2BAEF60B0017B5DD /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2821DA792BAEF60B0017B5DD /* View+Extension.swift */; };
 		2821DA7D2BAF1AD20017B5DD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 2821DA7C2BAF1AD20017B5DD /* LaunchAtLogin */; };
+		2831AD8B2BAF9B8B0064821C /* MenuBarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831AD8A2BAF9B8B0064821C /* MenuBarMenuView.swift */; };
 		286971102BAB2C170074C2FB /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */; };
 		286971152BAB2D800074C2FB /* MenuBarIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971142BAB2D800074C2FB /* MenuBarIconView.swift */; };
 		286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */; };
@@ -58,6 +59,7 @@
 		2806E9C82BAC6A6600CD2AE2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		2821DA772BAEE8250017B5DD /* ObservationTrackingStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationTrackingStream.swift; sourceTree = "<group>"; };
 		2821DA792BAEF60B0017B5DD /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		2831AD8A2BAF9B8B0064821C /* MenuBarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarMenuView.swift; sourceTree = "<group>"; };
 		286971142BAB2D800074C2FB /* MenuBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarIconView.swift; sourceTree = "<group>"; };
 		286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		2887D76A2BABFB6100D733FC /* Defaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Extension.swift"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				286971142BAB2D800074C2FB /* MenuBarIconView.swift */,
+				2831AD8A2BAF9B8B0064821C /* MenuBarMenuView.swift */,
 			);
 			path = "Menu Bar";
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				28EE29C42BAB21B5009005C3 /* ControllersSettingsView.swift in Sources */,
 				2806E9C12BAC5E6D00CD2AE2 /* ScrollController.swift in Sources */,
 				2887D7832BAC005200D733FC /* MainController.swift in Sources */,
+				2831AD8B2BAF9B8B0064821C /* MenuBarMenuView.swift in Sources */,
 				2887D7792BABFD4E00D733FC /* SymbolRepresentation.swift in Sources */,
 				2806E9C72BAC5EFD00CD2AE2 /* MissionController.swift in Sources */,
 				28EE29B02BAB2155009005C3 /* DialApp.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import SFSafeSymbols
 import AppKit
+import SwiftUI
 
 extension SFSymbol {
     static let __circleFillableSuffix = ".circle.fill"
@@ -45,11 +46,11 @@ extension SFSymbol {
         self.withSuffix(SFSymbol.__circleFillableSuffix) ?? .__circleFillableFallback
     }
     
-    var __image: NSImage {
-        NSImage(systemSymbol: self)
+    var __image: Image {
+        Image(systemSymbol: self)
     }
     
-    var __circleFilledImage: NSImage {
+    var __circleFilledImage: Image {
         __circleFilled.__image
     }
 }

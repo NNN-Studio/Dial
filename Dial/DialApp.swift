@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SettingsAccess
 import MenuBarExtraAccess
 
 var dial: SurfaceDial = .init()
@@ -22,35 +21,7 @@ struct DialApp: App {
         }
         
         MenuBarExtra("Dial", image: "None") {
-            SettingsLink(
-                label: {
-                    Text("Settings…")
-                },
-                preAction: {
-                    for window in NSApp.windows where window.toolbar?.items != nil {
-                        window.close()
-                    }
-                },
-                postAction: {
-                    for window in NSApp.windows where window.toolbar?.items != nil {
-                        window.orderFrontRegardless()
-                        window.center()
-                    }
-                }
-            )
-            .keyboardShortcut(",", modifiers: .command)
-            
-            Button("About \(Bundle.main.appName)") {
-                
-            }
-            .keyboardShortcut("i", modifiers: .command)
-            
-            Divider()
-            
-            Button("Quit") {
-                NSApp.terminate(nil)
-            }
-            .keyboardShortcut("q", modifiers: .command)
+            MenuBarMenuView()
         }
         .menuBarExtraStyle(.menu)
         .menuBarExtraAccess(isPresented: $isMenuBarItemPresented) { menuBarItem in

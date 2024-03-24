@@ -58,6 +58,7 @@
       }
     },
     "Auto disables status item while device disconnected. Re-open %@ to see this window." : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -67,7 +68,11 @@
         }
       }
     },
+    "Auto hides menu bar item" : {
+
+    },
     "Auto hides status item" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -571,6 +576,9 @@
         }
       }
     },
+    "disconnected" : {
+
+    },
     "Discover and connect to your device in Settings app so that %@ is able to take charge of it. Click the reconnect button above when your device is ready." : {
       "localizations" : {
         "zh-Hans" : {
@@ -734,6 +742,12 @@
     "Hello, World!" : {
 
     },
+    "Hides menu bar item while device disconnected. Re-open %@ to see this window." : {
+
+    },
+    "Menu Bar Item" : {
+
+    },
     "Open in Settings" : {
       "localizations" : {
         "zh-Hans" : {
@@ -767,6 +781,12 @@
           }
         }
       }
+    },
+    "press and hold dial" : {
+
+    },
+    "Quick Settings" : {
+
     },
     "Quit" : {
       "localizations" : {
@@ -1012,7 +1032,11 @@
         }
       }
     },
+    "Shows menu bar item" : {
+
+    },
     "Shows status item" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -1033,6 +1057,7 @@
       }
     },
     "Status Item" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -1041,6 +1066,9 @@
           }
         }
       }
+    },
+    "Surface Dial" : {
+
     },
     "SURFACE DIAL DISCONNECTED" : {
       "localizations" : {
