@@ -80,22 +80,22 @@ struct AcknowledgementsView: View {
             VStack {
                 Text("Dependencies")
                     .foregroundStyle(.secondary)
-                    .padding(.top, 12)
                 
                 buildAcknowledgements(packages: dependencies)
             }
+            .padding()
             .background {
                 VisualEffectView(material: .fullScreenUI, blendingMode: .behindWindow)
                     .ignoresSafeArea(.all)
             }
             
-            Spacer()
-            
-            Text("Special Thanks")
-                .foregroundStyle(.secondary)
-                .padding(.top, 12)
-            
-            buildAcknowledgements(packages: specialThanks)
+            VStack {
+                Text("Special Thanks")
+                    .foregroundStyle(.secondary)
+                
+                buildAcknowledgements(packages: specialThanks)
+            }
+            .padding()
         }
     }
     
@@ -146,7 +146,8 @@ struct AcknowledgementsView: View {
                     .help("License")
                 }
                 .tag(index)
-                .buttonBorderShape(.circle)
+                .buttonStyle(.borderless)
+                .imageScale(.large)
                 .padding(.vertical, 2)
             }
         }
