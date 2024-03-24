@@ -9,48 +9,54 @@ import SwiftUI
 import Defaults
 
 struct ControllersSettingsView: View {
-    @State var allControllerIDs: [ControllerID] = []
+    // Don't use `@Default()` as it results in data inconsistencies.
     @State var activatedControllerIDs: [ControllerID] = []
     @State var nonactivatedControllerIDs: [ControllerID] = []
     
     @State var selectedControllerID: ControllerID?
     
     var body: some View {
-        HSplitView {
+        /*
+        NavigationSplitView {
             List($activatedControllerIDs, id: \.self, selection: $selectedControllerID) { id in
-                ControllerStateEntryView(id: id)
+                NavigationLink {
+                    Text(id.wrappedValue.controller.name)
+                } label: {
+                    ControllerStateEntryView(id: id)
+                }
             }
             .frame(minWidth: 250)
-            .listStyle(.sidebar)
             
-            HStack {
-                Text(selectedControllerID?.controller.name ?? "")
+            List($nonactivatedControllerIDs, id: \.self, selection: $selectedControllerID) { id in
+                NavigationLink {
+                    Text(id.wrappedValue.controller.name)
+                } label: {
+                    ControllerStateEntryView(id: id)
+                }
             }
-            .orSomeView(condition: selectedControllerID == nil) {
-                Image(systemSymbol: .aqiMedium)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .symbolEffect(.variableColor.iterative.reversing, options: .repeating, isActive: true)
-                    .opacity(0.2)
-                    .frame(width: 64)
-            }
-            .frame(minWidth: 300, maxWidth: .infinity, maxHeight: .infinity)
+            .frame(minWidth: 250)
+        } detail: {
+            Image(systemSymbol: .aqiMedium)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .symbolEffect(.variableColor.iterative.reversing, options: .repeating, isActive: true)
+                .opacity(0.2)
+                .frame(width: 64)
         }
+         */
+        Text("Test")
         .task {
-            // Don't use `@Default()` as it results in data inconsistencies.
-            
             // MARK: Update activated controller ids
             
-            for await ids in Defaults.updates(.activatedControllerIDs) {
-                activatedControllerIDs = ids
-                allControllerIDs = Defaults.allControllerIDs
+            for await activatedControllerIDs in Defaults.updates(.activatedControllerIDs) {
+                self.activatedControllerIDs = activatedControllerIDs
             }
-            
+        }
+        .task {
             // MARK: Update nonactivated controller ids
             
-            for await ids in Defaults.updates(.activatedControllerIDs) {
-                activatedControllerIDs = ids
-                allControllerIDs = Defaults.allControllerIDs
+            for await nonactivatedControllerIDs in Defaults.updates(.nonactivatedControllerIDs) {
+                self.nonactivatedControllerIDs = nonactivatedControllerIDs
             }
         }
     }
@@ -84,14 +90,13 @@ struct ControllerStateEntryView: View {
                         .foregroundStyle(.placeholder)
                 }
             }
+            .lineLimit(1)
             
             Spacer()
             
             Toggle(isOn: $id.isActivated) {
-                EmptyView()
             }
-            .toggleStyle(.switch)
-            .controlSize(.small)
+            .toggleStyle(.checkbox)
         }
         .padding(.horizontal, 8)
         .padding(.vertical, 6)
@@ -99,13 +104,11 @@ struct ControllerStateEntryView: View {
 }
 
 #Preview {
-    VStack {
+    Group {
         ControllerStateEntryView(id: .constant(.builtin(.scroll)))
-        
-        Divider()
         
         let settings = ShortcutsController.Settings()
         ControllerStateEntryView(id: .constant(.shortcuts(settings)))
     }
-    .frame(width: 400)
+    .frame(width: 250)
 }

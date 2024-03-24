@@ -49,9 +49,6 @@
         }
       }
     },
-    "Activated" : {
-
-    },
     "App/PermissionsAlert/Content" : {
       "comment" : "accessibility permissions alert content",
       "extractionState" : "extracted_with_value",
@@ -1217,6 +1214,9 @@
         }
       }
     },
+    "Settings" : {
+
+    },
     "Settings…" : {
       "localizations" : {
         "zh-Hans" : {
@@ -1276,6 +1276,9 @@
           }
         }
       }
+    },
+    "Test" : {
+
     },
     "UI layout guide" : {
       "localizations" : {
