@@ -11,11 +11,12 @@ import Defaults
 struct ControllersSettingsView: View {
     @Default(.controllerStates) var controllerStates: [ControllerState]
     
-    @State var selectedControllerState: ControllerState?
+    @State var controllerIDs: [ControllerID] = []
+    @State var selectedControllerID: ControllerID?
     
     var body: some View {
         HSplitView {
-            List($controllerStates, id: \.self, selection: $selectedControllerState) { controllerState in
+            List($controllerIDs, id: \.self, selection: $selectedControllerID) { controllerID in
                 
                 ControllerStateEntryView(
                     activated: controllerState.isOn,
