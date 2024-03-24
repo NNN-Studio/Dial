@@ -13,7 +13,7 @@ import LaunchAtLogin
 struct GeneralSettingsView: View {
     let connectViaBluetoothTip = ConnectViaBluetoothTip()
     
-    @State var reconnectButtonHasPerformed = false
+    @State var reconnectButtonHasPerformed: Bool = false
     @State var isConnected: Bool = false
     @State var serial: String? = nil
     

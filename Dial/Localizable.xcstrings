@@ -2,6 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "About %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -10,6 +11,12 @@
           }
         }
       }
+    },
+    "About %@…" : {
+
+    },
+    "Accessibility Access" : {
+
     },
     "App/PermissionsAlert/Content" : {
       "comment" : "accessibility permissions alert content",
@@ -56,6 +63,12 @@
           }
         }
       }
+    },
+    "Automatically checks for updates" : {
+
+    },
+    "Check for Updates…" : {
+
     },
     "Connect via Bluetooth" : {
       "localizations" : {
@@ -329,6 +342,9 @@
         }
       }
     },
+    "Description" : {
+
+    },
     "Dial" : {
       "localizations" : {
         "zh-Hans" : {
@@ -523,6 +539,9 @@
         }
       }
     },
+    "Feedback" : {
+
+    },
     "General" : {
       "localizations" : {
         "zh-Hans" : {
@@ -663,6 +682,9 @@
         }
       }
     },
+    "Granted" : {
+
+    },
     "Haptics feedback" : {
       "localizations" : {
         "zh-Hans" : {
@@ -706,6 +728,9 @@
         }
       }
     },
+    "Not Granted" : {
+
+    },
     "Open in Settings" : {
       "localizations" : {
         "zh-Hans" : {
@@ -739,6 +764,9 @@
           }
         }
       }
+    },
+    "Permissions" : {
+
     },
     "press and hold dial" : {
       "localizations" : {
@@ -803,6 +831,12 @@
           }
         }
       }
+    },
+    "Request Access…" : {
+
+    },
+    "Send Feedback…" : {
+
     },
     "Sensitivity" : {
       "localizations" : {
@@ -1040,6 +1074,19 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "未连接到智能旋钮"
+          }
+        }
+      }
+    },
+    "Updates" : {
+
+    },
+    "Version %@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Version %1$@ (%2$@)"
           }
         }
       }

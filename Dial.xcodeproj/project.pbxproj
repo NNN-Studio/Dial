@@ -37,6 +37,7 @@
 		289B83FC2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FB2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift */; };
 		289B83FE2BADC44D00D56D43 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */; };
 		289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FF2BADC4F900D56D43 /* AppDelegate.swift */; };
+		28E71A362BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */; };
 		28EE29B02BAB2155009005C3 /* DialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29AF2BAB2155009005C3 /* DialApp.swift */; };
 		28EE29B42BAB2156009005C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EE29B32BAB2156009005C3 /* Assets.xcassets */; };
 		28EE29B72BAB2156009005C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EE29B62BAB2156009005C3 /* Preview Assets.xcassets */; };
@@ -44,7 +45,7 @@
 		28EE29C22BAB21AC009005C3 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C12BAB21AC009005C3 /* GeneralSettingsView.swift */; };
 		28EE29C42BAB21B5009005C3 /* ControllersSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C32BAB21B5009005C3 /* ControllersSettingsView.swift */; };
 		28EE29C62BAB21BD009005C3 /* DialMenuSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */; };
-		28EE29C82BAB21CB009005C3 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C72BAB21CB009005C3 /* MoreView.swift */; };
+		28EE29C82BAB21CB009005C3 /* MoreSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C72BAB21CB009005C3 /* MoreSettingsView.swift */; };
 		28EE29CB2BAB2234009005C3 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 28EE29CA2BAB2234009005C3 /* SettingsAccess */; };
 		28EE29CE2BAB2245009005C3 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 28EE29CD2BAB2245009005C3 /* Defaults */; };
 		28EE29D12BAB2258009005C3 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 28EE29D02BAB2258009005C3 /* SFSafeSymbols */; };
@@ -80,6 +81,7 @@
 		289B83FB2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViaBluetoothTip.swift; sourceTree = "<group>"; };
 		289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		289B83FF2BADC4F900D56D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkableEqualWidthVStack.swift; sourceTree = "<group>"; };
 		28EE29AC2BAB2155009005C3 /* Dial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EE29AF2BAB2155009005C3 /* DialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialApp.swift; sourceTree = "<group>"; };
 		28EE29B32BAB2156009005C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 		28EE29C12BAB21AC009005C3 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		28EE29C32BAB21B5009005C3 /* ControllersSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllersSettingsView.swift; sourceTree = "<group>"; };
 		28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialMenuSettingsView.swift; sourceTree = "<group>"; };
-		28EE29C72BAB21CB009005C3 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		28EE29C72BAB21CB009005C3 /* MoreSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,14 @@
 			path = Tips;
 			sourceTree = "<group>";
 		};
+		28E71A342BAFCE4200722045 /* View Auxiliaries */ = {
+			isa = PBXGroup;
+			children = (
+				28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */,
+			);
+			path = "View Auxiliaries";
+			sourceTree = "<group>";
+		};
 		28EE29A32BAB2155009005C3 = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +219,7 @@
 				2887D7742BABFD0B00D733FC /* Device */,
 				2887D77F2BAC000800D733FC /* Controllers */,
 				2887D7772BABFD2A00D733FC /* Utilities */,
+				28E71A342BAFCE4200722045 /* View Auxiliaries */,
 				286971112BAB2D550074C2FB /* Menu Bar */,
 				28EE29BE2BAB218D009005C3 /* Settings */,
 				289B83FA2BADB9C400D56D43 /* Tips */,
@@ -236,7 +247,7 @@
 				28EE29C12BAB21AC009005C3 /* GeneralSettingsView.swift */,
 				28EE29C32BAB21B5009005C3 /* ControllersSettingsView.swift */,
 				28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */,
-				28EE29C72BAB21CB009005C3 /* MoreView.swift */,
+				28EE29C72BAB21CB009005C3 /* MoreSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -329,7 +340,7 @@
 			files = (
 				2887D76F2BABFBD100D733FC /* SFSymbol+Extension.swift in Sources */,
 				28EE29C62BAB21BD009005C3 /* DialMenuSettingsView.swift in Sources */,
-				28EE29C82BAB21CB009005C3 /* MoreView.swift in Sources */,
+				28EE29C82BAB21CB009005C3 /* MoreSettingsView.swift in Sources */,
 				289B83FE2BADC44D00D56D43 /* PermissionsManager.swift in Sources */,
 				2887D77D2BABFE8900D733FC /* SurfaceDial.swift in Sources */,
 				2887D7712BABFBFF00D733FC /* NSString+Extension.swift in Sources */,
@@ -349,6 +360,7 @@
 				289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */,
 				2806E9C52BAC5ED600CD2AE2 /* BrigntnessController.swift in Sources */,
 				2821DA782BAEE8250017B5DD /* ObservationTrackingStream.swift in Sources */,
+				28E71A362BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift in Sources */,
 				2887D78B2BAC013300D733FC /* Input.swift in Sources */,
 				28EE29C22BAB21AC009005C3 /* GeneralSettingsView.swift in Sources */,
 				286971152BAB2D800074C2FB /* MenuBarIconView.swift in Sources */,

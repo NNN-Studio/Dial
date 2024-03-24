@@ -117,7 +117,7 @@ struct MenuBarMenuView: View {
         )
         .keyboardShortcut(",", modifiers: .command)
         
-        Button("About \(Bundle.main.appName)") {
+        Button("About \(Bundle.main.appName)…") {
             
         }
         .keyboardShortcut("i", modifiers: .command)

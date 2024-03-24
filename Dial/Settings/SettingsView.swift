@@ -39,13 +39,14 @@ struct SettingsView: View {
                 }
                 .frame(width: 450)
             
-            MoreView()
+            MoreSettingsView()
                 .tag(3)
                 .tabItem {
                     Image(systemSymbol: .ellipsis)
                     Text("More")
                 }
                 .frame(width: 450)
+                .fixedSize()
         }
         .task {
 #if DEBUG
