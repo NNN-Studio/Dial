@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Defaults
 
 struct MoreSettingsView: View {
     @Environment(\.openURL) private var openURL
     
     @State var test: Bool = false
     @State var isAccessibilityAccessGranted: Bool = false
+    @State var isShowingDataRestoration: Bool = false
     
     var body: some View {
         Form {
@@ -89,26 +91,61 @@ By sending feedbacks, you can report bugs, request features or more. Issue templ
                         Button {
                             openURL(URL(string: "placeholder")!)
                         } label: {
-                            Text("Send Feedback…")
-                                .frame(maxWidth: .infinity)
-                            
                             Image(systemSymbol: .rectanglePortraitAndArrowRight)
                                 .frame(width: 20, alignment: .center)
+                            
+                            Text("Send Feedback…")
+                                .frame(maxWidth: .infinity)
                         }
                         
                         Button {
                             NSApp.setActivationPolicy(.regular)
                             AboutViewController.open()
                         } label: {
-                            Text("About \(Bundle.main.appName)…")
-                                .frame(maxWidth: .infinity)
-                            
                             Image(systemSymbol: .infoCircle)
                                 .frame(width: 20, alignment: .center)
+                            
+                            Text("About \(Bundle.main.appName)…")
+                                .frame(maxWidth: .infinity)
                         }
                     }
                     .controlSize(.extraLarge)
                 }
+            }
+            
+            Section("Data Restoration", isExpanded: $isShowingDataRestoration) {
+                VStack {
+                    Button {
+                        Defaults.reset(
+                            .globalHapticsEnabled,
+                            .menuBarItemEnabled,
+                            .menuBarItemAutoHidden,
+                            .globalSensitivity,
+                            .globalDirection
+                        )
+                        
+                        print("Restored global configurations")
+                    } label: {
+                        Text("Restore Global Configurations")
+                            .frame(maxWidth: .infinity)
+                    }
+                    
+                    Button(role: .destructive) {
+                        Defaults.reset(
+                            .controllerStates,
+                            .currentControllerIndex,
+                            .selectedControllerIndex
+                        )
+                        
+                        print("Restored controllers")
+                    } label: {
+                        Text("Restore Controllers")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .tint(.red)
+                }
+                .controlSize(.extraLarge)
             }
         }
         .formStyle(.grouped)

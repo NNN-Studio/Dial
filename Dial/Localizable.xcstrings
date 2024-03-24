@@ -407,6 +407,9 @@
         }
       }
     },
+    "Data Restoration" : {
+
+    },
     "Dependencies" : {
       "localizations" : {
         "zh-Hans" : {
@@ -1001,6 +1004,12 @@
           }
         }
       }
+    },
+    "Restore Controllers" : {
+
+    },
+    "Restore Global Configurations" : {
+
     },
     "Send Feedback…" : {
       "localizations" : {
