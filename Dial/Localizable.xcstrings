@@ -725,6 +725,9 @@
     "Hello, World!" : {
 
     },
+    "HID device communications" : {
+
+    },
     "Hides menu bar item while device disconnected. To see this window again, please re-open %@." : {
       "localizations" : {
         "zh-Hans" : {
