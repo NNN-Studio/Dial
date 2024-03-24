@@ -24,10 +24,10 @@ struct ControllersSettingsView: View {
                 .itemProvider {
                     NSItemProvider(object: DraggableControllerState(controllerState.wrappedValue))
                 }
+                .onDrop(of: [.draggableControllerState], delegate: DraggableControllerStateDelegate(current: controllerState))
             }
             .frame(minWidth: 250)
             .listStyle(.sidebar)
-            .onDr
             
             HStack {
                 Text("Test")

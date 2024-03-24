@@ -7,6 +7,7 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
+import Defaults
 
 class DraggableControllerState: NSObject, Codable {
     var controllerState: ControllerState
@@ -55,5 +56,30 @@ extension DraggableControllerState: NSItemProviderReading, NSItemProviderWriting
 extension DraggableControllerState: Transferable {
     static var transferRepresentation : some TransferRepresentation {
         CodableRepresentation(contentType: .draggableControllerState)
+    }
+}
+
+struct DraggableControllerStateDelegate: DropDelegate {
+    @Binding var current: ControllerState
+    
+    func performDrop(info: DropInfo) -> Bool {
+        guard info.hasItemsConforming(to: [.draggableControllerState]) else { return false }
+        
+        let itemProviders = info.itemProviders(for: [.draggableControllerState])
+        guard let itemProvider = itemProviders.first else { return false }
+        
+        itemProvider.loadObject(ofClass: DraggableControllerState.self) { draggableControllerState, _ in
+            let draggableControllerState = draggableControllerState as? DraggableControllerState
+            if let controllerState = draggableControllerState?.controllerState {
+                guard
+                    let currentIndex = Defaults[.controllerStates].firstIndex(of: current),
+                    let index = Defaults[.controllerStates].firstIndex(of: controllerState)
+                else { return }
+                
+                Defaults[.controllerStates].swapAt(currentIndex, index)
+            }
+        }
+        
+        return true
     }
 }
