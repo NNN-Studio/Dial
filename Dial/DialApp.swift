@@ -10,6 +10,14 @@ import MenuBarExtraAccess
 
 var dial: SurfaceDial = .init()
 
+func notifyTaskStart(_ message: String, _ sender: Any? = nil) {
+    print("!!! Task started: \(message) !!!", terminator: "")
+    if let sender {
+        print(" (\(String(describing: type(of: sender))))", terminator: "")
+    }
+    print()
+}
+
 @main
 struct DialApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -31,10 +39,10 @@ struct DialApp: App {
                 button.subviews.count == 0
             else { return }
             
-            menuBarItem.length = 32
+            menuBarItem.length = 40
             
             let view = NSHostingView(rootView: MenuBarIconView())
-            view.frame.size = .init(width: 32, height: NSStatusBar.system.thickness)
+            view.frame.size = .init(width: 40, height: NSStatusBar.system.thickness)
             button.addSubview(view)
         }
     }

@@ -28,6 +28,8 @@ struct GeneralSettingsView: View {
     
     var body: some View {
         VStack {
+            // MARK: - Model
+            
             Image("Model", label: Text("Dial"))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -60,6 +62,8 @@ struct GeneralSettingsView: View {
                 .frame(width: 50, alignment: .leading)
             }
             
+            // MARK: - Tip
+            
             TipView(connectViaBluetoothTip)
                 .padding(.horizontal, 20)
                 .transition(.asymmetric(
@@ -67,41 +71,9 @@ struct GeneralSettingsView: View {
                     removal: .push(from: .top))
                 )
             
+            // MARK: - Options
+            
             Form {
-                Section("Global Behavior") {
-                    Toggle(isOn: $globalHapticsEnabled) {
-                        Text("Haptics feedback")
-                    }
-                }
-                
-                Section {
-                    Picker(selection: $globalSensitivity) {
-                        ForEach(Sensitivity.allCases) { sensitivity in
-                            Text(sensitivity.localizedTitle)
-                        }
-                    } label: {
-                        HStack {
-                            Text("Sensitivity")
-                            Image(systemSymbol: globalSensitivity.representingSymbol)
-                                .frame(height: 16)
-                                .frame(maxWidth: .infinity, alignment: .trailing)
-                        }
-                    }
-                    
-                    Picker(selection: $globalDirection) {
-                        ForEach(Direction.allCases) { direction in
-                            Text(direction.localizedTitle)
-                        }
-                    } label: {
-                        HStack {
-                            Text("Direction")
-                            Image(systemSymbol: globalDirection.representingSymbol)
-                                .frame(height: 16)
-                                .frame(maxWidth: .infinity, alignment: .trailing)
-                        }
-                    }
-                }
-                
                 Section("Menu Bar Item") {
                     Toggle(isOn: $menuBarItemEnabled) {
                         Text("Shows menu bar item")
@@ -126,10 +98,30 @@ struct GeneralSettingsView: View {
                     }
                 }
                 
-                Section {
-                    Toggle(isOn: $startsWithMacOS.isEnabled) {
-                        Text("Starts with macOS")
+                Section("Global Behavior") {
+                    Toggle(isOn: $globalHapticsEnabled) {
+                        Text("Haptics feedback")
                     }
+                }
+                
+                Section {
+                    Picker("Sensitivity", selection: $globalSensitivity) {
+                        ForEach(Sensitivity.allCases) { sensitivity in
+                            Text(sensitivity.localizedTitle)
+                        }
+                    }
+                    .badge(Text(globalSensitivity.representingSymbol.unicode!))
+                    
+                    Picker("Direction", selection: $globalDirection) {
+                        ForEach(Direction.allCases) { direction in
+                            Text(direction.localizedTitle)
+                        }
+                    }
+                    .badge(Text(globalDirection.representingSymbol.unicode!))
+                }
+                
+                Section {
+                    Toggle("Starts with macOS", isOn: $startsWithMacOS.isEnabled)
                 }
             }
             .formStyle(.grouped)
@@ -137,18 +129,24 @@ struct GeneralSettingsView: View {
         }
         .task {
             Task { @MainActor in
-                for await connectionStatus in observationTrackingStream({ dial.hardware.connectionStatus }) {
-                    isConnected = connectionStatus.isConnected
-                    
-                    if reconnectButtonHasPerformed && isConnected {
-                        ConnectViaBluetoothTip.didConnect.sendDonation()
-                    }
-                    
-                    switch connectionStatus {
-                    case .connected(let string):
-                        serial = string
-                    case .disconnected:
-                        serial = nil
+                notifyTaskStart("update connection status", self)
+                
+                for await _ in observationTrackingStream({ dial.hardware.connectionStatus }) {
+                    // Due to a strange delay in `connectionStatus`, we need this async block to guarantee the correct result.
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        let connectionStatus = dial.hardware.connectionStatus
+                        isConnected = connectionStatus.isConnected
+                        
+                        if reconnectButtonHasPerformed && isConnected {
+                            ConnectViaBluetoothTip.didConnect.sendDonation()
+                        }
+                        
+                        switch connectionStatus {
+                        case .connected(let string):
+                            serial = string
+                        case .disconnected:
+                            serial = nil
+                        }
                     }
                 }
             }

@@ -9,6 +9,20 @@ import Foundation
 import Defaults
 import SFSafeSymbols
 
+struct ControllerState: Codable, Hashable, Identifiable, Equatable, Defaults.Serializable {
+    var id: ControllerID
+    var isOn: Bool
+    
+    init(_ id: ControllerID, _ isOn: Bool) {
+        self.id = id
+        self.isOn = isOn
+    }
+    
+    func with(_ isOn: Bool) -> Self {
+        .init(self.id, isOn)
+    }
+}
+
 /// Decides how much steps per circle the dial is divided into.
 enum Sensitivity: CGFloat, CaseIterable, Defaults.Serializable {
     case low = 5

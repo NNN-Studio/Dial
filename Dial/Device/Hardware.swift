@@ -138,14 +138,14 @@ extension Hardware {
     
     private func disconnect() {
         if let dev = self.dev {
+            print("Device disconnected.")
+            
             // TODO: EXC_BAD_ACCESS, why?
             //hid_close(dev)
             
             self.dev = nil
             connectionStatus = .disconnected
             initSensitivity(autoTriggers: false)
-            
-            print("Device disconnected.")
         }
     }
     

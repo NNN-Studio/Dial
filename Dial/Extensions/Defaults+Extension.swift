@@ -18,7 +18,7 @@ extension Defaults.Keys {
     
     static let controllerStates: Key<[ControllerState]> = {
         Task { @MainActor in
-            print("Task started: validating controller indexes")
+            notifyTaskStart("validate controller indexes")
             
             for await controllers in Defaults.updates(.controllerStates) {
                 if controllers.isEmpty {
@@ -57,20 +57,6 @@ extension Defaults.Keys {
     // MARK: - Constants
     
     static let maxControllers = Key<Int>("maxControllers", default: 10)
-}
-
-struct ControllerState: Codable, Hashable, Identifiable, Equatable, Defaults.Serializable {
-    var id: ControllerID
-    var isOn: Bool
-    
-    init(_ id: ControllerID, _ isOn: Bool) {
-        self.id = id
-        self.isOn = isOn
-    }
-    
-    func with(_ isOn: Bool) -> Self {
-        .init(self.id, isOn)
-    }
 }
 
 extension Defaults {
