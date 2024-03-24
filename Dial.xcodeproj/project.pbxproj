@@ -44,7 +44,7 @@
 		28EE29C22BAB21AC009005C3 /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C12BAB21AC009005C3 /* GeneralSettingsView.swift */; };
 		28EE29C42BAB21B5009005C3 /* ControllersSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C32BAB21B5009005C3 /* ControllersSettingsView.swift */; };
 		28EE29C62BAB21BD009005C3 /* DialMenuSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */; };
-		28EE29C82BAB21CB009005C3 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C72BAB21CB009005C3 /* AboutView.swift */; };
+		28EE29C82BAB21CB009005C3 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29C72BAB21CB009005C3 /* MoreView.swift */; };
 		28EE29CB2BAB2234009005C3 /* SettingsAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 28EE29CA2BAB2234009005C3 /* SettingsAccess */; };
 		28EE29CE2BAB2245009005C3 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 28EE29CD2BAB2245009005C3 /* Defaults */; };
 		28EE29D12BAB2258009005C3 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 28EE29D02BAB2258009005C3 /* SFSafeSymbols */; };
@@ -89,7 +89,7 @@
 		28EE29C12BAB21AC009005C3 /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		28EE29C32BAB21B5009005C3 /* ControllersSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllersSettingsView.swift; sourceTree = "<group>"; };
 		28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialMenuSettingsView.swift; sourceTree = "<group>"; };
-		28EE29C72BAB21CB009005C3 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		28EE29C72BAB21CB009005C3 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,7 +236,7 @@
 				28EE29C12BAB21AC009005C3 /* GeneralSettingsView.swift */,
 				28EE29C32BAB21B5009005C3 /* ControllersSettingsView.swift */,
 				28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */,
-				28EE29C72BAB21CB009005C3 /* AboutView.swift */,
+				28EE29C72BAB21CB009005C3 /* MoreView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -329,7 +329,7 @@
 			files = (
 				2887D76F2BABFBD100D733FC /* SFSymbol+Extension.swift in Sources */,
 				28EE29C62BAB21BD009005C3 /* DialMenuSettingsView.swift in Sources */,
-				28EE29C82BAB21CB009005C3 /* AboutView.swift in Sources */,
+				28EE29C82BAB21CB009005C3 /* MoreView.swift in Sources */,
 				289B83FE2BADC44D00D56D43 /* PermissionsManager.swift in Sources */,
 				2887D77D2BABFE8900D733FC /* SurfaceDial.swift in Sources */,
 				2887D7712BABFBFF00D733FC /* NSString+Extension.swift in Sources */,

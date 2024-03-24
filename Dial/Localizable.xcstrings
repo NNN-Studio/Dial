@@ -1,16 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "About" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "关于"
-          }
-        }
-      }
-    },
     "About %@" : {
       "localizations" : {
         "zh-Hans" : {
@@ -22,7 +12,7 @@
       }
     },
     "App/PermissionsAlert/Content" : {
-      "comment" : "permissions alert content",
+      "comment" : "accessibility permissions alert content",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -40,7 +30,7 @@
       }
     },
     "App/PermissionsAlert/Title" : {
-      "comment" : "permissions alert title",
+      "comment" : "accessibility permissions alert title",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -57,22 +47,7 @@
         }
       }
     },
-    "Auto disables status item while device disconnected. Re-open %@ to see this window." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未连接到设备时自动隐藏菜单栏图标。再次启动%@以打开此窗口。"
-          }
-        }
-      }
-    },
     "Auto hides menu bar item" : {
-
-    },
-    "Auto hides status item" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -101,12 +76,6 @@
             "state" : "new",
             "value" : "Dial"
           }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "智能旋钮"
-          }
         }
       }
     },
@@ -118,12 +87,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "disconnected"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未连接"
           }
         }
       }
@@ -137,12 +100,6 @@
             "state" : "new",
             "value" : "Surface Dial disconnected"
           }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "未连接到智能旋钮"
-          }
         }
       }
     },
@@ -154,12 +111,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Dial"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "智能旋钮"
           }
         }
       }
@@ -183,12 +134,6 @@
             "state" : "new",
             "value" : "Alternative direction"
           }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "反转方向"
-          }
         }
       }
     },
@@ -200,12 +145,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Haptic feedback"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "震感反馈"
           }
         }
       }
@@ -219,12 +158,6 @@
             "state" : "new",
             "value" : "Follows physical direction"
           }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "跟随物理设备方向"
-          }
         }
       }
     },
@@ -236,12 +169,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Rotation type"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "旋转方式"
           }
         }
       }
@@ -577,14 +504,21 @@
       }
     },
     "disconnected" : {
-
-    },
-    "Discover and connect to your device in Settings app so that %@ is able to take charge of it. Click the reconnect button above when your device is ready." : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "你需要在系统设置中查找并连接到你的设备，以便让%@接管它。准备好你的设备后，请按下上方的重新连接按钮。"
+            "value" : "未连接"
+          }
+        }
+      }
+    },
+    "Discover and connect to your device in Settings app so that %@ is able to take charge of it. Click the reconnect button when your device is ready." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你需要在系统设置中查找并连接到你的设备，以便让%@接管它。准备好你的设备后，请按下重新连接按钮。"
           }
         }
       }
@@ -742,11 +676,35 @@
     "Hello, World!" : {
 
     },
-    "Hides menu bar item while device disconnected. Re-open %@ to see this window." : {
-
+    "Hides menu bar item while device disconnected. To see this window again, please re-open %@." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未连接到设备时自动隐藏菜单栏图标。需要访问此窗口时，请再次启动%@。"
+          }
+        }
+      }
     },
     "Menu Bar Item" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "菜单栏图标"
+          }
+        }
+      }
+    },
+    "More" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更多"
+          }
+        }
+      }
     },
     "Open in Settings" : {
       "localizations" : {
@@ -783,10 +741,24 @@
       }
     },
     "press and hold dial" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按住旋钮"
+          }
+        }
+      }
     },
     "Quick Settings" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "快速设置"
+          }
+        }
+      }
     },
     "Quit" : {
       "localizations" : {
@@ -1033,10 +1005,6 @@
       }
     },
     "Shows menu bar item" : {
-
-    },
-    "Shows status item" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -1056,19 +1024,15 @@
         }
       }
     },
-    "Status Item" : {
-      "extractionState" : "stale",
+    "Surface Dial" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "菜单栏图标"
+            "value" : "智能旋钮"
           }
         }
       }
-    },
-    "Surface Dial" : {
-
     },
     "SURFACE DIAL DISCONNECTED" : {
       "localizations" : {

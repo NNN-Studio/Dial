@@ -56,22 +56,14 @@ struct GeneralSettingsView: View {
                     Image(systemSymbol: isConnected ? .checkmarkCircleFill : .arrowTriangle2CirclepathCircleFill)
                         .imageScale(.large)
                 }
+                .popoverTip(connectViaBluetoothTip, arrowEdge: .trailing)
                 .buttonStyle(.borderless)
                 .controlSize(.extraLarge)
                 .tint(isConnected ? .green : .red)
                 .frame(width: 50, alignment: .leading)
             }
             
-            // MARK: - Tip
-            
-            TipView(connectViaBluetoothTip)
-                .padding(.horizontal, 20)
-                .transition(.asymmetric(
-                    insertion: .push(from: .top),
-                    removal: .push(from: .top))
-                )
-            
-            // MARK: - Options
+            // MARK: - Settings
             
             Form {
                 Section("Menu Bar Item") {
@@ -90,7 +82,7 @@ struct GeneralSettingsView: View {
                         Toggle(isOn: $menuBarItemAutoHidden) {
                             Text("Auto hides menu bar item")
                             
-                            Text("Hides menu bar item while device disconnected. Re-open \(Bundle.main.appName) to see this window.")
+                            Text("Hides menu bar item while device disconnected. To see this window again, please re-open \(Bundle.main.appName).")
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                                 .textSelection(.enabled)

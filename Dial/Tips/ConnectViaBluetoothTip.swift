@@ -16,7 +16,7 @@ struct ConnectViaBluetoothTip: Tip {
     }
     
     var message: Text? {
-        Text("Discover and connect to your device in Settings app so that \(Bundle.main.appName) is able to take charge of it. Click the reconnect button above when your device is ready.")
+        Text("Discover and connect to your device in Settings app so that \(Bundle.main.appName) is able to take charge of it. Click the reconnect button when your device is ready.")
     }
     
     var image: Image? {

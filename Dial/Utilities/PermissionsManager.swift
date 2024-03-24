@@ -33,7 +33,7 @@ class PermissionsManager {
                 format: NSLocalizedString(
                     "App/PermissionsAlert/Title",
                     value: "%@ needs Accessibility Permissions",
-                    comment: "permissions alert title"
+                    comment: "accessibility permissions alert title"
                 ),
                 Bundle.main.appName
             )
@@ -45,7 +45,7 @@ class PermissionsManager {
 
 If you're updating, you might have to remove %@ from the list before re-granting the permissions.
 """,
-                    comment: "permissions alert content"),
+                    comment: "accessibility permissions alert content"),
                 Bundle.main.appName, Bundle.main.appName
             )
             
