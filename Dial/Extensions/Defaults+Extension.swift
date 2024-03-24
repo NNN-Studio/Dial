@@ -16,43 +16,35 @@ extension Defaults.Keys {
     static let globalSensitivity = Key<Sensitivity>("globalSensitivity", default: .natural)
     static let globalDirection = Key<Direction>("globalDirection", default: .clockwise)
     
-    static let controllerStates: Key<[ControllerState]> = {
+    static let activatedControllerIDs: Key<[ControllerID]> = {
         Task { @MainActor in
             notifyTaskStart("validate controller indexes")
             
-            for await controllers in Defaults.updates(.controllerStates) {
+            for await controllers in Defaults.updates(.activatedControllerIDs) {
                 if controllers.isEmpty {
-                    // Not selectable
-                    Defaults[.currentControllerIndex] = nil
-                    Defaults[.selectedControllerIndex] = nil
+                    // No controller is activated
+                    Defaults[.currentControllerID] = nil
                 } else {
-                    if let current = Defaults[.currentControllerIndex] {
+                    if let index = Defaults.currentControllerIndex {
                         // Make sure the index is valid
-                        Defaults[.currentControllerIndex] = max(0, min(controllers.count, current))
+                        Defaults.currentControllerIndex = max(0, min(controllers.count, index))
                     } else {
                         // The index is `nil`, reset it
-                        Defaults[.currentControllerIndex] = 0
-                    }
-                    
-                    if let selected = Defaults[.selectedControllerIndex] {
-                        if selected < 0 || selected >= controllers.count {
-                            // Sets to `nil` if the index is invalid
-                            Defaults[.selectedControllerIndex] = nil
-                        }
+                        Defaults.currentControllerIndex = 0
                     }
                 }
             }
         }
         
-        return .init("controllers", default: [
-            .init(.builtin(.scroll), true),
-            .init(.builtin(.playback), true),
-            .init(.builtin(.brightness), true),
-            .init(.builtin(.mission), true)
+        return .init("activatedControllerIDs", default: [
+            .builtin(.scroll),
+            .builtin(.playback),
+            .builtin(.brightness),
+            .builtin(.mission)
         ])
     }()
-    static let currentControllerIndex = Key<Int?>("currentControllerIndex", default: nil)
-    static let selectedControllerIndex = Key<Int?>("selectedControllerIndex", default: nil)
+    static let nonactivatedControllerIDs: Key<[ControllerID]> = .init("nonactivatedControllerIDs", default: [])
+    static let currentControllerID = Key<ControllerID?>("currentControllerID", default: nil)
     
     // MARK: - Constants
     
@@ -60,59 +52,37 @@ extension Defaults.Keys {
 }
 
 extension Defaults {
-    static var activatedControllerStates: [ControllerState] {
+    static var currentControllerIndex: Int? {
         get {
-            Defaults[.controllerStates]
-                .filter(\.isOn)
-                .map { $0.with($0.id == currentControllerID) }
+            Defaults[.currentControllerID]
+                .flatMap { Defaults[.activatedControllerIDs].firstIndex(of: $0) }
         }
         
-        set {
-            let differences = newValue
-                .filter(\.isOn)
-                .filter { !activatedControllerStates.filter(\.isOn).contains($0) }
+        set(index) {
             guard
-                differences.count == 1,
-                let controllerID = differences.first?.id
-            else { return }
+                let index,
+                (0..<Defaults[.activatedControllerIDs].count).contains(index)
+            else {
+                Defaults[.currentControllerID] = nil
+                return
+            }
             
-            Defaults[.currentControllerIndex] = controllerIDs.firstIndex(of: controllerID)
-            print(controllerID)
+            let id = Defaults[.activatedControllerIDs][index]
+            Defaults[.currentControllerID] = id
         }
-    }
-    
-    static var controllerIDs: [ControllerID] {
-        Defaults[.controllerStates].map { $0.id }
-    }
-    
-    static var currentControllerID: ControllerID? {
-        guard let index = Defaults[.currentControllerIndex] else { return nil }
-        return controllerIDs[index]
-    }
-    
-    static var currentController: Controller? {
-        currentControllerID?.controller
-    }
-    
-    static var selectedControllerID: ControllerID? {
-        guard let index = Defaults[.selectedControllerIndex] else { return nil }
-        return controllerIDs[index]
-    }
-    
-    static var selectedController: Controller? {
-        selectedControllerID?.controller
     }
     
     static func cycleControllers(_ sign: Int, wrap: Bool = false) {
         guard sign != 0 else { return }
-        guard let index = Defaults[.currentControllerIndex] else { return }
+        guard let index = currentControllerIndex else { return }
         
         let cycledIndex = index + sign.signum()
-        let count = controllerIDs.count
-        let inRange = NSRange(location: 0, length: count).contains(cycledIndex)
+        let count = Defaults[.activatedControllerIDs].count
+        let inRange = (0..<count).contains(cycledIndex)
         
         if wrap || inRange {
-            Defaults[.currentControllerIndex] = (cycledIndex + count) % count
+            let controller = Defaults[.activatedControllerIDs][(cycledIndex + count) % count]
+            Defaults[.currentControllerID] = controller
             // TODO: Buzz
         }
     }
