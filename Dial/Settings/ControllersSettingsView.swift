@@ -16,15 +16,18 @@ struct ControllersSettingsView: View {
     var body: some View {
         HSplitView {
             List($controllerStates, id: \.self, selection: $selectedControllerState) { controllerState in
-                let controller = controllerState.id.controller
                 
                 ControllerStateEntryView(
                     activated: controllerState.isOn,
                     controllerState: controllerState
                 )
+                .itemProvider {
+                    NSItemProvider(object: DraggableControllerState(controllerState.wrappedValue))
+                }
             }
             .frame(minWidth: 250)
             .listStyle(.sidebar)
+            .onDr
             
             HStack {
                 Text("Test")

@@ -17,6 +17,8 @@
 		2821DA7A2BAEF60B0017B5DD /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2821DA792BAEF60B0017B5DD /* View+Extension.swift */; };
 		2821DA7D2BAF1AD20017B5DD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 2821DA7C2BAF1AD20017B5DD /* LaunchAtLogin */; };
 		2831AD8B2BAF9B8B0064821C /* MenuBarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831AD8A2BAF9B8B0064821C /* MenuBarMenuView.swift */; };
+		283856E22BB025F400860E7C /* DraggableControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283856E12BB025F400860E7C /* DraggableControllerState.swift */; };
+		283856E42BB026EF00860E7C /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283856E32BB026EF00860E7C /* UTType+Extension.swift */; };
 		286971102BAB2C170074C2FB /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */; };
 		286971152BAB2D800074C2FB /* MenuBarIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971142BAB2D800074C2FB /* MenuBarIconView.swift */; };
 		286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */; };
@@ -66,6 +68,9 @@
 		2821DA772BAEE8250017B5DD /* ObservationTrackingStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationTrackingStream.swift; sourceTree = "<group>"; };
 		2821DA792BAEF60B0017B5DD /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		2831AD8A2BAF9B8B0064821C /* MenuBarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarMenuView.swift; sourceTree = "<group>"; };
+		283856E12BB025F400860E7C /* DraggableControllerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableControllerState.swift; sourceTree = "<group>"; };
+		283856E32BB026EF00860E7C /* UTType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTType+Extension.swift"; sourceTree = "<group>"; };
+		283856E52BB028A500860E7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		286971142BAB2D800074C2FB /* MenuBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarIconView.swift; sourceTree = "<group>"; };
 		286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		2887D76A2BABFB6100D733FC /* Defaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Extension.swift"; sourceTree = "<group>"; };
@@ -152,6 +157,7 @@
 				2887D76E2BABFBD100D733FC /* SFSymbol+Extension.swift */,
 				2806E9BD2BAC5C8800CD2AE2 /* Date+Extension.swift */,
 				2821DA792BAEF60B0017B5DD /* View+Extension.swift */,
+				283856E32BB026EF00860E7C /* UTType+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,6 +180,7 @@
 				2887D78A2BAC013300D733FC /* Input.swift */,
 				289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */,
 				2821DA772BAEE8250017B5DD /* ObservationTrackingStream.swift */,
+				283856E12BB025F400860E7C /* DraggableControllerState.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -251,6 +258,7 @@
 				28EE29B82BAB2156009005C3 /* Dial.entitlements */,
 				28EE29B32BAB2156009005C3 /* Assets.xcassets */,
 				2806E9C82BAC6A6600CD2AE2 /* Localizable.xcstrings */,
+				283856E52BB028A500860E7C /* Info.plist */,
 			);
 			path = Dial;
 			sourceTree = "<group>";
@@ -362,11 +370,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2887D76F2BABFBD100D733FC /* SFSymbol+Extension.swift in Sources */,
+				283856E22BB025F400860E7C /* DraggableControllerState.swift in Sources */,
 				28EE29C62BAB21BD009005C3 /* DialMenuSettingsView.swift in Sources */,
 				28EE29C82BAB21CB009005C3 /* MoreSettingsView.swift in Sources */,
 				28E71A392BAFD57300722045 /* AboutViewController.swift in Sources */,
 				28E71A3B2BAFD57800722045 /* AboutView.swift in Sources */,
 				28E71A3F2BAFDA3700722045 /* AppVersionView.swift in Sources */,
+				283856E42BB026EF00860E7C /* UTType+Extension.swift in Sources */,
 				289B83FE2BADC44D00D56D43 /* PermissionsManager.swift in Sources */,
 				2887D77D2BABFE8900D733FC /* SurfaceDial.swift in Sources */,
 				2887D7712BABFBFF00D733FC /* NSString+Extension.swift in Sources */,
@@ -547,6 +557,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/lib/hidapi/hidapi";
+				INFOPLIST_FILE = Dial/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dial;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
@@ -585,6 +596,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/lib/hidapi/hidapi";
+				INFOPLIST_FILE = Dial/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Dial;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;

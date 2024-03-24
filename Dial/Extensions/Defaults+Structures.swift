@@ -9,7 +9,7 @@ import Foundation
 import Defaults
 import SFSafeSymbols
 
-class ControllerState: NSObject, Codable, Identifiable, Defaults.Serializable {
+struct ControllerState: Codable, Identifiable, Hashable, Equatable, Defaults.Serializable {
     var id: ControllerID
     var isOn: Bool
     
@@ -21,45 +21,6 @@ class ControllerState: NSObject, Codable, Identifiable, Defaults.Serializable {
     func with(_ isOn: Bool) -> ControllerState {
         .init(self.id, isOn)
     }
-}
-
-extension ControllerState: NSItemProviderReading, NSItemProviderWriting {
-    static let typeIdentifier = "dial.controllerstate"
-    
-    static var readableTypeIdentifiersForItemProvider: [String] {
-        [
-            typeIdentifier
-        ]
-    }
-    
-    static func object(
-        withItemProviderData data: Data,
-        typeIdentifier: String
-    ) throws -> Self {
-        try JSONDecoder().decode(Self.self, from: data)
-    }
-    
-    static var writableTypeIdentifiersForItemProvider: [String] {
-        [
-            typeIdentifier
-        ]
-    }
-    
-    func loadData(
-        withTypeIdentifier typeIdentifier: String,
-        forItemProviderCompletionHandler completionHandler: @escaping @Sendable (Data?, (any Error)?) -> Void
-    ) -> Progress? {
-        do {
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted
-            completionHandler(try encoder.encode(self), nil)
-        } catch {
-            completionHandler(nil, error)
-        }
-        
-        return nil
-    }
-    
 }
 
 /// Decides how much steps per circle the dial is divided into.
