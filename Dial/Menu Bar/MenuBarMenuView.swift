@@ -13,9 +13,9 @@ import LaunchAtLogin
 struct MenuBarMenuView: View {
     @State var isConnected: Bool = false
     @State var serial: String? = nil
-    @State var controllerStates: [ControllerState] = []
     
-    @Default(.currentControllerIndex) var currentControllerIndex
+    @Default(.activatedControllerIDs) var activatedControllerIDs
+    @Default(.currentControllerID) var currentControllerID
     
     @Default(.globalHapticsEnabled) var globalHapticsEnabled
     @Default(.globalSensitivity) var globalSensitivity
@@ -47,19 +47,13 @@ struct MenuBarMenuView: View {
         
         // MARK: - Controllers
         
-        let controllerStatesBinding = Binding {
-            controllerStates
-        } set: {
-            Defaults.activatedControllerStates = $0
-        }
-        
         Text("Controllers")
             .badge(Text("press and hold dial"))
         
-        ForEach(controllerStatesBinding) { state in
-            let controller = state.id.controller
+        ForEach($activatedControllerIDs) { id in
+            let controller = id.controller.wrappedValue
             
-            Toggle(isOn: state.isOn) {
+            Toggle(isOn: id.controller.isCurrentController) {
                 Image(systemSymbol: controller.representingSymbol)
                 Text(controller.name)
             }
@@ -144,12 +138,6 @@ struct MenuBarMenuView: View {
                         serial = nil
                     }
                 }
-            }
-            
-            // MARK: Update controller states
-            
-            for await _ in Defaults.updates([.controllerStates, .currentControllerIndex]) {
-                controllerStates = Defaults.activatedControllerStates
             }
         }
     }

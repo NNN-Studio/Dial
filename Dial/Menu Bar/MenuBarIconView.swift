@@ -38,9 +38,9 @@ struct MenuBarIconView: View {
                 }
             }
             
-            // MARK: Update current controller index
+            // MARK: Update current controller
             
-            for await _ in Defaults.updates(.currentControllerIndex) {
+            for await _ in Defaults.updates(.currentControllerID) {
                 if let controller = Defaults.currentController {
                     controllerSymbol = controller.representingSymbol
                 } else {

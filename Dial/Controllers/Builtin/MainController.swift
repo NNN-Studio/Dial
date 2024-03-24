@@ -78,7 +78,7 @@ class MainController: ObservableObject, Controller {
         case .continuous(_):
             break
         case .stepping(let direction):
-            Defaults.cycleControllers(direction.physical.negate.rawValue, wrap: Defaults.controllerIDs.count == Defaults[.maxControllers])
+            Defaults.cycleControllers(direction.physical.negate.rawValue, wrap: Defaults[.activatedControllerIDs].count == Defaults[.maxControllers])
         }
     }
     

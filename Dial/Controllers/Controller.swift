@@ -47,12 +47,26 @@ enum ControllerID: Codable, Hashable, Defaults.Serializable, Equatable {
     case builtin(Builtin)
     
     var controller: Controller {
-        switch self {
-        case .shortcuts(let settings):
-            ShortcutsController(settings: settings)
-        case .builtin(let builtin):
-            builtin.controller
+        get {
+            switch self {
+            case .shortcuts(let settings):
+                ShortcutsController(settings: settings)
+            case .builtin(let builtin):
+                builtin.controller
+            }
         }
+        
+        set(controller) {
+            // Enables selecting current controllers
+            return
+        }
+    }
+}
+
+extension ControllerID: Identifiable {
+    /// This is intended to make `ControllerID` conforms to `Identifiable`. The return value is the same as itself.
+    var id: ControllerID {
+        self
     }
 }
 
@@ -93,12 +107,27 @@ extension Controller {
         lhs.id == rhs.id
     }
     
-    func equals(_ another: any Controller) -> Bool {
-        Self.equals(self, another)
-    }
-    
     var isDefaultController: Bool {
         self is DefaultController
+    }
+    
+    var isCurrentController: Bool {
+        get {
+            Defaults[.currentControllerID] == id
+        }
+        
+        set {
+            guard Defaults[.activatedControllerIDs].contains(id) else {
+                Defaults[.currentControllerID] = nil
+                return
+            }
+            
+            Defaults[.currentControllerID] = id
+        }
+    }
+    
+    func equals(_ another: any Controller) -> Bool {
+        Self.equals(self, another)
     }
 }
 

@@ -52,6 +52,14 @@ extension Defaults.Keys {
 }
 
 extension Defaults {
+    static var allControllerIDs: [ControllerID] {
+        Array(Set(Defaults[.activatedControllerIDs] + Defaults[.nonactivatedControllerIDs]))
+    }
+    
+    static var currentController: Controller? {
+        Defaults[.currentControllerID]?.controller
+    }
+    
     static var currentControllerIndex: Int? {
         get {
             Defaults[.currentControllerID]

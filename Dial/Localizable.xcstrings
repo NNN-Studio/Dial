@@ -410,9 +410,6 @@
     "Data Restoration" : {
 
     },
-    "Default Controller" : {
-
-    },
     "Dependencies" : {
       "localizations" : {
         "zh-Hans" : {
@@ -1273,9 +1270,6 @@
           }
         }
       }
-    },
-    "Test" : {
-
     },
     "UI layout guide" : {
       "localizations" : {

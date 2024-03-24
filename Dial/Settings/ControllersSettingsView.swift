@@ -9,12 +9,11 @@ import SwiftUI
 import Defaults
 
 struct ControllersSettingsView: View {
-    @Default(.controllerStates) var controllerStates: [ControllerState]
-    
     @State var controllerIDs: [ControllerID] = []
     @State var selectedControllerID: ControllerID?
     
     var body: some View {
+        /*
         HSplitView {
             List($controllerIDs, id: \.self, selection: $selectedControllerID) { controllerID in
                 
@@ -43,18 +42,18 @@ struct ControllersSettingsView: View {
             }
             .frame(minWidth: 300, maxWidth: .infinity, maxHeight: .infinity)
         }
+         */
+        EmptyView()
     }
 }
 
 #Preview {
-    ControllersSettingsView(selectedControllerState: Defaults[.controllerStates][0])
+    ControllersSettingsView()
 }
 
 struct ControllerStateEntryView: View {
-    @Binding var activated: Bool
-    @Binding var controllerState: ControllerState
-    
     var body: some View {
+        /*
         let controller = controllerState.id.controller
         
         HStack {
@@ -88,24 +87,20 @@ struct ControllerStateEntryView: View {
         }
         .padding(.horizontal, 8)
         .padding(.vertical, 6)
+         */
+        EmptyView()
     }
 }
 
 #Preview {
     VStack {
-        ControllerStateEntryView(
-            activated: .constant(true),
-            controllerState: .constant(Defaults[.controllerStates][0])
-        )
+        ControllerStateEntryView()
         
         Divider()
         
         let shortcutsController = ShortcutsController(settings: ShortcutsController.Settings())
         
-        ControllerStateEntryView(
-            activated: .constant(true),
-            controllerState: .constant(.init(shortcutsController.id, true))
-        )
+        ControllerStateEntryView()
     }
     .frame(width: 400)
 }

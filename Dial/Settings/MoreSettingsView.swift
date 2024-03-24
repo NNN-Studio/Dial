@@ -132,9 +132,9 @@ By sending feedbacks, you can report bugs, request features or more. Issue templ
                     
                     Button(role: .destructive) {
                         Defaults.reset(
-                            .controllerStates,
-                            .currentControllerIndex,
-                            .selectedControllerIndex
+                            .activatedControllerIDs,
+                            .nonactivatedControllerIDs,
+                            .currentControllerID
                         )
                         
                         print("Restored controllers")
