@@ -49,6 +49,9 @@
         }
       }
     },
+    "Activated" : {
+
+    },
     "App/PermissionsAlert/Content" : {
       "comment" : "accessibility permissions alert content",
       "extractionState" : "extracted_with_value",
@@ -408,6 +411,9 @@
       }
     },
     "Data Restoration" : {
+
+    },
+    "Default Controller" : {
 
     },
     "Dependencies" : {

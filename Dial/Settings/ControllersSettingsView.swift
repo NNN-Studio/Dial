@@ -9,30 +9,24 @@ import SwiftUI
 import Defaults
 
 struct ControllersSettingsView: View {
-    @State var controllerIDs: [ControllerID] = []
+    @State var allControllerIDs: [ControllerID] = []
+    @State var activatedControllerIDs: [ControllerID] = []
+    @State var nonactivatedControllerIDs: [ControllerID] = []
+    
     @State var selectedControllerID: ControllerID?
     
     var body: some View {
-        /*
         HSplitView {
-            List($controllerIDs, id: \.self, selection: $selectedControllerID) { controllerID in
-                
-                ControllerStateEntryView(
-                    activated: controllerState.isOn,
-                    controllerState: controllerState
-                )
-                .itemProvider {
-                    NSItemProvider(object: DraggableControllerState(controllerState.wrappedValue))
-                }
-                .onDrop(of: [.draggableControllerState], delegate: DraggableControllerStateDelegate(current: controllerState))
+            List($activatedControllerIDs, id: \.self, selection: $selectedControllerID) { id in
+                ControllerStateEntryView(id: id)
             }
             .frame(minWidth: 250)
             .listStyle(.sidebar)
             
             HStack {
-                Text("Test")
+                Text(selectedControllerID?.controller.name ?? "")
             }
-            .orSomeView(condition: selectedControllerState == nil) {
+            .orSomeView(condition: selectedControllerID == nil) {
                 Image(systemSymbol: .aqiMedium)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -42,8 +36,23 @@ struct ControllersSettingsView: View {
             }
             .frame(minWidth: 300, maxWidth: .infinity, maxHeight: .infinity)
         }
-         */
-        EmptyView()
+        .task {
+            // Don't use `@Default()` as it results in data inconsistencies.
+            
+            // MARK: Update activated controller ids
+            
+            for await ids in Defaults.updates(.activatedControllerIDs) {
+                activatedControllerIDs = ids
+                allControllerIDs = Defaults.allControllerIDs
+            }
+            
+            // MARK: Update nonactivated controller ids
+            
+            for await ids in Defaults.updates(.activatedControllerIDs) {
+                activatedControllerIDs = ids
+                allControllerIDs = Defaults.allControllerIDs
+            }
+        }
     }
 }
 
@@ -52,20 +61,19 @@ struct ControllersSettingsView: View {
 }
 
 struct ControllerStateEntryView: View {
+    @Binding var id: ControllerID
+    
     var body: some View {
-        /*
-        let controller = controllerState.id.controller
-        
         HStack {
-            Image(systemSymbol: controller.representingSymbol)
+            Image(systemSymbol: id.controller.representingSymbol)
                 .imageScale(.large)
                 .frame(width: 32)
             
             VStack(alignment: .leading) {
-                Text(controller.name)
+                Text(id.controller.name)
                     .font(.title3)
                 
-                switch controller.id {
+                switch id {
                 case .shortcuts(let settings):
                     Text(settings.id.uuidString)
                         .font(.monospaced(.caption)())
@@ -79,7 +87,7 @@ struct ControllerStateEntryView: View {
             
             Spacer()
             
-            Toggle(isOn: $activated) {
+            Toggle(isOn: $id.isActivated) {
                 EmptyView()
             }
             .toggleStyle(.switch)
@@ -87,20 +95,17 @@ struct ControllerStateEntryView: View {
         }
         .padding(.horizontal, 8)
         .padding(.vertical, 6)
-         */
-        EmptyView()
     }
 }
 
 #Preview {
     VStack {
-        ControllerStateEntryView()
+        ControllerStateEntryView(id: .constant(.builtin(.scroll)))
         
         Divider()
         
-        let shortcutsController = ShortcutsController(settings: ShortcutsController.Settings())
-        
-        ControllerStateEntryView()
+        let settings = ShortcutsController.Settings()
+        ControllerStateEntryView(id: .constant(.shortcuts(settings)))
     }
     .frame(width: 400)
 }

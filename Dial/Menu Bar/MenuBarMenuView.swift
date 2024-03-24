@@ -51,11 +51,9 @@ struct MenuBarMenuView: View {
             .badge(Text("press and hold dial"))
         
         ForEach($activatedControllerIDs) { id in
-            let controller = id.controller.wrappedValue
-            
-            Toggle(isOn: id.controller.isCurrentController) {
-                Image(systemSymbol: controller.representingSymbol)
-                Text(controller.name)
+            Toggle(isOn: id.isCurrent) {
+                Image(systemSymbol: id.wrappedValue.controller.representingSymbol)
+                Text(id.wrappedValue.controller.name)
             }
         }
         

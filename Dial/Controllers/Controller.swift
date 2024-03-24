@@ -45,7 +45,9 @@ enum ControllerID: Codable, Hashable, Defaults.Serializable, Equatable {
     case shortcuts(ShortcutsController.Settings)
     
     case builtin(Builtin)
-    
+}
+
+extension ControllerID {
     var controller: Controller {
         get {
             switch self {
@@ -57,8 +59,49 @@ enum ControllerID: Codable, Hashable, Defaults.Serializable, Equatable {
         }
         
         set(controller) {
-            // Enables selecting current controllers
-            return
+            // Enable binding operations
+            guard let shortcutsController = controller as? ShortcutsController else { return }
+            
+            if Defaults[.activatedControllerIDs].contains(self) {
+                Defaults[.activatedControllerIDs].replace([self], with: [Self.shortcuts(shortcutsController.settings)])
+            }
+            
+            if Defaults[.nonactivatedControllerIDs].contains(self) {
+                Defaults[.nonactivatedControllerIDs].replace([self], with: [Self.shortcuts(shortcutsController.settings)])
+            }
+        }
+    }
+    
+    var isCurrent: Bool {
+        get {
+            Defaults[.currentControllerID] == self
+        }
+        
+        set {
+            guard Defaults[.activatedControllerIDs].contains(self) else {
+                Defaults[.currentControllerID] = nil
+                return
+            }
+            
+            Defaults[.currentControllerID] = self
+        }
+    }
+    
+    var isActivated: Bool {
+        get {
+            Defaults[.activatedControllerIDs].contains(self)
+        }
+        
+        set(activated) {
+            if activated && !isActivated {
+                Defaults[.activatedControllerIDs].append(self)
+                Defaults[.nonactivatedControllerIDs].replace([self], with: [])
+            }
+            
+            if !activated && isActivated {
+                Defaults[.activatedControllerIDs].replace([self], with: [])
+                Defaults[.nonactivatedControllerIDs].append(self)
+            }
         }
     }
 }
@@ -67,6 +110,17 @@ extension ControllerID: Identifiable {
     /// This is intended to make `ControllerID` conforms to `Identifiable`. The return value is the same as itself.
     var id: ControllerID {
         self
+    }
+}
+
+extension ControllerID: CustomDebugStringConvertible {
+    var debugDescription: String {
+        switch self {
+        case .shortcuts(_):
+            "Shortcuts<\(self)>"
+        case .builtin(let builtin):
+            "Builtin<\(String(reflecting: builtin))>"
+        }
     }
 }
 
@@ -109,21 +163,6 @@ extension Controller {
     
     var isDefaultController: Bool {
         self is DefaultController
-    }
-    
-    var isCurrentController: Bool {
-        get {
-            Defaults[.currentControllerID] == id
-        }
-        
-        set {
-            guard Defaults[.activatedControllerIDs].contains(id) else {
-                Defaults[.currentControllerID] = nil
-                return
-            }
-            
-            Defaults[.currentControllerID] = id
-        }
     }
     
     func equals(_ another: any Controller) -> Bool {
