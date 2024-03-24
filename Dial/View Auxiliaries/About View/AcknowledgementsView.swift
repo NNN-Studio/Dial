@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct PackageDescription {
-    var owner: String
     var name: String
+    var owner: String
     var url: URL
     var license: URL
     var reason: Text? = nil
@@ -20,32 +20,39 @@ struct AcknowledgementsView: View {
     
     let dependencies: [PackageDescription] = [
         .init(
-            owner: "Sindre Sorhus",
+            name: "hidapi",
+            owner: "libusb",
+            url: URL(string: "https://github.com/libusb/hidapi")!,
+            license: URL(string: "https://github.com/libusb/hidapi/blob/master/LICENSE.txt")!,
+            reason: Text("HID device communications")
+        ),
+        .init(
             name: "Defaults",
+            owner: "Sindre Sorhus",
             url: URL(string: "https://github.com/sindresorhus/Defaults")!,
             license: URL(string: "https://github.com/sindresorhus/Defaults/blob/main/license")!
         ),
         .init(
-            owner: "Sindre Sorhus",
             name: "LaunchAtLogin",
+            owner: "Sindre Sorhus",
             url: URL(string: "https://github.com/sindresorhus/LaunchAtLogin")!,
             license: URL(string: "https://github.com/sindresorhus/LaunchAtLogin/blob/main/license")!
         ),
         .init(
-            owner: "Orchetect",
             name: "MenuBarExtraAccess",
+            owner: "Orchetect",
             url: URL(string: "https://github.com/orchetect/MenuBarExtraAccess")!,
             license: URL(string: "https://github.com/orchetect/MenuBarExtraAccess/blob/main/LICENSE")!
         ),
         .init(
-            owner: "Orchetect",
             name: "SettingsAccess",
+            owner: "Orchetect",
             url: URL(string: "https://github.com/orchetect/SettingsAccess")!,
             license: URL(string: "https://github.com/orchetect/SettingsAccess/blob/main/LICENSE")!
         ),
         .init(
-            owner: "SF Safe Symbols",
             name: "SFSafeSymbols",
+            owner: "SF Safe Symbols",
             url: URL(string: "https://github.com/SFSafeSymbols/SFSafeSymbols")!,
             license: URL(string: "https://github.com/SFSafeSymbols/SFSafeSymbols/blob/stable/LICENSE")!
         )
@@ -53,42 +60,42 @@ struct AcknowledgementsView: View {
     
     let specialThanks: [PackageDescription] = [
         .init(
-            owner: "Andreas Karlsson",
             name: "MacDial",
+            owner: "Andreas Karlsson",
             url: URL(string: "https://github.com/andreasjhkarlsson/mac-dial")!,
             license: URL(string: "https://github.com/andreasjhkarlsson/mac-dial/blob/main/LICENSE")!,
-            reason: .init("Original project")
+            reason: Text("Original project")
         ),
         .init(
-            owner: "Kai Azim",
             name: "Loop",
+            owner: "Kai Azim",
             url: URL(string: "https://github.com/MrKai77/Loop")!,
             license: URL(string: "https://github.com/MrKai77/Loop/blob/develop/LICENSE")!,
-            reason: .init("UI layout guide")
+            reason: Text("UI layout guide")
         )
     ]
     
     var body: some View {
         VStack {
-            Text("Dependencies")
-                .foregroundStyle(.secondary)
-                .padding(.top, 12)
-            
-            buildAcknowledgements(packages: dependencies)
-            
-            Spacer()
-            
             VStack {
-                Text("Special Thanks")
+                Text("Dependencies")
                     .foregroundStyle(.secondary)
                     .padding(.top, 12)
                 
-                buildAcknowledgements(packages: specialThanks)
+                buildAcknowledgements(packages: dependencies)
             }
             .background {
                 VisualEffectView(material: .fullScreenUI, blendingMode: .behindWindow)
                     .ignoresSafeArea(.all)
             }
+            
+            Spacer()
+            
+            Text("Special Thanks")
+                .foregroundStyle(.secondary)
+                .padding(.top, 12)
+            
+            buildAcknowledgements(packages: specialThanks)
         }
     }
     
@@ -99,9 +106,10 @@ struct AcknowledgementsView: View {
                 let package = packages[index]
                 
                 HStack {
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 0) {
                         Text(package.name)
                             .bold()
+                            .padding(.bottom, 0)
                         
                         if let reason = package.reason {
                             reason
@@ -110,15 +118,15 @@ struct AcknowledgementsView: View {
                                 .padding(.bottom, 2)
                         }
                         
-                        HStack(spacing: 3) {
+                        HStack(spacing: 2) {
                             Text("By")
                                 .opacity(0.4)
                             
                             Text(package.owner)
                         }
                         .font(.caption)
-                        .textScale(.secondary)
                         .foregroundStyle(.secondary)
+                        .padding(.top, 2)
                     }
                     
                     Spacer(minLength: 50)
