@@ -75,11 +75,11 @@ struct MoreSettingsView: View {
                 }
             }
             
-            Section("Feedback") {
+            Section("Fundamental") {
                 HStack {
-                    Text(
-                        "Description"
-                    )
+                    Text("""
+By sending feedbacks, you can report bugs, request features or more. Issue templates are provided for detailing your feedbacks.
+""")
                     .font(.caption)
                     .foregroundStyle(.secondary)
                     

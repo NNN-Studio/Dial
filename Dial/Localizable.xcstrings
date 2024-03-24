@@ -1,22 +1,15 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@" : {
-
-    },
-    "About %@" : {
-      "extractionState" : "stale",
+    "About %@…" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "关于%@"
+            "value" : "关于%@…"
           }
         }
       }
-    },
-    "About %@…" : {
-
     },
     "AboutViewController/Title" : {
       "comment" : "about view controller title",
@@ -27,14 +20,34 @@
             "state" : "new",
             "value" : "About %@"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关于%@"
+          }
         }
       }
     },
     "Accessibility Access" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "辅助功能权限"
+          }
+        }
+      }
     },
     "Acknowledgements" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鸣谢"
+          }
+        }
+      }
     },
     "App/PermissionsAlert/Content" : {
       "comment" : "accessibility permissions alert content",
@@ -83,13 +96,44 @@
       }
     },
     "Automatically checks for updates" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自动检查更新"
+          }
+        }
+      }
     },
     "By" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "来自"
+          }
+        }
+      }
+    },
+    "By sending feedbacks, you can report bugs, request features or more. Issue templates are provided for detailing your feedbacks." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你可以通过发送反馈的方式报告漏洞、请求新功能等等。默认提供的议题模板可以帮助你更好地完善反馈信息。"
+          }
+        }
+      }
     },
     "Check for Updates…" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "检查更新…"
+          }
+        }
+      }
     },
     "Connect via Bluetooth" : {
       "localizations" : {
@@ -364,10 +408,14 @@
       }
     },
     "Dependencies" : {
-
-    },
-    "Description" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "依赖项"
+          }
+        }
+      }
     },
     "Dial" : {
       "localizations" : {
@@ -563,8 +611,15 @@
         }
       }
     },
-    "Feedback" : {
-
+    "Fundamental" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "基础信息"
+          }
+        }
+      }
     },
     "General" : {
       "localizations" : {
@@ -697,7 +752,14 @@
       }
     },
     "GitHub" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub"
+          }
+        }
+      }
     },
     "Global Behavior" : {
       "localizations" : {
@@ -710,7 +772,14 @@
       }
     },
     "Granted" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已给予"
+          }
+        }
+      }
     },
     "Haptics feedback" : {
       "localizations" : {
@@ -726,7 +795,14 @@
 
     },
     "HID device communications" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "与HID设备沟通"
+          }
+        }
+      }
     },
     "Hides menu bar item while device disconnected. To see this window again, please re-open %@." : {
       "localizations" : {
@@ -739,10 +815,24 @@
       }
     },
     "License" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "源代码证书"
+          }
+        }
+      }
     },
     "Main page" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "主页"
+          }
+        }
+      }
     },
     "Menu Bar Item" : {
       "localizations" : {
@@ -755,7 +845,14 @@
       }
     },
     "MIT License" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "MIT证书"
+          }
+        }
+      }
     },
     "More" : {
       "localizations" : {
@@ -768,7 +865,14 @@
       }
     },
     "Not Granted" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未给予"
+          }
+        }
+      }
     },
     "Open in Settings" : {
       "localizations" : {
@@ -805,10 +909,24 @@
       }
     },
     "Original project" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "原项目"
+          }
+        }
+      }
     },
     "Permissions" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "权限"
+          }
+        }
+      }
     },
     "press and hold dial" : {
       "localizations" : {
@@ -875,10 +993,24 @@
       }
     },
     "Request Access…" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请求权限…"
+          }
+        }
+      }
     },
     "Send Feedback…" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反馈问题…"
+          }
+        }
+      }
     },
     "Sensitivity" : {
       "localizations" : {
@@ -1091,7 +1223,14 @@
       }
     },
     "Special Thanks" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "特别感谢"
+          }
+        }
+      }
     },
     "Starts with macOS" : {
       "localizations" : {
@@ -1124,10 +1263,24 @@
       }
     },
     "UI layout guide" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UI设计指导"
+          }
+        }
+      }
     },
     "Updates" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更新"
+          }
+        }
+      }
     },
     "Version %@ (%@)" : {
       "localizations" : {
@@ -1136,11 +1289,24 @@
             "state" : "new",
             "value" : "Version %1$@ (%2$@)"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "应用版本：%1$@ (%2$@)"
+          }
         }
       }
     },
     "Your Surface Dial on Mac." : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在Mac上使用你的Surface智能旋钮。"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

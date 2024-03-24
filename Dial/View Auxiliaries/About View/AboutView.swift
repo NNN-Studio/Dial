@@ -21,7 +21,7 @@ struct AboutView: View {
                     .resizable()
                     .frame(width: 120, height: 120)
                 
-                Text("\(Bundle.main.appName)")
+                Text(Bundle.main.appName)
                     .font(.title)
                     .fontWeight(.bold)
                 
@@ -35,9 +35,9 @@ struct AboutView: View {
             
             Spacer()
             
-            ShrinkableEqualWidthVStack {
+            VStack {
                 Button {
-                    openURL(URL(string: "https://github.com/KrLite/Dial")!)
+                    openURL(URL(string: "https://github.com/NNN-Studio/Dial")!)
                 } label: {
                     Text("GitHub")
                         .foregroundColor(.primary)
@@ -58,7 +58,7 @@ struct AboutView: View {
                 }
             }
             
-            Link(destination: URL(string: "https://github.com/KrLite/Dial/blob/main/LICENSE")!) {
+            Link(destination: URL(string: "https://github.com/NNN-Studio/Dial/blob/main/LICENSE")!) {
                 Text("MIT License")
                     .underline()
                     .font(.caption)
