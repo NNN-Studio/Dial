@@ -38,6 +38,11 @@
 		289B83FE2BADC44D00D56D43 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */; };
 		289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FF2BADC4F900D56D43 /* AppDelegate.swift */; };
 		28E71A362BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */; };
+		28E71A392BAFD57300722045 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A382BAFD57300722045 /* AboutViewController.swift */; };
+		28E71A3B2BAFD57800722045 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A3A2BAFD57800722045 /* AboutView.swift */; };
+		28E71A3D2BAFD80D00722045 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A3C2BAFD80D00722045 /* VisualEffectView.swift */; };
+		28E71A3F2BAFDA3700722045 /* AppVersionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A3E2BAFDA3700722045 /* AppVersionView.swift */; };
+		28E71A412BAFDAE800722045 /* AcknowledgementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A402BAFDAE800722045 /* AcknowledgementsView.swift */; };
 		28EE29B02BAB2155009005C3 /* DialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE29AF2BAB2155009005C3 /* DialApp.swift */; };
 		28EE29B42BAB2156009005C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EE29B32BAB2156009005C3 /* Assets.xcassets */; };
 		28EE29B72BAB2156009005C3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EE29B62BAB2156009005C3 /* Preview Assets.xcassets */; };
@@ -82,6 +87,11 @@
 		289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		289B83FF2BADC4F900D56D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkableEqualWidthVStack.swift; sourceTree = "<group>"; };
+		28E71A382BAFD57300722045 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		28E71A3A2BAFD57800722045 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		28E71A3C2BAFD80D00722045 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		28E71A3E2BAFDA3700722045 /* AppVersionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionView.swift; sourceTree = "<group>"; };
+		28E71A402BAFDAE800722045 /* AcknowledgementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsView.swift; sourceTree = "<group>"; };
 		28EE29AC2BAB2155009005C3 /* Dial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EE29AF2BAB2155009005C3 /* DialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialApp.swift; sourceTree = "<group>"; };
 		28EE29B32BAB2156009005C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,9 +199,22 @@
 		28E71A342BAFCE4200722045 /* View Auxiliaries */ = {
 			isa = PBXGroup;
 			children = (
+				28E71A372BAFD56900722045 /* About View */,
 				28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */,
+				28E71A3C2BAFD80D00722045 /* VisualEffectView.swift */,
+				28E71A3E2BAFDA3700722045 /* AppVersionView.swift */,
 			);
 			path = "View Auxiliaries";
+			sourceTree = "<group>";
+		};
+		28E71A372BAFD56900722045 /* About View */ = {
+			isa = PBXGroup;
+			children = (
+				28E71A382BAFD57300722045 /* AboutViewController.swift */,
+				28E71A3A2BAFD57800722045 /* AboutView.swift */,
+				28E71A402BAFDAE800722045 /* AcknowledgementsView.swift */,
+			);
+			path = "About View";
 			sourceTree = "<group>";
 		};
 		28EE29A32BAB2155009005C3 = {
@@ -341,9 +364,13 @@
 				2887D76F2BABFBD100D733FC /* SFSymbol+Extension.swift in Sources */,
 				28EE29C62BAB21BD009005C3 /* DialMenuSettingsView.swift in Sources */,
 				28EE29C82BAB21CB009005C3 /* MoreSettingsView.swift in Sources */,
+				28E71A392BAFD57300722045 /* AboutViewController.swift in Sources */,
+				28E71A3B2BAFD57800722045 /* AboutView.swift in Sources */,
+				28E71A3F2BAFDA3700722045 /* AppVersionView.swift in Sources */,
 				289B83FE2BADC44D00D56D43 /* PermissionsManager.swift in Sources */,
 				2887D77D2BABFE8900D733FC /* SurfaceDial.swift in Sources */,
 				2887D7712BABFBFF00D733FC /* NSString+Extension.swift in Sources */,
+				28E71A3D2BAFD80D00722045 /* VisualEffectView.swift in Sources */,
 				2887D76D2BABFB9800D733FC /* NSImage+Extension.swift in Sources */,
 				289B83FC2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift in Sources */,
 				2806E9BE2BAC5C8800CD2AE2 /* Date+Extension.swift in Sources */,
@@ -354,6 +381,7 @@
 				2806E9C32BAC5EAF00CD2AE2 /* PlaybackController.swift in Sources */,
 				2887D7812BAC002400D733FC /* Controller.swift in Sources */,
 				2887D76B2BABFB6100D733FC /* Defaults+Extension.swift in Sources */,
+				28E71A412BAFDAE800722045 /* AcknowledgementsView.swift in Sources */,
 				2887D7732BABFCEA00D733FC /* Defaults+Structures.swift in Sources */,
 				286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */,
 				2821DA7A2BAEF60B0017B5DD /* View+Extension.swift in Sources */,
@@ -522,7 +550,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Dial;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright \U0003© 2024 Dial";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -560,7 +588,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Dial;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright \U0003© 2024 Dial";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

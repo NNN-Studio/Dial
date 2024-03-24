@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {
+
+    },
     "About %@" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -15,7 +18,22 @@
     "About %@…" : {
 
     },
+    "AboutViewController/Title" : {
+      "comment" : "about view controller title",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "About %@"
+          }
+        }
+      }
+    },
     "Accessibility Access" : {
+
+    },
+    "Acknowledgements" : {
 
     },
     "App/PermissionsAlert/Content" : {
@@ -65,6 +83,9 @@
       }
     },
     "Automatically checks for updates" : {
+
+    },
+    "By" : {
 
     },
     "Check for Updates…" : {
@@ -341,6 +362,9 @@
           }
         }
       }
+    },
+    "Dependencies" : {
+
     },
     "Description" : {
 
@@ -672,6 +696,9 @@
         }
       }
     },
+    "GitHub" : {
+
+    },
     "Global Behavior" : {
       "localizations" : {
         "zh-Hans" : {
@@ -708,6 +735,12 @@
         }
       }
     },
+    "License" : {
+
+    },
+    "Main page" : {
+
+    },
     "Menu Bar Item" : {
       "localizations" : {
         "zh-Hans" : {
@@ -717,6 +750,9 @@
           }
         }
       }
+    },
+    "MIT License" : {
+
     },
     "More" : {
       "localizations" : {
@@ -764,6 +800,9 @@
           }
         }
       }
+    },
+    "Original project" : {
+
     },
     "Permissions" : {
 
@@ -1048,6 +1087,9 @@
         }
       }
     },
+    "Special Thanks" : {
+
+    },
     "Starts with macOS" : {
       "localizations" : {
         "zh-Hans" : {
@@ -1078,6 +1120,9 @@
         }
       }
     },
+    "UI layout guide" : {
+
+    },
     "Updates" : {
 
     },
@@ -1090,6 +1135,9 @@
           }
         }
       }
+    },
+    "Your Surface Dial on Mac." : {
+
     }
   },
   "version" : "1.0"

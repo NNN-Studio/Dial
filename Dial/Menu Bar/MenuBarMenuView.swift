@@ -118,7 +118,8 @@ struct MenuBarMenuView: View {
         .keyboardShortcut(",", modifiers: .command)
         
         Button("About \(Bundle.main.appName)…") {
-            
+            NSApp.setActivationPolicy(.regular)
+            AboutViewController.open()
         }
         .keyboardShortcut("i", modifiers: .command)
         

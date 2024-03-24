@@ -22,23 +22,7 @@ struct MoreSettingsView: View {
                     VStack(alignment: .leading, spacing: 0) {
                         Text("Updates")
                         
-                        HStack {
-                            Text("Version \(Bundle.main.appVersion) (\(Bundle.main.appBuild))")
-                            
-                            Button(action: {
-                                let pasteboard = NSPasteboard.general
-                                pasteboard.clearContents()
-                                pasteboard.setString(
-                                    "\(Bundle.main.appVersion) (\(Bundle.main.appBuild))",
-                                    forType: NSPasteboard.PasteboardType.string
-                                )
-                            }, label: {
-                                Image(systemSymbol: .clipboardFill)
-                            })
-                            .buttonStyle(.plain)
-                        }
-                        .font(.caption)
-                        .foregroundColor(.secondary)
+                        AppVersionView()
                     }
                     
                     Spacer()
@@ -113,7 +97,8 @@ struct MoreSettingsView: View {
                         }
                         
                         Button {
-                            
+                            NSApp.setActivationPolicy(.regular)
+                            AboutViewController.open()
                         } label: {
                             Text("About \(Bundle.main.appName)…")
                                 .frame(maxWidth: .infinity)
