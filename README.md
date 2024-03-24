@@ -1,6 +1,6 @@
 # Dial
 
-###### Your Surface Dial on macOS.
+###### Your Surface Dial on Mac.
 
 > [!WARNING]
 > This project is currently working in progress.
