@@ -130,30 +130,26 @@ struct MenuBarMenuView: View {
         }
         .keyboardShortcut("q", modifiers: .command)
         .task {
-            Task { @MainActor in
-                notifyTaskStart("update connection status", self)
-                
-                for await _ in observationTrackingStream({ dial.hardware.connectionStatus }) {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        let connectionStatus = dial.hardware.connectionStatus
-                        isConnected = connectionStatus.isConnected
-                        
-                        switch connectionStatus {
-                        case .connected(let string):
-                            serial = string
-                        case .disconnected:
-                            serial = nil
-                        }
+            // MARK: Update conenction status
+            
+            for await _ in observationTrackingStream({ dial.hardware.connectionStatus }) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    let connectionStatus = dial.hardware.connectionStatus
+                    isConnected = connectionStatus.isConnected
+                    
+                    switch connectionStatus {
+                    case .connected(let string):
+                        serial = string
+                    case .disconnected:
+                        serial = nil
                     }
                 }
             }
             
-            Task { @MainActor in
-                notifyTaskStart("update controller states", self)
-                
-                for await _ in Defaults.updates([.controllerStates, .currentControllerIndex]) {
-                    controllerStates = Defaults.activatedControllerStates
-                }
+            // MARK: Update controller states
+            
+            for await _ in Defaults.updates([.controllerStates, .currentControllerIndex]) {
+                controllerStates = Defaults.activatedControllerStates
             }
         }
     }

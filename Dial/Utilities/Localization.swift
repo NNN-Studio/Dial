@@ -88,9 +88,9 @@ extension Localization: Localizable {
             NSLocalizedString("Quit.Name", value:"Quit app", comment: "quit")
         case .newController:
             NSLocalizedString(
-                "Controllers/Shortcuts/Fallback.Name",
-                value: "Controller %lld",
-                comment: "shortcuts controller fallback"
+                "Controllers/New.Name",
+                value: "New controller",
+                comment: "new controller name"
             )
         }
     }

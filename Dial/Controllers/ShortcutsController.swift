@@ -153,7 +153,7 @@ class ShortcutsController: Controller {
     }
     
     var name: String {
-        settings.name ?? Localization.newController.localizedName
+        settings.name ?? Localization.newController.localizedTitle
     }
     
     var representingSymbol: SFSymbol {

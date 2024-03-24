@@ -359,6 +359,18 @@
         }
       }
     },
+    "Controllers/New.Name" : {
+      "comment" : "new controller name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "New controller"
+          }
+        }
+      }
+    },
     "Controllers/New.Title" : {
       "comment" : "new controller name",
       "extractionState" : "extracted_with_value",
@@ -383,18 +395,6 @@
         }
       }
     },
-    "Controllers/Shortcuts/Fallback.Name" : {
-      "comment" : "shortcuts controller fallback",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Controller %lld"
-          }
-        }
-      }
-    },
     "Controllers/Shortcuts/Idle.Name" : {
       "comment" : "idle",
       "extractionState" : "extracted_with_value",
@@ -408,6 +408,9 @@
       }
     },
     "Data Restoration" : {
+
+    },
+    "Default Controller" : {
 
     },
     "Dependencies" : {
@@ -1270,6 +1273,9 @@
           }
         }
       }
+    },
+    "Test" : {
+
     },
     "UI layout guide" : {
       "localizations" : {

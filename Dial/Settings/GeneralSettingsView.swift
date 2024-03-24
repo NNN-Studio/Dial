@@ -120,25 +120,23 @@ struct GeneralSettingsView: View {
             .scrollDisabled(true)
         }
         .task {
-            Task { @MainActor in
-                notifyTaskStart("update connection status", self)
-                
-                for await _ in observationTrackingStream({ dial.hardware.connectionStatus }) {
-                    // Due to a strange delay in `connectionStatus`, we need this async block to guarantee the correct result.
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        let connectionStatus = dial.hardware.connectionStatus
-                        isConnected = connectionStatus.isConnected
-                        
-                        if reconnectButtonHasPerformed && isConnected {
-                            ConnectViaBluetoothTip.didConnect.sendDonation()
-                        }
-                        
-                        switch connectionStatus {
-                        case .connected(let string):
-                            serial = string
-                        case .disconnected:
-                            serial = nil
-                        }
+            // MARK: Update connection status
+            
+            for await _ in observationTrackingStream({ dial.hardware.connectionStatus }) {
+                // Due to a strange delay in `connectionStatus`, we need this async block to guarantee the correct result.
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    let connectionStatus = dial.hardware.connectionStatus
+                    isConnected = connectionStatus.isConnected
+                    
+                    if reconnectButtonHasPerformed && isConnected {
+                        ConnectViaBluetoothTip.didConnect.sendDonation()
+                    }
+                    
+                    switch connectionStatus {
+                    case .connected(let string):
+                        serial = string
+                    case .disconnected:
+                        serial = nil
                     }
                 }
             }

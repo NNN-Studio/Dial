@@ -29,7 +29,8 @@ struct SettingsView: View {
                     Image(systemSymbol: .hockeyPuck)
                     Text("Controllers")
                 }
-                .frame(width: 450)
+                .frame(minWidth: 650)
+                .frame(height: 500)
             
             DialMenuSettingsView()
                 .tag(2)

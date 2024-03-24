@@ -29,26 +29,22 @@ struct MenuBarIconView: View {
         .opacity(isConnected ? 1 : 0.2)
         .animation(.easeInOut, value: isConnected)
         .task {
-            Task { @MainActor in
-                notifyTaskStart("update connection status", self)
-                
-                for await _ in observationTrackingStream({ dial.hardware.connectionStatus }) {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        let connectionStatus = dial.hardware.connectionStatus
-                        isConnected = connectionStatus.isConnected
-                    }
+            // MARK: Update connection status
+            
+            for await _ in observationTrackingStream({ dial.hardware.connectionStatus }) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    let connectionStatus = dial.hardware.connectionStatus
+                    isConnected = connectionStatus.isConnected
                 }
             }
             
-            Task { @MainActor in
-                notifyTaskStart("update current controller index", self)
-                
-                for await _ in Defaults.updates(.currentControllerIndex) {
-                    if let controller = Defaults.currentController {
-                        controllerSymbol = controller.representingSymbol
-                    } else {
-                        controllerSymbol = nil
-                    }
+            // MARK: Update current controller index
+            
+            for await _ in Defaults.updates(.currentControllerIndex) {
+                if let controller = Defaults.currentController {
+                    controllerSymbol = controller.representingSymbol
+                } else {
+                    controllerSymbol = nil
                 }
             }
         }
