@@ -39,6 +39,7 @@
 		289B83FE2BADC44D00D56D43 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */; };
 		289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FF2BADC4F900D56D43 /* AppDelegate.swift */; };
 		28E4CBAB2BB1AD5F0054106D /* StaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4CBAA2BB1AD5F0054106D /* StaleView.swift */; };
+		28E4CBAD2BB1B0D60054106D /* DummyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4CBAC2BB1B0D60054106D /* DummyView.swift */; };
 		28E71A362BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */; };
 		28E71A392BAFD57300722045 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A382BAFD57300722045 /* AboutViewController.swift */; };
 		28E71A3B2BAFD57800722045 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A3A2BAFD57800722045 /* AboutView.swift */; };
@@ -91,6 +92,7 @@
 		289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		289B83FF2BADC4F900D56D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28E4CBAA2BB1AD5F0054106D /* StaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaleView.swift; sourceTree = "<group>"; };
+		28E4CBAC2BB1B0D60054106D /* DummyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyView.swift; sourceTree = "<group>"; };
 		28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkableEqualWidthVStack.swift; sourceTree = "<group>"; };
 		28E71A382BAFD57300722045 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		28E71A3A2BAFD57800722045 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				28EE29C32BAB21B5009005C3 /* ControllersSettingsView.swift */,
 				28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */,
 				28EE29C72BAB21CB009005C3 /* MoreSettingsView.swift */,
+				28E4CBAC2BB1B0D60054106D /* DummyView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				28EE29C42BAB21B5009005C3 /* ControllersSettingsView.swift in Sources */,
 				2806E9C12BAC5E6D00CD2AE2 /* ScrollController.swift in Sources */,
 				2887D7832BAC005200D733FC /* MainController.swift in Sources */,
+				28E4CBAD2BB1B0D60054106D /* DummyView.swift in Sources */,
 				2831AD8B2BAF9B8B0064821C /* MenuBarMenuView.swift in Sources */,
 				2887D7792BABFD4E00D733FC /* SymbolRepresentation.swift in Sources */,
 				2806E9C72BAC5EFD00CD2AE2 /* MissionController.swift in Sources */,

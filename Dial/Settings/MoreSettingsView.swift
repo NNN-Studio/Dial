@@ -15,6 +15,9 @@ struct MoreSettingsView: View {
     @State var isAccessibilityAccessGranted: Bool = false
     @State var isShowingDataRestoration: Bool = false
     
+    @State var isShowingRestoreGlobalConfigurationsDialog: Bool = false
+    @State var isShowingRestoreControllersDataDialog: Bool = false
+    
     var body: some View {
         Form {
             Section {
@@ -113,37 +116,55 @@ By sending feedbacks, you can report bugs, request features or more. Issue templ
                 }
             }
             
-            Section("Data Restoration", isExpanded: $isShowingDataRestoration) {
+            Section("Data Reset", isExpanded: $isShowingDataRestoration) {
                 VStack {
                     Button {
-                        Defaults.reset(
-                            .globalHapticsEnabled,
-                            .menuBarItemEnabled,
-                            .menuBarItemAutoHidden,
-                            .globalSensitivity,
-                            .globalDirection
-                        )
-                        
-                        print("Restored global configurations")
+                        isShowingRestoreGlobalConfigurationsDialog = true
                     } label: {
-                        Text("Restore Global Configurations")
+                        Text("Reset All Global Configurations")
                             .frame(maxWidth: .infinity)
+                    }
+                    .confirmationDialog(
+                        "Are You Sure to Reset All Global Configurations?",
+                        isPresented: $isShowingRestoreGlobalConfigurationsDialog,
+                        titleVisibility: .visible
+                    ) {
+                        Button("Reset", role: .destructive) {
+                            Defaults.reset(
+                                .globalHapticsEnabled,
+                                .menuBarItemEnabled,
+                                .menuBarItemAutoHidden,
+                                .globalSensitivity,
+                                .globalDirection
+                            )
+                            
+                            print("!!! Reset all global configurations !!!")
+                        }
                     }
                     
                     Button(role: .destructive) {
-                        Defaults.reset(
-                            .activatedControllerIDs,
-                            .nonactivatedControllerIDs,
-                            .currentControllerID
-                        )
-                        
-                        print("Restored controllers")
+                        isShowingRestoreControllersDataDialog = true
                     } label: {
-                        Text("Restore Controllers")
+                        Text("Reset Controllers Data")
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(.red)
+                    .confirmationDialog(
+                        "Are You Sure to Reset Controllers Data?",
+                        isPresented: $isShowingRestoreControllersDataDialog,
+                        titleVisibility: .visible
+                    ) {
+                        Button("Reset", role: .destructive) {
+                            Defaults.reset(
+                                .activatedControllerIDs,
+                                .nonactivatedControllerIDs,
+                                .currentControllerID
+                            )
+                            
+                            print("!!! Reset controllers data !!!")
+                        }
+                    }
                 }
                 .controlSize(.extraLarge)
             }

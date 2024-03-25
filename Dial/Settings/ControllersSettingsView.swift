@@ -16,35 +16,34 @@ struct ControllersSettingsView: View {
     @State var selectedControllerID: ControllerID?
     
     var body: some View {
-        /*
         NavigationSplitView {
-            List($activatedControllerIDs, id: \.self, selection: $selectedControllerID) { id in
+            Group {
                 NavigationLink {
-                    Text(id.wrappedValue.controller.name)
+                    Text("Content 1")
                 } label: {
-                    ControllerStateEntryView(id: id)
+                    Text("Navigation 1")
+                }
+                
+                NavigationLink {
+                    Text("Content 2")
+                } label: {
+                    Text("Navigation 2")
+                }
+                
+                NavigationLink {
+                    Text("Content 3")
+                } label: {
+                    Text("Navigation 3")
                 }
             }
-            .frame(minWidth: 250)
-            
-            List($nonactivatedControllerIDs, id: \.self, selection: $selectedControllerID) { id in
-                NavigationLink {
-                    Text(id.wrappedValue.controller.name)
-                } label: {
-                    ControllerStateEntryView(id: id)
-                }
-            }
-            .frame(minWidth: 250)
+            .navigationSplitViewColumnWidth(min: 250, ideal: 300)
         } detail: {
-            Image(systemSymbol: .aqiMedium)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .symbolEffect(.variableColor.iterative.reversing, options: .repeating, isActive: true)
-                .opacity(0.2)
-                .frame(width: 64)
+            Group {
+                StaleView()
+                    .frame(width: 64)
+            }
+            .navigationSplitViewColumnWidth(min: 350, ideal: 400)
         }
-         */
-        Text("Test")
         .task {
             // MARK: Update activated controller ids
             

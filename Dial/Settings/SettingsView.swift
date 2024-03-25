@@ -31,14 +31,12 @@ struct SettingsView: View {
                 .frame(width: 450)
                 .fixedSize()
             
-            ControllersSettingsView()
+            DummyView() // This is actually unreachable
                 .tag(Tab.controllers)
                 .tabItem {
                     Image(systemSymbol: .hockeyPuck)
                     Text("Controllers")
                 }
-                .frame(minWidth: 650)
-                .frame(height: 500)
             
             DialMenuSettingsView()
                 .tag(Tab.dialMenu)
@@ -52,55 +50,28 @@ struct SettingsView: View {
                 .tag(Tab.more)
                 .tabItem {
                     Image(systemSymbol: .ellipsis)
-                    Text("More")
+                    Text("More…")
                 }
                 .frame(width: 450)
                 .fixedSize()
         }
         .orSomeView(condition: selectedTab == .controllers) {
-            // Special case for the `NavigationSplitView` (which is `TabView`-incompatible)
-            NavigationSplitView {
-                Group {
-                    NavigationLink {
-                        Text("Content 1")
+            // Special case for the controllers view's `NavigationSplitView` (which is `TabView`-incompatible)
+            ControllersSettingsView()
+                .frame(height: 650)
+                .fixedSize(horizontal: false, vertical: true)
+                .toolbar {
+                    // Back button
+                    Button {
+                        selectedTab = restorableTab
                     } label: {
-                        Text("Navigation 1")
+                        Image(systemSymbol: .chevronLeft)
+                        
+                        Text("Other Settings…")
                     }
-                    
-                    NavigationLink {
-                        Text("Content 2")
-                    } label: {
-                        Text("Navigation 2")
-                    }
-                    
-                    NavigationLink {
-                        Text("Content 3")
-                    } label: {
-                        Text("Navigation 3")
-                    }
+                    .padding()
                 }
-                .navigationSplitViewColumnWidth(min: 250, ideal: 300)
-            } detail: {
-                Group {
-                    StaleView()
-                        .frame(width: 64)
-                }
-                .navigationSplitViewColumnWidth(min: 350, ideal: 400)
-            }
-            .frame(height: 750)
-            .fixedSize(horizontal: false, vertical: true)
-            .toolbar {
-                // The back button
-                Button {
-                    selectedTab = restorableTab
-                } label: {
-                    Image(systemSymbol: .chevronLeft)
-                    
-                    Text("Other Settings")
-                }
-                .padding()
-            }
-            .controlSize(.extraLarge)
+                .controlSize(.extraLarge)
         }
         .task {
             // Tips tasks

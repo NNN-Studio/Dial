@@ -85,6 +85,26 @@
         }
       }
     },
+    "Are You Sure to Reset All Global Configurations?" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "确定重置所有全局设置项吗？"
+          }
+        }
+      }
+    },
+    "Are You Sure to Reset Controllers Data?" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "确定重置控制器数据吗？"
+          }
+        }
+      }
+    },
     "Auto hides menu bar item" : {
       "localizations" : {
         "zh-Hans" : {
@@ -416,8 +436,15 @@
         }
       }
     },
-    "Data Restoration" : {
-
+    "Data Reset" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "数据重置"
+          }
+        }
+      }
     },
     "Default Controller" : {
 
@@ -869,12 +896,12 @@
         }
       }
     },
-    "More" : {
+    "More…" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "更多"
+            "value" : "更多…"
           }
         }
       }
@@ -942,8 +969,15 @@
         }
       }
     },
-    "Other Settings" : {
-
+    "Other Settings…" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "其它设置…"
+          }
+        }
+      }
     },
     "Permissions" : {
       "localizations" : {
@@ -1029,11 +1063,35 @@
         }
       }
     },
-    "Restore Controllers" : {
-
+    "Reset" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重置"
+          }
+        }
+      }
     },
-    "Restore Global Configurations" : {
-
+    "Reset All Global Configurations" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重置所有全局设置项"
+          }
+        }
+      }
+    },
+    "Reset Controllers Data" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重置控制器数据"
+          }
+        }
+      }
     },
     "Send Feedback…" : {
       "localizations" : {
@@ -1294,9 +1352,6 @@
           }
         }
       }
-    },
-    "Test" : {
-
     },
     "UI layout guide" : {
       "localizations" : {
