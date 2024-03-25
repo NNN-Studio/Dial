@@ -38,6 +38,7 @@
 		289B83FC2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FB2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift */; };
 		289B83FE2BADC44D00D56D43 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */; };
 		289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FF2BADC4F900D56D43 /* AppDelegate.swift */; };
+		28AC22182BB1C14C00ADA343 /* ApplicationDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC22172BB1C14C00ADA343 /* ApplicationDataView.swift */; };
 		28E4CBAB2BB1AD5F0054106D /* StaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4CBAA2BB1AD5F0054106D /* StaleView.swift */; };
 		28E4CBAD2BB1B0D60054106D /* DummyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4CBAC2BB1B0D60054106D /* DummyView.swift */; };
 		28E71A362BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */; };
@@ -91,6 +92,7 @@
 		289B83FB2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViaBluetoothTip.swift; sourceTree = "<group>"; };
 		289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		289B83FF2BADC4F900D56D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		28AC22172BB1C14C00ADA343 /* ApplicationDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDataView.swift; sourceTree = "<group>"; };
 		28E4CBAA2BB1AD5F0054106D /* StaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaleView.swift; sourceTree = "<group>"; };
 		28E4CBAC2BB1B0D60054106D /* DummyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyView.swift; sourceTree = "<group>"; };
 		28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkableEqualWidthVStack.swift; sourceTree = "<group>"; };
@@ -204,14 +206,23 @@
 			path = Tips;
 			sourceTree = "<group>";
 		};
+		28AC22162BB1C12D00ADA343 /* Fundamentals */ = {
+			isa = PBXGroup;
+			children = (
+				28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */,
+			);
+			path = Fundamentals;
+			sourceTree = "<group>";
+		};
 		28E71A342BAFCE4200722045 /* View Auxiliaries */ = {
 			isa = PBXGroup;
 			children = (
+				28E4CBAA2BB1AD5F0054106D /* StaleView.swift */,
+				28AC22162BB1C12D00ADA343 /* Fundamentals */,
 				28E71A372BAFD56900722045 /* About View */,
-				28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */,
 				28E71A3C2BAFD80D00722045 /* VisualEffectView.swift */,
 				28E71A3E2BAFDA3700722045 /* AppVersionView.swift */,
-				28E4CBAA2BB1AD5F0054106D /* StaleView.swift */,
+				28AC22172BB1C14C00ADA343 /* ApplicationDataView.swift */,
 			);
 			path = "View Auxiliaries";
 			sourceTree = "<group>";
@@ -383,6 +394,7 @@
 				2887D77D2BABFE8900D733FC /* SurfaceDial.swift in Sources */,
 				2887D7712BABFBFF00D733FC /* NSString+Extension.swift in Sources */,
 				28E71A3D2BAFD80D00722045 /* VisualEffectView.swift in Sources */,
+				28AC22182BB1C14C00ADA343 /* ApplicationDataView.swift in Sources */,
 				2887D76D2BABFB9800D733FC /* NSImage+Extension.swift in Sources */,
 				289B83FC2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift in Sources */,
 				2806E9BE2BAC5C8800CD2AE2 /* Date+Extension.swift in Sources */,

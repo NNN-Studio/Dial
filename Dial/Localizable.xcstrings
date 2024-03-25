@@ -85,22 +85,32 @@
         }
       }
     },
+    "Application Data" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "应用数据"
+          }
+        }
+      }
+    },
+    "Are You Sure to Reset All Controllers Data?" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "确定重置所有控制器数据吗？"
+          }
+        }
+      }
+    },
     "Are You Sure to Reset All Global Configurations?" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "确定重置所有全局设置项吗？"
-          }
-        }
-      }
-    },
-    "Are You Sure to Reset Controllers Data?" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "确定重置控制器数据吗？"
           }
         }
       }
@@ -228,6 +238,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "控制器"
+          }
+        }
+      }
+    },
+    "Controllers Data" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "控制器数据"
           }
         }
       }
@@ -432,16 +452,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Press and enter"
-          }
-        }
-      }
-    },
-    "Data Reset" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "数据重置"
           }
         }
       }
@@ -813,6 +823,16 @@
         }
       }
     },
+    "Global Configurations" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全局设置项"
+          }
+        }
+      }
+    },
     "Granted" : {
       "localizations" : {
         "zh-Hans" : {
@@ -969,17 +989,6 @@
         }
       }
     },
-    "Other Settings…" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "其它设置…"
-          }
-        }
-      }
-    },
     "Permissions" : {
       "localizations" : {
         "zh-Hans" : {
@@ -1070,26 +1079,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "重置"
-          }
-        }
-      }
-    },
-    "Reset All Global Configurations" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "重置所有全局设置项"
-          }
-        }
-      }
-    },
-    "Reset Controllers Data" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "重置控制器数据"
           }
         }
       }
