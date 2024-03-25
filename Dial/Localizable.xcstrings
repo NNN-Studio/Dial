@@ -193,6 +193,15 @@
         }
       }
     },
+    "Content 1" : {
+
+    },
+    "Content 2" : {
+
+    },
+    "Content 3" : {
+
+    },
     "Controllers" : {
       "localizations" : {
         "zh-Hans" : {
@@ -870,6 +879,15 @@
         }
       }
     },
+    "Navigation 1" : {
+
+    },
+    "Navigation 2" : {
+
+    },
+    "Navigation 3" : {
+
+    },
     "Not Granted" : {
       "localizations" : {
         "zh-Hans" : {
@@ -923,6 +941,9 @@
           }
         }
       }
+    },
+    "Other Settings" : {
+
     },
     "Permissions" : {
       "localizations" : {
@@ -1213,9 +1234,6 @@
           }
         }
       }
-    },
-    "Settings" : {
-
     },
     "Settings…" : {
       "localizations" : {

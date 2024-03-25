@@ -38,6 +38,7 @@
 		289B83FC2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FB2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift */; };
 		289B83FE2BADC44D00D56D43 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */; };
 		289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FF2BADC4F900D56D43 /* AppDelegate.swift */; };
+		28E4CBAB2BB1AD5F0054106D /* StaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4CBAA2BB1AD5F0054106D /* StaleView.swift */; };
 		28E71A362BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */; };
 		28E71A392BAFD57300722045 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A382BAFD57300722045 /* AboutViewController.swift */; };
 		28E71A3B2BAFD57800722045 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A3A2BAFD57800722045 /* AboutView.swift */; };
@@ -89,6 +90,7 @@
 		289B83FB2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViaBluetoothTip.swift; sourceTree = "<group>"; };
 		289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		289B83FF2BADC4F900D56D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		28E4CBAA2BB1AD5F0054106D /* StaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaleView.swift; sourceTree = "<group>"; };
 		28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkableEqualWidthVStack.swift; sourceTree = "<group>"; };
 		28E71A382BAFD57300722045 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		28E71A3A2BAFD57800722045 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */,
 				28E71A3C2BAFD80D00722045 /* VisualEffectView.swift */,
 				28E71A3E2BAFDA3700722045 /* AppVersionView.swift */,
+				28E4CBAA2BB1AD5F0054106D /* StaleView.swift */,
 			);
 			path = "View Auxiliaries";
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				2821DA7A2BAEF60B0017B5DD /* View+Extension.swift in Sources */,
 				289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */,
 				2806E9C52BAC5ED600CD2AE2 /* BrigntnessController.swift in Sources */,
+				28E4CBAB2BB1AD5F0054106D /* StaleView.swift in Sources */,
 				2821DA782BAEE8250017B5DD /* ObservationTrackingStream.swift in Sources */,
 				28E71A362BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift in Sources */,
 				2887D78B2BAC013300D733FC /* Input.swift in Sources */,
