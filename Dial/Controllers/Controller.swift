@@ -108,7 +108,7 @@ extension ControllerID {
 
 extension ControllerID: Identifiable {
     /// This is intended to make `ControllerID` conforms to `Identifiable`. The return value is the same as itself.
-    var id: ControllerID {
+    var id: Self {
         self
     }
 }

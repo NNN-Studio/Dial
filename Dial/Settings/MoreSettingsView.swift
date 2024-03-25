@@ -148,8 +148,6 @@ By sending feedbacks, you can report bugs, request features or more. Issue templ
                         Text("Reset Controllers Data")
                             .frame(maxWidth: .infinity)
                     }
-                    .buttonStyle(.borderedProminent)
-                    .tint(.red)
                     .confirmationDialog(
                         "Are You Sure to Reset Controllers Data?",
                         isPresented: $isShowingRestoreControllersDataDialog,
@@ -168,6 +166,8 @@ By sending feedbacks, you can report bugs, request features or more. Issue templ
                 }
                 .controlSize(.extraLarge)
             }
+            .buttonStyle(.borderedProminent)
+            .tint(.red)
         }
         .formStyle(.grouped)
         .scrollDisabled(true)

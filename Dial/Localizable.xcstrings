@@ -970,6 +970,7 @@
       }
     },
     "Other Settings…" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {

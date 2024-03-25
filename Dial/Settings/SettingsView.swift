@@ -10,23 +10,41 @@ import SFSafeSymbols
 import TipKit
 
 struct SettingsView: View {
-    enum Tab: String, Hashable {
+    enum Tab: String, Hashable, CaseIterable {
         case general = "general"
         case controllers = "controllers"
         case dialMenu = "dialMenu"
         case more = "more"
+        
+        @ViewBuilder
+        var tabItemView: some View {
+            Group {
+                switch self {
+                case .general:
+                    Image(systemSymbol: .gear)
+                    Text("General")
+                case .controllers:
+                    Image(systemSymbol: .hockeyPuck)
+                    Text("Controllers")
+                case .dialMenu:
+                    Image(systemSymbol: .circleCircle)
+                    Text("Dial Menu")
+                case .more:
+                    Image(systemSymbol: .curlybraces)
+                    Text("More…")
+                }
+            }
+        }
     }
     
     @State var selectedTab: Tab = .general
-    @State private var restorableTab: Tab = .general
     
     var body: some View {
         TabView(selection: $selectedTab) {
             GeneralSettingsView()
                 .tag(Tab.general)
                 .tabItem {
-                    Image(systemSymbol: .gear)
-                    Text("General")
+                    Tab.general.tabItemView
                 }
                 .frame(width: 450)
                 .fixedSize()
@@ -34,23 +52,20 @@ struct SettingsView: View {
             DummyView() // This is actually unreachable
                 .tag(Tab.controllers)
                 .tabItem {
-                    Image(systemSymbol: .hockeyPuck)
-                    Text("Controllers")
+                    Tab.controllers.tabItemView
                 }
             
             DialMenuSettingsView()
                 .tag(Tab.dialMenu)
                 .tabItem {
-                    Image(systemSymbol: .circleCircle)
-                    Text("Dial Menu")
+                    Tab.dialMenu.tabItemView
                 }
                 .frame(width: 450)
             
             MoreSettingsView()
                 .tag(Tab.more)
                 .tabItem {
-                    Image(systemSymbol: .ellipsis)
-                    Text("More…")
+                    Tab.more.tabItemView
                 }
                 .frame(width: 450)
                 .fixedSize()
@@ -61,15 +76,14 @@ struct SettingsView: View {
                 .frame(height: 650)
                 .fixedSize(horizontal: false, vertical: true)
                 .toolbar {
-                    // Back button
-                    Button {
-                        selectedTab = restorableTab
-                    } label: {
-                        Image(systemSymbol: .chevronLeft)
-                        
-                        Text("Other Settings…")
+                    ForEach(Tab.allCases) { tab in
+                        Button {
+                            selectedTab = tab
+                        } label: {
+                            tab.tabItemView
+                        }
+                        .disabled(tab == selectedTab)
                     }
-                    .padding()
                 }
                 .controlSize(.extraLarge)
         }
@@ -84,11 +98,12 @@ struct SettingsView: View {
                 .datastoreLocation(.applicationDefault)
             ])
         }
-        .onChange(of: selectedTab) { oldValue, newValue in
-            // Remember last tab
-            if selectedTab != .controllers {
-                restorableTab = selectedTab
-            }
-        }
+    }
+}
+
+extension SettingsView.Tab: Identifiable {
+    /// This is intended to make `SettingsView.Tab` conforms to `Identifiable`. The return value is the same as itself.
+    var id: Self {
+        self
     }
 }

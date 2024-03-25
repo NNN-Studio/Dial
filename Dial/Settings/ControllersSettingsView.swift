@@ -36,14 +36,16 @@ struct ControllersSettingsView: View {
                     Text("Navigation 3")
                 }
             }
+            .controlSize(.regular)
             .navigationSplitViewColumnWidth(min: 250, ideal: 300)
         } detail: {
             Group {
                 StaleView()
                     .frame(width: 64)
             }
-            .navigationSplitViewColumnWidth(min: 350, ideal: 400)
+            .navigationSplitViewColumnWidth(min: 400, ideal: 400)
         }
+        .controlSize(.extraLarge)
         .task {
             // MARK: Update activated controller ids
             
