@@ -18,22 +18,20 @@ struct ControllersSettingsView: View {
     var body: some View {
         NavigationSplitView {
             Group {
-                NavigationLink {
-                    Text("Content 1")
-                } label: {
-                    Text("Navigation 1")
+                List($activatedControllerIDs, selection: $selectedControllerID) { id in
+                    NavigationLink {
+                        Text(id.wrappedValue.controller.name)
+                    } label: {
+                        ControllerStateEntryView(id: id)
+                    }
                 }
                 
-                NavigationLink {
-                    Text("Content 2")
-                } label: {
-                    Text("Navigation 2")
-                }
-                
-                NavigationLink {
-                    Text("Content 3")
-                } label: {
-                    Text("Navigation 3")
+                List($nonactivatedControllerIDs, selection: $selectedControllerID) { id in
+                    NavigationLink {
+                        Text(id.wrappedValue.controller.name)
+                    } label: {
+                        ControllerStateEntryView(id: id)
+                    }
                 }
             }
             .controlSize(.regular)
