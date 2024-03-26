@@ -14,6 +14,7 @@ struct ControllersSettingsView: View {
     @State var nonactivatedControllerIDs: [ControllerID] = []
     
     @State var selectedControllerID: ControllerID?
+    @State var draggedControllerID: ControllerID?
     
     @State var isDragging: Bool = false
     
@@ -28,10 +29,15 @@ struct ControllersSettingsView: View {
                             } label: {
                                 ControllerStateEntryView(id: id)
                             }
-                            .draggable(id.wrappedValue)
+                            //.draggable(id.wrappedValue)
+                            .onDrag {
+                                print(0)
+                                draggedControllerID = id.wrappedValue
+                                return NSItemProvider(contentsOf: .applicationDirectory, contentType: [.controllerID])
+                            }
                             .onDrop(of: [.controllerID], delegate: ControllerIDDropDelegate(
                                 data: $activatedControllerIDs,
-                                selected: $selectedControllerID,
+                                dragged: $selectedControllerID,
                                 isDragging: $isDragging,
                                 id: id.wrappedValue
                             ))
@@ -49,6 +55,8 @@ struct ControllersSettingsView: View {
                         }
                     }
                 }
+                .animation(.easeInOut, value: activatedControllerIDs)
+                .animation(.easeInOut, value: nonactivatedControllerIDs)
             }
             .controlSize(.regular)
             .navigationSplitViewColumnWidth(min: 250, ideal: 300)
@@ -83,14 +91,15 @@ struct ControllersSettingsView: View {
 
 struct ControllerIDDropDelegate: DropDelegate {
     @Binding var data: [ControllerID]
-    @Binding var selected: ControllerID?
+    @Binding var dragged: ControllerID?
     @Binding var isDragging: Bool
     
     let id: ControllerID
     
     /// Drop finished work
     func performDrop(info: DropInfo) -> Bool {
-        selected = nil
+        print(1)
+        dragged = nil
         isDragging = false
         return true
     }
@@ -109,8 +118,8 @@ struct ControllerIDDropDelegate: DropDelegate {
     func dropEntered(info: DropInfo) {
         isDragging = true
         guard
-            let selected, selected != id,
-            let from = data.firstIndex(of: selected),
+            let dragged, dragged != id,
+            let from = data.firstIndex(of: dragged),
             let to = data.firstIndex(of: id)
         else { return }
         
