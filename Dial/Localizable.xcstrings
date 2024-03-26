@@ -173,54 +173,6 @@
         }
       }
     },
-    "ConnectionStatus/Off.Name" : {
-      "comment" : "if (!connected)",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Dial"
-          }
-        }
-      }
-    },
-    "ConnectionStatus/OffBadge.Name" : {
-      "comment" : "if (!connected) badge",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "disconnected"
-          }
-        }
-      }
-    },
-    "ConnectionStatus/OffPlaceholder.Name" : {
-      "comment" : "if (!connected) badge",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Surface Dial disconnected"
-          }
-        }
-      }
-    },
-    "ConnectionStatus/On.Name" : {
-      "comment" : "if (connected)",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Dial"
-          }
-        }
-      }
-    },
     "Controllers" : {
       "localizations" : {
         "zh-Hans" : {
@@ -237,54 +189,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "控制器数据"
-          }
-        }
-      }
-    },
-    "Controllers/Advanced/AlternativeDirection.Name" : {
-      "comment" : "alternative direction",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Alternative direction"
-          }
-        }
-      }
-    },
-    "Controllers/Advanced/Haptics.Name" : {
-      "comment" : "haptics",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Haptic feedback"
-          }
-        }
-      }
-    },
-    "Controllers/Advanced/PhysicalDirection.Name" : {
-      "comment" : "physical direction",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Follows physical direction"
-          }
-        }
-      }
-    },
-    "Controllers/Advanced/RotationType.Name" : {
-      "comment" : "rotation type",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Rotation type"
           }
         }
       }
@@ -384,54 +288,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Scroll"
-          }
-        }
-      }
-    },
-    "Controllers/New.Name" : {
-      "comment" : "new controller name",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "New controller"
-          }
-        }
-      }
-    },
-    "Controllers/New.Title" : {
-      "comment" : "new controller name",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "New Controller"
-          }
-        }
-      }
-    },
-    "Controllers/Shortcuts/Cancellable.Name" : {
-      "comment" : "cancellable",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Release to cancel"
-          }
-        }
-      }
-    },
-    "Controllers/Shortcuts/Idle.Name" : {
-      "comment" : "idle",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Press and enter"
           }
         }
       }
@@ -549,126 +405,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "通用"
-          }
-        }
-      }
-    },
-    "General/AutoHideIcon.Title" : {
-      "comment" : "auto hides icon",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Hides Icon while Disconnected"
-          }
-        }
-      }
-    },
-    "General/AutoHidesIcon.Name" : {
-      "comment" : "auto hides icon",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Hides icon while disconnected"
-          }
-        }
-      }
-    },
-    "General/Direction.Name" : {
-      "comment" : "direction",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Primary direction"
-          }
-        }
-      }
-    },
-    "General/Direction.Title" : {
-      "comment" : "direction",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Primary Direction"
-          }
-        }
-      }
-    },
-    "General/Haptics.Name" : {
-      "comment" : "haptics",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Global haptic feedback"
-          }
-        }
-      }
-    },
-    "General/Haptics.Title" : {
-      "comment" : "haptics",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Global Haptic Feedback"
-          }
-        }
-      }
-    },
-    "General/Sensitivity.Name" : {
-      "comment" : "sensitivity",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Sensitivity"
-          }
-        }
-      }
-    },
-    "General/Sensitivity.Title" : {
-      "comment" : "sensitivity",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Sensitivity"
-          }
-        }
-      }
-    },
-    "General/StartsWithMacOS.Name" : {
-      "comment" : "starts with macOS",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Starts with macOS"
-          }
-        }
-      }
-    },
-    "General/StartsWithMacOS.Title" : {
-      "comment" : "starts with macOS",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Starts with macOS"
           }
         }
       }
@@ -816,30 +552,6 @@
         }
       }
     },
-    "OpenSettings.Name" : {
-      "comment" : "open settings",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Settings..."
-          }
-        }
-      }
-    },
-    "OpenSettings.Title" : {
-      "comment" : "open settings",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Settings..."
-          }
-        }
-      }
-    },
     "Original project" : {
       "localizations" : {
         "zh-Hans" : {
@@ -886,30 +598,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "退出"
-          }
-        }
-      }
-    },
-    "Quit.Name" : {
-      "comment" : "quit",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Quit app"
-          }
-        }
-      }
-    },
-    "Quit.Title" : {
-      "comment" : "quit",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Quit App"
           }
         }
       }
