@@ -18,23 +18,25 @@ struct ControllersSettingsView: View {
     var body: some View {
         NavigationSplitView {
             Group {
-                List(selection: $selectedControllerID, content: { EmptyView() })
-                
                 List(selection: $selectedControllerID) {
-                    ForEach($activatedControllerIDs) { id in
-                        NavigationLink {
-                            Text(id.wrappedValue.controller.name)
-                        } label: {
-                            ControllerStateEntryView(id: id)
+                    Section("Activated") {
+                        ForEach($activatedControllerIDs) { id in
+                            NavigationLink {
+                                Text(id.wrappedValue.controller.name)
+                            } label: {
+                                ControllerStateEntryView(id: id)
+                            }
                         }
                     }
-                }
-                
-                List($activatedControllerIDs, selection: $selectedControllerID) { id in
-                    NavigationLink {
-                        Text(id.wrappedValue.controller.name)
-                    } label: {
-                        ControllerStateEntryView(id: id)
+                    
+                    Section("Nonactivated") {
+                        ForEach($nonactivatedControllerIDs) { id in
+                            NavigationLink {
+                                Text(id.wrappedValue.controller.name)
+                            } label: {
+                                ControllerStateEntryView(id: id)
+                            }
+                        }
                     }
                 }
             }

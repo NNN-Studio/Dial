@@ -83,6 +83,9 @@
         }
       }
     },
+    "Activated" : {
+
+    },
     "Application Data" : {
       "localizations" : {
         "zh-Hans" : {
@@ -531,6 +534,9 @@
           }
         }
       }
+    },
+    "Nonactivated" : {
+
     },
     "Not Granted" : {
       "localizations" : {
