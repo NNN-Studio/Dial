@@ -3,6 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>UTExportedTypeDeclarations</key>
-	<array/>
+	<array>
+		<dict>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>dial.controllerID</string>
+			<key>UTTypeTagSpecification</key>
+			<dict/>
+		</dict>
+	</array>
 </dict>
 </plist>

@@ -33,11 +33,11 @@ struct ControllersSettingsView: View {
                             .onDrag {
                                 print(0)
                                 draggedControllerID = id.wrappedValue
-                                return NSItemProvider(contentsOf: .applicationDirectory, contentType: [.controllerID])
+                                return NSItemProvider()
                             }
                             .onDrop(of: [.controllerID], delegate: ControllerIDDropDelegate(
                                 data: $activatedControllerIDs,
-                                dragged: $selectedControllerID,
+                                dragged: $draggedControllerID,
                                 isDragging: $isDragging,
                                 id: id.wrappedValue
                             ))
