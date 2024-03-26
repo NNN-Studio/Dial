@@ -9,6 +9,7 @@ import Foundation
 import AppKit
 import Defaults
 import SFSafeSymbols
+import SwiftUI
 
 enum ControllerID: Codable, Hashable, Defaults.Serializable, Equatable {
     enum Builtin: CaseIterable, Codable {
@@ -157,6 +158,12 @@ protocol Controller: AnyObject, SymbolRepresentable {
 }
 
 extension Controller {
+    static var newControllerName: String {
+        String(localized: .init("New Controller"))
+    }
+}
+
+extension Controller {
     static func equals(_ lhs: any Controller, _ rhs: any Controller) -> Bool {
         lhs.id == rhs.id
     }
@@ -171,7 +178,7 @@ extension Controller {
 }
 
 extension Controller {
-    var representingSymbol: SFSymbol {
+    var symbol: SFSymbol {
         .__circleFillableFallback
     }
     

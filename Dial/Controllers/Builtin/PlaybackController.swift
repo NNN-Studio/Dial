@@ -13,14 +13,14 @@ class PlaybackController: DefaultController {
     static let instance: PlaybackController = .init()
     
     var id: ControllerID = .builtin(.playback)
-    var name: String = NSLocalizedString("Controllers/Default/Playback/Name", value: "Playback", comment: "playback controller name")
-    var representingSymbol: SFSymbol = .speakerWave2
-    var description: String = NSLocalizedString(
-        "Controllers/Default/Playback/Description",
-        value: """
+    var name: String = String(localized: .init("Controllers/Default/Playback: Name", defaultValue: "Playback"))
+    var symbol: SFSymbol = .speakerWave2
+    var description: String = String(localized: .init(
+        "Controllers/Default/Playback: Description",
+        defaultValue: """
 You can trigger forward / backward by dialing, increase / decrease volume by dialing while pressing, toggle system play / pause by single clicking, and mute / unmute by double clicking through this controller.
-""",
-        comment: "playback controller description")
+"""
+    ))
     
     var rotationType: Rotation.RawType = .continuous
     

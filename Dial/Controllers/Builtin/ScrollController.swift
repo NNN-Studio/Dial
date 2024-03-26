@@ -13,14 +13,14 @@ class ScrollController: DefaultController {
     static let instance: ScrollController = .init()
     
     var id: ControllerID = .builtin(.scroll)
-    var name: String = NSLocalizedString("Controllers/Default/Scroll/Name", value: "Scroll", comment: "scroll controller description")
-    var representingSymbol: SFSymbol = .arrowUpArrowDown
-    var description: String = NSLocalizedString(
-        "Controllers/Default/Scroll/Description",
-        value: """
+    var name: String = String(localized: .init("Controllers/Default/Scroll: Name", defaultValue: "Scroll"))
+    var symbol: SFSymbol = .arrowUpArrowDown
+    var description: String = String(localized: .init(
+        "Controllers/Default/Scroll: Description",
+        defaultValue: """
 You can scroll and perform middle button clicks through this controller. Scrolls and clicks will always happen at the cursor.
-""",
-        comment: "scroll controller description")
+"""
+    ))
     
     var rotationType: Rotation.RawType = .continuous
     

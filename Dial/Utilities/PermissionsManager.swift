@@ -30,22 +30,21 @@ class PermissionsManager {
             let alert = NSAlert()
             alert.alertStyle = NSAlert.Style.informational
             alert.messageText = String(
-                format: NSLocalizedString(
-                    "App/PermissionsAlert/Title",
-                    value: "%@ needs Accessibility Permissions",
-                    comment: "accessibility permissions alert title"
-                ),
+                format: String(localized: .init(
+                    "Accessibility Permissions Alert: Title",
+                    defaultValue: "%@ needs Accessibility Permissions"
+                )),
                 Bundle.main.appName
             )
             alert.informativeText = String(
-                format: NSLocalizedString(
-                    "App/PermissionsAlert/Content",
-                    value: """
+                format: String(localized: .init(
+                    "Accessibility Permissions Alert: Content",
+                    defaultValue: """
 %@ needs Accessibility permissions to perform dialing actions.
 
 If you're updating, you might have to remove %@ from the list before re-granting the permissions.
-""",
-                    comment: "accessibility permissions alert content"),
+"""
+                )),
                 Bundle.main.appName, Bundle.main.appName
             )
             

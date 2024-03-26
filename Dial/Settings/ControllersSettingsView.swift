@@ -18,15 +18,19 @@ struct ControllersSettingsView: View {
     var body: some View {
         NavigationSplitView {
             Group {
-                List($activatedControllerIDs, selection: $selectedControllerID) { id in
-                    NavigationLink {
-                        Text(id.wrappedValue.controller.name)
-                    } label: {
-                        ControllerStateEntryView(id: id)
+                List(selection: $selectedControllerID, content: { EmptyView() })
+                
+                List(selection: $selectedControllerID) {
+                    ForEach($activatedControllerIDs) { id in
+                        NavigationLink {
+                            Text(id.wrappedValue.controller.name)
+                        } label: {
+                            ControllerStateEntryView(id: id)
+                        }
                     }
                 }
                 
-                List($nonactivatedControllerIDs, selection: $selectedControllerID) { id in
+                List($activatedControllerIDs, selection: $selectedControllerID) { id in
                     NavigationLink {
                         Text(id.wrappedValue.controller.name)
                     } label: {
@@ -70,7 +74,7 @@ struct ControllerStateEntryView: View {
     
     var body: some View {
         HStack {
-            Image(systemSymbol: id.controller.representingSymbol)
+            Image(systemSymbol: id.controller.symbol)
                 .imageScale(.large)
                 .frame(width: 32)
             

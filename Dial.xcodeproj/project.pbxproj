@@ -27,8 +27,8 @@
 		2887D7712BABFBFF00D733FC /* NSString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7702BABFBFF00D733FC /* NSString+Extension.swift */; };
 		2887D7732BABFCEA00D733FC /* Defaults+Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7722BABFCEA00D733FC /* Defaults+Structures.swift */; };
 		2887D7762BABFD2200D733FC /* Hardware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7752BABFD2200D733FC /* Hardware.swift */; };
-		2887D7792BABFD4E00D733FC /* SymbolRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7782BABFD4E00D733FC /* SymbolRepresentation.swift */; };
-		2887D77B2BABFE0E00D733FC /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D77A2BABFE0E00D733FC /* Localization.swift */; };
+		2887D7792BABFD4E00D733FC /* SymbolRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7782BABFD4E00D733FC /* SymbolRepresentable.swift */; };
+		2887D77B2BABFE0E00D733FC /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D77A2BABFE0E00D733FC /* Localizable.swift */; };
 		2887D77D2BABFE8900D733FC /* SurfaceDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D77C2BABFE8900D733FC /* SurfaceDial.swift */; };
 		2887D7812BAC002400D733FC /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7802BAC002400D733FC /* Controller.swift */; };
 		2887D7832BAC005200D733FC /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D7822BAC005200D733FC /* MainController.swift */; };
@@ -80,8 +80,8 @@
 		2887D7702BABFBFF00D733FC /* NSString+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+Extension.swift"; sourceTree = "<group>"; };
 		2887D7722BABFCEA00D733FC /* Defaults+Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Structures.swift"; sourceTree = "<group>"; };
 		2887D7752BABFD2200D733FC /* Hardware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hardware.swift; sourceTree = "<group>"; };
-		2887D7782BABFD4E00D733FC /* SymbolRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolRepresentation.swift; sourceTree = "<group>"; };
-		2887D77A2BABFE0E00D733FC /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		2887D7782BABFD4E00D733FC /* SymbolRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolRepresentable.swift; sourceTree = "<group>"; };
+		2887D77A2BABFE0E00D733FC /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		2887D77C2BABFE8900D733FC /* SurfaceDial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfaceDial.swift; sourceTree = "<group>"; };
 		2887D77E2BABFF6400D733FC /* Dial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dial-Bridging-Header.h"; sourceTree = "<group>"; };
 		2887D7802BAC002400D733FC /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
@@ -178,8 +178,8 @@
 		2887D7772BABFD2A00D733FC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2887D7782BABFD4E00D733FC /* SymbolRepresentation.swift */,
-				2887D77A2BABFE0E00D733FC /* Localization.swift */,
+				2887D7782BABFD4E00D733FC /* SymbolRepresentable.swift */,
+				2887D77A2BABFE0E00D733FC /* Localizable.swift */,
 				2887D7882BAC011300D733FC /* ShortcutArray.swift */,
 				2887D78A2BAC013300D733FC /* Input.swift */,
 				289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */,
@@ -400,7 +400,7 @@
 				2806E9BE2BAC5C8800CD2AE2 /* Date+Extension.swift in Sources */,
 				2887D7892BAC011300D733FC /* ShortcutArray.swift in Sources */,
 				2887D7762BABFD2200D733FC /* Hardware.swift in Sources */,
-				2887D77B2BABFE0E00D733FC /* Localization.swift in Sources */,
+				2887D77B2BABFE0E00D733FC /* Localizable.swift in Sources */,
 				28EE29C02BAB219E009005C3 /* SettingsView.swift in Sources */,
 				2806E9C32BAC5EAF00CD2AE2 /* PlaybackController.swift in Sources */,
 				2887D7812BAC002400D733FC /* Controller.swift in Sources */,
@@ -423,7 +423,7 @@
 				2887D7832BAC005200D733FC /* MainController.swift in Sources */,
 				28E4CBAD2BB1B0D60054106D /* DummyView.swift in Sources */,
 				2831AD8B2BAF9B8B0064821C /* MenuBarMenuView.swift in Sources */,
-				2887D7792BABFD4E00D733FC /* SymbolRepresentation.swift in Sources */,
+				2887D7792BABFD4E00D733FC /* SymbolRepresentable.swift in Sources */,
 				2806E9C72BAC5EFD00CD2AE2 /* MissionController.swift in Sources */,
 				28EE29B02BAB2155009005C3 /* DialApp.swift in Sources */,
 			);

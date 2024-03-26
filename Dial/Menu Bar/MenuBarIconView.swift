@@ -42,7 +42,7 @@ struct MenuBarIconView: View {
             
             for await _ in Defaults.updates(.currentControllerID) {
                 if let controller = Defaults.currentController {
-                    controllerSymbol = controller.representingSymbol
+                    controllerSymbol = controller.symbol
                 } else {
                     controllerSymbol = nil
                 }

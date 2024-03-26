@@ -13,15 +13,14 @@ class BrightnessController: DefaultController {
     static let instance: BrightnessController = .init()
     
     var id: ControllerID = .builtin(.brightness)
-    var name: String = NSLocalizedString("Controllers/Default/Brigshtnes/Name", value: "Brightness", comment: "brightness controller name")
-    var representingSymbol: SFSymbol = .sunMax
-    var description: String = NSLocalizedString(
-        "Controllers/Default/Brigshtnes/Description",
-        value: """
+    var name: String = String(localized: .init("Controllers/Default/Brigshtnes: Name", defaultValue: "Brightness"))
+    var symbol: SFSymbol = .sunMax
+    var description: String = String(localized: .init(
+        "Controllers/Default/Brigshtnes: Description",
+        defaultValue: """
 You can increase / decrease screen brightness by dialing, increase / decrease keyboard backlighting by dialing while pressing, and toggle keyboard backlighting by clicking through this controller.
-""",
-        comment: "brightness controller description"
-    )
+"""
+    ))
     
     var rotationType: Rotation.RawType = .continuous
     

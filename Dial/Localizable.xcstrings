@@ -39,18 +39,7 @@
         }
       }
     },
-    "Acknowledgements" : {
-      "localizations" : {
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "鸣谢"
-          }
-        }
-      }
-    },
-    "App/PermissionsAlert/Content" : {
-      "comment" : "accessibility permissions alert content",
+    "Accessibility Permissions Alert: Content" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -67,8 +56,7 @@
         }
       }
     },
-    "App/PermissionsAlert/Title" : {
-      "comment" : "accessibility permissions alert title",
+    "Accessibility Permissions Alert: Title" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -81,6 +69,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@需要辅助功能权限"
+          }
+        }
+      }
+    },
+    "Acknowledgements" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "鸣谢"
           }
         }
       }
@@ -291,8 +289,7 @@
         }
       }
     },
-    "Controllers/Default/Brigshtnes/Description" : {
-      "comment" : "brightness controller description",
+    "Controllers/Default/Brigshtnes: Description" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -303,8 +300,7 @@
         }
       }
     },
-    "Controllers/Default/Brigshtnes/Name" : {
-      "comment" : "brightness controller name",
+    "Controllers/Default/Brigshtnes: Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -315,8 +311,7 @@
         }
       }
     },
-    "Controllers/Default/Main/Name" : {
-      "comment" : "main controller",
+    "Controllers/Default/Main: Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -327,8 +322,7 @@
         }
       }
     },
-    "Controllers/Default/Mission/Description" : {
-      "comment" : "mission controller description",
+    "Controllers/Default/Mission: Description" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -339,8 +333,7 @@
         }
       }
     },
-    "Controllers/Default/Mission/Name" : {
-      "comment" : "mission controller name",
+    "Controllers/Default/Mission: Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -351,8 +344,7 @@
         }
       }
     },
-    "Controllers/Default/Playback/Description" : {
-      "comment" : "playback controller description",
+    "Controllers/Default/Playback: Description" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -363,8 +355,7 @@
         }
       }
     },
-    "Controllers/Default/Playback/Name" : {
-      "comment" : "playback controller name",
+    "Controllers/Default/Playback: Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -375,8 +366,7 @@
         }
       }
     },
-    "Controllers/Default/Scroll/Description" : {
-      "comment" : "scroll controller description",
+    "Controllers/Default/Scroll: Description" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -387,8 +377,7 @@
         }
       }
     },
-    "Controllers/Default/Scroll/Name" : {
-      "comment" : "scroll controller description",
+    "Controllers/Default/Scroll: Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -480,78 +469,6 @@
         }
       }
     },
-    "Dial/Rotation/Type/Continuous.Badge" : {
-      "comment" : "continuous rotation type",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "continuous"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "连续"
-          }
-        }
-      }
-    },
-    "Dial/Rotation/Type/Continuous.Name" : {
-      "comment" : "continuous rotation type",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Continuous"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "连续"
-          }
-        }
-      }
-    },
-    "Dial/Rotation/Type/Stepping.Badge" : {
-      "comment" : "stepping rotation type",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "stepping"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "步进"
-          }
-        }
-      }
-    },
-    "Dial/Rotation/Type/Stepping.Name" : {
-      "comment" : "stepping rotation type",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Stepping"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "步进"
-          }
-        }
-      }
-    },
     "Direction" : {
       "localizations" : {
         "zh-Hans" : {
@@ -562,26 +479,7 @@
         }
       }
     },
-    "Direction/Clockwise.Badge" : {
-      "comment" : "clockwise direction",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "clockwise"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "顺时针"
-          }
-        }
-      }
-    },
-    "Direction/Clockwise.Name" : {
-      "comment" : "clockwise direction",
+    "Direction: Clockwise Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -598,26 +496,7 @@
         }
       }
     },
-    "Direction/Counterclockwise.Badge" : {
-      "comment" : "counterclockwise direction",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "counterclockwise"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "逆时针"
-          }
-        }
-      }
-    },
-    "Direction/Counterclockwise.Name" : {
-      "comment" : "counterclockwise direction",
+    "Direction: Counterclockwise Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -1065,6 +944,40 @@
         }
       }
     },
+    "Rotation: Continuous Name" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Continuous"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "连续"
+          }
+        }
+      }
+    },
+    "Rotation: Stepping Name" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Stepping"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "步进"
+          }
+        }
+      }
+    },
     "Send Feedback…" : {
       "localizations" : {
         "zh-Hans" : {
@@ -1085,26 +998,7 @@
         }
       }
     },
-    "Sensitivity/Extreme.Badge" : {
-      "comment" : "extreme sensitivity",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "extreme"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "极致"
-          }
-        }
-      }
-    },
-    "Sensitivity/Extreme.Name" : {
-      "comment" : "extreme sensitivity",
+    "Sensitivity: Extreme Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -1121,26 +1015,7 @@
         }
       }
     },
-    "Sensitivity/High.Badge" : {
-      "comment" : "high sensitivity",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "high"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "高"
-          }
-        }
-      }
-    },
-    "Sensitivity/High.Name" : {
-      "comment" : "high sensitivity",
+    "Sensitivity: High Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -1157,26 +1032,7 @@
         }
       }
     },
-    "Sensitivity/Low.Badge" : {
-      "comment" : "low sensitivity",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "low"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "低"
-          }
-        }
-      }
-    },
-    "Sensitivity/Low.Name" : {
-      "comment" : "low sensitivity",
+    "Sensitivity: Low Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -1193,26 +1049,7 @@
         }
       }
     },
-    "Sensitivity/Medium.Badge" : {
-      "comment" : "medium sensitivity",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "medium"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "中等"
-          }
-        }
-      }
-    },
-    "Sensitivity/Medium.Name" : {
-      "comment" : "medium sensitivity",
+    "Sensitivity: Medium Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -1224,31 +1061,12 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "中等"
+            "value" : "中"
           }
         }
       }
     },
-    "Sensitivity/Natural.Badge" : {
-      "comment" : "natural sensitivity",
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "natural"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "自然"
-          }
-        }
-      }
-    },
-    "Sensitivity/Natural.Name" : {
-      "comment" : "natural sensitivity",
+    "Sensitivity: Natural Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {

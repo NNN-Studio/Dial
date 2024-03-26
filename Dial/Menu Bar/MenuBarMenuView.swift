@@ -52,7 +52,7 @@ struct MenuBarMenuView: View {
         
         ForEach($activatedControllerIDs) { id in
             Toggle(isOn: id.isCurrent) {
-                Image(systemSymbol: id.wrappedValue.controller.representingSymbol)
+                Image(systemSymbol: id.wrappedValue.controller.symbol)
                 Text(id.wrappedValue.controller.name)
             }
         }
@@ -69,21 +69,21 @@ struct MenuBarMenuView: View {
         
         Picker(selection: $globalSensitivity) {
             ForEach(Sensitivity.allCases) { sensitivity in
-                Text(sensitivity.localizedTitle)
+                Text(sensitivity.title)
             }
         } label: {
             Text("Sensitivity")
         }
-        .badge(Text(globalSensitivity.representingSymbol.unicode!))
+        .badge(Text(globalSensitivity.symbol.unicode!))
         
         Picker(selection: $globalDirection) {
             ForEach(Direction.allCases) { direction in
-                Text(direction.localizedTitle)
+                Text(direction.title)
             }
         } label: {
             Text("Direction")
         }
-        .badge(Text(globalDirection.representingSymbol.unicode!))
+        .badge(Text(globalDirection.symbol.unicode!))
         
         Divider()
         

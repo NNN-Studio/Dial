@@ -8,6 +8,14 @@
 import Foundation
 import Defaults
 import SFSafeSymbols
+import SwiftUI
+
+struct ControllerSection: Codable, Hashable, Defaults.Serializable {
+    enum ID: Codable, Hashable, Defaults.Serializable {
+        case activated
+        case nonactivated
+    }
+}
 
 /// Decides how much steps per circle the dial is divided into.
 enum Sensitivity: CGFloat, CaseIterable, Defaults.Serializable {
@@ -53,39 +61,24 @@ extension Sensitivity: Identifiable {
 }
 
 extension Sensitivity: Localizable {
-    var localizedName: String {
+    var name: String {
         switch self {
         case .low:
-            NSLocalizedString("Sensitivity/Low.Name", value: "Low", comment: "low sensitivity")
+            String(localized: .init("Sensitivity: Low Name", defaultValue: "Low"))
         case .medium:
-            NSLocalizedString("Sensitivity/Medium.Name", value: "Medium", comment: "medium sensitivity")
+            String(localized: .init("Sensitivity: Medium Name", defaultValue: "Medium"))
         case .natural:
-            NSLocalizedString("Sensitivity/Natural.Name", value: "Natural", comment: "natural sensitivity")
+            String(localized: .init("Sensitivity: Natural Name", defaultValue: "Natural"))
         case .high:
-            NSLocalizedString("Sensitivity/High.Name", value: "High", comment: "high sensitivity")
+            String(localized: .init("Sensitivity: High Name", defaultValue: "High"))
         case .extreme:
-            NSLocalizedString("Sensitivity/Extreme.Name", value: "Extreme", comment: "extreme sensitivity")
-        }
-    }
-    
-    var localizedBadge: String {
-        switch self {
-        case .low:
-            NSLocalizedString("Sensitivity/Low.Badge", value: "low", comment: "low sensitivity")
-        case .medium:
-            NSLocalizedString("Sensitivity/Medium.Badge", value: "medium", comment: "medium sensitivity")
-        case .natural:
-            NSLocalizedString("Sensitivity/Natural.Badge", value: "natural", comment: "natural sensitivity")
-        case .high:
-            NSLocalizedString("Sensitivity/High.Badge", value: "high", comment: "high sensitivity")
-        case .extreme:
-            NSLocalizedString("Sensitivity/Extreme.Badge", value: "extreme", comment: "extreme sensitivity")
+            String(localized: .init("Sensitivity: Extreme Name", defaultValue: "Extreme"))
         }
     }
 }
 
 extension Sensitivity: SymbolRepresentable {
-    var representingSymbol: SFSafeSymbols.SFSymbol {
+    var symbol: SFSafeSymbols.SFSymbol {
         switch self {
         case .low:
                 .hexagon
@@ -140,27 +133,18 @@ extension Direction: Identifiable {
 }
 
 extension Direction: Localizable {
-    var localizedName: String {
+    var name: String {
         switch self {
         case .clockwise:
-            NSLocalizedString("Direction/Clockwise.Name", value: "Clockwise", comment: "clockwise direction")
+            String(localized: .init("Direction: Clockwise Name", defaultValue: "Clockwise"))
         case .counterclockwise:
-            NSLocalizedString("Direction/Counterclockwise.Name", value: "Counterclockwise", comment: "counterclockwise direction")
-        }
-    }
-    
-    var localizedBadge: String {
-        switch self {
-        case .clockwise:
-            NSLocalizedString("Direction/Clockwise.Badge", value: "clockwise", comment: "clockwise direction")
-        case .counterclockwise:
-            NSLocalizedString("Direction/Counterclockwise.Badge", value: "counterclockwise", comment: "counterclockwise direction")
+            String(localized: .init("Direction: Counterclockwise Name", defaultValue: "Counterclockwise"))
         }
     }
 }
 
 extension Direction: SymbolRepresentable {
-    var representingSymbol: SFSymbol {
+    var symbol: SFSymbol {
         switch self {
         case .clockwise:
                 .digitalcrownHorizontalArrowClockwiseFill
@@ -215,32 +199,23 @@ enum Rotation: Codable {
 }
 
 extension Rotation.RawType: Localizable {
-    var localizedName: String {
+    var name: String {
         switch self {
         case .continuous:
-            NSLocalizedString("Dial/Rotation/Type/Continuous.Name", value: "Continuous", comment: "continuous rotation type")
+            String(localized: .init("Rotation: Continuous Name", defaultValue: "Continuous"))
         case .stepping:
-            NSLocalizedString("Dial/Rotation/Type/Stepping.Name", value: "Stepping", comment: "stepping rotation type")
-        }
-    }
-    
-    var localizedBadge: String {
-        switch self {
-        case .continuous:
-            NSLocalizedString("Dial/Rotation/Type/Continuous.Badge", value: "continuous", comment: "continuous rotation type")
-        case .stepping:
-            NSLocalizedString("Dial/Rotation/Type/Stepping.Badge", value: "stepping", comment: "stepping rotation type")
+            String(localized: .init("Rotation: Stepping Name", defaultValue: "Stepping"))
         }
     }
 }
 
 extension Rotation.RawType: SymbolRepresentable {
-    var representingSymbol: SFSymbol {
+    var symbol: SFSymbol {
         switch self {
         case .continuous:
-                .alternatingcurrent
+            .alternatingcurrent
         case .stepping:
-                .directcurrent
+            .directcurrent
         }
     }
 }

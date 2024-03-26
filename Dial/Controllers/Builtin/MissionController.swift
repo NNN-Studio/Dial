@@ -13,15 +13,14 @@ class MissionController: DefaultController {
     static let instance: MissionController = .init()
     
     var id: ControllerID = .builtin(.mission)
-    var name: String = NSLocalizedString("Controllers/Default/Mission/Name", value: "Mission", comment: "mission controller name")
-    var representingSymbol: SFSymbol = .command
-    var description: String = NSLocalizedString(
-        "Controllers/Default/Mission/Description",
-        value: """
+    var name: String = String(localized: .init("Controllers/Default/Mission: Name", defaultValue: "Mission"))
+    var symbol: SFSymbol = .command
+    var description: String = String(localized: .init(
+        "Controllers/Default/Mission: Description",
+        defaultValue: """
 You can iterate through App Switcher and activate the app windows through this controller.
-""",
-        comment: "mission controller description"
-    )
+"""
+    ))
     
     
     var haptics: Bool = true

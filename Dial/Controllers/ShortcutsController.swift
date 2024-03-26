@@ -25,7 +25,7 @@ class ShortcutsController: Controller {
     struct Settings: SymbolRepresentable, Codable, Defaults.Serializable {
         var id: UUID
         var name: String?
-        var representingSymbol: SFSymbol
+        var symbol: SFSymbol
         
         var haptics: Bool
         var physicalDirection: Bool
@@ -119,7 +119,7 @@ class ShortcutsController: Controller {
             self.id = UUID()
             
             self.name = name
-            self.representingSymbol = representingSymbol
+            self.symbol = representingSymbol
             
             self.haptics = haptics
             self.physicalDirection = physicalDirection
@@ -135,7 +135,7 @@ class ShortcutsController: Controller {
             }
             
             if resetsIcon {
-                representingSymbol = .__circleFillableFallback
+                symbol = .__circleFillableFallback
             }
             
             haptics = true
@@ -153,11 +153,11 @@ class ShortcutsController: Controller {
     }
     
     var name: String {
-        settings.name ?? Localization.newController.localizedTitle
+        settings.name ?? Self.newControllerName
     }
     
-    var representingSymbol: SFSymbol {
-        settings.representingSymbol
+    var symbol: SFSymbol {
+        settings.symbol
     }
     
     var haptics: Bool {
