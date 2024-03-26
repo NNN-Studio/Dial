@@ -3,24 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>UTExportedTypeDeclarations</key>
-	<array>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.text</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>Draggable Controller State</string>
-			<key>UTTypeIcons</key>
-			<dict>
-				<key>UTTypeIconBadgeName</key>
-				<string></string>
-			</dict>
-			<key>UTTypeIdentifier</key>
-			<string>dial.draggableControllerState</string>
-			<key>UTTypeTagSpecification</key>
-			<dict/>
-		</dict>
-	</array>
+	<array/>
 </dict>
 </plist>

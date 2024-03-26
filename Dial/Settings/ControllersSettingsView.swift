@@ -15,6 +15,8 @@ struct ControllersSettingsView: View {
     
     @State var selectedControllerID: ControllerID?
     
+    @State var isDragging: Bool = false
+    
     var body: some View {
         NavigationSplitView {
             Group {
@@ -26,6 +28,13 @@ struct ControllersSettingsView: View {
                             } label: {
                                 ControllerStateEntryView(id: id)
                             }
+                            .draggable(id.wrappedValue)
+                            .onDrop(of: [.controllerID], delegate: ControllerIDDropDelegate(
+                                data: $activatedControllerIDs,
+                                selected: $selectedControllerID,
+                                isDragging: $isDragging,
+                                id: id.wrappedValue
+                            ))
                         }
                     }
                     
@@ -36,6 +45,7 @@ struct ControllersSettingsView: View {
                             } label: {
                                 ControllerStateEntryView(id: id)
                             }
+                            .draggable(id.wrappedValue)
                         }
                     }
                 }
@@ -69,6 +79,43 @@ struct ControllersSettingsView: View {
 
 #Preview {
     ControllersSettingsView()
+}
+
+struct ControllerIDDropDelegate: DropDelegate {
+    @Binding var data: [ControllerID]
+    @Binding var selected: ControllerID?
+    @Binding var isDragging: Bool
+    
+    let id: ControllerID
+    
+    /// Drop finished work
+    func performDrop(info: DropInfo) -> Bool {
+        selected = nil
+        isDragging = false
+        return true
+    }
+    
+    /// Moving style without "+" icon
+    func dropUpdated(info: DropInfo) -> DropProposal? {
+        return DropProposal(operation: .move)
+    }
+    
+    /// Object is dragged off of the `onDrop` view
+    func dropExited(info: DropInfo) {
+        isDragging = false
+    }
+    
+    /// Object is dragged over the `onDrop` view
+    func dropEntered(info: DropInfo) {
+        isDragging = true
+        guard
+            let selected, selected != id,
+            let from = data.firstIndex(of: selected),
+            let to = data.firstIndex(of: id)
+        else { return }
+        
+        data.move(fromOffsets: IndexSet(integer: from), toOffset: to > from ? to + 1 : to)
+    }
 }
 
 struct ControllerStateEntryView: View {

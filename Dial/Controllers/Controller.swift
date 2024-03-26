@@ -138,6 +138,16 @@ extension ControllerID: LosslessStringConvertible {
     }
 }
 
+extension ControllerID: Transferable {
+    static var transferRepresentation: some TransferRepresentation {
+        DataRepresentation(contentType: .controllerID) { id in
+            try JSONEncoder().encode(id).base64EncodedData()
+        } importing: { data in
+            try JSONDecoder().decode(ControllerID.self, from: data)
+        }
+    }
+}
+
 protocol Controller: AnyObject, SymbolRepresentable {
     var id: ControllerID { get }
     

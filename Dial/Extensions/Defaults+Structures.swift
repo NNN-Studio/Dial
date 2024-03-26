@@ -10,13 +10,6 @@ import Defaults
 import SFSafeSymbols
 import SwiftUI
 
-struct ControllerSection: Codable, Hashable, Defaults.Serializable {
-    enum ID: Codable, Hashable, Defaults.Serializable {
-        case activated
-        case nonactivated
-    }
-}
-
 /// Decides how much steps per circle the dial is divided into.
 enum Sensitivity: CGFloat, CaseIterable, Defaults.Serializable {
     case low = 5

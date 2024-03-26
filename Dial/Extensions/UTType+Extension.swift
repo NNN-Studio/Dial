@@ -8,5 +8,5 @@
 import UniformTypeIdentifiers
 
 extension UTType {
-    static var draggableControllerState: UTType { UTType(exportedAs: "dial.draggableControllerState") }
+    static var controllerID: UTType { UTType(exportedAs: "dial.controllerID") }
 }
