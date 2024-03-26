@@ -16,24 +16,33 @@ struct ControllersSettingsView: View {
     @State var selectedControllerID: ControllerID?
     @State var draggedControllerID: ControllerID?
     
+    @State var searchText: String = ""
+    
     @State var isDragging: Bool = false
+    
+    func filtered(_ data: Binding<[ControllerID]>) -> Array<Binding<ControllerID>> {
+        data.filter {
+            searchText.isEmpty || $0.wrappedValue.controller.name.localizedStandardContains(searchText)
+        }
+    }
     
     var body: some View {
         NavigationSplitView {
             Group {
                 List(selection: $selectedControllerID) {
                     Section("Activated") {
-                        ForEach($activatedControllerIDs) { id in
+                        ForEach(filtered($activatedControllerIDs)) { id in
                             NavigationLink {
                                 Text(id.wrappedValue.controller.name)
                             } label: {
                                 ControllerStateEntryView(id: id)
                             }
+                            /*
                             //.draggable(id.wrappedValue)
                             .onDrag {
                                 print(0)
                                 draggedControllerID = id.wrappedValue
-                                return NSItemProvider()
+                                return NSItemProvider(contentsOf: .init(string: id.wrappedValue.description))!
                             }
                             .onDrop(of: [.controllerID], delegate: ControllerIDDropDelegate(
                                 data: $activatedControllerIDs,
@@ -41,22 +50,24 @@ struct ControllersSettingsView: View {
                                 isDragging: $isDragging,
                                 id: id.wrappedValue
                             ))
+                             */
                         }
                     }
                     
                     Section("Nonactivated") {
-                        ForEach($nonactivatedControllerIDs) { id in
+                        ForEach(filtered($nonactivatedControllerIDs)) { id in
                             NavigationLink {
                                 Text(id.wrappedValue.controller.name)
                             } label: {
                                 ControllerStateEntryView(id: id)
                             }
-                            .draggable(id.wrappedValue)
+                            //.draggable(id.wrappedValue)
                         }
                     }
                 }
                 .animation(.easeInOut, value: activatedControllerIDs)
                 .animation(.easeInOut, value: nonactivatedControllerIDs)
+                .searchable(text: $searchText, placement: .sidebar)
             }
             .controlSize(.regular)
             .navigationSplitViewColumnWidth(min: 250, ideal: 300)
@@ -123,6 +134,7 @@ struct ControllerIDDropDelegate: DropDelegate {
             let to = data.firstIndex(of: id)
         else { return }
         
+        print(2)
         data.move(fromOffsets: IndexSet(integer: from), toOffset: to > from ? to + 1 : to)
     }
 }
