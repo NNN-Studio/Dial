@@ -21,6 +21,7 @@
 		286971102BAB2C170074C2FB /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */; };
 		286971152BAB2D800074C2FB /* MenuBarIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971142BAB2D800074C2FB /* MenuBarIconView.swift */; };
 		286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */; };
+		28723D8C2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28723D8B2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift */; };
 		2887D76B2BABFB6100D733FC /* Defaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D76A2BABFB6100D733FC /* Defaults+Extension.swift */; };
 		2887D76D2BABFB9800D733FC /* NSImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D76C2BABFB9800D733FC /* NSImage+Extension.swift */; };
 		2887D76F2BABFBD100D733FC /* SFSymbol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D76E2BABFBD100D733FC /* SFSymbol+Extension.swift */; };
@@ -74,6 +75,7 @@
 		283856E52BB028A500860E7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		286971142BAB2D800074C2FB /* MenuBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarIconView.swift; sourceTree = "<group>"; };
 		286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		28723D8B2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedControllerSettingsView.swift; sourceTree = "<group>"; };
 		2887D76A2BABFB6100D733FC /* Defaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Extension.swift"; sourceTree = "<group>"; };
 		2887D76C2BABFB9800D733FC /* NSImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extension.swift"; sourceTree = "<group>"; };
 		2887D76E2BABFBD100D733FC /* SFSymbol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+Extension.swift"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */,
 				28EE29C72BAB21CB009005C3 /* MoreSettingsView.swift */,
 				28E4CBAC2BB1B0D60054106D /* DummyView.swift */,
+				28723D8B2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */,
 				2821DA7A2BAEF60B0017B5DD /* View+Extension.swift in Sources */,
 				289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */,
+				28723D8C2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift in Sources */,
 				2806E9C52BAC5ED600CD2AE2 /* BrigntnessController.swift in Sources */,
 				28E4CBAB2BB1AD5F0054106D /* StaleView.swift in Sources */,
 				2821DA782BAEE8250017B5DD /* ObservationTrackingStream.swift in Sources */,

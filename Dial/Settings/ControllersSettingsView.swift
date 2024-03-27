@@ -87,7 +87,7 @@ struct ControllersSettingsView: View {
     }
 }
 
-#Preview {
+#Preview("Settings") {
     ControllersSettingsView()
 }
 
@@ -128,7 +128,7 @@ struct ControllerStateEntryView: View {
     }
 }
 
-#Preview {
+#Preview("Entries") {
     Group {
         ControllerStateEntryView(id: .constant(.builtin(.scroll)))
         
