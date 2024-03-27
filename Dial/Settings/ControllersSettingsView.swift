@@ -91,45 +91,6 @@ struct ControllersSettingsView: View {
     ControllersSettingsView()
 }
 
-struct ControllerIDDropDelegate: DropDelegate {
-    @Binding var data: [ControllerID]
-    @Binding var dragged: ControllerID?
-    @Binding var isDragging: Bool
-    
-    let id: ControllerID
-    
-    /// Drop finished work
-    func performDrop(info: DropInfo) -> Bool {
-        print(1)
-        dragged = nil
-        isDragging = false
-        return true
-    }
-    
-    /// Moving style without "+" icon
-    func dropUpdated(info: DropInfo) -> DropProposal? {
-        return DropProposal(operation: .move)
-    }
-    
-    /// Object is dragged off of the `onDrop` view
-    func dropExited(info: DropInfo) {
-        isDragging = false
-    }
-    
-    /// Object is dragged over the `onDrop` view
-    func dropEntered(info: DropInfo) {
-        isDragging = true
-        guard
-            let dragged, dragged != id,
-            let from = data.firstIndex(of: dragged),
-            let to = data.firstIndex(of: id)
-        else { return }
-        
-        print(2)
-        data.move(fromOffsets: IndexSet(integer: from), toOffset: to > from ? to + 1 : to)
-    }
-}
-
 struct ControllerStateEntryView: View {
     @Binding var id: ControllerID
     
