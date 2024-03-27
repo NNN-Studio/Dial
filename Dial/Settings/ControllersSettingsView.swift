@@ -37,20 +37,11 @@ struct ControllersSettingsView: View {
                             } label: {
                                 ControllerStateEntryView(id: id)
                             }
-                            /*
                             //.draggable(id.wrappedValue)
-                            .onDrag {
-                                print(0)
-                                draggedControllerID = id.wrappedValue
-                                return NSItemProvider(contentsOf: .init(string: id.wrappedValue.description))!
-                            }
-                            .onDrop(of: [.controllerID], delegate: ControllerIDDropDelegate(
-                                data: $activatedControllerIDs,
-                                dragged: $draggedControllerID,
-                                isDragging: $isDragging,
-                                id: id.wrappedValue
-                            ))
-                             */
+                        }
+                        .onMove { indices, destination in
+                            activatedControllerIDs.move(fromOffsets: indices, toOffset: destination)
+                            selectedControllerID = nil
                         }
                     }
                     
