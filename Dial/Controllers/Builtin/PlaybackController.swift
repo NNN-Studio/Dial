@@ -9,7 +9,7 @@ import Foundation
 import AppKit
 import SFSafeSymbols
 
-class PlaybackController: DefaultController {
+class PlaybackController: BuiltinController {
     static let instance: PlaybackController = .init()
     
     var id: ControllerID = .builtin(.playback)

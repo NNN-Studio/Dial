@@ -13,9 +13,3 @@ protocol SymbolRepresentable {
     var symbol: SFSymbol { get }
 }
 
-extension SymbolRepresentable {
-    static var appIcon: SFSymbol {
-        .hockeyPuckFill
-    }
-}
-

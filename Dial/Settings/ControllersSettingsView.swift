@@ -10,15 +10,12 @@ import Defaults
 
 struct ControllersSettingsView: View {
     // Don't use `@Default()` as it results in data inconsistencies.
-    @State var activatedControllerIDs: [ControllerID] = []
-    @State var nonactivatedControllerIDs: [ControllerID] = []
+    @State var activated: [ControllerID] = []
+    @State var nonactivated: [ControllerID] = []
     
-    @State var selectedControllerID: ControllerID?
-    @State var draggedControllerID: ControllerID?
+    @State var selected: ControllerID?
     
     @State var searchText: String = ""
-    
-    @State var isDragging: Bool = false
     
     func filtered(_ data: Binding<[ControllerID]>) -> Array<Binding<ControllerID>> {
         data.filter {
@@ -29,9 +26,9 @@ struct ControllersSettingsView: View {
     var body: some View {
         NavigationSplitView {
             Group {
-                List(selection: $selectedControllerID) {
+                List(selection: $selected) {
                     Section("Activated") {
-                        ForEach(filtered($activatedControllerIDs)) { id in
+                        ForEach(filtered($activated)) { id in
                             NavigationLink {
                                 Text(id.wrappedValue.controller.name)
                             } label: {
@@ -40,13 +37,13 @@ struct ControllersSettingsView: View {
                             //.draggable(id.wrappedValue)
                         }
                         .onMove { indices, destination in
-                            activatedControllerIDs.move(fromOffsets: indices, toOffset: destination)
-                            selectedControllerID = nil
+                            activated.move(fromOffsets: indices, toOffset: destination)
+                            selected = nil
                         }
                     }
                     
                     Section("Nonactivated") {
-                        ForEach(filtered($nonactivatedControllerIDs)) { id in
+                        ForEach(filtered($nonactivated)) { id in
                             NavigationLink {
                                 Text(id.wrappedValue.controller.name)
                             } label: {
@@ -54,13 +51,67 @@ struct ControllersSettingsView: View {
                             }
                             //.draggable(id.wrappedValue)
                         }
+                        .onMove { indices, destination in
+                            nonactivated.move(fromOffsets: indices, toOffset: destination)
+                            selected = nil
+                        }
                     }
                 }
-                .animation(.easeInOut, value: activatedControllerIDs)
-                .animation(.easeInOut, value: nonactivatedControllerIDs)
-                .searchable(text: $searchText, placement: .sidebar)
+                .animation(.easeInOut, value: activated)
+                .animation(.easeInOut, value: nonactivated)
+                .padding(.all, 0)
+                
+                Divider()
+                
+                HStack {
+                    Text("\(filtered($activated).count + filtered($nonactivated).count) controllers, \(filtered($activated).count) activated")
+                        .font(.footnote)
+                        .foregroundStyle(.placeholder)
+                    
+                    Spacer()
+                    
+                    Button {
+                        guard let selected else { return }
+                        Defaults.removeController(id: selected)
+                        
+                        self.selected = nil
+                    } label: {
+                        Image(systemSymbol: .minus)
+                    }
+                    .disabled(selected == nil)
+                    
+                    Menu {
+                        Menu {
+                            ForEach(ControllerID.Builtin.availableCases) { id in
+                                Button {
+                                    Defaults.appendBuiltinController(id: id)
+                                } label: {
+                                    Text(id.controller.name)
+                                    Image(systemSymbol: id.controller.symbol)
+                                }
+                                .disabled(activated.contains(id.linkage))
+                            }
+                        } label: {
+                            Text("Builtin")
+                            Image(systemSymbol: .ellipsisCurlybraces)
+                        }
+                        
+                        Button {
+                            Defaults.appendNewController()
+                        } label: {
+                            Text(newControllerName)
+                            Image(systemSymbol: .gearBadge)
+                        }
+                    } label: {
+                        Image(systemSymbol: .plus)
+                    }
+                }
+                .buttonStyle(.plain)
+                .padding(.leading, 12)
+                .padding(.trailing, 8)
+                .padding(.top, 4)
+                .padding(.bottom, 8)
             }
-            .controlSize(.regular)
             .navigationSplitViewColumnWidth(min: 250, ideal: 300)
         } detail: {
             Group {
@@ -70,18 +121,19 @@ struct ControllersSettingsView: View {
             .navigationSplitViewColumnWidth(min: 400, ideal: 400)
         }
         .controlSize(.extraLarge)
+        .searchable(text: $searchText, placement: .sidebar)
         .task {
             // MARK: Update activated controller ids
             
             for await activatedControllerIDs in Defaults.updates(.activatedControllerIDs) {
-                self.activatedControllerIDs = activatedControllerIDs
+                self.activated = activatedControllerIDs
             }
         }
         .task {
             // MARK: Update nonactivated controller ids
             
             for await nonactivatedControllerIDs in Defaults.updates(.nonactivatedControllerIDs) {
-                self.nonactivatedControllerIDs = nonactivatedControllerIDs
+                self.nonactivated = nonactivatedControllerIDs
             }
         }
     }
@@ -94,6 +146,8 @@ struct ControllersSettingsView: View {
 struct ControllerStateEntryView: View {
     @Binding var id: ControllerID
     
+    @FocusState var isTextFieldFocused: Bool
+    
     var body: some View {
         HStack {
             Image(systemSymbol: id.controller.symbol)
@@ -101,7 +155,12 @@ struct ControllerStateEntryView: View {
                 .frame(width: 32)
             
             VStack(alignment: .leading) {
-                Text(id.controller.name)
+                TextField(newControllerName, text: $id.controller.name)
+                    .focused($isTextFieldFocused)
+                    .orSomeView(condition: id.isBuiltin) {
+                        // Immutable names with builtin controllers
+                        Text(id.controller.name)
+                    }
                     .font(.title3)
                 
                 switch id {
@@ -122,18 +181,65 @@ struct ControllerStateEntryView: View {
             Toggle(isOn: $id.isActivated) {
             }
             .toggleStyle(.checkbox)
+            .help("Controller activated")
         }
         .padding(.horizontal, 8)
         .padding(.vertical, 6)
+        .contextMenu(ContextMenu(menuItems: {
+            if !id.isBuiltin {
+                Button {
+                    isTextFieldFocused = true
+                } label: {
+                    Text("Rename")
+                }
+                .disabled(id.isBuiltin)
+            }
+            
+            Divider()
+            
+            if !id.isBuiltin {
+                Button {
+                    switch id {
+                    case .shortcuts(let settings):
+                        id = .shortcuts(settings.new())
+                    case .builtin(_):
+                        break
+                    }
+                } label: {
+                    Text("Reset")
+                }
+                .disabled(id.isBuiltin)
+                
+                Button {
+                    switch id {
+                    case .shortcuts(let settings):
+                        id = .shortcuts(settings.renew())
+                    case .builtin(_):
+                        break
+                    }
+                } label: {
+                    Text("Remove Name and Icon")
+                }
+                .disabled(id.isBuiltin)
+            }
+            
+            Button(role: .destructive) {
+                Defaults.removeController(id: id)
+            } label: {
+                Text("Remove")
+                    .foregroundStyle(.red)
+            }
+        }))
     }
 }
 
 #Preview("Entries") {
-    Group {
+    List {
         ControllerStateEntryView(id: .constant(.builtin(.scroll)))
         
         let settings = ShortcutsController.Settings()
         ControllerStateEntryView(id: .constant(.shortcuts(settings)))
     }
+    .listStyle(.sidebar)
     .frame(width: 250)
 }

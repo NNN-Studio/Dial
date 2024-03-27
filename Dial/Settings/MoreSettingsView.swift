@@ -93,7 +93,6 @@ By sending feedbacks, you can report bugs, request features or more. Issue templ
                         } label: {
                             Image(systemSymbol: .rectanglePortraitAndArrowRight)
                                 .frame(width: 20, alignment: .center)
-                            
                             Text("Send Feedback…")
                                 .frame(maxWidth: .infinity)
                         }
@@ -104,7 +103,6 @@ By sending feedbacks, you can report bugs, request features or more. Issue templ
                         } label: {
                             Image(systemSymbol: .infoCircle)
                                 .frame(width: 20, alignment: .center)
-                            
                             Text("About \(Bundle.main.appName)…")
                                 .frame(maxWidth: .infinity)
                         }

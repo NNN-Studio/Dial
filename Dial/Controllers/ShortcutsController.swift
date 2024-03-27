@@ -109,17 +109,18 @@ class ShortcutsController: Controller {
             }
         }
         
-        init(
+        private init(
+            id: UUID,
             name: String? = nil,
-            representingSymbol: SFSymbol = .__circleFillableFallback,
+            symbol: SFSymbol? = nil,
             haptics: Bool = true,
             physicalDirection: Bool = false, alternativeDirection: Bool = false,
             rotationType: Rotation.RawType = .continuous, shortcuts: Shortcuts = Shortcuts()
         ) {
-            self.id = UUID()
+            self.id = id
             
             self.name = name
-            self.symbol = representingSymbol
+            self.symbol = symbol ?? .__circleFillableFallback
             
             self.haptics = haptics
             self.physicalDirection = physicalDirection
@@ -129,20 +130,46 @@ class ShortcutsController: Controller {
             self.shortcuts = shortcuts
         }
         
-        mutating func reset(resetsName: Bool = false, resetsIcon: Bool = false) {
-            if resetsName {
-                name = nil
-            }
+        private init(_ from: Self) {
+            self.init(
+                id: from.id,
+                name: from.name, symbol: from.symbol,
+                haptics: from.haptics, physicalDirection: from.physicalDirection, alternativeDirection: from.alternativeDirection,
+                rotationType: from.rotationType, shortcuts: from.shortcuts
+            )
+        }
+        
+        init(
+            name: String? = nil,
+            symbol: SFSymbol? = nil,
+            haptics: Bool = true,
+            physicalDirection: Bool = false, alternativeDirection: Bool = false,
+            rotationType: Rotation.RawType = .continuous, shortcuts: Shortcuts = Shortcuts()
+        ) {
+            self.init(
+                id: UUID(),
+                name: name, symbol: symbol,
+                haptics: haptics, physicalDirection: physicalDirection, alternativeDirection: alternativeDirection,
+                rotationType: rotationType, shortcuts: shortcuts
+            )
+        }
+        
+        func new(resetsName: Bool = false, resetsSymbol: Bool = false) -> Self {
+            var result = Settings()
             
-            if resetsIcon {
-                symbol = .__circleFillableFallback
-            }
+            if !resetsName { result.name = self.name }
+            if !resetsSymbol { result.symbol = self.symbol }
             
-            haptics = true
-            physicalDirection = false
-            alternativeDirection = false
-            rotationType = .continuous
-            shortcuts = Shortcuts()
+            return result
+        }
+        
+        func renew() -> Self {
+            var result = Settings(self)
+            
+            result.name = nil
+            result.symbol = .__circleFillableFallback
+            
+            return result
         }
     }
     
@@ -153,7 +180,13 @@ class ShortcutsController: Controller {
     }
     
     var name: String {
-        settings.name ?? Self.newControllerName
+        get {
+            settings.name ?? newControllerName
+        }
+        
+        set {
+            settings.name = newValue
+        }
     }
     
     var symbol: SFSymbol {

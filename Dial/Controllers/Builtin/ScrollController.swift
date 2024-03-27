@@ -9,7 +9,7 @@ import Foundation
 import AppKit
 import SFSafeSymbols
 
-class ScrollController: DefaultController {
+class ScrollController: BuiltinController {
     static let instance: ScrollController = .init()
     
     var id: ControllerID = .builtin(.scroll)

@@ -9,7 +9,7 @@ import Foundation
 import AppKit
 import SFSafeSymbols
 
-class MissionController: DefaultController {
+class MissionController: BuiltinController {
     static let instance: MissionController = .init()
     
     var id: ControllerID = .builtin(.mission)

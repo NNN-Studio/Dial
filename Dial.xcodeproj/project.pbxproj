@@ -225,6 +225,7 @@
 				28E71A3C2BAFD80D00722045 /* VisualEffectView.swift */,
 				28E71A3E2BAFDA3700722045 /* AppVersionView.swift */,
 				28AC22172BB1C14C00ADA343 /* ApplicationDataView.swift */,
+				28723D8B2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift */,
 			);
 			path = "View Auxiliaries";
 			sourceTree = "<group>";
@@ -295,7 +296,6 @@
 				28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */,
 				28EE29C72BAB21CB009005C3 /* MoreSettingsView.swift */,
 				28E4CBAC2BB1B0D60054106D /* DummyView.swift */,
-				28723D8B2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";

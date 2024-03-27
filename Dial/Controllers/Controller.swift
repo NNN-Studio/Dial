@@ -11,6 +11,8 @@ import Defaults
 import SFSafeSymbols
 import SwiftUI
 
+let newControllerName: String = String(localized: .init("New Controller"))
+
 enum ControllerID: Codable, Hashable, Defaults.Serializable, Equatable {
     enum Builtin: CaseIterable, Codable {
         case main
@@ -36,6 +38,10 @@ enum ControllerID: Codable, Hashable, Defaults.Serializable, Equatable {
             case .mission:
                 MissionController.instance
             }
+        }
+        
+        var linkage: ControllerID {
+            .builtin(self)
         }
         
         static var availableCases: [ControllerID.Builtin] {
@@ -88,6 +94,15 @@ extension ControllerID {
         }
     }
     
+    var isBuiltin: Bool {
+        switch self {
+        case .shortcuts(_):
+            false
+        case .builtin(_):
+            true
+        }
+    }
+    
     var isActivated: Bool {
         get {
             Defaults[.activatedControllerIDs].contains(self)
@@ -109,6 +124,13 @@ extension ControllerID {
 
 extension ControllerID: Identifiable {
     /// This is intended to make `ControllerID` conforms to `Identifiable`. The return value is the same as itself.
+    var id: Self {
+        self
+    }
+}
+
+extension ControllerID.Builtin: Identifiable {
+    /// This is intended to make `ControllerID.Builtin` conforms to `Identifiable`. The return value is the same as itself.
     var id: Self {
         self
     }
@@ -151,7 +173,7 @@ extension ControllerID: Transferable {
 protocol Controller: AnyObject, SymbolRepresentable {
     var id: ControllerID { get }
     
-    var name: String { get }
+    var name: String { get set }
     
     /// Whether to enable haptic feedback on stepping. The default value is `false`.
     var haptics: Bool { get }
@@ -168,18 +190,8 @@ protocol Controller: AnyObject, SymbolRepresentable {
 }
 
 extension Controller {
-    static var newControllerName: String {
-        String(localized: .init("New Controller"))
-    }
-}
-
-extension Controller {
     static func equals(_ lhs: any Controller, _ rhs: any Controller) -> Bool {
         lhs.id == rhs.id
-    }
-    
-    var isDefaultController: Bool {
-        self is DefaultController
     }
     
     func equals(_ another: any Controller) -> Bool {
@@ -205,7 +217,7 @@ extension Controller {
     }
 }
 
-protocol DefaultController: Controller {
+protocol BuiltinController: Controller {
     var description: String { get }
 }
 

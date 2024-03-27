@@ -9,7 +9,7 @@ import Foundation
 import SFSafeSymbols
 import AppKit
 
-class BrightnessController: DefaultController {
+class BrightnessController: BuiltinController {
     static let instance: BrightnessController = .init()
     
     var id: ControllerID = .builtin(.brightness)
