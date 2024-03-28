@@ -138,19 +138,18 @@ struct ControllersSettingsView: View {
             // MARK: Update activated controller ids
             
             for await activatedControllerIDs in Defaults.updates(.activatedControllerIDs) {
+                // Clear the list to force refresh it, important!
                 self.activated = []
                 self.activated = activatedControllerIDs
-                print("update activated")
-                print(activatedControllerIDs.map { $0.controller.nameOrEmpty })
-                print(activated.map { $0.controller.nameOrEmpty })
             }
         }
         .task {
             // MARK: Update nonactivated controller ids
             
             for await nonactivatedControllerIDs in Defaults.updates(.nonactivatedControllerIDs) {
+                // Clear the list to force refresh it, important!
+                self.nonactivated = []
                 self.nonactivated = nonactivatedControllerIDs
-                print("update nonactivated")
             }
         }
     }
@@ -169,7 +168,6 @@ struct ControllerStateEntryView: View {
     init(id: Binding<ControllerID>) {
         self._id = id
         self.name = id.controller.nameOrEmpty.wrappedValue
-        print("init:", name, id.controller.nameOrEmpty.wrappedValue)
     }
     
     var body: some View {
@@ -183,7 +181,6 @@ struct ControllerStateEntryView: View {
                     .focused($isTextFieldFocused)
                     .onSubmit {
                         id.controller.nameOrEmpty = name
-                        print(name, id.controller.nameOrEmpty)
                     }
                     .orSomeView(condition: id.isBuiltin) {
                         // Immutable names with builtin controllers

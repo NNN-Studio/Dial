@@ -186,7 +186,6 @@ class ShortcutsController: Controller {
         
         set {
             settings.name = newValue
-            print("set:", newValue, settings.name)
             Defaults.saveController(settings: settings)
         }
     }
