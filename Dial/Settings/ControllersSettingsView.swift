@@ -9,10 +9,9 @@ import SwiftUI
 import Defaults
 
 struct ControllersSettingsView: View {
-    // Don't use `@Default()` as it results in data inconsistencies.
+    // Don't use `@Default()` as it results in data inconsistencies and index out of bounds errors.
     @State var activated: [ControllerID] = []
     @State var nonactivated: [ControllerID] = []
-    
     @State var selected: ControllerID?
     
     @State var searchText: String = ""
@@ -139,7 +138,11 @@ struct ControllersSettingsView: View {
             // MARK: Update activated controller ids
             
             for await activatedControllerIDs in Defaults.updates(.activatedControllerIDs) {
+                self.activated = []
                 self.activated = activatedControllerIDs
+                print("update activated")
+                print(activatedControllerIDs.map { $0.controller.nameOrEmpty })
+                print(activated.map { $0.controller.nameOrEmpty })
             }
         }
         .task {
@@ -147,13 +150,8 @@ struct ControllersSettingsView: View {
             
             for await nonactivatedControllerIDs in Defaults.updates(.nonactivatedControllerIDs) {
                 self.nonactivated = nonactivatedControllerIDs
+                print("update nonactivated")
             }
-        }
-        .onChange(of: activated) {
-            Defaults[.activatedControllerIDs] = activated
-        }
-        .onChange(of: nonactivated) {
-            Defaults[.nonactivatedControllerIDs] = nonactivated
         }
     }
 }
@@ -164,8 +162,15 @@ struct ControllersSettingsView: View {
 
 struct ControllerStateEntryView: View {
     @Binding var id: ControllerID
+    @State var name: String
     
     @FocusState var isTextFieldFocused: Bool
+    
+    init(id: Binding<ControllerID>) {
+        self._id = id
+        self.name = id.controller.nameOrEmpty.wrappedValue
+        print("init:", name, id.controller.nameOrEmpty.wrappedValue)
+    }
     
     var body: some View {
         HStack {
@@ -174,13 +179,12 @@ struct ControllerStateEntryView: View {
                 .frame(width: 32)
             
             VStack(alignment: .leading) {
-                TextField(newControllerName, text: .init(get: {
-                    id.controller.nameOrEmpty
-                }, set: {
-                    print("!", $0)
-                    id.controller.nameOrEmpty = $0
-                }))
+                TextField(newControllerName, text: $name)
                     .focused($isTextFieldFocused)
+                    .onSubmit {
+                        id.controller.nameOrEmpty = name
+                        print(name, id.controller.nameOrEmpty)
+                    }
                     .orSomeView(condition: id.isBuiltin) {
                         // Immutable names with builtin controllers
                         Text(id.controller.name ?? newControllerName)
@@ -259,10 +263,13 @@ struct ControllerStateEntryView: View {
 
 #Preview("Entries") {
     List {
-        ControllerStateEntryView(id: .constant(.builtin(.scroll)))
-        
         let settings = ShortcutsController.Settings()
-        ControllerStateEntryView(id: .constant(.shortcuts(settings)))
+        let controllerID1 = ControllerID.builtin(.scroll)
+        let controllerID2 = ControllerID.shortcuts(settings)
+        
+        ControllerStateEntryView(id: .constant(controllerID1))
+        
+        ControllerStateEntryView(id: .constant(controllerID2))
     }
     .listStyle(.sidebar)
     .frame(width: 250)

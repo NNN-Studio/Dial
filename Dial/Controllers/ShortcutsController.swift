@@ -185,8 +185,9 @@ class ShortcutsController: Controller {
         }
         
         set {
-            print(newValue)
             settings.name = newValue
+            print("set:", newValue, settings.name)
+            Defaults.saveController(settings: settings)
         }
     }
     
@@ -197,6 +198,7 @@ class ShortcutsController: Controller {
         
         set {
             settings.symbol = newValue
+            Defaults.saveController(settings: settings)
         }
     }
     
@@ -207,6 +209,7 @@ class ShortcutsController: Controller {
         
         set {
             settings.haptics = newValue
+            Defaults.saveController(settings: settings)
         }
     }
     
@@ -217,6 +220,7 @@ class ShortcutsController: Controller {
         
         set {
             settings.rotationType = newValue
+            Defaults.saveController(settings: settings)
         }
     }
     

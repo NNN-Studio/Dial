@@ -54,10 +54,11 @@ extension Defaults.Keys {
 extension Defaults {
     static func saveController(settings: ShortcutsController.Settings) {
         let id = ControllerID.shortcuts(settings)
-        print(id.controller.name)
+        print("save:", id.controller.name)
         
         if let activatedIndex = Defaults[.activatedControllerIDs].firstIndex(of: id) {
             Defaults[.activatedControllerIDs][activatedIndex] = id
+            print("save activated:", Defaults[.activatedControllerIDs][activatedIndex].controller.name)
         }
         
         if let nonactivatedIndex = Defaults[.nonactivatedControllerIDs].firstIndex(of: id) {
