@@ -53,26 +53,16 @@ extension Defaults.Keys {
 
 extension Defaults {
     static func saveController(settings: ShortcutsController.Settings) {
-        let activated = Defaults[.activatedControllerIDs].filter {
-            switch $0 {
-            case .shortcuts(let settings):
-                return settings.id == settings.id
-            case .builtin(_):
-                return false
-            }
-        }
-        Defaults[.activatedControllerIDs].replace(activated, with: [.shortcuts(settings)])
+        let id = ControllerID.shortcuts(settings)
+        print(id.controller.name)
         
-        let nonactivated = Defaults[.nonactivatedControllerIDs].filter {
-            switch $0 {
-            case .shortcuts(let settings):
-                return settings.id == settings.id
-            case .builtin(_):
-                return false
-            }
+        if let activatedIndex = Defaults[.activatedControllerIDs].firstIndex(of: id) {
+            Defaults[.activatedControllerIDs][activatedIndex] = id
         }
-        Defaults[.nonactivatedControllerIDs].replace(activated, with: [.shortcuts(settings)])
-        print(activated, nonactivated)
+        
+        if let nonactivatedIndex = Defaults[.nonactivatedControllerIDs].firstIndex(of: id) {
+            Defaults[.nonactivatedControllerIDs][nonactivatedIndex] = id
+        }
     }
     
     static func appendBuiltinController(id: ControllerID.Builtin) {

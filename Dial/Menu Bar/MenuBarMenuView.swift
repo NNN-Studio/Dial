@@ -53,7 +53,7 @@ struct MenuBarMenuView: View {
         ForEach($activatedControllerIDs) { id in
             Toggle(isOn: id.isCurrent) {
                 Image(systemSymbol: id.wrappedValue.controller.symbol)
-                Text(id.wrappedValue.controller.name)
+                Text(id.wrappedValue.controller.name ?? newControllerName)
             }
         }
         

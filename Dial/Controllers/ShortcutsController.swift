@@ -179,26 +179,45 @@ class ShortcutsController: Controller {
         .shortcuts(settings)
     }
     
-    var name: String {
+    var name: String? {
         get {
-            settings.name ?? newControllerName
+            settings.name
         }
         
         set {
+            print(newValue)
             settings.name = newValue
         }
     }
     
     var symbol: SFSymbol {
-        settings.symbol
+        get {
+            settings.symbol
+        }
+        
+        set {
+            settings.symbol = newValue
+        }
     }
     
     var haptics: Bool {
-        settings.haptics
+        get {
+            settings.haptics
+        }
+        
+        set {
+            settings.haptics = newValue
+        }
     }
     
     var rotationType: Rotation.RawType {
-        settings.rotationType
+        get {
+            settings.rotationType
+        }
+        
+        set {
+            settings.rotationType = newValue
+        }
     }
     
     init(settings: Settings) {

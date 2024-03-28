@@ -13,7 +13,7 @@ class MissionController: BuiltinController {
     static let instance: MissionController = .init()
     
     var id: ControllerID = .builtin(.mission)
-    var name: String = String(localized: .init("Controllers/Default/Mission: Name", defaultValue: "Mission"))
+    var name: String? = String(localized: .init("Controllers/Default/Mission: Name", defaultValue: "Mission"))
     var symbol: SFSymbol = .command
     var description: String = String(localized: .init(
         "Controllers/Default/Mission: Description",
@@ -21,7 +21,6 @@ class MissionController: BuiltinController {
 You can iterate through App Switcher and activate the app windows through this controller.
 """
     ))
-    
     
     var haptics: Bool = true
     var rotationType: Rotation.RawType = .stepping

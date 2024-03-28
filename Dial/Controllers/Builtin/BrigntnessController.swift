@@ -13,7 +13,7 @@ class BrightnessController: BuiltinController {
     static let instance: BrightnessController = .init()
     
     var id: ControllerID = .builtin(.brightness)
-    var name: String = String(localized: .init("Controllers/Default/Brigshtnes: Name", defaultValue: "Brightness"))
+    var name: String? = String(localized: .init("Controllers/Default/Brigshtnes: Name", defaultValue: "Brightness"))
     var symbol: SFSymbol = .sunMax
     var description: String = String(localized: .init(
         "Controllers/Default/Brigshtnes: Description",
@@ -22,6 +22,7 @@ You can increase / decrease screen brightness by dialing, increase / decrease ke
 """
     ))
     
+    var haptics: Bool = false
     var rotationType: Rotation.RawType = .continuous
     
     func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: SurfaceDial.Callback) {

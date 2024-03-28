@@ -33,7 +33,7 @@ class MainController: ObservableObject, Controller {
     static var instance: MainController = .init()
     
     var id: ControllerID = .builtin(.main)
-    var name: String = String(localized: .init("Controllers/Default/Main: Name", defaultValue: "Main"))
+    var name: String? = String(localized: .init("Controllers/Default/Main: Name", defaultValue: "Main"))
     var symbol: SFSymbol = .hockeyPuck
     
     var haptics: Bool = false

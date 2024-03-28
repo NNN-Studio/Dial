@@ -173,12 +173,14 @@ extension ControllerID: Transferable {
 protocol Controller: AnyObject, SymbolRepresentable {
     var id: ControllerID { get }
     
-    var name: String { get set }
+    var name: String? { get set }
+    
+    var symbol: SFSymbol { get set }
     
     /// Whether to enable haptic feedback on stepping. The default value is `false`.
-    var haptics: Bool { get }
+    var haptics: Bool { get set }
     
-    var rotationType: Rotation.RawType { get }
+    var rotationType: Rotation.RawType { get set }
     
     var autoTriggers: Bool { get }
     
@@ -200,16 +202,18 @@ extension Controller {
 }
 
 extension Controller {
-    var symbol: SFSymbol {
-        .__circleFillableFallback
-    }
-    
-    var haptics: Bool {
-        false
-    }
-    
     var autoTriggers: Bool {
         haptics && rotationType.autoTriggers
+    }
+    
+    var nameOrEmpty: String {
+        get {
+            name ?? ""
+        }
+        
+        set {
+            name = newValue.isEmpty ? nil : newValue
+        }
     }
     
     func onRelease(_ callback: SurfaceDial.Callback) {

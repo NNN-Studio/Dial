@@ -13,7 +13,7 @@ class PlaybackController: BuiltinController {
     static let instance: PlaybackController = .init()
     
     var id: ControllerID = .builtin(.playback)
-    var name: String = String(localized: .init("Controllers/Default/Playback: Name", defaultValue: "Playback"))
+    var name: String? = String(localized: .init("Controllers/Default/Playback: Name", defaultValue: "Playback"))
     var symbol: SFSymbol = .speakerWave2
     var description: String = String(localized: .init(
         "Controllers/Default/Playback: Description",
@@ -22,6 +22,7 @@ You can trigger forward / backward by dialing, increase / decrease volume by dia
 """
     ))
     
+    var haptics: Bool = false
     var rotationType: Rotation.RawType = .continuous
     
     func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: SurfaceDial.Callback) {
