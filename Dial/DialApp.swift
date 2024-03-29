@@ -18,6 +18,10 @@ func notifyTaskStart(_ message: String, _ sender: Any? = nil) {
     print()
 }
 
+var isPreview: Bool {
+    return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
+}
+
 @main
 struct DialApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate

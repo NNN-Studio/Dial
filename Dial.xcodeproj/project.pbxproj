@@ -18,6 +18,8 @@
 		2821DA7D2BAF1AD20017B5DD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 2821DA7C2BAF1AD20017B5DD /* LaunchAtLogin */; };
 		2831AD8B2BAF9B8B0064821C /* MenuBarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831AD8A2BAF9B8B0064821C /* MenuBarMenuView.swift */; };
 		283856E42BB026EF00860E7C /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283856E32BB026EF00860E7C /* UTType+Extension.swift */; };
+		285C9E4C2BB6F4D5003C6BAD /* ControllerEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C9E4B2BB6F4D5003C6BAD /* ControllerEntryView.swift */; };
+		285C9E4E2BB6F9C0003C6BAD /* ControllerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C9E4D2BB6F9C0003C6BAD /* ControllerDetailsView.swift */; };
 		286971102BAB2C170074C2FB /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */; };
 		286971152BAB2D800074C2FB /* MenuBarIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971142BAB2D800074C2FB /* MenuBarIconView.swift */; };
 		286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */; };
@@ -73,6 +75,8 @@
 		2831AD8A2BAF9B8B0064821C /* MenuBarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarMenuView.swift; sourceTree = "<group>"; };
 		283856E32BB026EF00860E7C /* UTType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTType+Extension.swift"; sourceTree = "<group>"; };
 		283856E52BB028A500860E7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		285C9E4B2BB6F4D5003C6BAD /* ControllerEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerEntryView.swift; sourceTree = "<group>"; };
+		285C9E4D2BB6F9C0003C6BAD /* ControllerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDetailsView.swift; sourceTree = "<group>"; };
 		286971142BAB2D800074C2FB /* MenuBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarIconView.swift; sourceTree = "<group>"; };
 		286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		28723D8B2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedControllerSettingsView.swift; sourceTree = "<group>"; };
@@ -296,6 +300,8 @@
 				28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */,
 				28EE29C72BAB21CB009005C3 /* MoreSettingsView.swift */,
 				28E4CBAC2BB1B0D60054106D /* DummyView.swift */,
+				285C9E4B2BB6F4D5003C6BAD /* ControllerEntryView.swift */,
+				285C9E4D2BB6F9C0003C6BAD /* ControllerDetailsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -405,6 +411,7 @@
 				2887D7762BABFD2200D733FC /* Hardware.swift in Sources */,
 				2887D77B2BABFE0E00D733FC /* Localizable.swift in Sources */,
 				28EE29C02BAB219E009005C3 /* SettingsView.swift in Sources */,
+				285C9E4E2BB6F9C0003C6BAD /* ControllerDetailsView.swift in Sources */,
 				2806E9C32BAC5EAF00CD2AE2 /* PlaybackController.swift in Sources */,
 				2887D7812BAC002400D733FC /* Controller.swift in Sources */,
 				2887D76B2BABFB6100D733FC /* Defaults+Extension.swift in Sources */,
@@ -414,6 +421,7 @@
 				2821DA7A2BAEF60B0017B5DD /* View+Extension.swift in Sources */,
 				289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */,
 				28723D8C2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift in Sources */,
+				285C9E4C2BB6F4D5003C6BAD /* ControllerEntryView.swift in Sources */,
 				2806E9C52BAC5ED600CD2AE2 /* BrigntnessController.swift in Sources */,
 				28E4CBAB2BB1AD5F0054106D /* StaleView.swift in Sources */,
 				2821DA782BAEE8250017B5DD /* ObservationTrackingStream.swift in Sources */,
