@@ -18,6 +18,7 @@ extension SFSymbol {
         SFSymbol.allSymbols
             .filter { $0.hasSuffix(SFSymbol.__circleFillableSuffix) && $0.withoutSuffix(SFSymbol.__circleFillableSuffix) != nil }
             .map { $0.withoutSuffix(SFSymbol.__circleFillableSuffix)! }
+            .sorted { $0.rawValue < $1.rawValue } // Sort naturally
     }
     
     func hasSuffix(_ suffix: String) -> Bool {
@@ -57,6 +58,10 @@ extension SFSymbol {
 
 extension SFSymbol: Codable {
     // Make it codable
+}
+
+extension SFSymbol: Identifiable {
+    // Make it identifiable
 }
 
 extension SFSymbol {
