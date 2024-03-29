@@ -216,7 +216,7 @@ struct ControllerStateEntryView: View {
                 Button {
                     switch id {
                     case .shortcuts(let settings):
-                        id = .shortcuts(settings.new(resetsName: true, resetsSymbol: true))
+                        (id.controller as? ShortcutsController)?.settings = settings.new()
                     case .builtin(_):
                         break
                     }

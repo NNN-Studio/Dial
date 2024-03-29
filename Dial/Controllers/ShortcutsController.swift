@@ -131,12 +131,7 @@ class ShortcutsController: Controller {
         }
         
         private init(_ from: Self) {
-            self.init(
-                id: from.id,
-                name: from.name, symbol: from.symbol,
-                haptics: from.haptics, physicalDirection: from.physicalDirection, alternativeDirection: from.alternativeDirection,
-                rotationType: from.rotationType, shortcuts: from.shortcuts
-            )
+            self.init(id: from.id)
         }
         
         init(
@@ -154,30 +149,24 @@ class ShortcutsController: Controller {
             )
         }
         
-        func new(resetsName: Bool = false, resetsSymbol: Bool = false) -> Self {
-            var result = Settings(self)
-            
-            if !resetsName { result.name = self.name }
-            if !resetsSymbol { result.symbol = self.symbol }
-            
-            Defaults.saveController(settings: result)
-            
-            return result
-        }
-        
-        func renew() -> Self {
-            var result = Settings(self)
-            
-            result.name = nil
-            result.symbol = .__circleFillableFallback
-            
-            Defaults.saveController(settings: result)
-            
-            return result
+        func new() -> Settings {
+            .init(self)
         }
     }
     
-    var settings: Settings
+    private var _settings: Settings
+    
+    var settings: Settings {
+        get {
+            _settings
+        }
+        
+        set {
+            print(0)
+            _settings = newValue
+            Defaults.saveController(settings: _settings)
+        }
+    }
     
     var id: ControllerID {
         .shortcuts(settings)
@@ -190,7 +179,6 @@ class ShortcutsController: Controller {
         
         set {
             settings.name = newValue
-            Defaults.saveController(settings: settings)
         }
     }
     
@@ -201,7 +189,6 @@ class ShortcutsController: Controller {
         
         set {
             settings.symbol = newValue
-            Defaults.saveController(settings: settings)
         }
     }
     
@@ -212,7 +199,6 @@ class ShortcutsController: Controller {
         
         set {
             settings.haptics = newValue
-            Defaults.saveController(settings: settings)
         }
     }
     
@@ -223,7 +209,6 @@ class ShortcutsController: Controller {
         
         set {
             settings.physicalDirection = newValue
-            Defaults.saveController(settings: settings)
         }
     }
     
@@ -234,7 +219,6 @@ class ShortcutsController: Controller {
         
         set {
             settings.alternativeDirection = newValue
-            Defaults.saveController(settings: settings)
         }
     }
     
@@ -245,7 +229,6 @@ class ShortcutsController: Controller {
         
         set {
             settings.rotationType = newValue
-            Defaults.saveController(settings: settings)
         }
     }
     
@@ -256,12 +239,11 @@ class ShortcutsController: Controller {
         
         set {
             settings.shortcuts = newValue
-            Defaults.saveController(settings: settings)
         }
     }
     
     init(settings: Settings) {
-        self.settings = settings
+        self._settings = settings
     }
     
     func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: SurfaceDial.Callback) {
