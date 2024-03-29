@@ -20,10 +20,10 @@
 		283856E42BB026EF00860E7C /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283856E32BB026EF00860E7C /* UTType+Extension.swift */; };
 		285C9E4C2BB6F4D5003C6BAD /* ControllerEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C9E4B2BB6F4D5003C6BAD /* ControllerEntryView.swift */; };
 		285C9E4E2BB6F9C0003C6BAD /* ControllerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C9E4D2BB6F9C0003C6BAD /* ControllerDetailsView.swift */; };
+		285C9E522BB6FE67003C6BAD /* ControllerIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C9E512BB6FE67003C6BAD /* ControllerIconView.swift */; };
 		286971102BAB2C170074C2FB /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */; };
 		286971152BAB2D800074C2FB /* MenuBarIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971142BAB2D800074C2FB /* MenuBarIconView.swift */; };
 		286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */; };
-		28723D8C2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28723D8B2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift */; };
 		2887D76B2BABFB6100D733FC /* Defaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D76A2BABFB6100D733FC /* Defaults+Extension.swift */; };
 		2887D76D2BABFB9800D733FC /* NSImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D76C2BABFB9800D733FC /* NSImage+Extension.swift */; };
 		2887D76F2BABFBD100D733FC /* SFSymbol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887D76E2BABFBD100D733FC /* SFSymbol+Extension.swift */; };
@@ -77,9 +77,9 @@
 		283856E52BB028A500860E7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		285C9E4B2BB6F4D5003C6BAD /* ControllerEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerEntryView.swift; sourceTree = "<group>"; };
 		285C9E4D2BB6F9C0003C6BAD /* ControllerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDetailsView.swift; sourceTree = "<group>"; };
+		285C9E512BB6FE67003C6BAD /* ControllerIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerIconView.swift; sourceTree = "<group>"; };
 		286971142BAB2D800074C2FB /* MenuBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarIconView.swift; sourceTree = "<group>"; };
 		286971172BAB2F6F0074C2FB /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
-		28723D8B2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedControllerSettingsView.swift; sourceTree = "<group>"; };
 		2887D76A2BABFB6100D733FC /* Defaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Defaults+Extension.swift"; sourceTree = "<group>"; };
 		2887D76C2BABFB9800D733FC /* NSImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Extension.swift"; sourceTree = "<group>"; };
 		2887D76E2BABFBD100D733FC /* SFSymbol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+Extension.swift"; sourceTree = "<group>"; };
@@ -223,13 +223,14 @@
 		28E71A342BAFCE4200722045 /* View Auxiliaries */ = {
 			isa = PBXGroup;
 			children = (
+				28E4CBAC2BB1B0D60054106D /* DummyView.swift */,
 				28E4CBAA2BB1AD5F0054106D /* StaleView.swift */,
 				28AC22162BB1C12D00ADA343 /* Fundamentals */,
 				28E71A372BAFD56900722045 /* About View */,
 				28E71A3C2BAFD80D00722045 /* VisualEffectView.swift */,
 				28E71A3E2BAFDA3700722045 /* AppVersionView.swift */,
 				28AC22172BB1C14C00ADA343 /* ApplicationDataView.swift */,
-				28723D8B2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift */,
+				285C9E512BB6FE67003C6BAD /* ControllerIconView.swift */,
 			);
 			path = "View Auxiliaries";
 			sourceTree = "<group>";
@@ -299,7 +300,6 @@
 				28EE29C32BAB21B5009005C3 /* ControllersSettingsView.swift */,
 				28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */,
 				28EE29C72BAB21CB009005C3 /* MoreSettingsView.swift */,
-				28E4CBAC2BB1B0D60054106D /* DummyView.swift */,
 				285C9E4B2BB6F4D5003C6BAD /* ControllerEntryView.swift */,
 				285C9E4D2BB6F9C0003C6BAD /* ControllerDetailsView.swift */,
 			);
@@ -420,10 +420,10 @@
 				286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */,
 				2821DA7A2BAEF60B0017B5DD /* View+Extension.swift in Sources */,
 				289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */,
-				28723D8C2BB4330300A8CDE0 /* DetailedControllerSettingsView.swift in Sources */,
 				285C9E4C2BB6F4D5003C6BAD /* ControllerEntryView.swift in Sources */,
 				2806E9C52BAC5ED600CD2AE2 /* BrigntnessController.swift in Sources */,
 				28E4CBAB2BB1AD5F0054106D /* StaleView.swift in Sources */,
+				285C9E522BB6FE67003C6BAD /* ControllerIconView.swift in Sources */,
 				2821DA782BAEE8250017B5DD /* ObservationTrackingStream.swift in Sources */,
 				28E71A362BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift in Sources */,
 				2887D78B2BAC013300D733FC /* Input.swift in Sources */,

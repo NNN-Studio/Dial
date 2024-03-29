@@ -16,16 +16,10 @@ struct ControllerDetailsView: View {
             let controller = id.controller as! ShortcutsController
             
             HStack {
-                Button {
-                    
-                } label: {
-                    Image(systemSymbol: id.controller.symbol)
-                        .imageScale(.large)
-                }
-                .buttonStyle(.borderless)
-                .aspectRatio(1, contentMode: .fill)
+                ControllerIconView(id: $id)
+                    .imageScale(.large)
                 
-                Text(id.controller.nameOrEmpty)
+                TextField(newControllerName, text: $id.controller.nameOrEmpty)
                     .font(.title3)
                 
                 Spacer()
@@ -59,15 +53,12 @@ struct ControllerDetailsView: View {
     }
 }
 
-#Preview {
-    HStack {
-        ControllerDetailsView(id: .constant(.builtin(.scroll)))
-            .frame(minWidth: 300)
-        
-        Divider()
-        
-        ControllerDetailsView(id: .constant(.shortcuts(.init())))
-            .frame(minWidth: 300)
-    }
-    .frame(height: 600)
+#Preview("Builtin") {
+    ControllerDetailsView(id: .constant(.builtin(.scroll)))
+        .frame(width: 450, height: 600)
+}
+
+#Preview("Shortcuts") {
+    ControllerDetailsView(id: .constant(.shortcuts(.init())))
+        .frame(width: 450, height: 600)
 }

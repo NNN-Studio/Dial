@@ -15,7 +15,7 @@ struct ControllerStateEntryView: View {
     
     var body: some View {
         HStack {
-            Image(systemSymbol: id.controller.symbol)
+            ControllerIconView(id: $id)
                 .imageScale(.large)
                 .frame(width: 32)
             
