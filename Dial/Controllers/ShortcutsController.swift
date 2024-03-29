@@ -155,10 +155,12 @@ class ShortcutsController: Controller {
         }
         
         func new(resetsName: Bool = false, resetsSymbol: Bool = false) -> Self {
-            var result = Settings()
+            var result = Settings(self)
             
             if !resetsName { result.name = self.name }
             if !resetsSymbol { result.symbol = self.symbol }
+            
+            Defaults.saveController(settings: result)
             
             return result
         }
@@ -168,6 +170,8 @@ class ShortcutsController: Controller {
             
             result.name = nil
             result.symbol = .__circleFillableFallback
+            
+            Defaults.saveController(settings: result)
             
             return result
         }
@@ -212,6 +216,28 @@ class ShortcutsController: Controller {
         }
     }
     
+    var physicalDirection: Bool {
+        get {
+            settings.physicalDirection
+        }
+        
+        set {
+            settings.physicalDirection = newValue
+            Defaults.saveController(settings: settings)
+        }
+    }
+    
+    var alternativeDirection: Bool {
+        get {
+            settings.alternativeDirection
+        }
+        
+        set {
+            settings.alternativeDirection = newValue
+            Defaults.saveController(settings: settings)
+        }
+    }
+    
     var rotationType: Rotation.RawType {
         get {
             settings.rotationType
@@ -219,6 +245,17 @@ class ShortcutsController: Controller {
         
         set {
             settings.rotationType = newValue
+            Defaults.saveController(settings: settings)
+        }
+    }
+    
+    var shortcuts: Settings.Shortcuts {
+        get {
+            settings.shortcuts
+        }
+        
+        set {
+            settings.shortcuts = newValue
             Defaults.saveController(settings: settings)
         }
     }

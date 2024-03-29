@@ -9,49 +9,47 @@ import SwiftUI
 import Defaults
 
 struct ControllersSettingsView: View {
-    // Don't use `@Default()` as it results in data inconsistencies and index out of bounds errors.
+    // Do not use `@Default()` as it results in data inconsistencies and index out of range errors.
     @State var activated: [ControllerID] = []
     @State var nonactivated: [ControllerID] = []
     @State var selected: ControllerID?
     
     @State var searchText: String = ""
     
-    func filtered(_ data: Binding<[ControllerID]>) -> Array<Binding<ControllerID>> {
+    func filter(_ data: Binding<[ControllerID]>) -> Array<Binding<ControllerID>> {
         data.filter {
             searchText.isEmpty || ($0.wrappedValue.controller.name ?? "").localizedStandardContains(searchText)
         }
     }
     
     @ViewBuilder
+    func buildNavigationLinkView(id: Binding<ControllerID>) -> some View {
+        NavigationLink {
+            Text(id.wrappedValue.controller.name ?? newControllerName)
+        } label: {
+            ControllerStateEntryView(id: id)
+        }
+        //.draggable(id.wrappedValue)
+    }
+    
+    @ViewBuilder
     func buildListView() -> some View {
         List(selection: $selected) {
             Section("Activated") {
-                ForEach(filtered($activated)) { id in
-                    NavigationLink {
-                        Text(id.wrappedValue.controller.name ?? newControllerName)
-                    } label: {
-                        ControllerStateEntryView(id: id)
-                    }
-                    //.draggable(id.wrappedValue)
+                ForEach(filter($activated)) { id in
+                    buildNavigationLinkView(id: id)
                 }
                 .onMove { indices, destination in
                     activated.move(fromOffsets: indices, toOffset: destination)
-                    selected = nil
                 }
             }
             
             Section("Nonactivated") {
-                ForEach(filtered($nonactivated)) { id in
-                    NavigationLink {
-                        Text(id.wrappedValue.controller.name ?? newControllerName)
-                    } label: {
-                        ControllerStateEntryView(id: id)
-                    }
-                    //.draggable(id.wrappedValue)
+                ForEach(filter($nonactivated)) { id in
+                    buildNavigationLinkView(id: id)
                 }
                 .onMove { indices, destination in
                     nonactivated.move(fromOffsets: indices, toOffset: destination)
-                    selected = nil
                 }
             }
         }
@@ -161,14 +159,8 @@ struct ControllersSettingsView: View {
 
 struct ControllerStateEntryView: View {
     @Binding var id: ControllerID
-    @State var name: String
     
     @FocusState var isTextFieldFocused: Bool
-    
-    init(id: Binding<ControllerID>) {
-        self._id = id
-        self.name = id.controller.nameOrEmpty.wrappedValue
-    }
     
     var body: some View {
         HStack {
@@ -177,11 +169,8 @@ struct ControllerStateEntryView: View {
                 .frame(width: 32)
             
             VStack(alignment: .leading) {
-                TextField(newControllerName, text: $name)
+                TextField(newControllerName, text: $id.controller.nameOrEmpty)
                     .focused($isTextFieldFocused)
-                    .onSubmit {
-                        id.controller.nameOrEmpty = name
-                    }
                     .orSomeView(condition: id.isBuiltin) {
                         // Immutable names with builtin controllers
                         Text(id.controller.name ?? newControllerName)
@@ -193,6 +182,7 @@ struct ControllerStateEntryView: View {
                     Text(settings.id.uuidString)
                         .font(.monospaced(.caption)())
                         .foregroundStyle(.placeholder)
+                        .help(settings.id.uuidString)
                 case .builtin(_):
                     Text("Default Controller")
                         .font(.monospaced(.caption)())
@@ -226,24 +216,12 @@ struct ControllerStateEntryView: View {
                 Button {
                     switch id {
                     case .shortcuts(let settings):
-                        id = .shortcuts(settings.new())
+                        id = .shortcuts(settings.new(resetsName: true, resetsSymbol: true))
                     case .builtin(_):
                         break
                     }
                 } label: {
                     Text("Reset")
-                }
-                .disabled(id.isBuiltin)
-                
-                Button {
-                    switch id {
-                    case .shortcuts(let settings):
-                        id = .shortcuts(settings.renew())
-                    case .builtin(_):
-                        break
-                    }
-                } label: {
-                    Text("Remove Name and Icon")
                 }
                 .disabled(id.isBuiltin)
             }
