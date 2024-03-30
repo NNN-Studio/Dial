@@ -48,10 +48,10 @@ Media backward (shortcuts 􀄪).
 """)),
         
         press: .init(localized: .init("Controllers/Builtin/Playback: Press", defaultValue: """
-System media play.
+Toggle system media play / pause.
 """)),
         doublePress: .init(localized: .init("Controllers/Builtin/Playback: Double Press", defaultValue: """
-System media pause.
+Toggle system mute.
 """)),
         
         pressAndRotateClockwisely: .init(localized: .init("Controllers/Builtin/Playback: Press and Rotate Clockwisely", defaultValue: """

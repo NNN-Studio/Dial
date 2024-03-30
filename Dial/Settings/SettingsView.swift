@@ -86,6 +86,7 @@ struct SettingsView: View {
                     }
                 }
                 .controlSize(.extraLarge)
+                .navigationTitle("Controllers")
         }
         .task {
             // Tips tasks

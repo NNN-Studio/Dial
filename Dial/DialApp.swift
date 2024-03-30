@@ -10,16 +10,14 @@ import MenuBarExtraAccess
 
 var dial: SurfaceDial = .init()
 
+var controllerNamePlaceholder: String = .init(localized: .init("Controller Name Placeholder", defaultValue: "New Controller"))
+
 func notifyTaskStart(_ message: String, _ sender: Any? = nil) {
     print("!!! Task started: \(message) !!!", terminator: "")
     if let sender {
         print(" (\(String(describing: type(of: sender))))", terminator: "")
     }
     print()
-}
-
-var isPreview: Bool {
-    return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
 }
 
 @main

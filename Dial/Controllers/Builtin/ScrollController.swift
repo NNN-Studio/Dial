@@ -19,6 +19,9 @@ class ScrollController: BuiltinController {
     var controllerDescription: ControllerDescription = .init(
         abstraction: .init(localized: .init("Controllers/Builtin/Scroll: Abstraction", defaultValue: """
 You can scroll and perform middle button clicks through this controller. Scrolls and clicks will always happen at the cursor.
+""")),
+        press: .init(localized: .init("Controllers/Builtin/Scroll: Press", defaultValue: """
+Perform a middle button click.
 """))
     )
     
@@ -29,6 +32,9 @@ You can scroll and perform middle button clicks through this controller. Scrolls
     
     func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: SurfaceDial.Callback) {
         Input.postMouse(.center, buttonState: .pressed)
+    }
+    
+    func onRelease(_ callback: SurfaceDial.Callback) {
         Input.postMouse(.center, buttonState: .released)
     }
     

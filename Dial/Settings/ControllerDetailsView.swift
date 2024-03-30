@@ -32,7 +32,7 @@ struct ControllerDetailsView: View {
                         .imageScale(.large)
                         .frame(width: 32, height: 24)
                     
-                    TextField(newControllerName, text: $id.controller.nameOrEmpty)
+                    TextField(controllerNamePlaceholder, text: $id.controller.nameOrEmpty)
                         .textFieldStyle(.plain)
                         .controlSize(.large)
                         .font(.title3)
@@ -76,7 +76,7 @@ struct ControllerDetailsView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .overlay(alignment: .bottom) {
-                Text("Customizing options of a default controller are not applicable.")
+                Text("This controller is builtin, customizations are not applicable.")
                     .font(.caption)
                     .foregroundStyle(.placeholder)
                     .padding()

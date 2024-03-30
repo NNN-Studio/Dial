@@ -100,10 +100,24 @@
       }
     },
     "Activated" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已启用"
+          }
+        }
+      }
     },
     "Alternates direction" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "反转旋转方向"
+          }
+        }
+      }
     },
     "Application Data" : {
       "localizations" : {
@@ -156,7 +170,24 @@
       }
     },
     "Builtin" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "内置"
+          }
+        }
+      }
+    },
+    "Builtin Controller" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "内置控制器"
+          }
+        }
+      }
     },
     "By" : {
       "localizations" : {
@@ -189,7 +220,14 @@
       }
     },
     "Configurations" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配置"
+          }
+        }
+      }
     },
     "Connect via Bluetooth" : {
       "localizations" : {
@@ -202,7 +240,31 @@
       }
     },
     "Controller activated" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "控制器已启用"
+          }
+        }
+      }
+    },
+    "Controller Name Placeholder" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "New Controller"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "新控制器"
+          }
+        }
+      }
     },
     "Controllers" : {
       "localizations" : {
@@ -232,6 +294,12 @@
             "state" : "new",
             "value" : "You can control screen brightness and keyboard backlighting through this controller."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通过此控制器，你可以控制屏幕亮度和键盘背光。"
+          }
         }
       }
     },
@@ -242,6 +310,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Keyboard backlighting down."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "降低键盘背光亮度。"
           }
         }
       }
@@ -254,6 +328,12 @@
             "state" : "new",
             "value" : "Keyboard backlighting up."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加键盘背光亮度。"
+          }
         }
       }
     },
@@ -264,6 +344,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Toggle keyboard backlighting."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "开关键盘背光。"
           }
         }
       }
@@ -276,6 +362,12 @@
             "state" : "new",
             "value" : "Screen brightness up."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加屏幕亮度。"
+          }
         }
       }
     },
@@ -286,6 +378,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Screen brightness down."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "降低屏幕亮度。"
           }
         }
       }
@@ -298,6 +396,12 @@
             "state" : "new",
             "value" : "You can iterate through App Switcher and activate app windows through this controller."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通过此控制器，你可以循环查看并激活应用切换器中的应用。"
+          }
         }
       }
     },
@@ -309,6 +413,12 @@
             "state" : "new",
             "value" : "You can control system media playbacks through this controller."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通过此控制器，你可以控制系统媒体状态。"
+          }
         }
       }
     },
@@ -318,7 +428,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "System media pause."
+            "value" : "Toggle system mute."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切换系统静音状态。"
           }
         }
       }
@@ -329,7 +445,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "System media play."
+            "value" : "Toggle system media play / pause."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "切换系统媒体播放/暂停。"
           }
         }
       }
@@ -342,6 +464,12 @@
             "state" : "new",
             "value" : "System volume up."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "增加系统音量。"
+          }
         }
       }
     },
@@ -352,6 +480,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "System volume down."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "降低系统音量。"
           }
         }
       }
@@ -364,6 +498,12 @@
             "state" : "new",
             "value" : "Media forward (shortcuts 􀄫)."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "媒体快进（􀄫）。"
+          }
         }
       }
     },
@@ -374,6 +514,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Media backward (shortcuts 􀄪)."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "媒体快退（􀄪）。"
           }
         }
       }
@@ -386,6 +532,29 @@
             "state" : "new",
             "value" : "You can scroll and perform middle button clicks through this controller. Scrolls and clicks will always happen at the cursor."
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通过此控制器，你可以模拟滚动和鼠标中键。滚动和按键操作总是发生在光标处。"
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Scroll: Press" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Perform a middle button click."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "模拟按下鼠标中键。"
+          }
         }
       }
     },
@@ -396,6 +565,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Brightness"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "亮度"
           }
         }
       }
@@ -419,6 +594,12 @@
             "state" : "new",
             "value" : "Mission"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "任务"
+          }
         }
       }
     },
@@ -429,6 +610,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Playback"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "媒体"
           }
         }
       }
@@ -441,14 +628,14 @@
             "state" : "new",
             "value" : "Scroll"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "滚动"
+          }
         }
       }
-    },
-    "Customizing options of a default controller are not applicable." : {
-
-    },
-    "Default Controller" : {
-
     },
     "Dependencies" : {
       "localizations" : {
@@ -545,10 +732,24 @@
       }
     },
     "Double press" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "连续按下"
+          }
+        }
+      }
     },
     "Follows physical direction" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "跟随物理设备旋转方向"
+          }
+        }
+      }
     },
     "Fundamental" : {
       "localizations" : {
@@ -610,9 +811,6 @@
         }
       }
     },
-    "Haptics" : {
-
-    },
     "Haptics feedback" : {
       "localizations" : {
         "zh-Hans" : {
@@ -647,7 +845,14 @@
       }
     },
     "Inactivated" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未启用"
+          }
+        }
+      }
     },
     "License" : {
       "localizations" : {
@@ -768,7 +973,14 @@
       }
     },
     "None" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无"
+          }
+        }
+      }
     },
     "Not Granted" : {
       "localizations" : {
@@ -811,10 +1023,24 @@
       }
     },
     "Press" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按下"
+          }
+        }
+      }
     },
-    "Press a key..." : {
-
+    "Press a key…" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按下按键…"
+          }
+        }
+      }
     },
     "press and hold dial" : {
       "localizations" : {
@@ -827,10 +1053,24 @@
       }
     },
     "Press and rotate clockwisely" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按下并顺时针旋转"
+          }
+        }
+      }
     },
     "Press and rotate counterclockwisely" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按下并逆时针旋转"
+          }
+        }
+      }
     },
     "Quick Settings" : {
       "localizations" : {
@@ -903,13 +1143,34 @@
       }
     },
     "Rotate clockwisely" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "顺时针旋转"
+          }
+        }
+      }
     },
     "Rotate counterclockwisely" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "逆时针旋转"
+          }
+        }
+      }
     },
     "Rotation type" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旋转方式"
+          }
+        }
+      }
     },
     "Rotation: Continuous Name" : {
       "extractionState" : "extracted_with_value",
@@ -1110,11 +1371,35 @@
         }
       }
     },
-    "This option applies after \"Follows physical direction\"." : {
-
+    "This controller is builtin, customizations are not applicable." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此控制器是内置控制器，自定义选项不可用。"
+          }
+        }
+      }
     },
-    "Triggers when..." : {
-
+    "This option applies after \"Follows physical direction\"." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此设置项应用于“跟随物理设备旋转”项之后。"
+          }
+        }
+      }
+    },
+    "Triggers when…" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自定义快捷键…"
+          }
+        }
+      }
     },
     "UI layout guide" : {
       "localizations" : {

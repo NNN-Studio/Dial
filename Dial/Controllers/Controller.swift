@@ -11,8 +11,6 @@ import Defaults
 import SFSafeSymbols
 import SwiftUI
 
-let newControllerName: String = String(localized: .init("New Controller"))
-
 enum ControllerID: Codable, Hashable, Defaults.Serializable, Equatable {
     enum Builtin: CaseIterable, Codable {
         case main

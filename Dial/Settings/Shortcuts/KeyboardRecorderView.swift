@@ -76,7 +76,7 @@ struct KeyboardRecorderView: View {
                     buildBorderedView(square: false) {
                         Text("None")
                             .or(condition: isActive) {
-                                Text("Press a key...")
+                                Text("Press a key…")
                             }
                     }
                 } else {

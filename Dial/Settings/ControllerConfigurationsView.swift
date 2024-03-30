@@ -24,7 +24,7 @@ struct ControllerConfigurationsView: View {
             
             // MARK: - Shortcuts
             
-            Section("Triggers when...", isExpanded: $isSectionExpanded) {
+            Section("Triggers when…", isExpanded: $isSectionExpanded) {
                 Section {
                     VStack {
                         HStack {
@@ -113,7 +113,7 @@ struct ControllerConfigurationsView: View {
             // MARK: - Configurations
             
             Section("Configurations") {
-                Toggle("Haptics", isOn: controller.haptics)
+                Toggle("Haptics feedback", isOn: controller.haptics)
             }
             
             Section {

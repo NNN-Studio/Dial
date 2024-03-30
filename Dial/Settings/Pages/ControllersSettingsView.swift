@@ -82,7 +82,7 @@ struct ControllersSettingsView: View {
                         Button {
                             Defaults.appendBuiltinController(id: id)
                         } label: {
-                            Text(id.controller.name ?? newControllerName)
+                            Text(id.controller.name ?? controllerNamePlaceholder)
                             Image(systemSymbol: id.controller.symbol)
                         }
                         .disabled(activated.contains(id.linkage))
@@ -95,7 +95,7 @@ struct ControllersSettingsView: View {
                 Button {
                     Defaults.appendNewController()
                 } label: {
-                    Text(newControllerName)
+                    Text(controllerNamePlaceholder)
                     Image(systemSymbol: .gearBadge)
                 }
             } label: {

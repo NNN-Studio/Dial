@@ -21,11 +21,11 @@ struct ControllerStateEntryView: View {
             
             VStack(alignment: .leading) {
                 // This crashes previews. Why?
-                TextField(newControllerName, text: $id.controller.nameOrEmpty)
+                TextField(controllerNamePlaceholder, text: $id.controller.nameOrEmpty)
                     .focused($isTextFieldFocused)
                     .orSomeView(condition: id.isBuiltin) {
                         // Immutable names with builtin controllers
-                        Text(id.controller.name ?? newControllerName)
+                        Text(id.controller.name ?? controllerNamePlaceholder)
                     }
                     .font(.title3)
                 
@@ -36,7 +36,7 @@ struct ControllerStateEntryView: View {
                         .foregroundStyle(.placeholder)
                         .help(settings.id.uuidString)
                 case .builtin(_):
-                    Text("Default Controller")
+                    Text("Builtin Controller")
                         .font(.monospaced(.caption)())
                         .foregroundStyle(.placeholder)
                 }
