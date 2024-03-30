@@ -16,7 +16,7 @@ extension NSEvent.ModifierFlags: Codable {
 struct ShortcutArray: Codable, Defaults.Serializable {
     var modifiers: NSEvent.ModifierFlags
     
-    var keys: [Input]
+    var keys: Set<Input>
     
     var display: String {
         keys.map { $0.name }.joined(separator: " ")
@@ -28,7 +28,7 @@ struct ShortcutArray: Codable, Defaults.Serializable {
     
     init(
         modifiers: NSEvent.ModifierFlags = [],
-        keys: [Input] = []
+        keys: Set<Input> = Set()
     ) {
         self.modifiers = modifiers
         self.keys = keys
@@ -39,3 +39,12 @@ struct ShortcutArray: Codable, Defaults.Serializable {
     }
 }
 
+extension ShortcutArray: Equatable {
+    // Make it equatable
+}
+
+extension ShortcutArray {
+    var sortedKeys: [Input] {
+        keys.sorted(by: >)
+    }
+}

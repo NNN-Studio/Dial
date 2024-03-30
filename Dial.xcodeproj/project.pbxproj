@@ -44,6 +44,9 @@
 		289B83FE2BADC44D00D56D43 /* PermissionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */; };
 		289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289B83FF2BADC4F900D56D43 /* AppDelegate.swift */; };
 		28AC22182BB1C14C00ADA343 /* ApplicationDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28AC22172BB1C14C00ADA343 /* ApplicationDataView.swift */; };
+		28DC1B622BB807DF00EBE057 /* KeyboardRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC1B612BB807DF00EBE057 /* KeyboardRecorderView.swift */; };
+		28DC1B642BB8082100EBE057 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC1B632BB8082100EBE057 /* EventMonitor.swift */; };
+		28DC1B662BB8101500EBE057 /* ModifierFlags+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC1B652BB8101500EBE057 /* ModifierFlags+Extensions.swift */; };
 		28E4CBAB2BB1AD5F0054106D /* StaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4CBAA2BB1AD5F0054106D /* StaleView.swift */; };
 		28E4CBAD2BB1B0D60054106D /* DummyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4CBAC2BB1B0D60054106D /* DummyView.swift */; };
 		28E71A362BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */; };
@@ -103,6 +106,9 @@
 		289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsManager.swift; sourceTree = "<group>"; };
 		289B83FF2BADC4F900D56D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28AC22172BB1C14C00ADA343 /* ApplicationDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDataView.swift; sourceTree = "<group>"; };
+		28DC1B612BB807DF00EBE057 /* KeyboardRecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardRecorderView.swift; sourceTree = "<group>"; };
+		28DC1B632BB8082100EBE057 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		28DC1B652BB8101500EBE057 /* ModifierFlags+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModifierFlags+Extensions.swift"; sourceTree = "<group>"; };
 		28E4CBAA2BB1AD5F0054106D /* StaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaleView.swift; sourceTree = "<group>"; };
 		28E4CBAC2BB1B0D60054106D /* DummyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyView.swift; sourceTree = "<group>"; };
 		28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkableEqualWidthVStack.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 				2806E9BD2BAC5C8800CD2AE2 /* Date+Extension.swift */,
 				2821DA792BAEF60B0017B5DD /* View+Extension.swift */,
 				283856E32BB026EF00860E7C /* UTType+Extension.swift */,
+				28DC1B652BB8101500EBE057 /* ModifierFlags+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,6 +201,7 @@
 				2887D78A2BAC013300D733FC /* Input.swift */,
 				289B83FD2BADC44D00D56D43 /* PermissionsManager.swift */,
 				2821DA772BAEE8250017B5DD /* ObservationTrackingStream.swift */,
+				28DC1B632BB8082100EBE057 /* EventMonitor.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -222,6 +230,25 @@
 				28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */,
 			);
 			path = Fundamentals;
+			sourceTree = "<group>";
+		};
+		28DC1B5F2BB8077500EBE057 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				28EE29C12BAB21AC009005C3 /* GeneralSettingsView.swift */,
+				28EE29C32BAB21B5009005C3 /* ControllersSettingsView.swift */,
+				28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */,
+				28EE29C72BAB21CB009005C3 /* MoreSettingsView.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		28DC1B602BB8079600EBE057 /* Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				28DC1B612BB807DF00EBE057 /* KeyboardRecorderView.swift */,
+			);
+			path = Shortcuts;
 			sourceTree = "<group>";
 		};
 		28E71A342BAFCE4200722045 /* View Auxiliaries */ = {
@@ -301,13 +328,11 @@
 			children = (
 				285C9E532BB6FF36003C6BAD /* IconChooserView.swift */,
 				28EE29BF2BAB219E009005C3 /* SettingsView.swift */,
-				28EE29C12BAB21AC009005C3 /* GeneralSettingsView.swift */,
-				28EE29C32BAB21B5009005C3 /* ControllersSettingsView.swift */,
-				28EE29C52BAB21BD009005C3 /* DialMenuSettingsView.swift */,
-				28EE29C72BAB21CB009005C3 /* MoreSettingsView.swift */,
+				28DC1B5F2BB8077500EBE057 /* Pages */,
 				285C9E4B2BB6F4D5003C6BAD /* ControllerEntryView.swift */,
 				285C9E4D2BB6F9C0003C6BAD /* ControllerDetailsView.swift */,
 				2839A6F22BB7EB0000AFFFCE /* ControllerConfigurationsView.swift */,
+				28DC1B602BB8079600EBE057 /* Shortcuts */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -409,6 +434,7 @@
 				2887D77D2BABFE8900D733FC /* SurfaceDial.swift in Sources */,
 				2887D7712BABFBFF00D733FC /* NSString+Extension.swift in Sources */,
 				28E71A3D2BAFD80D00722045 /* VisualEffectView.swift in Sources */,
+				28DC1B642BB8082100EBE057 /* EventMonitor.swift in Sources */,
 				28AC22182BB1C14C00ADA343 /* ApplicationDataView.swift in Sources */,
 				2887D76D2BABFB9800D733FC /* NSImage+Extension.swift in Sources */,
 				289B83FC2BADB9DA00D56D43 /* ConnectViaBluetoothTip.swift in Sources */,
@@ -426,7 +452,9 @@
 				286971182BAB2F6F0074C2FB /* Bundle+Extension.swift in Sources */,
 				2821DA7A2BAEF60B0017B5DD /* View+Extension.swift in Sources */,
 				289B84002BADC4F900D56D43 /* AppDelegate.swift in Sources */,
+				28DC1B662BB8101500EBE057 /* ModifierFlags+Extensions.swift in Sources */,
 				285C9E4C2BB6F4D5003C6BAD /* ControllerEntryView.swift in Sources */,
+				28DC1B622BB807DF00EBE057 /* KeyboardRecorderView.swift in Sources */,
 				2806E9C52BAC5ED600CD2AE2 /* BrigntnessController.swift in Sources */,
 				28E4CBAB2BB1AD5F0054106D /* StaleView.swift in Sources */,
 				285C9E522BB6FE67003C6BAD /* ControllerIconView.swift in Sources */,

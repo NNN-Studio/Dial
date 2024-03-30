@@ -360,7 +360,7 @@ extension Input {
         }
     }
     
-    static func postKeys(_ keys: [Input], modifiers: NSEvent.ModifierFlags = [], repetition count: Int = 1) {
+    static func postKeys(_ keys: Set<Input>, modifiers: NSEvent.ModifierFlags = [], repetition count: Int = 1) {
         func doKey(_ key: Int32, down: Bool) {
             guard let eventSource = CGEventSource(stateID: .hidSystemState) else {
                 print("Failed to create event source")
@@ -385,3 +385,14 @@ extension Input {
     }
 }
 
+extension Input: Identifiable {
+    var id: Int32 {
+        rawValue
+    }
+}
+
+extension Input: Comparable {
+    static func < (lhs: Input, rhs: Input) -> Bool {
+        lhs.rawValue < rhs.rawValue
+    }
+}
