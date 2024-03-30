@@ -14,13 +14,23 @@ struct IconChooserView: View {
     let columns: [GridItem] = [.init(.adaptive(minimum: 50, maximum: 100))]
     
     var body: some View {
-        ScrollView(.vertical) {
-            LazyVGrid(columns: columns) {
-                ForEach(SFSymbol.__circleFillableSymbols) { symbol in
-                    IconCellView(chosen: $chosen, symbol: symbol)
+        ScrollViewReader { proxy in
+            ScrollView(.vertical) {
+                LazyVGrid(columns: columns) {
+                    ForEach(SFSymbol.__circleFillableSymbols) { symbol in
+                        IconCellView(
+                            chosen: $chosen,
+                            symbol: symbol
+                        )
+                    }
+                }
+                .padding()
+                .onChange(of: chosen, initial: true) {
+                    withAnimation {
+                        proxy.scrollTo(chosen)
+                    }
                 }
             }
-            .padding()
         }
     }
 }
@@ -48,20 +58,19 @@ struct IconCellView: View {
     var body: some View {
         Button {
             count += 1
-            withAnimation(.interactiveSpring) {
+            withAnimation {
                 chosen = symbol
             }
         } label: {
             Image(systemSymbol: symbol)
                 .frame(maxWidth: .infinity)
                 .frame(height: 45)
+                .bold()
                 .symbolEffect(.bounce, value: count)
         }
         .buttonStyle(.borderless)
-        .tint(chosen == symbol ? .accentColor : .secondary)
-        .background {
-            chosen == symbol ? Color.accentColor.opacity(0.1) : Color.secondary.opacity(0.05)
-        }
-        .clipShape(.capsule)
+        .foregroundStyle(chosen == symbol ? Color.accentColor : Color.secondary)
+        .background(chosen == symbol ? Color.accentColor.opacity(0.1) : Color.clear, in: .capsule)
+        .id(symbol)
     }
 }

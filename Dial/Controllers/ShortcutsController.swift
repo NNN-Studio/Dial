@@ -162,7 +162,6 @@ class ShortcutsController: Controller {
         }
         
         set {
-            print(0)
             _settings = newValue
             Defaults.saveController(settings: _settings)
         }

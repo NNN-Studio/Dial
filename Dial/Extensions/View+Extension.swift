@@ -21,4 +21,27 @@ extension View {
             self
         }
     }
+    
+    @ViewBuilder
+    func `if`(
+        condition: Bool,
+        _ trueExpression: (Self) -> some View,
+        falseExpression: (Self) -> some View
+    ) -> some View {
+        if condition {
+            trueExpression(self)
+        } else {
+            falseExpression(self)
+        }
+    }
+    
+    @ViewBuilder
+    func `if`(
+        condition: Bool,
+        _ expression: (Self) -> some View
+    ) -> some View {
+        `if`(condition: condition, expression) { view in
+            view
+        }
+    }
 }

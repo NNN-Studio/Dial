@@ -10,16 +10,22 @@ import SwiftUI
 struct ControllerIconView: View {
     @Binding var id: ControllerID
     
+    @State var isPopoverPresented: Bool = false
+    
     var body: some View {
         Button {
-            
+            isPopoverPresented.toggle()
         } label: {
             Image(systemSymbol: id.controller.symbol)
+                .aspectRatio(1, contentMode: .fit)
         }
         .buttonStyle(.borderless)
         .orSomeView(condition: id.isBuiltin) {
             Image(systemSymbol: id.controller.symbol)
         }
-        .aspectRatio(1, contentMode: .fill)
+        .popover(isPresented: $isPopoverPresented) {
+            IconChooserView(chosen: $id.controller.symbol)
+                .frame(width: 300, height: 420)
+        }
     }
 }
