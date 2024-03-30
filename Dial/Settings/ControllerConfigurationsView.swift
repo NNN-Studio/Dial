@@ -12,6 +12,8 @@ struct ControllerConfigurationsView: View {
     
     @StateObject private var keyboardRecorderModel: KeyboardRecorderModel = .init()
     
+    @State var isSectionExpanded: Bool = true
+    
     var body: some View {
         Form {
             let controller = Binding(get: {
@@ -22,86 +24,88 @@ struct ControllerConfigurationsView: View {
             
             // MARK: - Shortcuts
             
-            Section("Shortcuts") {
-                VStack {
-                    HStack {
-                        Image(systemSymbol: .digitalcrownHorizontalArrowClockwise)
-                        Text("Rotate clockwisely")
-                        Spacer()
+            Section("Triggers when...", isExpanded: $isSectionExpanded) {
+                Section {
+                    VStack {
+                        HStack {
+                            Image(systemSymbol: .digitalcrownHorizontalArrowClockwise)
+                            Text("Rotate clockwisely")
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Spacer()
+                            KeyboardRecorderView(controller.shortcuts.rotation.clockwise)
+                        }
                     }
                     
-                    HStack {
-                        Spacer()
-                        KeyboardRecorderView(controller.shortcuts.rotation.clockwise)
+                    VStack {
+                        HStack {
+                            Image(systemSymbol: .digitalcrownHorizontalArrowCounterclockwise)
+                            Text("Rotate counterclockwisely")
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Spacer()
+                            KeyboardRecorderView(controller.shortcuts.rotation.counterclockwise)
+                        }
                     }
                 }
                 
-                VStack {
-                    HStack {
-                        Image(systemSymbol: .digitalcrownHorizontalArrowCounterclockwise)
-                        Text("Rotate counterclockwisely")
-                        Spacer()
+                Section {
+                    VStack {
+                        HStack {
+                            Image(systemSymbol: .digitalcrownHorizontalPress)
+                            Text("Press")
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Spacer()
+                            KeyboardRecorderView(controller.shortcuts.double)
+                        }
                     }
                     
-                    HStack {
-                        Spacer()
-                        Text("Test")
-                    }
-                }
-            }
-            
-            Section() {
-                VStack {
-                    HStack {
-                        Image(systemSymbol: .digitalcrownHorizontalPress)
-                        Text("Press")
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        Spacer()
-                        Text("Test")
-                    }
-                }
-                
-                VStack {
-                    HStack {
-                        Image(systemSymbol: .digitalcrownHorizontalPressFill)
-                        Text("Double press")
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        Spacer()
-                        Text("Test")
-                    }
-                }
-            }
-            
-            Section {
-                VStack {
-                    HStack {
-                        Image(systemSymbol: .digitalcrownHorizontalArrowClockwiseFill)
-                        Text("Press and rotate clockwisely")
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        Spacer()
-                        Text("Test")
+                    VStack {
+                        HStack {
+                            Image(systemSymbol: .digitalcrownHorizontalPressFill)
+                            Text("Double press")
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Spacer()
+                            KeyboardRecorderView(controller.shortcuts.single)
+                        }
                     }
                 }
                 
-                VStack {
-                    HStack {
-                        Image(systemSymbol: .digitalcrownHorizontalArrowCounterclockwiseFill)
-                        Text("Press and rotate counterclockwisely")
-                        Spacer()
+                Section {
+                    VStack {
+                        HStack {
+                            Image(systemSymbol: .digitalcrownHorizontalArrowClockwiseFill)
+                            Text("Press and rotate clockwisely")
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Spacer()
+                            KeyboardRecorderView(controller.shortcuts.pressedRotation.clockwise)
+                        }
                     }
                     
-                    HStack {
-                        Spacer()
-                        Text("Test")
+                    VStack {
+                        HStack {
+                            Image(systemSymbol: .digitalcrownHorizontalArrowCounterclockwiseFill)
+                            Text("Press and rotate counterclockwisely")
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Spacer()
+                            KeyboardRecorderView(controller.shortcuts.pressedRotation.counterclockwise)
+                        }
                     }
                 }
             }
@@ -134,9 +138,10 @@ struct ControllerConfigurationsView: View {
                 .badge(Text(controller.wrappedValue.rotationType.symbol.unicode!))
             }
         }
-        .controlSize(.regular)
-        .formStyle(.grouped)
         .environmentObject(keyboardRecorderModel)
+        .formStyle(.grouped)
+        .controlSize(.regular)
+        .animation(.easeInOut, value: isSectionExpanded)
     }
 }
 

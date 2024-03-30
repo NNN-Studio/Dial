@@ -939,9 +939,6 @@
         }
       }
     },
-    "Shortcuts" : {
-
-    },
     "Shows menu bar item" : {
       "localizations" : {
         "zh-Hans" : {
@@ -992,10 +989,10 @@
         }
       }
     },
-    "Test" : {
+    "This option applies after \"Follows physical direction\"." : {
 
     },
-    "This option applies after \"Follows physical direction\"." : {
+    "Triggers when..." : {
 
     },
     "UI layout guide" : {
