@@ -69,11 +69,18 @@ struct ControllerDetailsView: View {
                     .padding(.vertical, 6)
                 }
                 
+                if let controller = id.controller as? BuiltinController {
+                    ControllerDescriptionView(description: controller.controllerDescription)
+                        .padding()
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .overlay(alignment: .bottom) {
                 Text("Customizing options of a default controller are not applicable.")
                     .font(.caption)
                     .foregroundStyle(.placeholder)
+                    .padding()
             }
-            .frame(maxWidth: .infinity)
         }
     }
     

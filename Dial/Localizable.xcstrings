@@ -224,13 +224,167 @@
         }
       }
     },
-    "Controllers/Default/Brigshtnes: Description" : {
+    "Controllers/Builtin/Brightness: Abstraction" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "You can increase / decrease screen brightness by dialing, increase / decrease keyboard backlighting by dialing while pressing, and toggle keyboard backlighting by clicking through this controller."
+            "value" : "You can control screen brightness and keyboard backlighting through this controller."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Brightness: Double Press" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Keyboard backlighting down."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Brightness: Press" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Keyboard backlighting up."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Brightness: Press and Rotate Clockwisely" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Toggle keyboard backlighting."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Brightness: Rotate Clockwisely" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Screen brightness up."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Brightness: Rotate Counterclockwisely" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Screen brightness down."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Mission: Abstraction" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You can iterate through App Switcher and activate app windows through this controller."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Playback: Abstraction" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You can control system media playbacks through this controller."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Playback: Double Press" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "System media pause."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Playback: Press" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "System media play."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Playback: Press and Rotate Clockwisely" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "System volume up."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Playback: Press and Rotate Counterclockwisely" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "System volume down."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Playback: Rotate Clockwisely" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Media forward (shortcuts 􀄫)."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Playback: Rotate Counterclockwisely" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Media backward (shortcuts 􀄪)."
+          }
+        }
+      }
+    },
+    "Controllers/Builtin/Scroll: Abstraction" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You can scroll and perform middle button clicks through this controller. Scrolls and clicks will always happen at the cursor."
           }
         }
       }
@@ -257,17 +411,6 @@
         }
       }
     },
-    "Controllers/Default/Mission: Description" : {
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "You can iterate through App Switcher and activate the app windows through this controller."
-          }
-        }
-      }
-    },
     "Controllers/Default/Mission: Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
@@ -279,17 +422,6 @@
         }
       }
     },
-    "Controllers/Default/Playback: Description" : {
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "You can trigger forward / backward by dialing, increase / decrease volume by dialing while pressing, toggle system play / pause by single clicking, and mute / unmute by double clicking through this controller."
-          }
-        }
-      }
-    },
     "Controllers/Default/Playback: Name" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
@@ -297,17 +429,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "Playback"
-          }
-        }
-      }
-    },
-    "Controllers/Default/Scroll: Description" : {
-      "extractionState" : "extracted_with_value",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "You can scroll and perform middle button clicks through this controller. Scrolls and clicks will always happen at the cursor."
           }
         }
       }

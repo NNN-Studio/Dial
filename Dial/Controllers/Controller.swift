@@ -224,6 +224,6 @@ extension Controller {
 }
 
 protocol BuiltinController: Controller {
-    var description: ControllerDescription { get }
+    var controllerDescription: ControllerDescription { get }
 }
 

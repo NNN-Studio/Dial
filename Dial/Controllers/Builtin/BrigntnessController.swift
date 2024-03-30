@@ -15,12 +15,30 @@ class BrightnessController: BuiltinController {
     var id: ControllerID = .builtin(.brightness)
     var name: String? = String(localized: .init("Controllers/Default/Brigshtnes: Name", defaultValue: "Brightness"))
     var symbol: SFSymbol = .sunMax
-    var description: String = String(localized: .init(
-        "Controllers/Default/Brigshtnes: Description",
-        defaultValue: """
-You can increase / decrease screen brightness by dialing, increase / decrease keyboard backlighting by dialing while pressing, and toggle keyboard backlighting by clicking through this controller.
-"""
-    ))
+    
+    var controllerDescription: ControllerDescription = .init(
+        abstraction: .init(localized: .init("Controllers/Builtin/Brightness: Abstraction", defaultValue: """
+You can control screen brightness and keyboard backlighting through this controller.
+""")),
+        
+        rotateClockwisely: .init(localized: .init("Controllers/Builtin/Brightness: Rotate Clockwisely", defaultValue: """
+Screen brightness up.
+""")),
+        rotateCounterclockwisely: .init(localized: .init("Controllers/Builtin/Brightness: Rotate Counterclockwisely", defaultValue: """
+Screen brightness down.
+""")),
+        
+        press: .init(localized: .init("Controllers/Builtin/Brightness: Press", defaultValue: """
+Keyboard backlighting up.
+""")),
+        doublePress: .init(localized: .init("Controllers/Builtin/Brightness: Double Press", defaultValue: """
+Keyboard backlighting down.
+""")),
+        
+        pressAndRotateClockwisely: .init(localized: .init("Controllers/Builtin/Brightness: Press and Rotate Clockwisely", defaultValue: """
+Toggle keyboard backlighting.
+"""))
+    )
     
     var haptics: Bool = false
     var rotationType: Rotation.RawType = .continuous

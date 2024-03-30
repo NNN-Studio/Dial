@@ -16,7 +16,7 @@ class ScrollController: BuiltinController {
     var name: String? = String(localized: .init("Controllers/Default/Scroll: Name", defaultValue: "Scroll"))
     var symbol: SFSymbol = .arrowUpArrowDown
     
-    var description: ControllerDescription = .init(
+    var controllerDescription: ControllerDescription = .init(
         abstraction: .init(localized: .init("Controllers/Builtin/Scroll: Abstraction", defaultValue: """
 You can scroll and perform middle button clicks through this controller. Scrolls and clicks will always happen at the cursor.
 """))
