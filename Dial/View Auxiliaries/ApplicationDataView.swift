@@ -114,7 +114,7 @@ struct ApplicationDataView: View {
     func resetControllersData() {
         Defaults.reset(
             .activatedControllerIDs,
-            .nonactivatedControllerIDs,
+            .inactivatedControllerIDs,
             .currentControllerID
         )
         

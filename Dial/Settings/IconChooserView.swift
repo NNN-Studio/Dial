@@ -36,7 +36,7 @@ struct IconChooserView: View {
 }
 
 #Preview {
-    struct Wrapper: View {
+    struct IconChooserWrapper: View {
         @State var chosen: SFSymbol = .__circleFillableFallback
         
         var body: some View {
@@ -45,7 +45,7 @@ struct IconChooserView: View {
         }
     }
     
-    return Wrapper()
+    return IconChooserWrapper()
 }
 
 struct IconCellView: View {

@@ -8,14 +8,14 @@
             "state" : "new",
             "value" : "%1$lld controllers, %2$lld activated"
           }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "共%1$lld个控制器，已启用%2$lld个"
+          }
         }
       }
-    },
-    "1" : {
-
-    },
-    "2" : {
-
     },
     "About %@…" : {
       "localizations" : {
@@ -100,6 +100,9 @@
       }
     },
     "Activated" : {
+
+    },
+    "Alternates direction" : {
 
     },
     "Application Data" : {
@@ -420,6 +423,12 @@
         }
       }
     },
+    "Double press" : {
+
+    },
+    "Follows physical direction" : {
+
+    },
     "Fundamental" : {
       "localizations" : {
         "zh-Hans" : {
@@ -480,6 +489,9 @@
         }
       }
     },
+    "Haptics" : {
+
+    },
     "Haptics feedback" : {
       "localizations" : {
         "zh-Hans" : {
@@ -513,6 +525,9 @@
         }
       }
     },
+    "Inactivated" : {
+
+    },
     "License" : {
       "localizations" : {
         "zh-Hans" : {
@@ -543,6 +558,74 @@
         }
       }
     },
+    "Menu: Direction" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Direction"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "旋转方向"
+          }
+        }
+      }
+    },
+    "Menu: Haptics" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Haptics Feedback"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "震感反馈"
+          }
+        }
+      }
+    },
+    "Menu: Sensitivity" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Sensitivity"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "敏感度"
+          }
+        }
+      }
+    },
+    "Menu: Starts with macOS" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Starts with macOS"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "随macOS启动"
+          }
+        }
+      }
+    },
     "MIT License" : {
       "localizations" : {
         "zh-Hans" : {
@@ -562,9 +645,6 @@
           }
         }
       }
-    },
-    "Nonactivated" : {
-
     },
     "Not Granted" : {
       "localizations" : {
@@ -606,6 +686,9 @@
         }
       }
     },
+    "Press" : {
+
+    },
     "press and hold dial" : {
       "localizations" : {
         "zh-Hans" : {
@@ -615,6 +698,12 @@
           }
         }
       }
+    },
+    "Press and rotate clockwisely" : {
+
+    },
+    "Press and rotate counterclockwisely" : {
+
     },
     "Quick Settings" : {
       "localizations" : {
@@ -647,10 +736,24 @@
       }
     },
     "Remove" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "移除"
+          }
+        }
+      }
     },
     "Rename" : {
-
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "重命名"
+          }
+        }
+      }
     },
     "Request Access…" : {
       "localizations" : {
@@ -671,6 +774,15 @@
           }
         }
       }
+    },
+    "Rotate clockwisely" : {
+
+    },
+    "Rotate counterclockwisely" : {
+
+    },
+    "Rotation type" : {
+
     },
     "Rotation: Continuous Name" : {
       "extractionState" : "extracted_with_value",
@@ -873,6 +985,9 @@
           }
         }
       }
+    },
+    "This option applies after \"Follows physical direction\"." : {
+
     },
     "UI layout guide" : {
       "localizations" : {

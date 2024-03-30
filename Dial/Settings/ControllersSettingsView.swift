@@ -11,7 +11,7 @@ import Defaults
 struct ControllersSettingsView: View {
     // Do not use `@Default()` as it results in data inconsistencies and index out of range errors.
     @State var activated: [ControllerID] = []
-    @State var nonactivated: [ControllerID] = []
+    @State var inactivated: [ControllerID] = []
     @State var selected: ControllerID?
     
     @State var searchText: String = ""
@@ -45,12 +45,12 @@ struct ControllersSettingsView: View {
                 }
             }
             
-            Section("Nonactivated") {
-                ForEach(filter($nonactivated)) { id in
+            Section("Inactivated") {
+                ForEach(filter($inactivated)) { id in
                     buildNavigationLinkView(id: id)
                 }
                 .onMove { indices, destination in
-                    nonactivated.move(fromOffsets: indices, toOffset: destination)
+                    inactivated.move(fromOffsets: indices, toOffset: destination)
                     selected = nil
                 }
             }
@@ -60,7 +60,7 @@ struct ControllersSettingsView: View {
     @ViewBuilder
     func buildFooterView() -> some View {
         HStack {
-            Text("\($activated.count + $nonactivated.count) controllers, \($activated.count) activated")
+            Text("\($activated.count + $inactivated.count) controllers, \($activated.count) activated")
                 .font(.footnote)
                 .foregroundStyle(.placeholder)
             
@@ -110,7 +110,7 @@ struct ControllersSettingsView: View {
             Group {
                 buildListView()
                     .animation(.easeInOut, value: activated)
-                    .animation(.easeInOut, value: nonactivated)
+                    .animation(.easeInOut, value: inactivated)
                     .padding(.all, 0)
                     .padding(.bottom, 30)
                     .overlay(alignment: .bottom) {
@@ -144,12 +144,12 @@ struct ControllersSettingsView: View {
             }
         }
         .task {
-            // MARK: Update nonactivated controller ids
+            // MARK: Update inactivated controller ids
             
-            for await nonactivatedControllerIDs in Defaults.updates(.nonactivatedControllerIDs) {
+            for await inactivatedControllerIDs in Defaults.updates(.inactivatedControllerIDs) {
                 // Clear the list to force refresh it, important!
-                self.nonactivated = []
-                self.nonactivated = nonactivatedControllerIDs
+                self.inactivated = []
+                self.inactivated = inactivatedControllerIDs
             }
         }
     }

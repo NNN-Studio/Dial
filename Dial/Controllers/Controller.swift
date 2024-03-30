@@ -67,15 +67,17 @@ extension ControllerID {
         
         set(controller) {
             // Enable binding operations
+            /*
             guard let shortcutsController = controller as? ShortcutsController else { return }
             
             if Defaults[.activatedControllerIDs].contains(self) {
                 Defaults[.activatedControllerIDs].replace([self], with: [Self.shortcuts(shortcutsController.settings)])
             }
             
-            if Defaults[.nonactivatedControllerIDs].contains(self) {
-                Defaults[.nonactivatedControllerIDs].replace([self], with: [Self.shortcuts(shortcutsController.settings)])
+            if Defaults[.inactivatedControllerIDs].contains(self) {
+                Defaults[.inactivatedControllerIDs].replace([self], with: [Self.shortcuts(shortcutsController.settings)])
             }
+             */
         }
     }
     
@@ -111,12 +113,12 @@ extension ControllerID {
         set(activated) {
             if activated && !isActivated {
                 Defaults[.activatedControllerIDs].append(self)
-                Defaults[.nonactivatedControllerIDs].replace([self], with: [])
+                Defaults[.inactivatedControllerIDs].replace([self], with: [])
             }
             
             if !activated && isActivated {
                 Defaults[.activatedControllerIDs].replace([self], with: [])
-                Defaults[.nonactivatedControllerIDs].append(self)
+                Defaults[.inactivatedControllerIDs].append(self)
             }
         }
     }

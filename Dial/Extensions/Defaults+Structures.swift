@@ -176,7 +176,7 @@ enum Rotation: Codable {
         self.type == type
     }
     
-    enum RawType: Codable {
+    enum RawType: Codable, CaseIterable {
         case continuous
         case stepping
         
@@ -210,6 +210,12 @@ extension Rotation.RawType: SymbolRepresentable {
         case .stepping:
             .directcurrent
         }
+    }
+}
+
+extension Rotation.RawType: Identifiable {
+    var id: Self {
+        self
     }
 }
 

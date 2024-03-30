@@ -43,7 +43,7 @@ extension Defaults.Keys {
             .builtin(.mission)
         ])
     }()
-    static let nonactivatedControllerIDs: Key<[ControllerID]> = .init("nonactivatedControllerIDs", default: [])
+    static let inactivatedControllerIDs: Key<[ControllerID]> = .init("inactivatedControllerIDs", default: [])
     static let currentControllerID = Key<ControllerID?>("currentControllerID", default: nil)
     
     // MARK: - Constants
@@ -59,26 +59,26 @@ extension Defaults {
             Defaults[.activatedControllerIDs][activatedIndex] = id
         }
         
-        if let nonactivatedIndex = Defaults[.nonactivatedControllerIDs].firstIndex(of: id) {
-            Defaults[.nonactivatedControllerIDs][nonactivatedIndex] = id
+        if let inactivatedIndex = Defaults[.inactivatedControllerIDs].firstIndex(of: id) {
+            Defaults[.inactivatedControllerIDs][inactivatedIndex] = id
         }
     }
     
     static func appendBuiltinController(id: ControllerID.Builtin) {
-        Defaults[.nonactivatedControllerIDs].append(.builtin(id))
+        Defaults[.inactivatedControllerIDs].append(.builtin(id))
     }
     
     static func appendNewController() {
-        Defaults[.nonactivatedControllerIDs].append(.shortcuts(.init()))
+        Defaults[.inactivatedControllerIDs].append(.shortcuts(.init()))
     }
     
     static func removeController(id: ControllerID) {
         Defaults[.activatedControllerIDs].replace([id], with: [])
-        Defaults[.nonactivatedControllerIDs].replace([id], with: [])
+        Defaults[.inactivatedControllerIDs].replace([id], with: [])
     }
     
     static var allControllerIDs: [ControllerID] {
-        Array(Set(Defaults[.activatedControllerIDs] + Defaults[.nonactivatedControllerIDs]))
+        Array(Set(Defaults[.activatedControllerIDs] + Defaults[.inactivatedControllerIDs]))
     }
     
     static var currentController: Controller? {

@@ -67,16 +67,21 @@ extension SFSymbol: Identifiable {
 extension SFSymbol {
     // Toxic
     var unicode: String? {
-        if self == .hexagon { return "􀝝" }
-        if self == .rays { return "􀇯" }
-        if self == .slowmo { return "􀇱" }
-        if self == .timelapse { return "􀇲" }
-        if self == .circleCircle { return "􀨁" }
-        
-        if self == .digitalcrownHorizontalArrowClockwiseFill { return "􀻲" }
-        if self == .digitalcrownHorizontalArrowCounterclockwiseFill { return "􀻴" }
-        
-        return nil
+        switch self {
+        case .hexagon: "􀝝"
+        case .rays: "􀇯"
+        case .slowmo: "􀇱"
+        case .timelapse: "􀇲"
+        case .circleCircle: "􀨁"
+            
+        case .directcurrent: "􀯝"
+        case .alternatingcurrent: "􁆭"
+            
+        case .digitalcrownHorizontalArrowClockwiseFill: "􀻲"
+        case .digitalcrownHorizontalArrowCounterclockwiseFill: "􀻴"
+            
+        default: nil
+        }
     }
 }
 

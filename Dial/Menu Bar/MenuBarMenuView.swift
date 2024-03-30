@@ -64,7 +64,7 @@ struct MenuBarMenuView: View {
         Text("Quick Settings")
         
         Toggle(isOn: $globalHapticsEnabled) {
-            Text("Haptics feedback")
+            Text(.init(localized: .init("Menu: Haptics", defaultValue: "Haptics Feedback")))
         }
         
         Picker(selection: $globalSensitivity) {
@@ -72,7 +72,7 @@ struct MenuBarMenuView: View {
                 Text(sensitivity.title)
             }
         } label: {
-            Text("Sensitivity")
+            Text(.init(localized: .init("Menu: Sensitivity", defaultValue: "Sensitivity")))
         }
         .badge(Text(globalSensitivity.symbol.unicode!))
         
@@ -81,7 +81,7 @@ struct MenuBarMenuView: View {
                 Text(direction.title)
             }
         } label: {
-            Text("Direction")
+            Text(.init(localized: .init("Menu: Direction", defaultValue: "Direction")))
         }
         .badge(Text(globalDirection.symbol.unicode!))
         
@@ -89,7 +89,9 @@ struct MenuBarMenuView: View {
         
         // MARK: - More Settings
         
-        Toggle("Starts with macOS", isOn: $startsWithMacOS.isEnabled)
+        Toggle(isOn: $startsWithMacOS.isEnabled) {
+            Text(.init(localized: .init("Menu: Starts with macOS", defaultValue: "Starts with macOS")))
+        }
         
         SettingsLink(
             label: {
