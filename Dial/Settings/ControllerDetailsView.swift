@@ -17,8 +17,6 @@ struct ControllerDetailsView: View {
     ) -> some View {
         view()
             .background {
-                //Rectangle()
-                    //.fill(.separator.opacity(0.2))
                 VisualEffectView(material: .sidebar, blendingMode: .behindWindow)
                     .clipShape(.rect(cornerSize: cornerSize, style: .continuous))
             }

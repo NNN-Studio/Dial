@@ -21,37 +21,87 @@ struct ControllerConfigurationsView: View {
             // MARK: - Shortcuts
             
             Section("Shortcuts") {
-                HStack {
-                    Image(systemSymbol: .digitalcrownHorizontalArrowClockwise)
-                    Text("Rotate clockwisely")
+                VStack {
+                    HStack {
+                        Image(systemSymbol: .digitalcrownHorizontalArrowClockwise)
+                        Text("Rotate clockwisely")
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        Text("Test")
+                    }
                 }
                 
-                HStack {
-                    Image(systemSymbol: .digitalcrownHorizontalArrowCounterclockwise)
-                    Text("Rotate counterclockwisely")
+                VStack {
+                    HStack {
+                        Image(systemSymbol: .digitalcrownHorizontalArrowCounterclockwise)
+                        Text("Rotate counterclockwisely")
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        Text("Test")
+                    }
                 }
             }
             
             Section() {
-                HStack {
-                    Image(systemSymbol: .digitalcrownHorizontalPress)
-                    Text("Press")
+                VStack {
+                    HStack {
+                        Image(systemSymbol: .digitalcrownHorizontalPress)
+                        Text("Press")
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        Text("Test")
+                    }
                 }
                 
-                HStack {
-                    Image(systemSymbol: .digitalcrownHorizontalPressFill)
-                    Text("Double press")
+                VStack {
+                    HStack {
+                        Image(systemSymbol: .digitalcrownHorizontalPressFill)
+                        Text("Double press")
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        Text("Test")
+                    }
                 }
             }
             
-            HStack {
-                Image(systemSymbol: .digitalcrownHorizontalArrowClockwiseFill)
-                Text("Press and rotate clockwisely")
-            }
-            
-            HStack {
-                Image(systemSymbol: .digitalcrownHorizontalArrowCounterclockwiseFill)
-                Text("Press and rotate counterclockwisely")
+            Section {
+                VStack {
+                    HStack {
+                        Image(systemSymbol: .digitalcrownHorizontalArrowClockwiseFill)
+                        Text("Press and rotate clockwisely")
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        Text("Test")
+                    }
+                }
+                
+                VStack {
+                    HStack {
+                        Image(systemSymbol: .digitalcrownHorizontalArrowCounterclockwiseFill)
+                        Text("Press and rotate counterclockwisely")
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        Text("Test")
+                    }
+                }
             }
             
             // MARK: - Configurations
@@ -79,7 +129,7 @@ struct ControllerConfigurationsView: View {
                         Text(rotationType.name)
                     }
                 }
-                //.badge(Text(controller.wrappedValue.rotationType.symbol.unicode!))
+                .badge(Text(controller.wrappedValue.rotationType.symbol.unicode!))
             }
         }
         .controlSize(.regular)
@@ -89,10 +139,8 @@ struct ControllerConfigurationsView: View {
 
 #Preview {
     struct ControllerConfigurationsWrapper: View {
-        @State var id: ControllerID = .shortcuts(.init())
-        
         var body: some View {
-            ControllerConfigurationsView(id: $id)
+            ControllerConfigurationsView(id: .constant(.shortcuts(.init())))
         }
     }
     
