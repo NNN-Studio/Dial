@@ -646,6 +646,9 @@
         }
       }
     },
+    "None" : {
+
+    },
     "Not Granted" : {
       "localizations" : {
         "zh-Hans" : {
@@ -687,6 +690,9 @@
       }
     },
     "Press" : {
+
+    },
+    "Press a key..." : {
 
     },
     "press and hold dial" : {
@@ -985,6 +991,9 @@
           }
         }
       }
+    },
+    "Test" : {
+
     },
     "This option applies after \"Follows physical direction\"." : {
 

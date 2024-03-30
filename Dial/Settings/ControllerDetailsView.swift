@@ -12,7 +12,7 @@ struct ControllerDetailsView: View {
     
     @ViewBuilder
     func buildHeaderView(
-        cornerSize: CGSize = .init(width: 24, height: 24),
+        cornerSize: CGSize = .init(width: 12, height: 12),
         _ view: () -> some View
     ) -> some View {
         view()

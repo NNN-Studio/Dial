@@ -35,25 +35,25 @@ class ShortcutsController: Controller {
         var shortcuts: Shortcuts
         
         struct Shortcuts: Codable, Defaults.Serializable {
-            var rotation: [Direction: ShortcutArray]
-            var pressedRotation: [Direction: ShortcutArray]
+            var rotation: ShortcutArray.DirectionBased
+            var pressedRotation: ShortcutArray.DirectionBased
             
             var single: ShortcutArray
             var double: ShortcutArray
             
             var isEmpty: Bool {
-                rotation.values.allSatisfy { $0.isEmpty } && pressedRotation.values.allSatisfy { $0.isEmpty } && single.isEmpty && double.isEmpty
+                rotation.isAllEmpty && pressedRotation.isAllEmpty && single.isEmpty && double.isEmpty
             }
             
             init(
-                rotation: [Direction : ShortcutArray] = [
-                    .clockwise: .init(),
-                    .counterclockwise: .init()
-                ],
-                pressedRotation: [Direction : ShortcutArray] = [
-                    .clockwise: .init(),
-                    .counterclockwise: .init()
-                ],
+                rotation: ShortcutArray.DirectionBased = .init(
+                    clockwise: .init(),
+                    counterclockwise: .init()
+                ),
+                pressedRotation: ShortcutArray.DirectionBased = .init(
+                    clockwise: .init(),
+                    counterclockwise: .init()
+                ),
                 single: ShortcutArray = ShortcutArray(),
                 double: ShortcutArray = ShortcutArray()
             ) {
@@ -66,14 +66,14 @@ class ShortcutsController: Controller {
             func getModifiers(_ actionTarget: ActionTarget) -> NSEvent.ModifierFlags {
                 switch actionTarget {
                 case .rotateClockwise:
-                    rotation[.clockwise]?.modifiers ?? []
+                    rotation.clockwise.modifiers
                 case .rotateCounterclockwise:
-                    rotation[.counterclockwise]?.modifiers ?? []
+                    rotation.counterclockwise.modifiers
                     
                 case .pressedRotateClockwise:
-                    pressedRotation[.clockwise]?.modifiers ?? []
+                    pressedRotation.clockwise.modifiers
                 case .pressedRotateCounterclockwise:
-                    pressedRotation[.counterclockwise]?.modifiers ?? []
+                    pressedRotation.counterclockwise.modifiers
                     
                 case .clickSingle:
                     single.modifiers
@@ -92,14 +92,14 @@ class ShortcutsController: Controller {
                 
                 switch actionTarget {
                 case .rotateClockwise:
-                    rotation[.clockwise]?.modifiers = modified
+                    rotation.clockwise.modifiers = modified
                 case .rotateCounterclockwise:
-                    rotation[.counterclockwise]?.modifiers = modified
+                    rotation.counterclockwise.modifiers = modified
                     
                 case .pressedRotateClockwise:
-                    pressedRotation[.clockwise]?.modifiers = modified
+                    pressedRotation.clockwise.modifiers = modified
                 case .pressedRotateCounterclockwise:
-                    pressedRotation[.counterclockwise]?.modifiers = modified
+                    pressedRotation.counterclockwise.modifiers = modified
                     
                 case .clickSingle:
                     single.modifiers = modified
@@ -267,9 +267,9 @@ class ShortcutsController: Controller {
         
         switch buttonState {
         case .pressed:
-            settings.shortcuts.pressedRotation[direction]?.post()
+            settings.shortcuts.pressedRotation.from(direction).post()
         case .released:
-            settings.shortcuts.rotation[direction]?.post()
+            settings.shortcuts.rotation.from(direction).post()
         }
         
         if haptics && !rotationType.autoTriggers {

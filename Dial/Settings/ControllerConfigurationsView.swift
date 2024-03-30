@@ -10,6 +10,8 @@ import SwiftUI
 struct ControllerConfigurationsView: View {
     @Binding var id: ControllerID
     
+    @StateObject private var keyboardRecorderModel: KeyboardRecorderModel = .init()
+    
     var body: some View {
         Form {
             let controller = Binding(get: {
@@ -30,7 +32,7 @@ struct ControllerConfigurationsView: View {
                     
                     HStack {
                         Spacer()
-                        Text("Test")
+                        KeyboardRecorderView(controller.shortcuts.rotation.clockwise)
                     }
                 }
                 
@@ -134,6 +136,7 @@ struct ControllerConfigurationsView: View {
         }
         .controlSize(.regular)
         .formStyle(.grouped)
+        .environmentObject(keyboardRecorderModel)
     }
 }
 

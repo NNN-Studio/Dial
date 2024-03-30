@@ -54,10 +54,8 @@ struct ControllerStateEntryView: View {
         .padding(.vertical, 6)
         .contextMenu(ContextMenu(menuItems: {
             if !id.isBuiltin {
-                Button {
+                Button("Rename") {
                     isTextFieldFocused = true
-                } label: {
-                    Text("Rename")
                 }
                 .disabled(id.isBuiltin)
             }
@@ -65,15 +63,13 @@ struct ControllerStateEntryView: View {
             Divider()
             
             if !id.isBuiltin {
-                Button {
+                Button("Reset") {
                     switch id {
                     case .shortcuts(let settings):
                         (id.controller as? ShortcutsController)?.settings = settings.new()
                     case .builtin(_):
                         break
                     }
-                } label: {
-                    Text("Reset")
                 }
                 .disabled(id.isBuiltin)
             }

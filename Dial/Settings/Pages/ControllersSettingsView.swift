@@ -130,7 +130,7 @@ struct ControllersSettingsView: View {
                 StaleView()
                     .frame(width: 64)
             }
-            .navigationSplitViewColumnWidth(min: 400, ideal: 400)
+            .navigationSplitViewColumnWidth(min: 450, ideal: 450)
         }
         .controlSize(.extraLarge)
         .searchable(text: $searchText, placement: .sidebar)

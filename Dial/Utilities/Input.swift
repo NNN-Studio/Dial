@@ -54,6 +54,8 @@ enum Input: Int32, CaseIterable, Codable, Defaults.Serializable {
     
     case keyEscape = 0x35
     
+    case keyBackspace = 0x33
+    
     /// ~
     case keyTide = 0x32
     
@@ -238,6 +240,8 @@ enum Input: Int32, CaseIterable, Codable, Defaults.Serializable {
             "􁂎"
         case .keyEscape:
             "esc"
+        case .keyBackspace:
+            "􁂈"
         case .keyTide:
             "~"
         case .keyMinus:
@@ -393,6 +397,6 @@ extension Input: Identifiable {
 
 extension Input: Comparable {
     static func < (lhs: Input, rhs: Input) -> Bool {
-        lhs.rawValue < rhs.rawValue
+        lhs.name < rhs.name
     }
 }

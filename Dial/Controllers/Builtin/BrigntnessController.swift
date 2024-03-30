@@ -37,7 +37,7 @@ You can increase / decrease screen brightness by dialing, increase / decrease ke
         switch rotation {
         case .continuous(let direction):
             var modifiers: NSEvent.ModifierFlags
-            var action: [Hardware.ButtonState: [Direction: (aux: [Int32], normal: [Input])]] = [:]
+            var action: [Hardware.ButtonState: [Direction: (aux: [Int32], normal: Set<Input>)]] = [:]
             
             switch buttonState {
             case .pressed:

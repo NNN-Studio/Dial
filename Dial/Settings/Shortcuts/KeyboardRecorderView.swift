@@ -49,17 +49,16 @@ struct KeyboardRecorderView: View {
         ForEach(modifiers.sortedKeys) { modifier in
             buildBorderedView {
                 Image(systemSymbol: modifier.symbol)
-                    .imageScale(.large)
             }
         }
     }
     
     @ViewBuilder
-    func buildBorderedView(_ content: () -> some View) -> some View {
+    func buildBorderedView(square: Bool = true, _ content: () -> some View) -> some View {
         content()
             .monospaced()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .aspectRatio(1, contentMode: .fill)
+            .aspectRatio(square ? 1 : nil, contentMode: .fill)
             .padding(5)
             .background {
                 buildBackgroundView()
@@ -68,28 +67,27 @@ struct KeyboardRecorderView: View {
     }
     
     var body: some View {
-        Button(action: {
+        Button {
             guard !self.isActive else { return }
             self.startObservingKeys()
-        }, label: {
+        } label: {
             HStack {
                 if self.previewShortcuts.isEmpty {
-                    Text("None")
-                        .or(condition: isActive) {
-                            Text("Press a key...")
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .padding(.horizontal, 8)
-                        .background {
-                            buildBackgroundView()
-                        }
-                        .fixedSize(horizontal: true, vertical: false)
+                    buildBorderedView(square: false) {
+                        Text("None")
+                            .or(condition: isActive) {
+                                Text("Press a key...")
+                            }
+                    }
                 } else {
-                    buildModifierViews(previewShortcuts.modifiers)
-                    
-                    Image(systemSymbol: .plus)
-                        .imageScale(.large)
-                        .frame(width: 24)
+                    if !previewShortcuts.modifiers.isEmpty {
+                        buildModifierViews(previewShortcuts.modifiers)
+                        
+                        Image(systemSymbol: .plus)
+                            .imageScale(.large)
+                            .frame(width: 24)
+                            .foregroundStyle(.placeholder)
+                    }
                     
                     ForEach(previewShortcuts.sortedKeys) { key in
                         buildBorderedView {
@@ -99,7 +97,15 @@ struct KeyboardRecorderView: View {
                 }
             }
             .contentShape(Rectangle())
-        })
+        }
+        .contextMenu {
+            Button(role: .destructive) {
+                currentShortcuts = ShortcutArray()
+            } label: {
+                Text("Reset")
+                    .foregroundStyle(.red)
+            }
+        }
         .buttonStyle(.plain)
         .scaleEffect(isCurrentlyPressed ? 0.9 : 1)
         .onHover { isHovering in
@@ -127,7 +133,7 @@ struct KeyboardRecorderView: View {
             if event.type == .flagsChanged {
                 previewShortcuts.modifiers = event.modifierFlags
                 
-                if let key = Input(rawValue: Int32(event.keyCode)) {
+                if let key = Input(rawValue: Int32(event.keyCode)), key != .unknown {
                     previewShortcuts.keys.insert(key)
                 }
                 
@@ -142,7 +148,7 @@ struct KeyboardRecorderView: View {
             }
             
             if event.type == .keyDown  && !event.isARepeat {
-                if let key = Input(rawValue: Int32(event.keyCode)) {
+                if let key = Input(rawValue: Int32(event.keyCode)), key != .unknown {
                     if key == .keyEscape {
                         finishedObservingKeys(wasForced: true)
                         return
@@ -184,11 +190,4 @@ struct KeyboardRecorderView: View {
         eventMonitor?.stop()
         eventMonitor = nil
     }
-}
-
-#Preview {
-    KeyboardRecorderView(.constant(.init(
-        modifiers: .command,
-        keys: .init([.keyA, .keyW])
-    )))
 }

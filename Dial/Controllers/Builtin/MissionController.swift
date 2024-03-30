@@ -45,7 +45,7 @@ You can iterate through App Switcher and activate the app windows through this c
             inMission = true
             
             let modifiers: [Direction: NSEvent.ModifierFlags] = [.clockwise: [.command], .counterclockwise: [.shift, .command]]
-            let action: [Direction: [Input]] = [.clockwise: [.keyTab], .counterclockwise: [.keyTab]]
+            let action: [Direction: Set<Input>] = [.clockwise: [.keyTab], .counterclockwise: [.keyTab]]
             
             Input.postKeys(action[direction]!, modifiers: modifiers[direction]!)
             
