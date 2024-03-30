@@ -11,6 +11,12 @@
         }
       }
     },
+    "1" : {
+
+    },
+    "2" : {
+
+    },
     "About %@…" : {
       "localizations" : {
         "zh-Hans" : {
@@ -179,6 +185,9 @@
         }
       }
     },
+    "Configurations" : {
+
+    },
     "Connect via Bluetooth" : {
       "localizations" : {
         "zh-Hans" : {
@@ -310,6 +319,9 @@
           }
         }
       }
+    },
+    "Customizing options of a default controller are not applicable." : {
+
     },
     "Default Controller" : {
 
@@ -808,6 +820,9 @@
           }
         }
       }
+    },
+    "Shortcuts" : {
+
     },
     "Shows menu bar item" : {
       "localizations" : {

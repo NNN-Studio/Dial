@@ -25,7 +25,7 @@ struct ControllersSettingsView: View {
     @ViewBuilder
     func buildNavigationLinkView(id: Binding<ControllerID>) -> some View {
         NavigationLink {
-            Text(id.wrappedValue.controller.name ?? newControllerName)
+            ControllerDetailsView(id: id)
         } label: {
             ControllerStateEntryView(id: id)
         }

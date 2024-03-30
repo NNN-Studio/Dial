@@ -13,17 +13,20 @@ struct ControllerIconView: View {
     @State var isPopoverPresented: Bool = false
     
     var body: some View {
-        Button {
-            isPopoverPresented.toggle()
-        } label: {
-            Image(systemSymbol: id.controller.symbol)
-                .aspectRatio(1, contentMode: .fit)
+        ZStack {
+            Button {
+                isPopoverPresented.toggle()
+            } label: {
+                Image(systemSymbol: id.controller.symbol)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+            .buttonStyle(.borderless)
+            .orSomeView(condition: id.isBuiltin) {
+                Image(systemSymbol: id.controller.symbol)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
         }
-        .buttonStyle(.borderless)
-        .orSomeView(condition: id.isBuiltin) {
-            Image(systemSymbol: id.controller.symbol)
-        }
-        .popover(isPresented: $isPopoverPresented) {
+        .popover(isPresented: $isPopoverPresented, arrowEdge: .leading) {
             IconChooserView(chosen: $id.controller.symbol)
                 .frame(width: 300, height: 420)
         }
