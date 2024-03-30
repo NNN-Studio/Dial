@@ -32,12 +32,14 @@ struct AcknowledgementsView: View {
             url: URL(string: "https://github.com/sindresorhus/Defaults")!,
             license: URL(string: "https://github.com/sindresorhus/Defaults/blob/main/license")!
         ),
+        /*
         .init(
             name: "ISSoundAdditions",
             owner: "InerziaSoft",
             url: URL(string: "https://github.com/InerziaSoft/ISSoundAdditions")!,
             license: URL(string: "https://github.com/InerziaSoft/ISSoundAdditions/LICENSE")!
         ),
+         */
         .init(
             name: "LaunchAtLogin",
             owner: "Sindre Sorhus",

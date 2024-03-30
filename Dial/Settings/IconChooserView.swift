@@ -63,14 +63,14 @@ struct IconCellView: View {
             }
         } label: {
             Image(systemSymbol: symbol)
+                .bold()
                 .frame(maxWidth: .infinity)
                 .frame(height: 45)
-                .bold()
                 .symbolEffect(.bounce, value: count)
         }
         .buttonStyle(.borderless)
-        .foregroundStyle(chosen == symbol ? Color.accentColor : Color.secondary)
-        .background(chosen == symbol ? Color.accentColor.opacity(0.1) : Color.clear, in: .capsule)
+        .background(chosen == symbol ? Color.accentColor : .clear, in: .capsule)
+        .foregroundStyle(.blendMode(.overlay))
         .id(symbol)
     }
 }

@@ -44,4 +44,17 @@ extension View {
             view
         }
     }
+    
+    @ViewBuilder
+    func possibleKeyboardShortcut(
+        _ key: KeyEquivalent?,
+        modifiers: EventModifiers = .command,
+        localization: KeyboardShortcut.Localization = .automatic
+    ) -> some View {
+        if let key {
+            self.keyboardShortcut(key, modifiers: modifiers, localization: localization)
+        } else {
+            self
+        }
+    }
 }

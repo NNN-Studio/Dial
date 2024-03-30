@@ -15,25 +15,7 @@ class PlaybackController: BuiltinController {
     
     var id: ControllerID = .builtin(.playback)
     var name: String? = String(localized: .init("Controllers/Default/Playback: Name", defaultValue: "Playback"))
-    var symbol: SFSymbol {
-        get {
-            let volume = Sound.output.volume
-            
-            return if volume > 2.0 / 3.0 {
-                .speakerWave3
-            } else if volume > 1.0 / 3.0 {
-                .speakerWave2
-            } else if volume > 0 {
-                .speakerWave1
-            } else {
-                .speaker
-            }
-        }
-        
-        set {
-            // None
-        }
-    }
+    var symbol: SFSymbol = .speakerWave2
     
     var controllerDescription: ControllerDescription = .init(
         abstraction: .init(localized: .init("Controllers/Builtin/Playback: Abstraction", defaultValue: """

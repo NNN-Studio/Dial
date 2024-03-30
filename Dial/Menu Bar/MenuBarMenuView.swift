@@ -23,6 +23,10 @@ struct MenuBarMenuView: View {
     
     @ObservedObject var startsWithMacOS = LaunchAtLogin.observable
     
+    func possibleChar(from int: Int) -> Character? {
+        return String(int).first
+    }
+    
     var body: some View {
         // MARK: - Status
         
@@ -50,11 +54,15 @@ struct MenuBarMenuView: View {
         Text("Controllers")
             .badge(Text("press and hold dial"))
         
-        ForEach($activatedControllerIDs) { id in
+        ForEach(Array($activatedControllerIDs.enumerated()), id: \.offset) { index, id in
             Toggle(isOn: id.isCurrent) {
                 Image(systemSymbol: id.wrappedValue.controller.symbol)
                 Text(id.wrappedValue.controller.name ?? controllerNamePlaceholder)
             }
+            .possibleKeyboardShortcut(
+                possibleChar(from: index).map { KeyEquivalent.init($0) },
+                modifiers: .option
+            )
         }
         
         Divider()
