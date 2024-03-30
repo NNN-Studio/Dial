@@ -15,12 +15,33 @@ class PlaybackController: BuiltinController {
     var id: ControllerID = .builtin(.playback)
     var name: String? = String(localized: .init("Controllers/Default/Playback: Name", defaultValue: "Playback"))
     var symbol: SFSymbol = .speakerWave2
-    var description: String = String(localized: .init(
-        "Controllers/Default/Playback: Description",
-        defaultValue: """
-You can trigger forward / backward by dialing, increase / decrease volume by dialing while pressing, toggle system play / pause by single clicking, and mute / unmute by double clicking through this controller.
-"""
-    ))
+    
+    var description: ControllerDescription = .init(
+        abstraction: .init(localized: .init("Controllers/Builtin/Playback: Abstraction", defaultValue: """
+You can control system media playbacks through this controller.
+""")),
+        
+        rotateClockwisely: .init(localized: .init("Controllers/Builtin/Playback: Rotate Clockwisely", defaultValue: """
+Media forward (shortcuts 􀄫).
+""")),
+        rotateCounterclockwisely: .init(localized: .init("Controllers/Builtin/Playback: Rotate Counterclockwisely", defaultValue: """
+Media backward (shortcuts 􀄪).
+""")),
+        
+        press: .init(localized: .init("Controllers/Builtin/Playback: Press", defaultValue: """
+System media play.
+""")),
+        doublePress: .init(localized: .init("Controllers/Builtin/Playback: Double Press", defaultValue: """
+System media pause.
+""")),
+        
+        pressAndRotateClockwisely: .init(localized: .init("Controllers/Builtin/Playback: Press and Rotate Clockwisely", defaultValue: """
+System volume up.
+""")),
+        pressAndRotateCounterclockwisely: .init(localized: .init("Controllers/Builtin/Playback: Press and Rotate Counterclockwisely", defaultValue: """
+System volume down.
+"""))
+    )
     
     var haptics: Bool = false
     var rotationType: Rotation.RawType = .continuous

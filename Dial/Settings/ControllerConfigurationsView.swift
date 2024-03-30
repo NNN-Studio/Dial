@@ -35,7 +35,7 @@ struct ControllerConfigurationsView: View {
                         
                         HStack {
                             Spacer()
-                            KeyboardRecorderView(controller.shortcuts.rotation.clockwise)
+                            KeyboardRecorderView(controller.shortcuts.rotate.clockwisely)
                         }
                     }
                     
@@ -48,7 +48,7 @@ struct ControllerConfigurationsView: View {
                         
                         HStack {
                             Spacer()
-                            KeyboardRecorderView(controller.shortcuts.rotation.counterclockwise)
+                            KeyboardRecorderView(controller.shortcuts.rotate.counterclockwisely)
                         }
                     }
                 }
@@ -63,7 +63,7 @@ struct ControllerConfigurationsView: View {
                         
                         HStack {
                             Spacer()
-                            KeyboardRecorderView(controller.shortcuts.double)
+                            KeyboardRecorderView(controller.shortcuts.doublePress)
                         }
                     }
                     
@@ -76,7 +76,7 @@ struct ControllerConfigurationsView: View {
                         
                         HStack {
                             Spacer()
-                            KeyboardRecorderView(controller.shortcuts.single)
+                            KeyboardRecorderView(controller.shortcuts.press)
                         }
                     }
                 }
@@ -91,7 +91,7 @@ struct ControllerConfigurationsView: View {
                         
                         HStack {
                             Spacer()
-                            KeyboardRecorderView(controller.shortcuts.pressedRotation.clockwise)
+                            KeyboardRecorderView(controller.shortcuts.pressAndRotate.clockwisely)
                         }
                     }
                     
@@ -104,7 +104,7 @@ struct ControllerConfigurationsView: View {
                         
                         HStack {
                             Spacer()
-                            KeyboardRecorderView(controller.shortcuts.pressedRotation.counterclockwise)
+                            KeyboardRecorderView(controller.shortcuts.pressAndRotate.counterclockwisely)
                         }
                     }
                 }

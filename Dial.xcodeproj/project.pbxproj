@@ -47,6 +47,8 @@
 		28DC1B622BB807DF00EBE057 /* KeyboardRecorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC1B612BB807DF00EBE057 /* KeyboardRecorderView.swift */; };
 		28DC1B642BB8082100EBE057 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC1B632BB8082100EBE057 /* EventMonitor.swift */; };
 		28DC1B662BB8101500EBE057 /* ModifierFlags+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC1B652BB8101500EBE057 /* ModifierFlags+Extensions.swift */; };
+		28DC1B682BB81F9300EBE057 /* ControllerDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC1B672BB81F9300EBE057 /* ControllerDescription.swift */; };
+		28DC1B6B2BB8242500EBE057 /* ISSoundAdditions in Frameworks */ = {isa = PBXBuildFile; productRef = 28DC1B6A2BB8242500EBE057 /* ISSoundAdditions */; };
 		28E4CBAB2BB1AD5F0054106D /* StaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4CBAA2BB1AD5F0054106D /* StaleView.swift */; };
 		28E4CBAD2BB1B0D60054106D /* DummyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4CBAC2BB1B0D60054106D /* DummyView.swift */; };
 		28E71A362BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */; };
@@ -109,6 +111,7 @@
 		28DC1B612BB807DF00EBE057 /* KeyboardRecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardRecorderView.swift; sourceTree = "<group>"; };
 		28DC1B632BB8082100EBE057 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		28DC1B652BB8101500EBE057 /* ModifierFlags+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModifierFlags+Extensions.swift"; sourceTree = "<group>"; };
+		28DC1B672BB81F9300EBE057 /* ControllerDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDescription.swift; sourceTree = "<group>"; };
 		28E4CBAA2BB1AD5F0054106D /* StaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaleView.swift; sourceTree = "<group>"; };
 		28E4CBAC2BB1B0D60054106D /* DummyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyView.swift; sourceTree = "<group>"; };
 		28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkableEqualWidthVStack.swift; sourceTree = "<group>"; };
@@ -138,6 +141,7 @@
 				28EE29CE2BAB2245009005C3 /* Defaults in Frameworks */,
 				286971102BAB2C170074C2FB /* MenuBarExtraAccess in Frameworks */,
 				2821DA7D2BAF1AD20017B5DD /* LaunchAtLogin in Frameworks */,
+				28DC1B6B2BB8242500EBE057 /* ISSoundAdditions in Frameworks */,
 				28EE29CB2BAB2234009005C3 /* SettingsAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				2887D7802BAC002400D733FC /* Controller.swift */,
+				28DC1B672BB81F9300EBE057 /* ControllerDescription.swift */,
 				2806E9BF2BAC5E5500CD2AE2 /* Builtin */,
 				2887D7862BAC00AF00D733FC /* ShortcutsController.swift */,
 			);
@@ -359,6 +364,7 @@
 				28EE29D02BAB2258009005C3 /* SFSafeSymbols */,
 				2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */,
 				2821DA7C2BAF1AD20017B5DD /* LaunchAtLogin */,
+				28DC1B6A2BB8242500EBE057 /* ISSoundAdditions */,
 			);
 			productName = Dial;
 			productReference = 28EE29AC2BAB2155009005C3 /* Dial.app */;
@@ -395,6 +401,7 @@
 				28EE29CF2BAB2258009005C3 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 				2869710E2BAB2C170074C2FB /* XCRemoteSwiftPackageReference "MenuBarExtraAccess" */,
 				2821DA7B2BAF1AD20017B5DD /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+				28DC1B692BB8242500EBE057 /* XCRemoteSwiftPackageReference "ISSoundAdditions" */,
 			);
 			productRefGroup = 28EE29AD2BAB2155009005C3 /* Products */;
 			projectDirPath = "";
@@ -465,6 +472,7 @@
 				2887D78B2BAC013300D733FC /* Input.swift in Sources */,
 				28EE29C22BAB21AC009005C3 /* GeneralSettingsView.swift in Sources */,
 				286971152BAB2D800074C2FB /* MenuBarIconView.swift in Sources */,
+				28DC1B682BB81F9300EBE057 /* ControllerDescription.swift in Sources */,
 				2887D7872BAC00AF00D733FC /* ShortcutsController.swift in Sources */,
 				28EE29C42BAB21B5009005C3 /* ControllersSettingsView.swift in Sources */,
 				2806E9C12BAC5E6D00CD2AE2 /* ScrollController.swift in Sources */,
@@ -721,6 +729,14 @@
 				minimumVersion = 1.0.5;
 			};
 		};
+		28DC1B692BB8242500EBE057 /* XCRemoteSwiftPackageReference "ISSoundAdditions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/InerziaSoft/ISSoundAdditions";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		28EE29C92BAB2234009005C3 /* XCRemoteSwiftPackageReference "SettingsAccess" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/orchetect/SettingsAccess";
@@ -757,6 +773,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2869710E2BAB2C170074C2FB /* XCRemoteSwiftPackageReference "MenuBarExtraAccess" */;
 			productName = MenuBarExtraAccess;
+		};
+		28DC1B6A2BB8242500EBE057 /* ISSoundAdditions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28DC1B692BB8242500EBE057 /* XCRemoteSwiftPackageReference "ISSoundAdditions" */;
+			productName = ISSoundAdditions;
 		};
 		28EE29CA2BAB2234009005C3 /* SettingsAccess */ = {
 			isa = XCSwiftPackageProductDependency;

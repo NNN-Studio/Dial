@@ -51,19 +51,19 @@ extension ShortcutArray {
 
 extension ShortcutArray {
     struct DirectionBased: Codable {
-        var clockwise: ShortcutArray
-        var counterclockwise: ShortcutArray
+        var clockwisely: ShortcutArray
+        var counterclockwisely: ShortcutArray
         
         var isAllEmpty: Bool {
-            clockwise.isEmpty && counterclockwise.isEmpty
+            clockwisely.isEmpty && counterclockwisely.isEmpty
         }
         
         func from(_ direction: Direction) -> ShortcutArray {
             switch direction {
             case .clockwise:
-                clockwise
+                clockwisely
             case .counterclockwise:
-                counterclockwise
+                counterclockwisely
             }
         }
     }

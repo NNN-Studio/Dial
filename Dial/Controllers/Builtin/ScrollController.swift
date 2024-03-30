@@ -15,12 +15,12 @@ class ScrollController: BuiltinController {
     var id: ControllerID = .builtin(.scroll)
     var name: String? = String(localized: .init("Controllers/Default/Scroll: Name", defaultValue: "Scroll"))
     var symbol: SFSymbol = .arrowUpArrowDown
-    var description: String = String(localized: .init(
-        "Controllers/Default/Scroll: Description",
-        defaultValue: """
+    
+    var description: ControllerDescription = .init(
+        abstraction: .init(localized: .init("Controllers/Builtin/Scroll: Abstraction", defaultValue: """
 You can scroll and perform middle button clicks through this controller. Scrolls and clicks will always happen at the cursor.
-"""
-    ))
+"""))
+    )
     
     var haptics: Bool = false
     var rotationType: Rotation.RawType = .continuous

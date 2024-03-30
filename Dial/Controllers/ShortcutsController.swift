@@ -11,17 +11,6 @@ import SFSafeSymbols
 import AppKit
 
 class ShortcutsController: Controller {
-    enum ActionTarget: CaseIterable, Codable, Defaults.Serializable {
-        case rotateClockwise
-        case rotateCounterclockwise
-        
-        case pressedRotateClockwise
-        case pressedRotateCounterclockwise
-        
-        case clickSingle
-        case clickDouble
-    }
-    
     struct Settings: SymbolRepresentable, Codable, Defaults.Serializable {
         var id: UUID
         var name: String?
@@ -35,77 +24,32 @@ class ShortcutsController: Controller {
         var shortcuts: Shortcuts
         
         struct Shortcuts: Codable, Defaults.Serializable {
-            var rotation: ShortcutArray.DirectionBased
-            var pressedRotation: ShortcutArray.DirectionBased
+            var rotate: ShortcutArray.DirectionBased
+            var pressAndRotate: ShortcutArray.DirectionBased
             
-            var single: ShortcutArray
-            var double: ShortcutArray
+            var press: ShortcutArray
+            var doublePress: ShortcutArray
             
             var isEmpty: Bool {
-                rotation.isAllEmpty && pressedRotation.isAllEmpty && single.isEmpty && double.isEmpty
+                rotate.isAllEmpty && pressAndRotate.isAllEmpty && press.isEmpty && doublePress.isEmpty
             }
             
             init(
                 rotation: ShortcutArray.DirectionBased = .init(
-                    clockwise: .init(),
-                    counterclockwise: .init()
+                    clockwisely: .init(),
+                    counterclockwisely: .init()
                 ),
                 pressedRotation: ShortcutArray.DirectionBased = .init(
-                    clockwise: .init(),
-                    counterclockwise: .init()
+                    clockwisely: .init(),
+                    counterclockwisely: .init()
                 ),
                 single: ShortcutArray = ShortcutArray(),
                 double: ShortcutArray = ShortcutArray()
             ) {
-                self.rotation = rotation
-                self.pressedRotation = pressedRotation
-                self.single = single
-                self.double = double
-            }
-            
-            func getModifiers(_ actionTarget: ActionTarget) -> NSEvent.ModifierFlags {
-                switch actionTarget {
-                case .rotateClockwise:
-                    rotation.clockwise.modifiers
-                case .rotateCounterclockwise:
-                    rotation.counterclockwise.modifiers
-                    
-                case .pressedRotateClockwise:
-                    pressedRotation.clockwise.modifiers
-                case .pressedRotateCounterclockwise:
-                    pressedRotation.counterclockwise.modifiers
-                    
-                case .clickSingle:
-                    single.modifiers
-                case .clickDouble:
-                    double.modifiers
-                }
-            }
-            
-            mutating func setModifiers(
-                _ actionTarget: ActionTarget,
-                modifiers: NSEvent.ModifierFlags,
-                activated: Bool
-            ) {
-                let original = getModifiers(actionTarget)
-                let modified = activated ? original.union(modifiers) : original.subtracting(modifiers)
-                
-                switch actionTarget {
-                case .rotateClockwise:
-                    rotation.clockwise.modifiers = modified
-                case .rotateCounterclockwise:
-                    rotation.counterclockwise.modifiers = modified
-                    
-                case .pressedRotateClockwise:
-                    pressedRotation.clockwise.modifiers = modified
-                case .pressedRotateCounterclockwise:
-                    pressedRotation.counterclockwise.modifiers = modified
-                    
-                case .clickSingle:
-                    single.modifiers = modified
-                case .clickDouble:
-                    double.modifiers = modified
-                }
+                self.rotate = rotation
+                self.pressAndRotate = pressedRotation
+                self.press = single
+                self.doublePress = double
             }
         }
         
@@ -247,9 +191,9 @@ class ShortcutsController: Controller {
     
     func onClick(isDoubleClick: Bool, interval: TimeInterval?, _ callback: SurfaceDial.Callback) {
         if isDoubleClick {
-            settings.shortcuts.double.post()
+            settings.shortcuts.doublePress.post()
         } else {
-            settings.shortcuts.single.post()
+            settings.shortcuts.press.post()
         }
     }
     
@@ -267,9 +211,9 @@ class ShortcutsController: Controller {
         
         switch buttonState {
         case .pressed:
-            settings.shortcuts.pressedRotation.from(direction).post()
+            settings.shortcuts.pressAndRotate.from(direction).post()
         case .released:
-            settings.shortcuts.rotation.from(direction).post()
+            settings.shortcuts.rotate.from(direction).post()
         }
         
         if haptics && !rotationType.autoTriggers {
