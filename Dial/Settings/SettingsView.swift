@@ -70,12 +70,10 @@ struct SettingsView: View {
                 .frame(width: 450)
                 .fixedSize()
         }
-        .animation(., body: <#T##(PlaceholderContentView<Self>) -> V#>)
         .orSomeView(condition: selectedTab == .controllers) {
-            // Special case for the controllers view's `NavigationSplitView` (which is `TabView`-incompatible)
+            /// Special case for the controllers view's ``NavigationSplitView`` (which is ``TabView`` incompatible)
             ControllersSettingsView()
-                .frame(height: 650)
-                .fixedSize(horizontal: false, vertical: true)
+                .frame(minHeight: 450, idealHeight: 600)
                 .toolbar {
                     ForEach(Tab.allCases) { tab in
                         Button {
@@ -104,7 +102,6 @@ struct SettingsView: View {
 }
 
 extension SettingsView.Tab: Identifiable {
-    /// This is intended to make `SettingsView.Tab` conforms to `Identifiable`. The return value is the same as itself.
     var id: Self {
         self
     }

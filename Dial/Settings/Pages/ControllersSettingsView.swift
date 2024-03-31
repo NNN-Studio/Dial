@@ -25,7 +25,7 @@ struct ControllersSettingsView: View {
     @ViewBuilder
     func buildNavigationLinkView(id: Binding<ControllerID>) -> some View {
         NavigationLink {
-            ControllerDetailsView(id: id)
+            ShortcutsControllerDetailsView(id: id)
         } label: {
             ControllerStateEntryView(id: id)
         }
@@ -39,8 +39,11 @@ struct ControllersSettingsView: View {
                 ForEach(filter($activated)) { id in
                     buildNavigationLinkView(id: id)
                 }
-                .onMove { indices, destination in
-                    activated.move(fromOffsets: indices, toOffset: destination)
+                .onDelete { indexSet in
+                    activated.remove(atOffsets: indexSet)
+                }
+                .onMove { indexSet, destination in
+                    activated.move(fromOffsets: indexSet, toOffset: destination)
                     selected = nil
                 }
             }
@@ -49,8 +52,11 @@ struct ControllersSettingsView: View {
                 ForEach(filter($inactivated)) { id in
                     buildNavigationLinkView(id: id)
                 }
-                .onMove { indices, destination in
-                    inactivated.move(fromOffsets: indices, toOffset: destination)
+                .onDelete { indexSet in
+                    activated.remove(atOffsets: indexSet)
+                }
+                .onMove { indexSet, destination in
+                    inactivated.move(fromOffsets: indexSet, toOffset: destination)
                     selected = nil
                 }
             }
@@ -83,7 +89,7 @@ struct ControllersSettingsView: View {
                             Defaults.appendBuiltinController(id: id)
                         } label: {
                             Text(id.controller.name ?? controllerNamePlaceholder)
-                            Image(systemSymbol: id.controller.symbol)
+                            id.controller.symbol.image
                         }
                         .disabled(activated.contains(id.linkage))
                     }
@@ -112,7 +118,7 @@ struct ControllersSettingsView: View {
                     .animation(.easeInOut, value: activated)
                     .animation(.easeInOut, value: inactivated)
                     .padding(.all, 0)
-                    .padding(.bottom, 30)
+                    .padding(.bottom, 32)
                     .overlay(alignment: .bottom) {
                         VStack {
                             Divider()
@@ -120,7 +126,7 @@ struct ControllersSettingsView: View {
                             buildFooterView()
                                 .padding(.horizontal)
                                 .padding(.top, 2)
-                                .padding(.bottom, 6)
+                                .padding(.bottom, 8)
                         }
                     }
             }

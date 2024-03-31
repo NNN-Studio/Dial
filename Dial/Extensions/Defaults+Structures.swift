@@ -11,7 +11,7 @@ import SFSafeSymbols
 import SwiftUI
 
 /// Decides how much steps per circle the dial is divided into.
-enum Sensitivity: Float, CaseIterable, Defaults.Serializable {
+enum Sensitivity: CGFloat, CaseIterable, Defaults.Serializable {
     case low = 5
     
     case medium = 7
@@ -23,7 +23,7 @@ enum Sensitivity: Float, CaseIterable, Defaults.Serializable {
     case extreme = 45
     
     /// Decides how much steps per circle the dial is divided into in continuous rotation.
-    var density: Float {
+    var density: CGFloat {
         switch self {
         case .low: 60
         case .medium: 90
@@ -33,11 +33,11 @@ enum Sensitivity: Float, CaseIterable, Defaults.Serializable {
         }
     }
     
-    var gap: Float {
+    var gap: CGFloat {
         360 / rawValue
     }
     
-    var flow: Float {
+    var flow: CGFloat {
         360 / density
     }
 }
@@ -202,7 +202,7 @@ enum DialMenuThickness: CaseIterable, Codable, Defaults.Serializable {
     case regular
     case thick
     
-    var value: Float {
+    var value: CGFloat {
         switch self {
         case .thin: 24
         case .regular: 32

@@ -11,13 +11,24 @@ import Defaults
 struct ControllerStateEntryView: View {
     @Binding var id: ControllerID
     
+    @Default(.currentControllerID) var current
+    
     @FocusState var isTextFieldFocused: Bool
     
     var body: some View {
         HStack {
-            ControllerIconView(id: $id)
-                .imageScale(.large)
-                .frame(width: 32)
+            ZStack {
+                if current == id {
+                    Circle()
+                        .scale(1.25)
+                        .fill(.quinary)
+                }
+                
+                ControllerIconView(id: $id)
+                    .imageScale(.large)
+            }
+            .frame(width: 32)
+            .padding(.trailing, 4)
             
             VStack(alignment: .leading) {
                 // This crashes previews. Why?
@@ -32,12 +43,14 @@ struct ControllerStateEntryView: View {
                 switch id {
                 case .shortcuts(let settings):
                     Text(settings.id.uuidString)
-                        .font(.monospaced(.caption)())
+                        .font(.caption)
+                        .monospaced()
                         .foregroundStyle(.placeholder)
                         .help(settings.id.uuidString)
                 case .builtin(_):
                     Text("Builtin Controller")
-                        .font(.monospaced(.caption)())
+                        .font(.caption)
+                        .monospaced()
                         .foregroundStyle(.placeholder)
                 }
             }
@@ -46,6 +59,7 @@ struct ControllerStateEntryView: View {
             Spacer()
             
             Toggle(isOn: $id.isActivated) {
+                // No label
             }
             .toggleStyle(.checkbox)
             .help("Controller activated")

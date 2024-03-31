@@ -1,5 +1,5 @@
 //
-//  ControllerDetailsView.swift
+//  ShortcutsControllerDetailsView.swift
 //  Dial
 //
 //  Created by KrLite on 2024/3/29.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct ControllerDetailsView: View {
+struct ShortcutsControllerDetailsView: View {
     @Binding var id: ControllerID
     
     @ViewBuilder
     func buildHeaderView(
-        cornerSize: CGSize = .init(width: 12, height: 12),
+        cornerSize: CGSize = .init(width: 10, height: 10),
         _ view: () -> some View
     ) -> some View {
         view()
             .background {
-                VisualEffectView(material: .sidebar, blendingMode: .behindWindow)
+                VisualEffectView(material: .headerView, blendingMode: .behindWindow)
                     .clipShape(.rect(cornerSize: cornerSize, style: .continuous))
             }
     }
@@ -43,10 +43,10 @@ struct ControllerDetailsView: View {
                 .padding(.horizontal, 16)
                 .padding(.vertical, 6)
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 20)
             .padding(.top, 16)
             
-            ControllerConfigurationsView(id: $id)
+            ShortcutsControllerConfigurationsView(id: $id)
         }
     }
     
@@ -70,7 +70,7 @@ struct ControllerDetailsView: View {
                 }
                 
                 if let controller = id.controller as? BuiltinController {
-                    ControllerDescriptionView(description: controller.controllerDescription)
+                    BuiltinControllerDescriptionView(description: controller.controllerDescription)
                         .padding()
                 }
             }
@@ -92,11 +92,11 @@ struct ControllerDetailsView: View {
 }
 
 #Preview("Builtin") {
-    ControllerDetailsView(id: .constant(.builtin(.scroll)))
+    ShortcutsControllerDetailsView(id: .constant(.builtin(.scroll)))
         .frame(width: 450, height: 450)
 }
 
 #Preview("Shortcuts") {
-    ControllerDetailsView(id: .constant(.shortcuts(.init())))
+    ShortcutsControllerDetailsView(id: .constant(.shortcuts(.init())))
         .frame(width: 450, height: 450)
 }

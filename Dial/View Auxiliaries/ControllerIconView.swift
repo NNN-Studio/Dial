@@ -17,12 +17,14 @@ struct ControllerIconView: View {
             Button {
                 isPopoverPresented.toggle()
             } label: {
-                Image(systemSymbol: id.controller.symbol)
+                id.controller.symbol.image
+                    .bold()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
             .buttonStyle(.borderless)
             .orSomeView(condition: id.isBuiltin) {
-                Image(systemSymbol: id.controller.symbol)
+                id.controller.symbol.image
+                    .bold()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }

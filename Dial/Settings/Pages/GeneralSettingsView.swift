@@ -100,16 +100,18 @@ struct GeneralSettingsView: View {
                     Picker("Sensitivity", selection: $globalSensitivity) {
                         ForEach(Sensitivity.allCases) { sensitivity in
                             Text(sensitivity.name)
+                                .badge(Text(sensitivity.symbol.unicode!))
                         }
                     }
-                    .badge(Text(globalSensitivity.symbol.unicode!))
+                    .badge(Text(globalSensitivity.symbol.image))
                     
                     Picker("Direction", selection: $globalDirection) {
                         ForEach(Direction.allCases) { direction in
                             Text(direction.name)
+                                .badge(Text(direction.symbol.unicode!))
                         }
                     }
-                    .badge(Text(globalDirection.symbol.unicode!))
+                    .badge(Text(globalDirection.symbol.image))
                 }
                 
                 Section {

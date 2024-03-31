@@ -18,11 +18,11 @@
 		2821DA7D2BAF1AD20017B5DD /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 2821DA7C2BAF1AD20017B5DD /* LaunchAtLogin */; };
 		2831AD8B2BAF9B8B0064821C /* MenuBarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2831AD8A2BAF9B8B0064821C /* MenuBarMenuView.swift */; };
 		283856E42BB026EF00860E7C /* UTType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283856E32BB026EF00860E7C /* UTType+Extension.swift */; };
-		2839A6F32BB7EB0000AFFFCE /* ControllerConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839A6F22BB7EB0000AFFFCE /* ControllerConfigurationsView.swift */; };
+		2839A6F32BB7EB0000AFFFCE /* ShortcutsControllerConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2839A6F22BB7EB0000AFFFCE /* ShortcutsControllerConfigurationsView.swift */; };
 		284D34592BB925F20025F9BA /* DialMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D34582BB925F20025F9BA /* DialMenuView.swift */; };
 		284D345B2BB92DC40025F9BA /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D345A2BB92DC40025F9BA /* Segment.swift */; };
 		285C9E4C2BB6F4D5003C6BAD /* ControllerEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C9E4B2BB6F4D5003C6BAD /* ControllerEntryView.swift */; };
-		285C9E4E2BB6F9C0003C6BAD /* ControllerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C9E4D2BB6F9C0003C6BAD /* ControllerDetailsView.swift */; };
+		285C9E4E2BB6F9C0003C6BAD /* ShortcutsControllerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C9E4D2BB6F9C0003C6BAD /* ShortcutsControllerDetailsView.swift */; };
 		285C9E522BB6FE67003C6BAD /* ControllerIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C9E512BB6FE67003C6BAD /* ControllerIconView.swift */; };
 		285C9E542BB6FF36003C6BAD /* IconChooserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285C9E532BB6FF36003C6BAD /* IconChooserView.swift */; };
 		286971102BAB2C170074C2FB /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 2869710F2BAB2C170074C2FB /* MenuBarExtraAccess */; };
@@ -51,7 +51,7 @@
 		28DC1B662BB8101500EBE057 /* ModifierFlags+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC1B652BB8101500EBE057 /* ModifierFlags+Extensions.swift */; };
 		28DC1B682BB81F9300EBE057 /* ControllerDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC1B672BB81F9300EBE057 /* ControllerDescription.swift */; };
 		28DC1B6B2BB8242500EBE057 /* ISSoundAdditions in Frameworks */ = {isa = PBXBuildFile; productRef = 28DC1B6A2BB8242500EBE057 /* ISSoundAdditions */; };
-		28DC1B6D2BB8268B00EBE057 /* ControllerDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC1B6C2BB8268B00EBE057 /* ControllerDescriptionView.swift */; };
+		28DC1B6D2BB8268B00EBE057 /* BuiltinControllerDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DC1B6C2BB8268B00EBE057 /* BuiltinControllerDescriptionView.swift */; };
 		28E4CBAB2BB1AD5F0054106D /* StaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4CBAA2BB1AD5F0054106D /* StaleView.swift */; };
 		28E4CBAD2BB1B0D60054106D /* DummyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E4CBAC2BB1B0D60054106D /* DummyView.swift */; };
 		28E71A362BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */; };
@@ -85,11 +85,11 @@
 		2831AD8A2BAF9B8B0064821C /* MenuBarMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarMenuView.swift; sourceTree = "<group>"; };
 		283856E32BB026EF00860E7C /* UTType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UTType+Extension.swift"; sourceTree = "<group>"; };
 		283856E52BB028A500860E7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		2839A6F22BB7EB0000AFFFCE /* ControllerConfigurationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerConfigurationsView.swift; sourceTree = "<group>"; };
+		2839A6F22BB7EB0000AFFFCE /* ShortcutsControllerConfigurationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsControllerConfigurationsView.swift; sourceTree = "<group>"; };
 		284D34582BB925F20025F9BA /* DialMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialMenuView.swift; sourceTree = "<group>"; };
 		284D345A2BB92DC40025F9BA /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
 		285C9E4B2BB6F4D5003C6BAD /* ControllerEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerEntryView.swift; sourceTree = "<group>"; };
-		285C9E4D2BB6F9C0003C6BAD /* ControllerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDetailsView.swift; sourceTree = "<group>"; };
+		285C9E4D2BB6F9C0003C6BAD /* ShortcutsControllerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutsControllerDetailsView.swift; sourceTree = "<group>"; };
 		285C9E512BB6FE67003C6BAD /* ControllerIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerIconView.swift; sourceTree = "<group>"; };
 		285C9E532BB6FF36003C6BAD /* IconChooserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconChooserView.swift; sourceTree = "<group>"; };
 		286971142BAB2D800074C2FB /* MenuBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarIconView.swift; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		28DC1B632BB8082100EBE057 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		28DC1B652BB8101500EBE057 /* ModifierFlags+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModifierFlags+Extensions.swift"; sourceTree = "<group>"; };
 		28DC1B672BB81F9300EBE057 /* ControllerDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDescription.swift; sourceTree = "<group>"; };
-		28DC1B6C2BB8268B00EBE057 /* ControllerDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDescriptionView.swift; sourceTree = "<group>"; };
+		28DC1B6C2BB8268B00EBE057 /* BuiltinControllerDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuiltinControllerDescriptionView.swift; sourceTree = "<group>"; };
 		28E4CBAA2BB1AD5F0054106D /* StaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaleView.swift; sourceTree = "<group>"; };
 		28E4CBAC2BB1B0D60054106D /* DummyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyView.swift; sourceTree = "<group>"; };
 		28E71A352BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrinkableEqualWidthVStack.swift; sourceTree = "<group>"; };
@@ -351,9 +351,9 @@
 				28EE29BF2BAB219E009005C3 /* SettingsView.swift */,
 				28DC1B5F2BB8077500EBE057 /* Pages */,
 				285C9E4B2BB6F4D5003C6BAD /* ControllerEntryView.swift */,
-				285C9E4D2BB6F9C0003C6BAD /* ControllerDetailsView.swift */,
-				28DC1B6C2BB8268B00EBE057 /* ControllerDescriptionView.swift */,
-				2839A6F22BB7EB0000AFFFCE /* ControllerConfigurationsView.swift */,
+				28DC1B6C2BB8268B00EBE057 /* BuiltinControllerDescriptionView.swift */,
+				285C9E4D2BB6F9C0003C6BAD /* ShortcutsControllerDetailsView.swift */,
+				2839A6F22BB7EB0000AFFFCE /* ShortcutsControllerConfigurationsView.swift */,
 				28DC1B602BB8079600EBE057 /* Shortcuts */,
 			);
 			path = Settings;
@@ -467,9 +467,9 @@
 				2887D7892BAC011300D733FC /* ShortcutArray.swift in Sources */,
 				2887D7762BABFD2200D733FC /* Hardware.swift in Sources */,
 				2887D77B2BABFE0E00D733FC /* Localizable.swift in Sources */,
-				28DC1B6D2BB8268B00EBE057 /* ControllerDescriptionView.swift in Sources */,
+				28DC1B6D2BB8268B00EBE057 /* BuiltinControllerDescriptionView.swift in Sources */,
 				28EE29C02BAB219E009005C3 /* SettingsView.swift in Sources */,
-				285C9E4E2BB6F9C0003C6BAD /* ControllerDetailsView.swift in Sources */,
+				285C9E4E2BB6F9C0003C6BAD /* ShortcutsControllerDetailsView.swift in Sources */,
 				2806E9C32BAC5EAF00CD2AE2 /* PlaybackController.swift in Sources */,
 				2887D7812BAC002400D733FC /* Controller.swift in Sources */,
 				2887D76B2BABFB6100D733FC /* Defaults+Extension.swift in Sources */,
@@ -488,7 +488,7 @@
 				2821DA782BAEE8250017B5DD /* ObservationTrackingStream.swift in Sources */,
 				285C9E542BB6FF36003C6BAD /* IconChooserView.swift in Sources */,
 				28E71A362BAFCE9500722045 /* ShrinkableEqualWidthVStack.swift in Sources */,
-				2839A6F32BB7EB0000AFFFCE /* ControllerConfigurationsView.swift in Sources */,
+				2839A6F32BB7EB0000AFFFCE /* ShortcutsControllerConfigurationsView.swift in Sources */,
 				2887D78B2BAC013300D733FC /* Input.swift in Sources */,
 				28EE29C22BAB21AC009005C3 /* GeneralSettingsView.swift in Sources */,
 				286971152BAB2D800074C2FB /* MenuBarIconView.swift in Sources */,

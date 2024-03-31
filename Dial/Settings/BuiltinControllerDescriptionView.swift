@@ -1,5 +1,5 @@
 //
-//  ControllerDescriptionView.swift
+//  BuiltinControllerDescriptionView.swift
 //  Dial
 //
 //  Created by KrLite on 2024/3/30.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ControllerDescriptionView: View {
+struct BuiltinControllerDescriptionView: View {
     var description: ControllerDescription
     
     var body: some View {
@@ -87,6 +87,6 @@ struct ControllerDescriptionView: View {
 }
 
 #Preview {
-    ControllerDescriptionView(description: .example)
+    BuiltinControllerDescriptionView(description: .example)
         .frame(width: 450)
 }

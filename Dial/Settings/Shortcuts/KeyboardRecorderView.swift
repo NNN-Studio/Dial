@@ -48,7 +48,7 @@ struct KeyboardRecorderView: View {
     func buildModifierViews(_ modifiers: NSEvent.ModifierFlags) -> some View {
         ForEach(modifiers.sortedKeys) { modifier in
             buildBorderedView {
-                Image(systemSymbol: modifier.symbol)
+                modifier.symbol.image
             }
         }
     }
@@ -101,6 +101,7 @@ struct KeyboardRecorderView: View {
         .contextMenu {
             Button(role: .destructive) {
                 currentShortcuts = ShortcutArray()
+                finishedObservingKeys(wasForced: true)
             } label: {
                 Text("Reset")
                     .foregroundStyle(.red)

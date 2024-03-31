@@ -31,6 +31,7 @@ struct MenuBarMenuView: View {
         // MARK: - Status
         
         Button {
+            // Nothing to do
         } label: {
             Text("Surface Dial")
             Image(systemSymbol: .hockeyPuck)
@@ -56,7 +57,7 @@ struct MenuBarMenuView: View {
         
         ForEach(Array($activatedControllerIDs.enumerated()), id: \.offset) { index, id in
             Toggle(isOn: id.isCurrent) {
-                Image(systemSymbol: id.wrappedValue.controller.symbol)
+                id.wrappedValue.controller.symbol.image
                 Text(id.wrappedValue.controller.name ?? controllerNamePlaceholder)
             }
             .possibleKeyboardShortcut(
@@ -78,6 +79,7 @@ struct MenuBarMenuView: View {
         Picker(selection: $globalSensitivity) {
             ForEach(Sensitivity.allCases) { sensitivity in
                 Text(sensitivity.title)
+                    .badge(Text(sensitivity.symbol.unicode!))
             }
         } label: {
             Text(.init(localized: .init("Menu: Sensitivity", defaultValue: "Sensitivity")))
@@ -87,6 +89,7 @@ struct MenuBarMenuView: View {
         Picker(selection: $globalDirection) {
             ForEach(Direction.allCases) { direction in
                 Text(direction.title)
+                    .badge(Text(direction.symbol.unicode!))
             }
         } label: {
             Text(.init(localized: .init("Menu: Direction", defaultValue: "Direction")))
@@ -149,8 +152,4 @@ struct MenuBarMenuView: View {
             }
         }
     }
-}
-
-#Preview {
-    MenuBarMenuView()
 }

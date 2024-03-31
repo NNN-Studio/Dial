@@ -39,20 +39,20 @@ extension SFSymbol {
 }
 
 extension SFSymbol {
-    var __isCircleFillable: Bool {
+    var isCircleFillable: Bool {
         SFSymbol.__circleFillableSymbols.contains(self)
     }
     
-    var __circleFilled: SFSymbol {
+    var circleFilled: SFSymbol {
         self.withSuffix(SFSymbol.__circleFillableSuffix) ?? .__circleFillableFallback
     }
     
-    var __image: Image {
+    var image: Image {
         Image(systemSymbol: self)
     }
     
-    var __circleFilledImage: Image {
-        __circleFilled.__image
+    var imageCircleFilled: Image {
+        circleFilled.image
     }
 }
 
@@ -65,7 +65,8 @@ extension SFSymbol: Identifiable {
 }
 
 extension SFSymbol {
-    // Toxic
+    /// Embed ``Image`` in ``Text`` if possible. Only use this if embedding doesn't work (for example, in context menus).
+    @available(*, deprecated, message: "This variable is not practical.")
     var unicode: String? {
         switch self {
         case .hexagon: "􀝝"
@@ -84,4 +85,3 @@ extension SFSymbol {
         }
     }
 }
-

@@ -52,6 +52,8 @@ extension Defaults.Keys {
 }
 
 extension Defaults {
+    static let maxControllersCount = 10
+    
     static func saveController(settings: ShortcutsController.Settings) {
         let id = ControllerID.shortcuts(settings)
         
@@ -78,7 +80,7 @@ extension Defaults {
     }
     
     static var allControllerIDs: [ControllerID] {
-        Array(Set(Defaults[.activatedControllerIDs] + Defaults[.inactivatedControllerIDs]))
+        Defaults[.activatedControllerIDs] + Defaults[.inactivatedControllerIDs]
     }
     
     static var currentController: Controller? {

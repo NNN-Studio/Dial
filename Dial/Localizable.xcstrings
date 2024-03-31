@@ -27,7 +27,7 @@
         }
       }
     },
-    "AboutViewController/Title" : {
+    "About View Controller: Title" : {
       "comment" : "about view controller title",
       "extractionState" : "extracted_with_value",
       "localizations" : {
@@ -667,6 +667,160 @@
         }
       }
     },
+    "Dial Menu Animation: Bouncy" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Bouncy"
+          }
+        }
+      }
+    },
+    "Dial Menu Animation: Ease In" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Ease In"
+          }
+        }
+      }
+    },
+    "Dial Menu Animation: Ease In Out" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Ease In Out"
+          }
+        }
+      }
+    },
+    "Dial Menu Animation: Ease Out" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Ease Out"
+          }
+        }
+      }
+    },
+    "Dial Menu Animation: Interactive Spring" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Interactive Spring"
+          }
+        }
+      }
+    },
+    "Dial Menu Animation: Interpolative Spring" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Interpolative Spring"
+          }
+        }
+      }
+    },
+    "Dial Menu Animation: Linear" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Linear"
+          }
+        }
+      }
+    },
+    "Dial Menu Animation: None" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "None"
+          }
+        }
+      }
+    },
+    "Dial Menu Animation: Smooth" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Smooth"
+          }
+        }
+      }
+    },
+    "Dial Menu Animation: Snappy" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Snappy"
+          }
+        }
+      }
+    },
+    "Dial Menu Animation: Spring" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Spring"
+          }
+        }
+      }
+    },
+    "Dial Menu Thickness: Regular" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Regular"
+          }
+        }
+      }
+    },
+    "Dial Menu Thickness: Thick" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Thick"
+          }
+        }
+      }
+    },
+    "Dial Menu Thickness: Thin" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Thin"
+          }
+        }
+      }
+    },
     "Direction" : {
       "localizations" : {
         "zh-Hans" : {
@@ -677,7 +831,7 @@
         }
       }
     },
-    "Direction: Clockwise Name" : {
+    "Direction: Clockwise" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -694,7 +848,7 @@
         }
       }
     },
-    "Direction: Counterclockwise Name" : {
+    "Direction: Counterclockwise" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -1172,7 +1326,7 @@
         }
       }
     },
-    "Rotation: Continuous Name" : {
+    "Rotation: Continuous" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -1189,7 +1343,7 @@
         }
       }
     },
-    "Rotation: Stepping Name" : {
+    "Rotation: Stepping" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -1226,7 +1380,7 @@
         }
       }
     },
-    "Sensitivity: Extreme Name" : {
+    "Sensitivity: Extreme" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -1243,7 +1397,7 @@
         }
       }
     },
-    "Sensitivity: High Name" : {
+    "Sensitivity: High" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -1260,7 +1414,7 @@
         }
       }
     },
-    "Sensitivity: Low Name" : {
+    "Sensitivity: Low" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -1277,7 +1431,7 @@
         }
       }
     },
-    "Sensitivity: Medium Name" : {
+    "Sensitivity: Medium" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
@@ -1294,7 +1448,7 @@
         }
       }
     },
-    "Sensitivity: Natural Name" : {
+    "Sensitivity: Natural" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "en" : {
