@@ -18,7 +18,7 @@ class AboutViewController {
             window.title = String(
                 format:
                     NSLocalizedString(
-                        "AboutViewController/Title",
+                        "About View Controller: Title",
                         value: "About %@",
                         comment: "about view controller title"
                     ),

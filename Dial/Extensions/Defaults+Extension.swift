@@ -16,6 +16,10 @@ extension Defaults.Keys {
     static let globalSensitivity = Key<Sensitivity>("globalSensitivity", default: .natural)
     static let globalDirection = Key<Direction>("globalDirection", default: .clockwise)
     
+    static let dialMenuThickness = Key<DialMenuThickness>("dialMenuThickness", default: .regular)
+    static let dialMenuAnimation = Key<DialMenuAnimation>("dialMenuAnimation", default: .easeInOut)
+    static let dialMenuAppearsAtCursor = Key<Bool>("dialMenuAppearsAtCursor", default: false)
+    
     static let activatedControllerIDs: Key<[ControllerID]> = {
         Task { @MainActor in
             notifyTaskStart("validate controller indexes")
@@ -45,10 +49,6 @@ extension Defaults.Keys {
     }()
     static let inactivatedControllerIDs: Key<[ControllerID]> = .init("inactivatedControllerIDs", default: [])
     static let currentControllerID = Key<ControllerID?>("currentControllerID", default: nil)
-    
-    // MARK: - Constants
-    
-    static let maxControllers = Key<Int>("maxControllers", default: 10)
 }
 
 extension Defaults {

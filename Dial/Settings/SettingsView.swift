@@ -24,7 +24,7 @@ struct SettingsView: View {
                     Image(systemSymbol: .gear)
                     Text("General")
                 case .controllers:
-                    Image(systemSymbol: .hockeyPuck)
+                    Image(systemSymbol: .dialHigh)
                     Text("Controllers")
                 case .dialMenu:
                     Image(systemSymbol: .circleCircle)
@@ -70,6 +70,7 @@ struct SettingsView: View {
                 .frame(width: 450)
                 .fixedSize()
         }
+        .animation(., body: <#T##(PlaceholderContentView<Self>) -> V#>)
         .orSomeView(condition: selectedTab == .controllers) {
             // Special case for the controllers view's `NavigationSplitView` (which is `TabView`-incompatible)
             ControllersSettingsView()
