@@ -92,7 +92,7 @@ struct GeneralSettingsView: View {
                 
                 Section("Global Behavior") {
                     Toggle(isOn: $globalHapticsEnabled) {
-                        Text("Haptics feedback")
+                        Text("Haptic feedback")
                     }
                 }
                 

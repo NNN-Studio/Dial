@@ -113,7 +113,7 @@ struct ControllerConfigurationsView: View {
             // MARK: - Configurations
             
             Section("Configurations") {
-                Toggle("Haptics feedback", isOn: controller.haptics)
+                Toggle("Haptic feedback", isOn: controller.haptics)
             }
             
             Section {

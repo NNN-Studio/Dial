@@ -46,7 +46,7 @@ struct MoreSettingsView: View {
                     
                     Text("Granted")
                         .or(condition: !isAccessibilityAccessGranted) {
-                            Text("Not Granted")
+                            Text("Not granted")
                         }
                     
                     Circle()

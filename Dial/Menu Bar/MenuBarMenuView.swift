@@ -72,7 +72,7 @@ struct MenuBarMenuView: View {
         Text("Quick Settings")
         
         Toggle(isOn: $globalHapticsEnabled) {
-            Text(.init(localized: .init("Menu: Haptics", defaultValue: "Haptics Feedback")))
+            Text(.init(localized: .init("Menu: Haptics", defaultValue: "Haptic Feedback")))
         }
         
         Picker(selection: $globalSensitivity) {

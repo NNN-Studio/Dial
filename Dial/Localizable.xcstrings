@@ -811,7 +811,7 @@
         }
       }
     },
-    "Haptics feedback" : {
+    "Haptic feedback" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -907,7 +907,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Haptics Feedback"
+            "value" : "Haptic Feedback"
           }
         },
         "zh-Hans" : {
@@ -982,7 +982,7 @@
         }
       }
     },
-    "Not Granted" : {
+    "Not granted" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
